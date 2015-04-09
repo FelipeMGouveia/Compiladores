@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/br.poli.ecomp.compiladores/src-gen" editDirectory="/br.poli.ecomp.compiladores.edit/src"
+    editorDirectory="/br.poli.ecomp.compiladores.editor/src" modelPluginID="br.poli.ecomp.compiladores"
+    forceOverwrite="true" modelName="NotC" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="br.poli.ecomp.compiladores.edit"
+    editorPluginID="br.poli.ecomp.compiladores.editor" runtimeVersion="2.10">
+  <genPackages prefix="NotC" basePackage="br.poli.ecomp.compiladores" disposableProviderFactory="true"
+      fileExtensions="notc" ecorePackage="NotC.ecore#/">
+    <genClasses ecoreClass="NotC.ecore#//Code">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Code/declarations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Code/functions"/>
+    </genClasses>
+    <genClasses ecoreClass="NotC.ecore#//Function">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NotC.ecore#//Function/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NotC.ecore#//Function/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Function/param"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Function/block"/>
+    </genClasses>
+    <genClasses ecoreClass="NotC.ecore#//FuncParam">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NotC.ecore#//FuncParam/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NotC.ecore#//FuncParam/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//FuncParam/next"/>
+    </genClasses>
+    <genClasses ecoreClass="NotC.ecore#//Block">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Block/statement"/>
+    </genClasses>
+    <genClasses ecoreClass="NotC.ecore#//Statement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Statement/declarations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Statement/commands"/>
+    </genClasses>
+    <genClasses ecoreClass="NotC.ecore#//Command">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Command/expr"/>
+    </genClasses>
+    <genClasses ecoreClass="NotC.ecore#//IfCommand">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//IfCommand/ifBlock"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//IfCommand/elseBlock"/>
+    </genClasses>
+    <genClasses ecoreClass="NotC.ecore#//WhileCommand">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//WhileCommand/whileBlock"/>
+    </genClasses>
+    <genClasses ecoreClass="NotC.ecore#//Declaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NotC.ecore#//Declaration/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Declaration/value"/>
+    </genClasses>
+    <genClasses ecoreClass="NotC.ecore#//RDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//RDeclaration/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//RDeclaration/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//RDeclaration/next"/>
+    </genClasses>
+    <genClasses ecoreClass="NotC.ecore#//IDDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NotC.ecore#//IDDeclaration/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//IDDeclaration/value"/>
+    </genClasses>
+    <genClasses ecoreClass="NotC.ecore#//Expression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Expression/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Expression/result"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Expression/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NotC.ecore#//Expression/operator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Expression/right"/>
+    </genClasses>
+    <genClasses ecoreClass="NotC.ecore#//Expr5">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NotC.ecore#//Expr5/value"/>
+    </genClasses>
+    <genClasses ecoreClass="NotC.ecore#//Expr"/>
+    <genClasses ecoreClass="NotC.ecore#//Expr2"/>
+    <genClasses ecoreClass="NotC.ecore#//Expr3"/>
+  </genPackages>
+</genmodel:GenModel>

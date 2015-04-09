@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.poli.br/ecomp/compiladores/NotC" 
+       class = "br.poli.ecomp.compiladores.notC.NotCPackage"
+       genModel = "model/generated/NotC.genmodel" /> 
+	
+  </extension>
+
+
+
+</plugin>

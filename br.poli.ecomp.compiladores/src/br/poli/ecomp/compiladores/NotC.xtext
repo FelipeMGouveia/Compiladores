@@ -1,0 +1,31 @@
+grammar br.poli.ecomp.compiladores.NotC with org.eclipse.xtext.common.Terminals
+
+generate notC "http://www.poli.br/ecomp/compiladores/NotC"
+
+Code: (declarations+=Declaration)* (functions+=Function)*;
+
+Function: type=Type id=ID '(' (param=FuncParam)? ')' block=Block ;
+FuncParam: type=Type id=ID (',' next=FuncParam)? ;
+
+Block: '{' statement=Statement '}';
+Statement: (declarations+=IDDeclaration)* (commands+=Command)*;
+
+Command: IfCommand | WhileCommand;
+IfCommand: 'if' '(' expr=Expr ')' ifBlock = Block ('else' elseBlock=Block)?;
+WhileCommand: 'while' '(' expr=Expr ')' whileBlock=Block;
+
+Declaration: type=Type  value=RDeclaration ';' ;
+RDeclaration: id=IDDeclaration ({RDeclaration.left=current}',' next=RDeclaration)?;
+
+IDDeclaration: id=ID ('=' value=Expr)? ;
+
+Expr returns Expression: Expr2 ({Expr.left=current} (operator=('+' | '-' ))right=Expr2 )*;
+Expr2 returns Expression: Expr3 ({Expr2.left=current} (operator=('*' | '/')) right=Expr3)*;
+Expr3 returns Expression: Expr4 ({Expr3.left=current} (operator=('^')) right=Expr4)*;
+Expr4 returns Expression: '(' value=Expr ')' | result=Expr5;
+Expr5: value = INT ;
+
+
+//Expr: value=INT | value=INT ('*' | '/' | '+' |'-') right=Expr;
+
+Type: 'var';
