@@ -173,29 +173,33 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 	public class StatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Statement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cDeclarationsAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cDeclarationsIDDeclarationParserRuleCall_0_0 = (RuleCall)cDeclarationsAssignment_0.eContents().get(0);
-		private final Assignment cCommandsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cCommandsCommandParserRuleCall_1_0 = (RuleCall)cCommandsAssignment_1.eContents().get(0);
+		private final Action cStatementAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cDeclarationsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cDeclarationsDeclarationParserRuleCall_1_0 = (RuleCall)cDeclarationsAssignment_1.eContents().get(0);
+		private final Assignment cCommandsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cCommandsCommandParserRuleCall_2_0 = (RuleCall)cCommandsAssignment_2.eContents().get(0);
 		
 		//Statement:
-		//	declarations+=IDDeclaration* commands+=Command*;
+		//	{Statement} declarations+=Declaration* commands+=Command*;
 		public ParserRule getRule() { return rule; }
 
-		//declarations+=IDDeclaration* commands+=Command*
+		//{Statement} declarations+=Declaration* commands+=Command*
 		public Group getGroup() { return cGroup; }
 
-		//declarations+=IDDeclaration*
-		public Assignment getDeclarationsAssignment_0() { return cDeclarationsAssignment_0; }
+		//{Statement}
+		public Action getStatementAction_0() { return cStatementAction_0; }
 
-		//IDDeclaration
-		public RuleCall getDeclarationsIDDeclarationParserRuleCall_0_0() { return cDeclarationsIDDeclarationParserRuleCall_0_0; }
+		//declarations+=Declaration*
+		public Assignment getDeclarationsAssignment_1() { return cDeclarationsAssignment_1; }
+
+		//Declaration
+		public RuleCall getDeclarationsDeclarationParserRuleCall_1_0() { return cDeclarationsDeclarationParserRuleCall_1_0; }
 
 		//commands+=Command*
-		public Assignment getCommandsAssignment_1() { return cCommandsAssignment_1; }
+		public Assignment getCommandsAssignment_2() { return cCommandsAssignment_2; }
 
 		//Command
-		public RuleCall getCommandsCommandParserRuleCall_1_0() { return cCommandsCommandParserRuleCall_1_0; }
+		public RuleCall getCommandsCommandParserRuleCall_2_0() { return cCommandsCommandParserRuleCall_2_0; }
 	}
 
 	public class CommandElements extends AbstractParserRuleElementFinder {
@@ -616,15 +620,19 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class TypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Type");
-		private final Keyword cVarKeyword = (Keyword)rule.eContents().get(1);
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final Keyword cValueVarKeyword_0 = (Keyword)cValueAssignment.eContents().get(0);
 		
 		////Expr: value=INT | value=INT ('*' | '/' | '+' |'-') right=Expr;
 		//Type:
-		//	"var";
+		//	value="var";
 		public ParserRule getRule() { return rule; }
 
+		//value="var"
+		public Assignment getValueAssignment() { return cValueAssignment; }
+
 		//"var"
-		public Keyword getVarKeyword() { return cVarKeyword; }
+		public Keyword getValueVarKeyword_0() { return cValueVarKeyword_0; }
 	}
 	
 	
@@ -742,7 +750,7 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Statement:
-	//	declarations+=IDDeclaration* commands+=Command*;
+	//	{Statement} declarations+=Declaration* commands+=Command*;
 	public StatementElements getStatementAccess() {
 		return pStatement;
 	}
@@ -863,7 +871,7 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 
 	////Expr: value=INT | value=INT ('*' | '/' | '+' |'-') right=Expr;
 	//Type:
-	//	"var";
+	//	value="var";
 	public TypeElements getTypeAccess() {
 		return pType;
 	}

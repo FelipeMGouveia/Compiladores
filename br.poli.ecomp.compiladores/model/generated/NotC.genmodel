@@ -12,13 +12,13 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Code/functions"/>
     </genClasses>
     <genClasses ecoreClass="NotC.ecore#//Function">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NotC.ecore#//Function/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Function/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NotC.ecore#//Function/id"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Function/param"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Function/block"/>
     </genClasses>
     <genClasses ecoreClass="NotC.ecore#//FuncParam">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NotC.ecore#//FuncParam/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//FuncParam/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NotC.ecore#//FuncParam/id"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//FuncParam/next"/>
     </genClasses>
@@ -40,7 +40,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//WhileCommand/whileBlock"/>
     </genClasses>
     <genClasses ecoreClass="NotC.ecore#//Declaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NotC.ecore#//Declaration/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Declaration/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Declaration/value"/>
     </genClasses>
     <genClasses ecoreClass="NotC.ecore#//RDeclaration">
@@ -61,6 +61,9 @@
     </genClasses>
     <genClasses ecoreClass="NotC.ecore#//Expr5">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NotC.ecore#//Expr5/value"/>
+    </genClasses>
+    <genClasses ecoreClass="NotC.ecore#//Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NotC.ecore#//Type/value"/>
     </genClasses>
     <genClasses ecoreClass="NotC.ecore#//Expr"/>
     <genClasses ecoreClass="NotC.ecore#//Expr2"/>

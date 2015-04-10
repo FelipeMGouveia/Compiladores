@@ -15,6 +15,7 @@ import br.poli.ecomp.compiladores.notC.IfCommand;
 import br.poli.ecomp.compiladores.notC.NotCPackage;
 import br.poli.ecomp.compiladores.notC.RDeclaration;
 import br.poli.ecomp.compiladores.notC.Statement;
+import br.poli.ecomp.compiladores.notC.Type;
 import br.poli.ecomp.compiladores.notC.WhileCommand;
 import br.poli.ecomp.compiladores.services.NotCGrammarAccess;
 import com.google.inject.Inject;
@@ -140,6 +141,12 @@ public class NotCSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case NotCPackage.STATEMENT:
 				if(context == grammarAccess.getStatementRule()) {
 					sequence_Statement(context, (Statement) semanticObject); 
+					return; 
+				}
+				else break;
+			case NotCPackage.TYPE:
+				if(context == grammarAccess.getTypeRule()) {
+					sequence_Type(context, (Type) semanticObject); 
 					return; 
 				}
 				else break;
@@ -306,10 +313,26 @@ public class NotCSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (declarations+=IDDeclaration* commands+=Command*)
+	 *     (declarations+=Declaration* commands+=Command*)
 	 */
 	protected void sequence_Statement(EObject context, Statement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     value='var'
+	 */
+	protected void sequence_Type(EObject context, Type semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, NotCPackage.Literals.TYPE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, NotCPackage.Literals.TYPE__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getTypeAccess().getValueVarKeyword_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	

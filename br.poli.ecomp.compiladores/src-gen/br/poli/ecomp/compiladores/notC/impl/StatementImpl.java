@@ -3,7 +3,7 @@
 package br.poli.ecomp.compiladores.notC.impl;
 
 import br.poli.ecomp.compiladores.notC.Command;
-import br.poli.ecomp.compiladores.notC.IDDeclaration;
+import br.poli.ecomp.compiladores.notC.Declaration;
 import br.poli.ecomp.compiladores.notC.NotCPackage;
 import br.poli.ecomp.compiladores.notC.Statement;
 
@@ -45,7 +45,7 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
    * @generated
    * @ordered
    */
-  protected EList<IDDeclaration> declarations;
+  protected EList<Declaration> declarations;
 
   /**
    * The cached value of the '{@link #getCommands() <em>Commands</em>}' containment reference list.
@@ -83,11 +83,11 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<IDDeclaration> getDeclarations()
+  public EList<Declaration> getDeclarations()
   {
     if (declarations == null)
     {
-      declarations = new EObjectContainmentEList<IDDeclaration>(IDDeclaration.class, this, NotCPackage.STATEMENT__DECLARATIONS);
+      declarations = new EObjectContainmentEList<Declaration>(Declaration.class, this, NotCPackage.STATEMENT__DECLARATIONS);
     }
     return declarations;
   }
@@ -155,7 +155,7 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
     {
       case NotCPackage.STATEMENT__DECLARATIONS:
         getDeclarations().clear();
-        getDeclarations().addAll((Collection<? extends IDDeclaration>)newValue);
+        getDeclarations().addAll((Collection<? extends Declaration>)newValue);
         return;
       case NotCPackage.STATEMENT__COMMANDS:
         getCommands().clear();

@@ -77,6 +77,7 @@ public class NotCFactoryImpl extends EFactoryImpl implements NotCFactory
       case NotCPackage.ID_DECLARATION: return createIDDeclaration();
       case NotCPackage.EXPRESSION: return createExpression();
       case NotCPackage.EXPR5: return createExpr5();
+      case NotCPackage.TYPE: return createType();
       case NotCPackage.EXPR: return createExpr();
       case NotCPackage.EXPR2: return createExpr2();
       case NotCPackage.EXPR3: return createExpr3();
@@ -226,6 +227,17 @@ public class NotCFactoryImpl extends EFactoryImpl implements NotCFactory
   {
     Expr5Impl expr5 = new Expr5Impl();
     return expr5;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Type createType()
+  {
+    TypeImpl type = new TypeImpl();
+    return type;
   }
 
   /**

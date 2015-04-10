@@ -8,7 +8,7 @@ Function: type=Type id=ID '(' (param=FuncParam)? ')' block=Block ;
 FuncParam: type=Type id=ID (',' next=FuncParam)? ;
 
 Block: '{' statement=Statement '}';
-Statement: (declarations+=IDDeclaration)* (commands+=Command)*;
+Statement: {Statement} (declarations+=Declaration)* (commands+=Command)* ;
 
 Command: IfCommand | WhileCommand;
 IfCommand: 'if' '(' expr=Expr ')' ifBlock = Block ('else' elseBlock=Block)?;
@@ -28,4 +28,4 @@ Expr5: value = INT ;
 
 //Expr: value=INT | value=INT ('*' | '/' | '+' |'-') right=Expr;
 
-Type: 'var';
+Type: value='var';

@@ -3,13 +3,20 @@
  */
 package br.poli.ecomp.compiladores.generator;
 
+import br.poli.ecomp.compiladores.notC.Block;
 import br.poli.ecomp.compiladores.notC.Code;
+import br.poli.ecomp.compiladores.notC.Command;
 import br.poli.ecomp.compiladores.notC.Declaration;
 import br.poli.ecomp.compiladores.notC.Expr5;
 import br.poli.ecomp.compiladores.notC.Expression;
+import br.poli.ecomp.compiladores.notC.FuncParam;
 import br.poli.ecomp.compiladores.notC.Function;
 import br.poli.ecomp.compiladores.notC.IDDeclaration;
+import br.poli.ecomp.compiladores.notC.IfCommand;
 import br.poli.ecomp.compiladores.notC.RDeclaration;
+import br.poli.ecomp.compiladores.notC.Statement;
+import br.poli.ecomp.compiladores.notC.Type;
+import br.poli.ecomp.compiladores.notC.WhileCommand;
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import java.util.Arrays;
@@ -54,7 +61,8 @@ public class NotCGenerator implements IGenerator {
         {
           EList<Function> _functions_1 = code.getFunctions();
           for(final Function function : _functions_1) {
-            _builder.append("function.compile");
+            CharSequence _compile_1 = this.compile(function);
+            _builder.append(_compile_1, "");
           }
         }
       }
@@ -65,12 +73,13 @@ public class NotCGenerator implements IGenerator {
   
   protected CharSequence _compile(final Declaration declaration) {
     StringConcatenation _builder = new StringConcatenation();
-    String _type = declaration.getType();
-    _builder.append(_type, "");
+    Type _type = declaration.getType();
+    Object _compile = this.compile(_type);
+    _builder.append(_compile, "");
     _builder.append(" ");
     RDeclaration _value = declaration.getValue();
-    Object _compile = this.compile(_value);
-    _builder.append(_compile, "");
+    Object _compile_1 = this.compile(_value);
+    _builder.append(_compile_1, "");
     _builder.append(";");
     return _builder;
   }
@@ -187,6 +196,158 @@ public class NotCGenerator implements IGenerator {
   
   protected CharSequence _compile(final Function function) {
     StringConcatenation _builder = new StringConcatenation();
+    Type _type = function.getType();
+    Object _compile = this.compile(_type);
+    _builder.append(_compile, "");
+    _builder.append(" ");
+    String _id = function.getId();
+    _builder.append(_id, "");
+    _builder.append(" ( ");
+    {
+      FuncParam _param = function.getParam();
+      boolean _notEquals = (!Objects.equal(_param, null));
+      if (_notEquals) {
+        FuncParam _param_1 = function.getParam();
+        Object _compile_1 = this.compile(_param_1);
+        _builder.append(_compile_1, "");
+      }
+    }
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
+    Block _block = function.getBlock();
+    Object _compile_2 = this.compile(_block);
+    _builder.append(_compile_2, "");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final FuncParam funcParam) {
+    StringConcatenation _builder = new StringConcatenation();
+    Type _type = funcParam.getType();
+    Object _compile = this.compile(_type);
+    _builder.append(_compile, "");
+    _builder.append(" ");
+    String _id = funcParam.getId();
+    _builder.append(_id, "");
+    {
+      FuncParam _next = funcParam.getNext();
+      boolean _notEquals = (!Objects.equal(_next, null));
+      if (_notEquals) {
+        _builder.append(", ");
+        FuncParam _next_1 = funcParam.getNext();
+        Object _compile_1 = this.compile(_next_1);
+        _builder.append(_compile_1, "");
+      }
+    }
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final Block block) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("{");
+    _builder.newLine();
+    {
+      Statement _statement = block.getStatement();
+      boolean _notEquals = (!Objects.equal(_statement, null));
+      if (_notEquals) {
+        Statement _statement_1 = block.getStatement();
+        Object _compile = this.compile(_statement_1);
+        _builder.append(_compile, "");
+      }
+    }
+    _builder.newLineIfNotEmpty();
+    _builder.append("}");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final Statement statement) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      EList<Declaration> _declarations = statement.getDeclarations();
+      boolean _notEquals = (!Objects.equal(_declarations, null));
+      if (_notEquals) {
+        {
+          EList<Declaration> _declarations_1 = statement.getDeclarations();
+          for(final Declaration declaration : _declarations_1) {
+            _builder.append("\t");
+            Object _compile = this.compile(declaration);
+            _builder.append(_compile, "");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+      }
+    }
+    {
+      EList<Command> _commands = statement.getCommands();
+      boolean _notEquals_1 = (!Objects.equal(_commands, null));
+      if (_notEquals_1) {
+        {
+          EList<Command> _commands_1 = statement.getCommands();
+          for(final Command command : _commands_1) {
+            _builder.append("\t");
+            Object _compile_1 = this.compile(command);
+            _builder.append(_compile_1, "");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+      }
+    }
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final IfCommand ifcommand) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("if ( ");
+    Expression _expr = ifcommand.getExpr();
+    Object _compile = this.compile(_expr);
+    _builder.append(_compile, "");
+    _builder.append(" ) ");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    Block _ifBlock = ifcommand.getIfBlock();
+    Object _compile_1 = this.compile(_ifBlock);
+    _builder.append(_compile_1, "\t");
+    {
+      Block _elseBlock = ifcommand.getElseBlock();
+      boolean _notEquals = (!Objects.equal(_elseBlock, null));
+      if (_notEquals) {
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
+        _builder.append("else ");
+        _builder.newLine();
+        _builder.append("\t");
+        Block _elseBlock_1 = ifcommand.getElseBlock();
+        Object _compile_2 = this.compile(_elseBlock_1);
+        _builder.append(_compile_2, "\t");
+      }
+    }
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final WhileCommand whileCommand) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("while ( ");
+    Expression _expr = whileCommand.getExpr();
+    Object _compile = this.compile(_expr);
+    _builder.append(_compile, "");
+    _builder.append(" )");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    Block _whileBlock = whileCommand.getWhileBlock();
+    Object _compile_1 = this.compile(_whileBlock);
+    _builder.append(_compile_1, "\t");
+    {
+      Block _whileBlock_1 = whileCommand.getWhileBlock();
+      boolean _notEquals = (!Objects.equal(_whileBlock_1, null));
+      if (_notEquals) {
+      }
+    }
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final Type type) {
+    StringConcatenation _builder = new StringConcatenation();
+    String _value = type.getValue();
+    _builder.append(_value, "");
     return _builder;
   }
   
@@ -202,22 +363,34 @@ public class NotCGenerator implements IGenerator {
     }
   }
   
-  public CharSequence compile(final EObject declaration) {
-    if (declaration instanceof Declaration) {
-      return _compile((Declaration)declaration);
-    } else if (declaration instanceof Expr5) {
-      return _compile((Expr5)declaration);
-    } else if (declaration instanceof Expression) {
-      return _compile((Expression)declaration);
-    } else if (declaration instanceof Function) {
-      return _compile((Function)declaration);
-    } else if (declaration instanceof IDDeclaration) {
-      return _compile((IDDeclaration)declaration);
-    } else if (declaration instanceof RDeclaration) {
-      return _compile((RDeclaration)declaration);
+  public CharSequence compile(final EObject ifcommand) {
+    if (ifcommand instanceof IfCommand) {
+      return _compile((IfCommand)ifcommand);
+    } else if (ifcommand instanceof WhileCommand) {
+      return _compile((WhileCommand)ifcommand);
+    } else if (ifcommand instanceof Block) {
+      return _compile((Block)ifcommand);
+    } else if (ifcommand instanceof Declaration) {
+      return _compile((Declaration)ifcommand);
+    } else if (ifcommand instanceof Expr5) {
+      return _compile((Expr5)ifcommand);
+    } else if (ifcommand instanceof Expression) {
+      return _compile((Expression)ifcommand);
+    } else if (ifcommand instanceof FuncParam) {
+      return _compile((FuncParam)ifcommand);
+    } else if (ifcommand instanceof Function) {
+      return _compile((Function)ifcommand);
+    } else if (ifcommand instanceof IDDeclaration) {
+      return _compile((IDDeclaration)ifcommand);
+    } else if (ifcommand instanceof RDeclaration) {
+      return _compile((RDeclaration)ifcommand);
+    } else if (ifcommand instanceof Statement) {
+      return _compile((Statement)ifcommand);
+    } else if (ifcommand instanceof Type) {
+      return _compile((Type)ifcommand);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(declaration).toString());
+        Arrays.<Object>asList(ifcommand).toString());
     }
   }
 }

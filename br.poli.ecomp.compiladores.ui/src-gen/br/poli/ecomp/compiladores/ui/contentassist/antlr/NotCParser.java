@@ -72,8 +72,8 @@ public class NotCParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFuncParamAccess().getIdAssignment_1(), "rule__FuncParam__IdAssignment_1");
 					put(grammarAccess.getFuncParamAccess().getNextAssignment_2_1(), "rule__FuncParam__NextAssignment_2_1");
 					put(grammarAccess.getBlockAccess().getStatementAssignment_1(), "rule__Block__StatementAssignment_1");
-					put(grammarAccess.getStatementAccess().getDeclarationsAssignment_0(), "rule__Statement__DeclarationsAssignment_0");
-					put(grammarAccess.getStatementAccess().getCommandsAssignment_1(), "rule__Statement__CommandsAssignment_1");
+					put(grammarAccess.getStatementAccess().getDeclarationsAssignment_1(), "rule__Statement__DeclarationsAssignment_1");
+					put(grammarAccess.getStatementAccess().getCommandsAssignment_2(), "rule__Statement__CommandsAssignment_2");
 					put(grammarAccess.getIfCommandAccess().getExprAssignment_2(), "rule__IfCommand__ExprAssignment_2");
 					put(grammarAccess.getIfCommandAccess().getIfBlockAssignment_4(), "rule__IfCommand__IfBlockAssignment_4");
 					put(grammarAccess.getIfCommandAccess().getElseBlockAssignment_5_1(), "rule__IfCommand__ElseBlockAssignment_5_1");
@@ -94,6 +94,7 @@ public class NotCParser extends AbstractContentAssistParser {
 					put(grammarAccess.getExpr4Access().getValueAssignment_0_1(), "rule__Expr4__ValueAssignment_0_1");
 					put(grammarAccess.getExpr4Access().getResultAssignment_1(), "rule__Expr4__ResultAssignment_1");
 					put(grammarAccess.getExpr5Access().getValueAssignment(), "rule__Expr5__ValueAssignment");
+					put(grammarAccess.getTypeAccess().getValueAssignment(), "rule__Type__ValueAssignment");
 				}
 			};
 		}

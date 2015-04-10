@@ -362,19 +362,25 @@ ruleStatement returns [EObject current=null]
     }
     @after { leaveRule(); }:
 ((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getStatementAccess().getStatementAction_0(),
+            $current);
+    }
+)(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getStatementAccess().getDeclarationsIDDeclarationParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getStatementAccess().getDeclarationsDeclarationParserRuleCall_1_0()); 
 	    }
-		lv_declarations_0_0=ruleIDDeclaration		{
+		lv_declarations_1_0=ruleDeclaration		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getStatementRule());
 	        }
        		add(
        			$current, 
        			"declarations",
-        		lv_declarations_0_0, 
-        		"IDDeclaration");
+        		lv_declarations_1_0, 
+        		"Declaration");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -382,16 +388,16 @@ ruleStatement returns [EObject current=null]
 )*(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getStatementAccess().getCommandsCommandParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getStatementAccess().getCommandsCommandParserRuleCall_2_0()); 
 	    }
-		lv_commands_1_0=ruleCommand		{
+		lv_commands_2_0=ruleCommand		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getStatementRule());
 	        }
        		add(
        			$current, 
        			"commands",
-        		lv_commands_1_0, 
+        		lv_commands_2_0, 
         		"Command");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1136,27 +1142,36 @@ ruleExpr5 returns [EObject current=null]
 
 
 // Entry rule entryRuleType
-entryRuleType returns [String current=null] 
+entryRuleType returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getTypeRule()); } 
+	{ newCompositeNode(grammarAccess.getTypeRule()); }
 	 iv_ruleType=ruleType 
-	 { $current=$iv_ruleType.current.getText(); }  
+	 { $current=$iv_ruleType.current; } 
 	 EOF 
 ;
 
 // Rule Type
-ruleType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+ruleType returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-
-	kw='var' 
+(
+(
+		lv_value_0_0=	'var' 
     {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getTypeAccess().getVarKeyword()); 
+        newLeafNode(lv_value_0_0, grammarAccess.getTypeAccess().getValueVarKeyword_0());
     }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTypeRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_0_0, "var");
+	    }
 
-    ;
+)
+)
+;
 
 
 

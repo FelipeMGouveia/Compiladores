@@ -4,6 +4,7 @@ package br.poli.ecomp.compiladores.notC.impl;
 
 import br.poli.ecomp.compiladores.notC.FuncParam;
 import br.poli.ecomp.compiladores.notC.NotCPackage;
+import br.poli.ecomp.compiladores.notC.Type;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -32,24 +33,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class FuncParamImpl extends MinimalEObjectImpl.Container implements FuncParam
 {
   /**
-   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getType()
    * @generated
    * @ordered
    */
-  protected static final String TYPE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
-  protected String type = TYPE_EDEFAULT;
+  protected Type type;
 
   /**
    * The default value of the '{@link #getId() <em>Id</em>}' attribute.
@@ -107,7 +98,7 @@ public class FuncParamImpl extends MinimalEObjectImpl.Container implements FuncP
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getType()
+  public Type getType()
   {
     return type;
   }
@@ -117,12 +108,37 @@ public class FuncParamImpl extends MinimalEObjectImpl.Container implements FuncP
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(String newType)
+  public NotificationChain basicSetType(Type newType, NotificationChain msgs)
   {
-    String oldType = type;
+    Type oldType = type;
     type = newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, NotCPackage.FUNC_PARAM__TYPE, oldType, type));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, NotCPackage.FUNC_PARAM__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setType(Type newType)
+  {
+    if (newType != type)
+    {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - NotCPackage.FUNC_PARAM__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - NotCPackage.FUNC_PARAM__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, NotCPackage.FUNC_PARAM__TYPE, newType, newType));
   }
 
   /**
@@ -206,6 +222,8 @@ public class FuncParamImpl extends MinimalEObjectImpl.Container implements FuncP
   {
     switch (featureID)
     {
+      case NotCPackage.FUNC_PARAM__TYPE:
+        return basicSetType(null, msgs);
       case NotCPackage.FUNC_PARAM__NEXT:
         return basicSetNext(null, msgs);
     }
@@ -243,7 +261,7 @@ public class FuncParamImpl extends MinimalEObjectImpl.Container implements FuncP
     switch (featureID)
     {
       case NotCPackage.FUNC_PARAM__TYPE:
-        setType((String)newValue);
+        setType((Type)newValue);
         return;
       case NotCPackage.FUNC_PARAM__ID:
         setId((String)newValue);
@@ -266,7 +284,7 @@ public class FuncParamImpl extends MinimalEObjectImpl.Container implements FuncP
     switch (featureID)
     {
       case NotCPackage.FUNC_PARAM__TYPE:
-        setType(TYPE_EDEFAULT);
+        setType((Type)null);
         return;
       case NotCPackage.FUNC_PARAM__ID:
         setId(ID_EDEFAULT);
@@ -289,7 +307,7 @@ public class FuncParamImpl extends MinimalEObjectImpl.Container implements FuncP
     switch (featureID)
     {
       case NotCPackage.FUNC_PARAM__TYPE:
-        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+        return type != null;
       case NotCPackage.FUNC_PARAM__ID:
         return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
       case NotCPackage.FUNC_PARAM__NEXT:
@@ -309,9 +327,7 @@ public class FuncParamImpl extends MinimalEObjectImpl.Container implements FuncP
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (type: ");
-    result.append(type);
-    result.append(", id: ");
+    result.append(" (id: ");
     result.append(id);
     result.append(')');
     return result.toString();

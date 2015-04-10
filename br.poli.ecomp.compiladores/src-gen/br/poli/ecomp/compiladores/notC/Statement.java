@@ -27,7 +27,7 @@ public interface Statement extends EObject
 {
   /**
    * Returns the value of the '<em><b>Declarations</b></em>' containment reference list.
-   * The list contents are of type {@link br.poli.ecomp.compiladores.notC.IDDeclaration}.
+   * The list contents are of type {@link br.poli.ecomp.compiladores.notC.Declaration}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Declarations</em>' containment reference list isn't clear,
@@ -39,7 +39,7 @@ public interface Statement extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<IDDeclaration> getDeclarations();
+  EList<Declaration> getDeclarations();
 
   /**
    * Returns the value of the '<em><b>Commands</b></em>' containment reference list.

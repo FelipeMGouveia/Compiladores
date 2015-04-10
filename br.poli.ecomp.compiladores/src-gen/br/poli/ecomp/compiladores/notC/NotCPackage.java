@@ -104,7 +104,7 @@ public interface NotCPackage extends EPackage
   int FUNCTION = 1;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -159,7 +159,7 @@ public interface NotCPackage extends EPackage
   int FUNC_PARAM = 2;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -381,7 +381,7 @@ public interface NotCPackage extends EPackage
   int DECLARATION = 8;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -583,6 +583,34 @@ public interface NotCPackage extends EPackage
   int EXPR5_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link br.poli.ecomp.compiladores.notC.impl.TypeImpl <em>Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.poli.ecomp.compiladores.notC.impl.TypeImpl
+   * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getType()
+   * @generated
+   */
+  int TYPE = 13;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__VALUE = 0;
+
+  /**
+   * The number of structural features of the '<em>Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link br.poli.ecomp.compiladores.notC.impl.ExprImpl <em>Expr</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -590,7 +618,7 @@ public interface NotCPackage extends EPackage
    * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getExpr()
    * @generated
    */
-  int EXPR = 13;
+  int EXPR = 14;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -654,7 +682,7 @@ public interface NotCPackage extends EPackage
    * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getExpr2()
    * @generated
    */
-  int EXPR2 = 14;
+  int EXPR2 = 15;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -718,7 +746,7 @@ public interface NotCPackage extends EPackage
    * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getExpr3()
    * @generated
    */
-  int EXPR3 = 15;
+  int EXPR3 = 16;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -818,15 +846,15 @@ public interface NotCPackage extends EPackage
   EClass getFunction();
 
   /**
-   * Returns the meta object for the attribute '{@link br.poli.ecomp.compiladores.notC.Function#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link br.poli.ecomp.compiladores.notC.Function#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
+   * @return the meta object for the containment reference '<em>Type</em>'.
    * @see br.poli.ecomp.compiladores.notC.Function#getType()
    * @see #getFunction()
    * @generated
    */
-  EAttribute getFunction_Type();
+  EReference getFunction_Type();
 
   /**
    * Returns the meta object for the attribute '{@link br.poli.ecomp.compiladores.notC.Function#getId <em>Id</em>}'.
@@ -872,15 +900,15 @@ public interface NotCPackage extends EPackage
   EClass getFuncParam();
 
   /**
-   * Returns the meta object for the attribute '{@link br.poli.ecomp.compiladores.notC.FuncParam#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link br.poli.ecomp.compiladores.notC.FuncParam#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
+   * @return the meta object for the containment reference '<em>Type</em>'.
    * @see br.poli.ecomp.compiladores.notC.FuncParam#getType()
    * @see #getFuncParam()
    * @generated
    */
-  EAttribute getFuncParam_Type();
+  EReference getFuncParam_Type();
 
   /**
    * Returns the meta object for the attribute '{@link br.poli.ecomp.compiladores.notC.FuncParam#getId <em>Id</em>}'.
@@ -1042,15 +1070,15 @@ public interface NotCPackage extends EPackage
   EClass getDeclaration();
 
   /**
-   * Returns the meta object for the attribute '{@link br.poli.ecomp.compiladores.notC.Declaration#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link br.poli.ecomp.compiladores.notC.Declaration#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
+   * @return the meta object for the containment reference '<em>Type</em>'.
    * @see br.poli.ecomp.compiladores.notC.Declaration#getType()
    * @see #getDeclaration()
    * @generated
    */
-  EAttribute getDeclaration_Type();
+  EReference getDeclaration_Type();
 
   /**
    * Returns the meta object for the containment reference '{@link br.poli.ecomp.compiladores.notC.Declaration#getValue <em>Value</em>}'.
@@ -1225,6 +1253,27 @@ public interface NotCPackage extends EPackage
   EAttribute getExpr5_Value();
 
   /**
+   * Returns the meta object for class '{@link br.poli.ecomp.compiladores.notC.Type <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Type</em>'.
+   * @see br.poli.ecomp.compiladores.notC.Type
+   * @generated
+   */
+  EClass getType();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.poli.ecomp.compiladores.notC.Type#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see br.poli.ecomp.compiladores.notC.Type#getValue()
+   * @see #getType()
+   * @generated
+   */
+  EAttribute getType_Value();
+
+  /**
    * Returns the meta object for class '{@link br.poli.ecomp.compiladores.notC.Expr <em>Expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1314,12 +1363,12 @@ public interface NotCPackage extends EPackage
     EClass FUNCTION = eINSTANCE.getFunction();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FUNCTION__TYPE = eINSTANCE.getFunction_Type();
+    EReference FUNCTION__TYPE = eINSTANCE.getFunction_Type();
 
     /**
      * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
@@ -1356,12 +1405,12 @@ public interface NotCPackage extends EPackage
     EClass FUNC_PARAM = eINSTANCE.getFuncParam();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FUNC_PARAM__TYPE = eINSTANCE.getFuncParam_Type();
+    EReference FUNC_PARAM__TYPE = eINSTANCE.getFuncParam_Type();
 
     /**
      * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
@@ -1496,12 +1545,12 @@ public interface NotCPackage extends EPackage
     EClass DECLARATION = eINSTANCE.getDeclaration();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DECLARATION__TYPE = eINSTANCE.getDeclaration_Type();
+    EReference DECLARATION__TYPE = eINSTANCE.getDeclaration_Type();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
@@ -1638,6 +1687,24 @@ public interface NotCPackage extends EPackage
      * @generated
      */
     EAttribute EXPR5__VALUE = eINSTANCE.getExpr5_Value();
+
+    /**
+     * The meta object literal for the '{@link br.poli.ecomp.compiladores.notC.impl.TypeImpl <em>Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.poli.ecomp.compiladores.notC.impl.TypeImpl
+     * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getType()
+     * @generated
+     */
+    EClass TYPE = eINSTANCE.getType();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TYPE__VALUE = eINSTANCE.getType_Value();
 
     /**
      * The meta object literal for the '{@link br.poli.ecomp.compiladores.notC.impl.ExprImpl <em>Expr</em>}' class.

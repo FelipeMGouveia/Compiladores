@@ -19,6 +19,7 @@ import br.poli.ecomp.compiladores.notC.NotCFactory;
 import br.poli.ecomp.compiladores.notC.NotCPackage;
 import br.poli.ecomp.compiladores.notC.RDeclaration;
 import br.poli.ecomp.compiladores.notC.Statement;
+import br.poli.ecomp.compiladores.notC.Type;
 import br.poli.ecomp.compiladores.notC.WhileCommand;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -126,6 +127,13 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
    * @generated
    */
   private EClass expr5EClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass typeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -256,9 +264,9 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFunction_Type()
+  public EReference getFunction_Type()
   {
-    return (EAttribute)functionEClass.getEStructuralFeatures().get(0);
+    return (EReference)functionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -306,9 +314,9 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFuncParam_Type()
+  public EReference getFuncParam_Type()
   {
-    return (EAttribute)funcParamEClass.getEStructuralFeatures().get(0);
+    return (EReference)funcParamEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -466,9 +474,9 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDeclaration_Type()
+  public EReference getDeclaration_Type()
   {
-    return (EAttribute)declarationEClass.getEStructuralFeatures().get(0);
+    return (EReference)declarationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -636,6 +644,26 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getType()
+  {
+    return typeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getType_Value()
+  {
+    return (EAttribute)typeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getExpr()
   {
     return exprEClass;
@@ -696,13 +724,13 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
     createEReference(codeEClass, CODE__FUNCTIONS);
 
     functionEClass = createEClass(FUNCTION);
-    createEAttribute(functionEClass, FUNCTION__TYPE);
+    createEReference(functionEClass, FUNCTION__TYPE);
     createEAttribute(functionEClass, FUNCTION__ID);
     createEReference(functionEClass, FUNCTION__PARAM);
     createEReference(functionEClass, FUNCTION__BLOCK);
 
     funcParamEClass = createEClass(FUNC_PARAM);
-    createEAttribute(funcParamEClass, FUNC_PARAM__TYPE);
+    createEReference(funcParamEClass, FUNC_PARAM__TYPE);
     createEAttribute(funcParamEClass, FUNC_PARAM__ID);
     createEReference(funcParamEClass, FUNC_PARAM__NEXT);
 
@@ -724,7 +752,7 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
     createEReference(whileCommandEClass, WHILE_COMMAND__WHILE_BLOCK);
 
     declarationEClass = createEClass(DECLARATION);
-    createEAttribute(declarationEClass, DECLARATION__TYPE);
+    createEReference(declarationEClass, DECLARATION__TYPE);
     createEReference(declarationEClass, DECLARATION__VALUE);
 
     rDeclarationEClass = createEClass(RDECLARATION);
@@ -745,6 +773,9 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
 
     expr5EClass = createEClass(EXPR5);
     createEAttribute(expr5EClass, EXPR5__VALUE);
+
+    typeEClass = createEClass(TYPE);
+    createEAttribute(typeEClass, TYPE__VALUE);
 
     exprEClass = createEClass(EXPR);
 
@@ -794,13 +825,13 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
     initEReference(getCode_Functions(), this.getFunction(), null, "functions", null, 0, -1, Code.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionEClass, Function.class, "Function", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFunction_Type(), ecorePackage.getEString(), "type", null, 0, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunction_Type(), this.getType(), null, "type", null, 0, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFunction_Id(), ecorePackage.getEString(), "id", null, 0, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunction_Param(), this.getFuncParam(), null, "param", null, 0, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunction_Block(), this.getBlock(), null, "block", null, 0, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(funcParamEClass, FuncParam.class, "FuncParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFuncParam_Type(), ecorePackage.getEString(), "type", null, 0, 1, FuncParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFuncParam_Type(), this.getType(), null, "type", null, 0, 1, FuncParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFuncParam_Id(), ecorePackage.getEString(), "id", null, 0, 1, FuncParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFuncParam_Next(), this.getFuncParam(), null, "next", null, 0, 1, FuncParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -808,7 +839,7 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
     initEReference(getBlock_Statement(), this.getStatement(), null, "statement", null, 0, 1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(statementEClass, Statement.class, "Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStatement_Declarations(), this.getIDDeclaration(), null, "declarations", null, 0, -1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStatement_Declarations(), this.getDeclaration(), null, "declarations", null, 0, -1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStatement_Commands(), this.getCommand(), null, "commands", null, 0, -1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(commandEClass, Command.class, "Command", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -822,7 +853,7 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
     initEReference(getWhileCommand_WhileBlock(), this.getBlock(), null, "whileBlock", null, 0, 1, WhileCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(declarationEClass, Declaration.class, "Declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDeclaration_Type(), ecorePackage.getEString(), "type", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDeclaration_Type(), this.getType(), null, "type", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDeclaration_Value(), this.getRDeclaration(), null, "value", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(rDeclarationEClass, RDeclaration.class, "RDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -843,6 +874,9 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
 
     initEClass(expr5EClass, Expr5.class, "Expr5", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getExpr5_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Expr5.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getType_Value(), ecorePackage.getEString(), "value", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(exprEClass, Expr.class, "Expr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
