@@ -2,8 +2,8 @@
  */
 package br.poli.ecomp.compiladores.notC.impl;
 
-import br.poli.ecomp.compiladores.notC.Expr5;
 import br.poli.ecomp.compiladores.notC.NotCPackage;
+import br.poli.ecomp.compiladores.notC.Type;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,18 +14,18 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Expr5</b></em>'.
+ * An implementation of the model object '<em><b>Type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link br.poli.ecomp.compiladores.notC.impl.Expr5Impl#getValue <em>Value</em>}</li>
+ *   <li>{@link br.poli.ecomp.compiladores.notC.impl.TypeImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class Expr5Impl extends MinimalEObjectImpl.Container implements Expr5
+public class TypeImpl extends MinimalEObjectImpl.Container implements Type
 {
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -35,7 +35,7 @@ public class Expr5Impl extends MinimalEObjectImpl.Container implements Expr5
    * @generated
    * @ordered
    */
-  protected static final int VALUE_EDEFAULT = 0;
+  protected static final String VALUE_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -45,14 +45,14 @@ public class Expr5Impl extends MinimalEObjectImpl.Container implements Expr5
    * @generated
    * @ordered
    */
-  protected int value = VALUE_EDEFAULT;
+  protected String value = VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected Expr5Impl()
+  protected TypeImpl()
   {
     super();
   }
@@ -65,7 +65,7 @@ public class Expr5Impl extends MinimalEObjectImpl.Container implements Expr5
   @Override
   protected EClass eStaticClass()
   {
-    return NotCPackage.Literals.EXPR5;
+    return NotCPackage.Literals.TYPE;
   }
 
   /**
@@ -73,7 +73,7 @@ public class Expr5Impl extends MinimalEObjectImpl.Container implements Expr5
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getValue()
+  public String getValue()
   {
     return value;
   }
@@ -83,12 +83,12 @@ public class Expr5Impl extends MinimalEObjectImpl.Container implements Expr5
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(int newValue)
+  public void setValue(String newValue)
   {
-    int oldValue = value;
+    String oldValue = value;
     value = newValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, NotCPackage.EXPR5__VALUE, oldValue, value));
+      eNotify(new ENotificationImpl(this, Notification.SET, NotCPackage.TYPE__VALUE, oldValue, value));
   }
 
   /**
@@ -101,7 +101,7 @@ public class Expr5Impl extends MinimalEObjectImpl.Container implements Expr5
   {
     switch (featureID)
     {
-      case NotCPackage.EXPR5__VALUE:
+      case NotCPackage.TYPE__VALUE:
         return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -117,8 +117,8 @@ public class Expr5Impl extends MinimalEObjectImpl.Container implements Expr5
   {
     switch (featureID)
     {
-      case NotCPackage.EXPR5__VALUE:
-        setValue((Integer)newValue);
+      case NotCPackage.TYPE__VALUE:
+        setValue((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,7 +134,7 @@ public class Expr5Impl extends MinimalEObjectImpl.Container implements Expr5
   {
     switch (featureID)
     {
-      case NotCPackage.EXPR5__VALUE:
+      case NotCPackage.TYPE__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
     }
@@ -151,8 +151,8 @@ public class Expr5Impl extends MinimalEObjectImpl.Container implements Expr5
   {
     switch (featureID)
     {
-      case NotCPackage.EXPR5__VALUE:
-        return value != VALUE_EDEFAULT;
+      case NotCPackage.TYPE__VALUE:
+        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
     }
     return super.eIsSet(featureID);
   }
@@ -174,4 +174,4 @@ public class Expr5Impl extends MinimalEObjectImpl.Container implements Expr5
     return result.toString();
   }
 
-} //Expr5Impl
+} //TypeImpl

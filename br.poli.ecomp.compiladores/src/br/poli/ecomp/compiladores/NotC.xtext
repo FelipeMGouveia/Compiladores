@@ -10,22 +10,20 @@ FuncParam: type=Type id=ID (',' next=FuncParam)? ;
 Block: '{' statement=Statement '}';
 Statement: {Statement} (declarations+=Declaration)* (commands+=Command)* ;
 
-Command: IfCommand | WhileCommand;
+Command: IfCommand | WhileCommand | ReturnCommand;
 IfCommand: 'if' '(' expr=Expr ')' ifBlock = Block ('else' elseBlock=Block)?;
 WhileCommand: 'while' '(' expr=Expr ')' whileBlock=Block;
+ReturnCommand: 'return' (expr=Expr) ';';
 
 Declaration: type=Type  value=RDeclaration ';' ;
 RDeclaration: id=IDDeclaration ({RDeclaration.left=current}',' next=RDeclaration)?;
 
 IDDeclaration: id=ID ('=' value=Expr)? ;
 
-Expr returns Expression: Expr2 ({Expr.left=current} (operator=('+' | '-' ))right=Expr2 )*;
-Expr2 returns Expression: Expr3 ({Expr2.left=current} (operator=('*' | '/')) right=Expr3)*;
-Expr3 returns Expression: Expr4 ({Expr3.left=current} (operator=('^')) right=Expr4)*;
-Expr4 returns Expression: '(' value=Expr ')' | result=Expr5;
-Expr5: value = INT ;
+Expr returns Expression: Term ({Expr.left=current} (operator=('+' | '-' ))right=Term )*;
+Term returns Expression: Factor ({Term.left=current} (operator=('*' | '/')) right=Factor)*;
+Factor returns Expression: Atomic ({Factor.left=current} (operator=('^')) right=Atomic)*;
+Atomic returns Expression: '(' value=Expr ')' | result=Element;
+Element: INT | ID;
 
-
-//Expr: value=INT | value=INT ('*' | '/' | '+' |'-') right=Expr;
-
-Type: value='var';
+Type: (value = 'int'| value = 'float'| value ='char');

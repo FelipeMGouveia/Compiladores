@@ -130,6 +130,14 @@ public class NotCSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case NotCPackage.RETURN_COMMAND:
+      {
+        ReturnCommand returnCommand = (ReturnCommand)theEObject;
+        T result = caseReturnCommand(returnCommand);
+        if (result == null) result = caseCommand(returnCommand);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case NotCPackage.DECLARATION:
       {
         Declaration declaration = (Declaration)theEObject;
@@ -158,13 +166,6 @@ public class NotCSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case NotCPackage.EXPR5:
-      {
-        Expr5 expr5 = (Expr5)theEObject;
-        T result = caseExpr5(expr5);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case NotCPackage.TYPE:
       {
         Type type = (Type)theEObject;
@@ -180,19 +181,19 @@ public class NotCSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case NotCPackage.EXPR2:
+      case NotCPackage.TERM:
       {
-        Expr2 expr2 = (Expr2)theEObject;
-        T result = caseExpr2(expr2);
-        if (result == null) result = caseExpression(expr2);
+        Term term = (Term)theEObject;
+        T result = caseTerm(term);
+        if (result == null) result = caseExpression(term);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case NotCPackage.EXPR3:
+      case NotCPackage.FACTOR:
       {
-        Expr3 expr3 = (Expr3)theEObject;
-        T result = caseExpr3(expr3);
-        if (result == null) result = caseExpression(expr3);
+        Factor factor = (Factor)theEObject;
+        T result = caseFactor(factor);
+        if (result == null) result = caseExpression(factor);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -329,6 +330,22 @@ public class NotCSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Return Command</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Return Command</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReturnCommand(ReturnCommand object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -393,22 +410,6 @@ public class NotCSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Expr5</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Expr5</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseExpr5(Expr5 object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -441,33 +442,33 @@ public class NotCSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Expr2</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Term</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Expr2</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Term</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseExpr2(Expr2 object)
+  public T caseTerm(Term object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Expr3</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Factor</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Expr3</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Factor</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseExpr3(Expr3 object)
+  public T caseFactor(Factor object)
   {
     return null;
   }

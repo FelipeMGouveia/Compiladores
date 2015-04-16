@@ -4,17 +4,17 @@ import br.poli.ecomp.compiladores.notC.Block;
 import br.poli.ecomp.compiladores.notC.Code;
 import br.poli.ecomp.compiladores.notC.Declaration;
 import br.poli.ecomp.compiladores.notC.Expr;
-import br.poli.ecomp.compiladores.notC.Expr2;
-import br.poli.ecomp.compiladores.notC.Expr3;
-import br.poli.ecomp.compiladores.notC.Expr5;
 import br.poli.ecomp.compiladores.notC.Expression;
+import br.poli.ecomp.compiladores.notC.Factor;
 import br.poli.ecomp.compiladores.notC.FuncParam;
 import br.poli.ecomp.compiladores.notC.Function;
 import br.poli.ecomp.compiladores.notC.IDDeclaration;
 import br.poli.ecomp.compiladores.notC.IfCommand;
 import br.poli.ecomp.compiladores.notC.NotCPackage;
 import br.poli.ecomp.compiladores.notC.RDeclaration;
+import br.poli.ecomp.compiladores.notC.ReturnCommand;
 import br.poli.ecomp.compiladores.notC.Statement;
+import br.poli.ecomp.compiladores.notC.Term;
 import br.poli.ecomp.compiladores.notC.Type;
 import br.poli.ecomp.compiladores.notC.WhileCommand;
 import br.poli.ecomp.compiladores.services.NotCGrammarAccess;
@@ -65,41 +65,26 @@ public class NotCSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case NotCPackage.EXPR2:
-				if(context == grammarAccess.getExprRule() ||
-				   context == grammarAccess.getExpr2Rule() ||
-				   context == grammarAccess.getExpr2Access().getExpr2LeftAction_1_0() ||
-				   context == grammarAccess.getExprAccess().getExprLeftAction_1_0()) {
-					sequence_Expr2(context, (Expr2) semanticObject); 
-					return; 
-				}
-				else break;
-			case NotCPackage.EXPR3:
-				if(context == grammarAccess.getExprRule() ||
-				   context == grammarAccess.getExpr2Rule() ||
-				   context == grammarAccess.getExpr2Access().getExpr2LeftAction_1_0() ||
-				   context == grammarAccess.getExpr3Rule() ||
-				   context == grammarAccess.getExpr3Access().getExpr3LeftAction_1_0() ||
-				   context == grammarAccess.getExprAccess().getExprLeftAction_1_0()) {
-					sequence_Expr3(context, (Expr3) semanticObject); 
-					return; 
-				}
-				else break;
-			case NotCPackage.EXPR5:
-				if(context == grammarAccess.getExpr5Rule()) {
-					sequence_Expr5(context, (Expr5) semanticObject); 
-					return; 
-				}
-				else break;
 			case NotCPackage.EXPRESSION:
+				if(context == grammarAccess.getAtomicRule() ||
+				   context == grammarAccess.getExprRule() ||
+				   context == grammarAccess.getExprAccess().getExprLeftAction_1_0() ||
+				   context == grammarAccess.getFactorRule() ||
+				   context == grammarAccess.getFactorAccess().getFactorLeftAction_1_0() ||
+				   context == grammarAccess.getTermRule() ||
+				   context == grammarAccess.getTermAccess().getTermLeftAction_1_0()) {
+					sequence_Atomic(context, (Expression) semanticObject); 
+					return; 
+				}
+				else break;
+			case NotCPackage.FACTOR:
 				if(context == grammarAccess.getExprRule() ||
-				   context == grammarAccess.getExpr2Rule() ||
-				   context == grammarAccess.getExpr2Access().getExpr2LeftAction_1_0() ||
-				   context == grammarAccess.getExpr3Rule() ||
-				   context == grammarAccess.getExpr3Access().getExpr3LeftAction_1_0() ||
-				   context == grammarAccess.getExpr4Rule() ||
-				   context == grammarAccess.getExprAccess().getExprLeftAction_1_0()) {
-					sequence_Expr4(context, (Expression) semanticObject); 
+				   context == grammarAccess.getExprAccess().getExprLeftAction_1_0() ||
+				   context == grammarAccess.getFactorRule() ||
+				   context == grammarAccess.getFactorAccess().getFactorLeftAction_1_0() ||
+				   context == grammarAccess.getTermRule() ||
+				   context == grammarAccess.getTermAccess().getTermLeftAction_1_0()) {
+					sequence_Factor(context, (Factor) semanticObject); 
 					return; 
 				}
 				else break;
@@ -138,9 +123,25 @@ public class NotCSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
+			case NotCPackage.RETURN_COMMAND:
+				if(context == grammarAccess.getCommandRule() ||
+				   context == grammarAccess.getReturnCommandRule()) {
+					sequence_ReturnCommand(context, (ReturnCommand) semanticObject); 
+					return; 
+				}
+				else break;
 			case NotCPackage.STATEMENT:
 				if(context == grammarAccess.getStatementRule()) {
 					sequence_Statement(context, (Statement) semanticObject); 
+					return; 
+				}
+				else break;
+			case NotCPackage.TERM:
+				if(context == grammarAccess.getExprRule() ||
+				   context == grammarAccess.getExprAccess().getExprLeftAction_1_0() ||
+				   context == grammarAccess.getTermRule() ||
+				   context == grammarAccess.getTermAccess().getTermLeftAction_1_0()) {
+					sequence_Term(context, (Term) semanticObject); 
 					return; 
 				}
 				else break;
@@ -160,6 +161,15 @@ public class NotCSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Constraint:
+	 *     (value=Expr | result=Element)
+	 */
+	protected void sequence_Atomic(EObject context, Expression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Constraint:
@@ -207,52 +217,18 @@ public class NotCSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (left=Expr2_Expr2_1_0 (operator='*' | operator='/') right=Expr3)
-	 */
-	protected void sequence_Expr2(EObject context, Expr2 semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (left=Expr3_Expr3_1_0 operator='^' right=Expr4)
-	 */
-	protected void sequence_Expr3(EObject context, Expr3 semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (value=Expr | result=Expr5)
-	 */
-	protected void sequence_Expr4(EObject context, Expression semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     value=INT
-	 */
-	protected void sequence_Expr5(EObject context, Expr5 semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, NotCPackage.Literals.EXPR5__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, NotCPackage.Literals.EXPR5__VALUE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getExpr5Access().getValueINTTerminalRuleCall_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (left=Expr_Expr_1_0 (operator='+' | operator='-') right=Expr2)
+	 *     (left=Expr_Expr_1_0 (operator='+' | operator='-') right=Term)
 	 */
 	protected void sequence_Expr(EObject context, Expr semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (left=Factor_Factor_1_0 operator='^' right=Atomic)
+	 */
+	protected void sequence_Factor(EObject context, Factor semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -313,6 +289,22 @@ public class NotCSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     expr=Expr
+	 */
+	protected void sequence_ReturnCommand(EObject context, ReturnCommand semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, NotCPackage.Literals.COMMAND__EXPR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, NotCPackage.Literals.COMMAND__EXPR));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getReturnCommandAccess().getExprExprParserRuleCall_1_0(), semanticObject.getExpr());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (declarations+=Declaration* commands+=Command*)
 	 */
 	protected void sequence_Statement(EObject context, Statement semanticObject) {
@@ -322,17 +314,19 @@ public class NotCSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     value='var'
+	 *     (left=Term_Term_1_0 (operator='*' | operator='/') right=Factor)
+	 */
+	protected void sequence_Term(EObject context, Term semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (value='int' | value='float' | value='char')
 	 */
 	protected void sequence_Type(EObject context, Type semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, NotCPackage.Literals.TYPE__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, NotCPackage.Literals.TYPE__VALUE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getTypeAccess().getValueVarKeyword_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

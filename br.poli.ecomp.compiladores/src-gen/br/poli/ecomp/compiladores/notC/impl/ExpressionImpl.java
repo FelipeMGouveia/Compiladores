@@ -2,7 +2,6 @@
  */
 package br.poli.ecomp.compiladores.notC.impl;
 
-import br.poli.ecomp.compiladores.notC.Expr5;
 import br.poli.ecomp.compiladores.notC.Expression;
 import br.poli.ecomp.compiladores.notC.NotCPackage;
 
@@ -45,14 +44,24 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
   protected Expression value;
 
   /**
-   * The cached value of the '{@link #getResult() <em>Result</em>}' containment reference.
+   * The default value of the '{@link #getResult() <em>Result</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getResult()
    * @generated
    * @ordered
    */
-  protected Expr5 result;
+  protected static final String RESULT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getResult() <em>Result</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getResult()
+   * @generated
+   * @ordered
+   */
+  protected String result = RESULT_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getLeft() <em>Left</em>}' containment reference.
@@ -168,7 +177,7 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expr5 getResult()
+  public String getResult()
   {
     return result;
   }
@@ -178,37 +187,12 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetResult(Expr5 newResult, NotificationChain msgs)
+  public void setResult(String newResult)
   {
-    Expr5 oldResult = result;
+    String oldResult = result;
     result = newResult;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, NotCPackage.EXPRESSION__RESULT, oldResult, newResult);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setResult(Expr5 newResult)
-  {
-    if (newResult != result)
-    {
-      NotificationChain msgs = null;
-      if (result != null)
-        msgs = ((InternalEObject)result).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - NotCPackage.EXPRESSION__RESULT, null, msgs);
-      if (newResult != null)
-        msgs = ((InternalEObject)newResult).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - NotCPackage.EXPRESSION__RESULT, null, msgs);
-      msgs = basicSetResult(newResult, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, NotCPackage.EXPRESSION__RESULT, newResult, newResult));
+      eNotify(new ENotificationImpl(this, Notification.SET, NotCPackage.EXPRESSION__RESULT, oldResult, result));
   }
 
   /**
@@ -342,8 +326,6 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
     {
       case NotCPackage.EXPRESSION__VALUE:
         return basicSetValue(null, msgs);
-      case NotCPackage.EXPRESSION__RESULT:
-        return basicSetResult(null, msgs);
       case NotCPackage.EXPRESSION__LEFT:
         return basicSetLeft(null, msgs);
       case NotCPackage.EXPRESSION__RIGHT:
@@ -390,7 +372,7 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
         setValue((Expression)newValue);
         return;
       case NotCPackage.EXPRESSION__RESULT:
-        setResult((Expr5)newValue);
+        setResult((String)newValue);
         return;
       case NotCPackage.EXPRESSION__LEFT:
         setLeft((Expression)newValue);
@@ -419,7 +401,7 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
         setValue((Expression)null);
         return;
       case NotCPackage.EXPRESSION__RESULT:
-        setResult((Expr5)null);
+        setResult(RESULT_EDEFAULT);
         return;
       case NotCPackage.EXPRESSION__LEFT:
         setLeft((Expression)null);
@@ -447,7 +429,7 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
       case NotCPackage.EXPRESSION__VALUE:
         return value != null;
       case NotCPackage.EXPRESSION__RESULT:
-        return result != null;
+        return RESULT_EDEFAULT == null ? result != null : !RESULT_EDEFAULT.equals(result);
       case NotCPackage.EXPRESSION__LEFT:
         return left != null;
       case NotCPackage.EXPRESSION__OPERATOR:
@@ -469,7 +451,9 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (operator: ");
+    result.append(" (result: ");
+    result.append(result);
+    result.append(", operator: ");
     result.append(operator);
     result.append(')');
     return result.toString();

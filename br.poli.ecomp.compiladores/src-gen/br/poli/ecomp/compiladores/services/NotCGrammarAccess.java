@@ -207,12 +207,13 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cIfCommandParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cWhileCommandParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cReturnCommandParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//Command:
-		//	IfCommand | WhileCommand;
+		//	IfCommand | WhileCommand | ReturnCommand;
 		public ParserRule getRule() { return rule; }
 
-		//IfCommand | WhileCommand
+		//IfCommand | WhileCommand | ReturnCommand
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//IfCommand
@@ -220,6 +221,9 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 
 		//WhileCommand
 		public RuleCall getWhileCommandParserRuleCall_1() { return cWhileCommandParserRuleCall_1; }
+
+		//ReturnCommand
+		public RuleCall getReturnCommandParserRuleCall_2() { return cReturnCommandParserRuleCall_2; }
 	}
 
 	public class IfCommandElements extends AbstractParserRuleElementFinder {
@@ -316,6 +320,34 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Block
 		public RuleCall getWhileBlockBlockParserRuleCall_4_0() { return cWhileBlockBlockParserRuleCall_4_0; }
+	}
+
+	public class ReturnCommandElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ReturnCommand");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cReturnKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cExprAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cExprExprParserRuleCall_1_0 = (RuleCall)cExprAssignment_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//ReturnCommand:
+		//	"return" expr=Expr ";";
+		public ParserRule getRule() { return rule; }
+
+		//"return" expr=Expr ";"
+		public Group getGroup() { return cGroup; }
+
+		//"return"
+		public Keyword getReturnKeyword_0() { return cReturnKeyword_0; }
+
+		//expr=Expr
+		public Assignment getExprAssignment_1() { return cExprAssignment_1; }
+
+		//Expr
+		public RuleCall getExprExprParserRuleCall_1_0() { return cExprExprParserRuleCall_1_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
 	}
 
 	public class DeclarationElements extends AbstractParserRuleElementFinder {
@@ -429,7 +461,7 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 	public class ExprElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Expr");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cExpr2ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cTermParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Action cExprLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Assignment cOperatorAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
@@ -437,19 +469,19 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cOperatorPlusSignKeyword_1_1_0_0 = (Keyword)cOperatorAlternatives_1_1_0.eContents().get(0);
 		private final Keyword cOperatorHyphenMinusKeyword_1_1_0_1 = (Keyword)cOperatorAlternatives_1_1_0.eContents().get(1);
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cRightExpr2ParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
+		private final RuleCall cRightTermParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
 		//Expr returns Expression:
-		//	Expr2 ({Expr.left=current} operator=("+" | "-") right=Expr2)*;
+		//	Term ({Expr.left=current} operator=("+" | "-") right=Term)*;
 		public ParserRule getRule() { return rule; }
 
-		//Expr2 ({Expr.left=current} operator=("+" | "-") right=Expr2)*
+		//Term ({Expr.left=current} operator=("+" | "-") right=Term)*
 		public Group getGroup() { return cGroup; }
 
-		//Expr2
-		public RuleCall getExpr2ParserRuleCall_0() { return cExpr2ParserRuleCall_0; }
+		//Term
+		public RuleCall getTermParserRuleCall_0() { return cTermParserRuleCall_0; }
 
-		//({Expr.left=current} operator=("+" | "-") right=Expr2)*
+		//({Expr.left=current} operator=("+" | "-") right=Term)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{Expr.left=current}
@@ -467,41 +499,41 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 		//"-"
 		public Keyword getOperatorHyphenMinusKeyword_1_1_0_1() { return cOperatorHyphenMinusKeyword_1_1_0_1; }
 
-		//right=Expr2
+		//right=Term
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
 
-		//Expr2
-		public RuleCall getRightExpr2ParserRuleCall_1_2_0() { return cRightExpr2ParserRuleCall_1_2_0; }
+		//Term
+		public RuleCall getRightTermParserRuleCall_1_2_0() { return cRightTermParserRuleCall_1_2_0; }
 	}
 
-	public class Expr2Elements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Expr2");
+	public class TermElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Term");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cExpr3ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cFactorParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Action cExpr2LeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Action cTermLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Assignment cOperatorAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final Alternatives cOperatorAlternatives_1_1_0 = (Alternatives)cOperatorAssignment_1_1.eContents().get(0);
 		private final Keyword cOperatorAsteriskKeyword_1_1_0_0 = (Keyword)cOperatorAlternatives_1_1_0.eContents().get(0);
 		private final Keyword cOperatorSolidusKeyword_1_1_0_1 = (Keyword)cOperatorAlternatives_1_1_0.eContents().get(1);
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cRightExpr3ParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
+		private final RuleCall cRightFactorParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		//Expr2 returns Expression:
-		//	Expr3 ({Expr2.left=current} operator=("*" | "/") right=Expr3)*;
+		//Term returns Expression:
+		//	Factor ({Term.left=current} operator=("*" | "/") right=Factor)*;
 		public ParserRule getRule() { return rule; }
 
-		//Expr3 ({Expr2.left=current} operator=("*" | "/") right=Expr3)*
+		//Factor ({Term.left=current} operator=("*" | "/") right=Factor)*
 		public Group getGroup() { return cGroup; }
 
-		//Expr3
-		public RuleCall getExpr3ParserRuleCall_0() { return cExpr3ParserRuleCall_0; }
+		//Factor
+		public RuleCall getFactorParserRuleCall_0() { return cFactorParserRuleCall_0; }
 
-		//({Expr2.left=current} operator=("*" | "/") right=Expr3)*
+		//({Term.left=current} operator=("*" | "/") right=Factor)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{Expr2.left=current}
-		public Action getExpr2LeftAction_1_0() { return cExpr2LeftAction_1_0; }
+		//{Term.left=current}
+		public Action getTermLeftAction_1_0() { return cTermLeftAction_1_0; }
 
 		//operator=("*" | "/")
 		public Assignment getOperatorAssignment_1_1() { return cOperatorAssignment_1_1; }
@@ -515,39 +547,39 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 		//"/"
 		public Keyword getOperatorSolidusKeyword_1_1_0_1() { return cOperatorSolidusKeyword_1_1_0_1; }
 
-		//right=Expr3
+		//right=Factor
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
 
-		//Expr3
-		public RuleCall getRightExpr3ParserRuleCall_1_2_0() { return cRightExpr3ParserRuleCall_1_2_0; }
+		//Factor
+		public RuleCall getRightFactorParserRuleCall_1_2_0() { return cRightFactorParserRuleCall_1_2_0; }
 	}
 
-	public class Expr3Elements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Expr3");
+	public class FactorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Factor");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cExpr4ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cAtomicParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Action cExpr3LeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Action cFactorLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Assignment cOperatorAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final Keyword cOperatorCircumflexAccentKeyword_1_1_0 = (Keyword)cOperatorAssignment_1_1.eContents().get(0);
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cRightExpr4ParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
+		private final RuleCall cRightAtomicParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		//Expr3 returns Expression:
-		//	Expr4 ({Expr3.left=current} operator="^" right=Expr4)*;
+		//Factor returns Expression:
+		//	Atomic ({Factor.left=current} operator="^" right=Atomic)*;
 		public ParserRule getRule() { return rule; }
 
-		//Expr4 ({Expr3.left=current} operator="^" right=Expr4)*
+		//Atomic ({Factor.left=current} operator="^" right=Atomic)*
 		public Group getGroup() { return cGroup; }
 
-		//Expr4
-		public RuleCall getExpr4ParserRuleCall_0() { return cExpr4ParserRuleCall_0; }
+		//Atomic
+		public RuleCall getAtomicParserRuleCall_0() { return cAtomicParserRuleCall_0; }
 
-		//({Expr3.left=current} operator="^" right=Expr4)*
+		//({Factor.left=current} operator="^" right=Atomic)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{Expr3.left=current}
-		public Action getExpr3LeftAction_1_0() { return cExpr3LeftAction_1_0; }
+		//{Factor.left=current}
+		public Action getFactorLeftAction_1_0() { return cFactorLeftAction_1_0; }
 
 		//operator="^"
 		public Assignment getOperatorAssignment_1_1() { return cOperatorAssignment_1_1; }
@@ -555,15 +587,15 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 		//"^"
 		public Keyword getOperatorCircumflexAccentKeyword_1_1_0() { return cOperatorCircumflexAccentKeyword_1_1_0; }
 
-		//right=Expr4
+		//right=Atomic
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
 
-		//Expr4
-		public RuleCall getRightExpr4ParserRuleCall_1_2_0() { return cRightExpr4ParserRuleCall_1_2_0; }
+		//Atomic
+		public RuleCall getRightAtomicParserRuleCall_1_2_0() { return cRightAtomicParserRuleCall_1_2_0; }
 	}
 
-	public class Expr4Elements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Expr4");
+	public class AtomicElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Atomic");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
@@ -571,13 +603,13 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueExprParserRuleCall_0_1_0 = (RuleCall)cValueAssignment_0_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
 		private final Assignment cResultAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cResultExpr5ParserRuleCall_1_0 = (RuleCall)cResultAssignment_1.eContents().get(0);
+		private final RuleCall cResultElementParserRuleCall_1_0 = (RuleCall)cResultAssignment_1.eContents().get(0);
 		
-		//Expr4 returns Expression:
-		//	"(" value=Expr ")" | result=Expr5;
+		//Atomic returns Expression:
+		//	"(" value=Expr ")" | result=Element;
 		public ParserRule getRule() { return rule; }
 
-		//"(" value=Expr ")" | result=Expr5
+		//"(" value=Expr ")" | result=Element
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"(" value=Expr ")"
@@ -595,44 +627,67 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_0_2() { return cRightParenthesisKeyword_0_2; }
 
-		//result=Expr5
+		//result=Element
 		public Assignment getResultAssignment_1() { return cResultAssignment_1; }
 
-		//Expr5
-		public RuleCall getResultExpr5ParserRuleCall_1_0() { return cResultExpr5ParserRuleCall_1_0; }
+		//Element
+		public RuleCall getResultElementParserRuleCall_1_0() { return cResultElementParserRuleCall_1_0; }
 	}
 
-	public class Expr5Elements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Expr5");
-		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cValueINTTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+	public class ElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Element");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//Expr5:
-		//	value=INT;
+		//Element:
+		//	INT | ID;
 		public ParserRule getRule() { return rule; }
 
-		//value=INT
-		public Assignment getValueAssignment() { return cValueAssignment; }
+		//INT | ID
+		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//INT
-		public RuleCall getValueINTTerminalRuleCall_0() { return cValueINTTerminalRuleCall_0; }
+		public RuleCall getINTTerminalRuleCall_0() { return cINTTerminalRuleCall_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
 	}
 
 	public class TypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Type");
-		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
-		private final Keyword cValueVarKeyword_0 = (Keyword)cValueAssignment.eContents().get(0);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cValueAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final Keyword cValueIntKeyword_0_0 = (Keyword)cValueAssignment_0.eContents().get(0);
+		private final Assignment cValueAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final Keyword cValueFloatKeyword_1_0 = (Keyword)cValueAssignment_1.eContents().get(0);
+		private final Assignment cValueAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final Keyword cValueCharKeyword_2_0 = (Keyword)cValueAssignment_2.eContents().get(0);
 		
-		////Expr: value=INT | value=INT ('*' | '/' | '+' |'-') right=Expr;
 		//Type:
-		//	value="var";
+		//	value="int" | value="float" | value="char";
 		public ParserRule getRule() { return rule; }
 
-		//value="var"
-		public Assignment getValueAssignment() { return cValueAssignment; }
+		//value="int" | value="float" | value="char"
+		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"var"
-		public Keyword getValueVarKeyword_0() { return cValueVarKeyword_0; }
+		//value="int"
+		public Assignment getValueAssignment_0() { return cValueAssignment_0; }
+
+		//"int"
+		public Keyword getValueIntKeyword_0_0() { return cValueIntKeyword_0_0; }
+
+		//value="float"
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
+
+		//"float"
+		public Keyword getValueFloatKeyword_1_0() { return cValueFloatKeyword_1_0; }
+
+		//value="char"
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+
+		//"char"
+		public Keyword getValueCharKeyword_2_0() { return cValueCharKeyword_2_0; }
 	}
 	
 	
@@ -644,14 +699,15 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 	private final CommandElements pCommand;
 	private final IfCommandElements pIfCommand;
 	private final WhileCommandElements pWhileCommand;
+	private final ReturnCommandElements pReturnCommand;
 	private final DeclarationElements pDeclaration;
 	private final RDeclarationElements pRDeclaration;
 	private final IDDeclarationElements pIDDeclaration;
 	private final ExprElements pExpr;
-	private final Expr2Elements pExpr2;
-	private final Expr3Elements pExpr3;
-	private final Expr4Elements pExpr4;
-	private final Expr5Elements pExpr5;
+	private final TermElements pTerm;
+	private final FactorElements pFactor;
+	private final AtomicElements pAtomic;
+	private final ElementElements pElement;
 	private final TypeElements pType;
 	
 	private final Grammar grammar;
@@ -671,14 +727,15 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 		this.pCommand = new CommandElements();
 		this.pIfCommand = new IfCommandElements();
 		this.pWhileCommand = new WhileCommandElements();
+		this.pReturnCommand = new ReturnCommandElements();
 		this.pDeclaration = new DeclarationElements();
 		this.pRDeclaration = new RDeclarationElements();
 		this.pIDDeclaration = new IDDeclarationElements();
 		this.pExpr = new ExprElements();
-		this.pExpr2 = new Expr2Elements();
-		this.pExpr3 = new Expr3Elements();
-		this.pExpr4 = new Expr4Elements();
-		this.pExpr5 = new Expr5Elements();
+		this.pTerm = new TermElements();
+		this.pFactor = new FactorElements();
+		this.pAtomic = new AtomicElements();
+		this.pElement = new ElementElements();
 		this.pType = new TypeElements();
 	}
 	
@@ -760,7 +817,7 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Command:
-	//	IfCommand | WhileCommand;
+	//	IfCommand | WhileCommand | ReturnCommand;
 	public CommandElements getCommandAccess() {
 		return pCommand;
 	}
@@ -787,6 +844,16 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getWhileCommandRule() {
 		return getWhileCommandAccess().getRule();
+	}
+
+	//ReturnCommand:
+	//	"return" expr=Expr ";";
+	public ReturnCommandElements getReturnCommandAccess() {
+		return pReturnCommand;
+	}
+	
+	public ParserRule getReturnCommandRule() {
+		return getReturnCommandAccess().getRule();
 	}
 
 	//Declaration:
@@ -820,7 +887,7 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Expr returns Expression:
-	//	Expr2 ({Expr.left=current} operator=("+" | "-") right=Expr2)*;
+	//	Term ({Expr.left=current} operator=("+" | "-") right=Term)*;
 	public ExprElements getExprAccess() {
 		return pExpr;
 	}
@@ -829,49 +896,48 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 		return getExprAccess().getRule();
 	}
 
-	//Expr2 returns Expression:
-	//	Expr3 ({Expr2.left=current} operator=("*" | "/") right=Expr3)*;
-	public Expr2Elements getExpr2Access() {
-		return pExpr2;
+	//Term returns Expression:
+	//	Factor ({Term.left=current} operator=("*" | "/") right=Factor)*;
+	public TermElements getTermAccess() {
+		return pTerm;
 	}
 	
-	public ParserRule getExpr2Rule() {
-		return getExpr2Access().getRule();
+	public ParserRule getTermRule() {
+		return getTermAccess().getRule();
 	}
 
-	//Expr3 returns Expression:
-	//	Expr4 ({Expr3.left=current} operator="^" right=Expr4)*;
-	public Expr3Elements getExpr3Access() {
-		return pExpr3;
+	//Factor returns Expression:
+	//	Atomic ({Factor.left=current} operator="^" right=Atomic)*;
+	public FactorElements getFactorAccess() {
+		return pFactor;
 	}
 	
-	public ParserRule getExpr3Rule() {
-		return getExpr3Access().getRule();
+	public ParserRule getFactorRule() {
+		return getFactorAccess().getRule();
 	}
 
-	//Expr4 returns Expression:
-	//	"(" value=Expr ")" | result=Expr5;
-	public Expr4Elements getExpr4Access() {
-		return pExpr4;
+	//Atomic returns Expression:
+	//	"(" value=Expr ")" | result=Element;
+	public AtomicElements getAtomicAccess() {
+		return pAtomic;
 	}
 	
-	public ParserRule getExpr4Rule() {
-		return getExpr4Access().getRule();
+	public ParserRule getAtomicRule() {
+		return getAtomicAccess().getRule();
 	}
 
-	//Expr5:
-	//	value=INT;
-	public Expr5Elements getExpr5Access() {
-		return pExpr5;
+	//Element:
+	//	INT | ID;
+	public ElementElements getElementAccess() {
+		return pElement;
 	}
 	
-	public ParserRule getExpr5Rule() {
-		return getExpr5Access().getRule();
+	public ParserRule getElementRule() {
+		return getElementAccess().getRule();
 	}
 
-	////Expr: value=INT | value=INT ('*' | '/' | '+' |'-') right=Expr;
 	//Type:
-	//	value="var";
+	//	value="int" | value="float" | value="char";
 	public TypeElements getTypeAccess() {
 		return pType;
 	}

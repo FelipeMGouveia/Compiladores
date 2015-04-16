@@ -6,7 +6,7 @@ package br.poli.ecomp.compiladores.generator
 import br.poli.ecomp.compiladores.notC.Block
 import br.poli.ecomp.compiladores.notC.Code
 import br.poli.ecomp.compiladores.notC.Declaration
-import br.poli.ecomp.compiladores.notC.Expr5
+
 import br.poli.ecomp.compiladores.notC.Expression
 import br.poli.ecomp.compiladores.notC.FuncParam
 import br.poli.ecomp.compiladores.notC.Function
@@ -42,9 +42,8 @@ class NotCGenerator implements IGenerator {
 	'''«idDeclaration.id»«IF idDeclaration.value != null» = «idDeclaration.value.compile»«ENDIF»'''
 	
 	def dispatch compile(Expression expr)
-	'''«IF expr.result != null»«expr.result.compile»«ENDIF»«IF expr.value != null»( «expr.value.compile» )«ENDIF»«IF expr.left != null»«expr.left.compile»«ENDIF»«IF expr.operator != null» «expr.operator» «ENDIF»«IF expr.right != null»«expr.right.compile»«ENDIF»'''
-	def dispatch compile(Expr5 expr)
-	'''«expr.value»'''
+	'''«IF expr.value != null»( «expr.value.compile» )«ENDIF»«IF expr.left != null»«expr.left.compile»«ENDIF»«IF expr.operator != null» «expr.operator» «ENDIF»«IF expr.right != null»«expr.right.compile»«ENDIF»'''
+	
 		
 		
 //Function: type=Type id=ID '(' (param=FuncParam)? ')' block=Block ;

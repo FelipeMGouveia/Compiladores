@@ -39,6 +39,7 @@
     <genClasses ecoreClass="NotC.ecore#//WhileCommand">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//WhileCommand/whileBlock"/>
     </genClasses>
+    <genClasses ecoreClass="NotC.ecore#//ReturnCommand"/>
     <genClasses ecoreClass="NotC.ecore#//Declaration">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Declaration/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Declaration/value"/>
@@ -54,19 +55,16 @@
     </genClasses>
     <genClasses ecoreClass="NotC.ecore#//Expression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Expression/value"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Expression/result"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NotC.ecore#//Expression/result"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Expression/left"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NotC.ecore#//Expression/operator"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Expression/right"/>
-    </genClasses>
-    <genClasses ecoreClass="NotC.ecore#//Expr5">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NotC.ecore#//Expr5/value"/>
     </genClasses>
     <genClasses ecoreClass="NotC.ecore#//Type">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NotC.ecore#//Type/value"/>
     </genClasses>
     <genClasses ecoreClass="NotC.ecore#//Expr"/>
-    <genClasses ecoreClass="NotC.ecore#//Expr2"/>
-    <genClasses ecoreClass="NotC.ecore#//Expr3"/>
+    <genClasses ecoreClass="NotC.ecore#//Term"/>
+    <genClasses ecoreClass="NotC.ecore#//Factor"/>
   </genPackages>
 </genmodel:GenModel>

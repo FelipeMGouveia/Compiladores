@@ -2,28 +2,28 @@
  */
 package br.poli.ecomp.compiladores.notC.impl;
 
-import br.poli.ecomp.compiladores.notC.Expr3;
 import br.poli.ecomp.compiladores.notC.NotCPackage;
+import br.poli.ecomp.compiladores.notC.ReturnCommand;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Expr3</b></em>'.
+ * An implementation of the model object '<em><b>Return Command</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class Expr3Impl extends ExpressionImpl implements Expr3
+public class ReturnCommandImpl extends CommandImpl implements ReturnCommand
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected Expr3Impl()
+  protected ReturnCommandImpl()
   {
     super();
   }
@@ -36,7 +36,7 @@ public class Expr3Impl extends ExpressionImpl implements Expr3
   @Override
   protected EClass eStaticClass()
   {
-    return NotCPackage.Literals.EXPR3;
+    return NotCPackage.Literals.RETURN_COMMAND;
   }
 
-} //Expr3Impl
+} //ReturnCommandImpl

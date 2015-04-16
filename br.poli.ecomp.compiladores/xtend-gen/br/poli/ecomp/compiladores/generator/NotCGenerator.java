@@ -7,7 +7,6 @@ import br.poli.ecomp.compiladores.notC.Block;
 import br.poli.ecomp.compiladores.notC.Code;
 import br.poli.ecomp.compiladores.notC.Command;
 import br.poli.ecomp.compiladores.notC.Declaration;
-import br.poli.ecomp.compiladores.notC.Expr5;
 import br.poli.ecomp.compiladores.notC.Expression;
 import br.poli.ecomp.compiladores.notC.FuncParam;
 import br.poli.ecomp.compiladores.notC.Function;
@@ -137,38 +136,28 @@ public class NotCGenerator implements IGenerator {
   protected CharSequence _compile(final Expression expr) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      Expr5 _result = expr.getResult();
-      boolean _notEquals = (!Objects.equal(_result, null));
-      if (_notEquals) {
-        Expr5 _result_1 = expr.getResult();
-        Object _compile = this.compile(_result_1);
-        _builder.append(_compile, "");
-      }
-    }
-    {
       Expression _value = expr.getValue();
-      boolean _notEquals_1 = (!Objects.equal(_value, null));
-      if (_notEquals_1) {
+      boolean _notEquals = (!Objects.equal(_value, null));
+      if (_notEquals) {
         _builder.append("( ");
         Expression _value_1 = expr.getValue();
-        Object _compile_1 = this.compile(_value_1);
-        _builder.append(_compile_1, "");
+        _builder.append(_value_1, "");
         _builder.append(" )");
       }
     }
     {
       Expression _left = expr.getLeft();
-      boolean _notEquals_2 = (!Objects.equal(_left, null));
-      if (_notEquals_2) {
+      boolean _notEquals_1 = (!Objects.equal(_left, null));
+      if (_notEquals_1) {
         Expression _left_1 = expr.getLeft();
-        Object _compile_2 = this.compile(_left_1);
-        _builder.append(_compile_2, "");
+        Object _compile_1 = this.compile(_left_1);
+        _builder.append(_compile_1, "");
       }
     }
     {
       String _operator = expr.getOperator();
-      boolean _notEquals_3 = (!Objects.equal(_operator, null));
-      if (_notEquals_3) {
+      boolean _notEquals_2 = (!Objects.equal(_operator, null));
+      if (_notEquals_2) {
         _builder.append(" ");
         String _operator_1 = expr.getOperator();
         _builder.append(_operator_1, "");
@@ -177,20 +166,13 @@ public class NotCGenerator implements IGenerator {
     }
     {
       Expression _right = expr.getRight();
-      boolean _notEquals_4 = (!Objects.equal(_right, null));
-      if (_notEquals_4) {
+      boolean _notEquals_3 = (!Objects.equal(_right, null));
+      if (_notEquals_3) {
         Expression _right_1 = expr.getRight();
-        Object _compile_3 = this.compile(_right_1);
-        _builder.append(_compile_3, "");
+        Object _compile_2 = this.compile(_right_1);
+        _builder.append(_compile_2, "");
       }
     }
-    return _builder;
-  }
-  
-  protected CharSequence _compile(final Expr5 expr) {
-    StringConcatenation _builder = new StringConcatenation();
-    int _value = expr.getValue();
-    _builder.append(_value, "");
     return _builder;
   }
   
@@ -372,8 +354,6 @@ public class NotCGenerator implements IGenerator {
       return _compile((Block)ifcommand);
     } else if (ifcommand instanceof Declaration) {
       return _compile((Declaration)ifcommand);
-    } else if (ifcommand instanceof Expr5) {
-      return _compile((Expr5)ifcommand);
     } else if (ifcommand instanceof Expression) {
       return _compile((Expression)ifcommand);
     } else if (ifcommand instanceof FuncParam) {

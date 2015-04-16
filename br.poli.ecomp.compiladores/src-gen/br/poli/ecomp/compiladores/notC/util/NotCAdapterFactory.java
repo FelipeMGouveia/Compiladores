@@ -115,6 +115,11 @@ public class NotCAdapterFactory extends AdapterFactoryImpl
         return createWhileCommandAdapter();
       }
       @Override
+      public Adapter caseReturnCommand(ReturnCommand object)
+      {
+        return createReturnCommandAdapter();
+      }
+      @Override
       public Adapter caseDeclaration(Declaration object)
       {
         return createDeclarationAdapter();
@@ -135,11 +140,6 @@ public class NotCAdapterFactory extends AdapterFactoryImpl
         return createExpressionAdapter();
       }
       @Override
-      public Adapter caseExpr5(Expr5 object)
-      {
-        return createExpr5Adapter();
-      }
-      @Override
       public Adapter caseType(Type object)
       {
         return createTypeAdapter();
@@ -150,14 +150,14 @@ public class NotCAdapterFactory extends AdapterFactoryImpl
         return createExprAdapter();
       }
       @Override
-      public Adapter caseExpr2(Expr2 object)
+      public Adapter caseTerm(Term object)
       {
-        return createExpr2Adapter();
+        return createTermAdapter();
       }
       @Override
-      public Adapter caseExpr3(Expr3 object)
+      public Adapter caseFactor(Factor object)
       {
-        return createExpr3Adapter();
+        return createFactorAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -302,6 +302,21 @@ public class NotCAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link br.poli.ecomp.compiladores.notC.ReturnCommand <em>Return Command</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.poli.ecomp.compiladores.notC.ReturnCommand
+   * @generated
+   */
+  public Adapter createReturnCommandAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link br.poli.ecomp.compiladores.notC.Declaration <em>Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -362,21 +377,6 @@ public class NotCAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link br.poli.ecomp.compiladores.notC.Expr5 <em>Expr5</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see br.poli.ecomp.compiladores.notC.Expr5
-   * @generated
-   */
-  public Adapter createExpr5Adapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link br.poli.ecomp.compiladores.notC.Type <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -407,31 +407,31 @@ public class NotCAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link br.poli.ecomp.compiladores.notC.Expr2 <em>Expr2</em>}'.
+   * Creates a new adapter for an object of class '{@link br.poli.ecomp.compiladores.notC.Term <em>Term</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see br.poli.ecomp.compiladores.notC.Expr2
+   * @see br.poli.ecomp.compiladores.notC.Term
    * @generated
    */
-  public Adapter createExpr2Adapter()
+  public Adapter createTermAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link br.poli.ecomp.compiladores.notC.Expr3 <em>Expr3</em>}'.
+   * Creates a new adapter for an object of class '{@link br.poli.ecomp.compiladores.notC.Factor <em>Factor</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see br.poli.ecomp.compiladores.notC.Expr3
+   * @see br.poli.ecomp.compiladores.notC.Factor
    * @generated
    */
-  public Adapter createExpr3Adapter()
+  public Adapter createFactorAdapter()
   {
     return null;
   }

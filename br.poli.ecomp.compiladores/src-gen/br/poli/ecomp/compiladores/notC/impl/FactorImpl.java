@@ -2,28 +2,28 @@
  */
 package br.poli.ecomp.compiladores.notC.impl;
 
-import br.poli.ecomp.compiladores.notC.Expr2;
+import br.poli.ecomp.compiladores.notC.Factor;
 import br.poli.ecomp.compiladores.notC.NotCPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Expr2</b></em>'.
+ * An implementation of the model object '<em><b>Factor</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class Expr2Impl extends ExpressionImpl implements Expr2
+public class FactorImpl extends ExpressionImpl implements Factor
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected Expr2Impl()
+  protected FactorImpl()
   {
     super();
   }
@@ -36,7 +36,7 @@ public class Expr2Impl extends ExpressionImpl implements Expr2
   @Override
   protected EClass eStaticClass()
   {
-    return NotCPackage.Literals.EXPR2;
+    return NotCPackage.Literals.FACTOR;
   }
 
-} //Expr2Impl
+} //FactorImpl

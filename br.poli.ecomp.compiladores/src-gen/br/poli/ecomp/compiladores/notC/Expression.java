@@ -53,30 +53,30 @@ public interface Expression extends EObject
   void setValue(Expression value);
 
   /**
-   * Returns the value of the '<em><b>Result</b></em>' containment reference.
+   * Returns the value of the '<em><b>Result</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Result</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Result</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Result</em>' containment reference.
-   * @see #setResult(Expr5)
+   * @return the value of the '<em>Result</em>' attribute.
+   * @see #setResult(String)
    * @see br.poli.ecomp.compiladores.notC.NotCPackage#getExpression_Result()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  Expr5 getResult();
+  String getResult();
 
   /**
-   * Sets the value of the '{@link br.poli.ecomp.compiladores.notC.Expression#getResult <em>Result</em>}' containment reference.
+   * Sets the value of the '{@link br.poli.ecomp.compiladores.notC.Expression#getResult <em>Result</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Result</em>' containment reference.
+   * @param value the new value of the '<em>Result</em>' attribute.
    * @see #getResult()
    * @generated
    */
-  void setResult(Expr5 value);
+  void setResult(String value);
 
   /**
    * Returns the value of the '<em><b>Left</b></em>' containment reference.

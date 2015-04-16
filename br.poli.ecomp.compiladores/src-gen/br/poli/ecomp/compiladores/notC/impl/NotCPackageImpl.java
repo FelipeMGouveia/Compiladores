@@ -7,10 +7,8 @@ import br.poli.ecomp.compiladores.notC.Code;
 import br.poli.ecomp.compiladores.notC.Command;
 import br.poli.ecomp.compiladores.notC.Declaration;
 import br.poli.ecomp.compiladores.notC.Expr;
-import br.poli.ecomp.compiladores.notC.Expr2;
-import br.poli.ecomp.compiladores.notC.Expr3;
-import br.poli.ecomp.compiladores.notC.Expr5;
 import br.poli.ecomp.compiladores.notC.Expression;
+import br.poli.ecomp.compiladores.notC.Factor;
 import br.poli.ecomp.compiladores.notC.FuncParam;
 import br.poli.ecomp.compiladores.notC.Function;
 import br.poli.ecomp.compiladores.notC.IDDeclaration;
@@ -18,7 +16,9 @@ import br.poli.ecomp.compiladores.notC.IfCommand;
 import br.poli.ecomp.compiladores.notC.NotCFactory;
 import br.poli.ecomp.compiladores.notC.NotCPackage;
 import br.poli.ecomp.compiladores.notC.RDeclaration;
+import br.poli.ecomp.compiladores.notC.ReturnCommand;
 import br.poli.ecomp.compiladores.notC.Statement;
+import br.poli.ecomp.compiladores.notC.Term;
 import br.poli.ecomp.compiladores.notC.Type;
 import br.poli.ecomp.compiladores.notC.WhileCommand;
 
@@ -98,6 +98,13 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass returnCommandEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass declarationEClass = null;
 
   /**
@@ -126,13 +133,6 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass expr5EClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass typeEClass = null;
 
   /**
@@ -147,14 +147,14 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass expr2EClass = null;
+  private EClass termEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass expr3EClass = null;
+  private EClass factorEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -464,6 +464,16 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getReturnCommand()
+  {
+    return returnCommandEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getDeclaration()
   {
     return declarationEClass;
@@ -584,9 +594,9 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExpression_Result()
+  public EAttribute getExpression_Result()
   {
-    return (EReference)expressionEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)expressionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -624,26 +634,6 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getExpr5()
-  {
-    return expr5EClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getExpr5_Value()
-  {
-    return (EAttribute)expr5EClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getType()
   {
     return typeEClass;
@@ -674,9 +664,9 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getExpr2()
+  public EClass getTerm()
   {
-    return expr2EClass;
+    return termEClass;
   }
 
   /**
@@ -684,9 +674,9 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getExpr3()
+  public EClass getFactor()
   {
-    return expr3EClass;
+    return factorEClass;
   }
 
   /**
@@ -751,6 +741,8 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
     whileCommandEClass = createEClass(WHILE_COMMAND);
     createEReference(whileCommandEClass, WHILE_COMMAND__WHILE_BLOCK);
 
+    returnCommandEClass = createEClass(RETURN_COMMAND);
+
     declarationEClass = createEClass(DECLARATION);
     createEReference(declarationEClass, DECLARATION__TYPE);
     createEReference(declarationEClass, DECLARATION__VALUE);
@@ -766,22 +758,19 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
 
     expressionEClass = createEClass(EXPRESSION);
     createEReference(expressionEClass, EXPRESSION__VALUE);
-    createEReference(expressionEClass, EXPRESSION__RESULT);
+    createEAttribute(expressionEClass, EXPRESSION__RESULT);
     createEReference(expressionEClass, EXPRESSION__LEFT);
     createEAttribute(expressionEClass, EXPRESSION__OPERATOR);
     createEReference(expressionEClass, EXPRESSION__RIGHT);
-
-    expr5EClass = createEClass(EXPR5);
-    createEAttribute(expr5EClass, EXPR5__VALUE);
 
     typeEClass = createEClass(TYPE);
     createEAttribute(typeEClass, TYPE__VALUE);
 
     exprEClass = createEClass(EXPR);
 
-    expr2EClass = createEClass(EXPR2);
+    termEClass = createEClass(TERM);
 
-    expr3EClass = createEClass(EXPR3);
+    factorEClass = createEClass(FACTOR);
   }
 
   /**
@@ -815,9 +804,10 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
     // Add supertypes to classes
     ifCommandEClass.getESuperTypes().add(this.getCommand());
     whileCommandEClass.getESuperTypes().add(this.getCommand());
+    returnCommandEClass.getESuperTypes().add(this.getCommand());
     exprEClass.getESuperTypes().add(this.getExpression());
-    expr2EClass.getESuperTypes().add(this.getExpression());
-    expr3EClass.getESuperTypes().add(this.getExpression());
+    termEClass.getESuperTypes().add(this.getExpression());
+    factorEClass.getESuperTypes().add(this.getExpression());
 
     // Initialize classes and features; add operations and parameters
     initEClass(codeEClass, Code.class, "Code", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -852,6 +842,8 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
     initEClass(whileCommandEClass, WhileCommand.class, "WhileCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getWhileCommand_WhileBlock(), this.getBlock(), null, "whileBlock", null, 0, 1, WhileCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(returnCommandEClass, ReturnCommand.class, "ReturnCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(declarationEClass, Declaration.class, "Declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDeclaration_Type(), this.getType(), null, "type", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDeclaration_Value(), this.getRDeclaration(), null, "value", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -867,22 +859,19 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExpression_Value(), this.getExpression(), null, "value", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getExpression_Result(), this.getExpr5(), null, "result", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getExpression_Result(), ecorePackage.getEString(), "result", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpression_Left(), this.getExpression(), null, "left", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getExpression_Operator(), ecorePackage.getEString(), "operator", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpression_Right(), this.getExpression(), null, "right", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(expr5EClass, Expr5.class, "Expr5", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getExpr5_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Expr5.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getType_Value(), ecorePackage.getEString(), "value", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(exprEClass, Expr.class, "Expr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(expr2EClass, Expr2.class, "Expr2", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(termEClass, Term.class, "Term", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(expr3EClass, Expr3.class, "Expr3", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(factorEClass, Factor.class, "Factor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource(eNS_URI);

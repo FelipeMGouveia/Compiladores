@@ -371,6 +371,34 @@ public interface NotCPackage extends EPackage
   int WHILE_COMMAND_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link br.poli.ecomp.compiladores.notC.impl.ReturnCommandImpl <em>Return Command</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.poli.ecomp.compiladores.notC.impl.ReturnCommandImpl
+   * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getReturnCommand()
+   * @generated
+   */
+  int RETURN_COMMAND = 8;
+
+  /**
+   * The feature id for the '<em><b>Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_COMMAND__EXPR = COMMAND__EXPR;
+
+  /**
+   * The number of structural features of the '<em>Return Command</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_COMMAND_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link br.poli.ecomp.compiladores.notC.impl.DeclarationImpl <em>Declaration</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -378,7 +406,7 @@ public interface NotCPackage extends EPackage
    * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getDeclaration()
    * @generated
    */
-  int DECLARATION = 8;
+  int DECLARATION = 9;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -415,7 +443,7 @@ public interface NotCPackage extends EPackage
    * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getRDeclaration()
    * @generated
    */
-  int RDECLARATION = 9;
+  int RDECLARATION = 10;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -461,7 +489,7 @@ public interface NotCPackage extends EPackage
    * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getIDDeclaration()
    * @generated
    */
-  int ID_DECLARATION = 10;
+  int ID_DECLARATION = 11;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -498,7 +526,7 @@ public interface NotCPackage extends EPackage
    * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 11;
+  int EXPRESSION = 12;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -510,7 +538,7 @@ public interface NotCPackage extends EPackage
   int EXPRESSION__VALUE = 0;
 
   /**
-   * The feature id for the '<em><b>Result</b></em>' containment reference.
+   * The feature id for the '<em><b>Result</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -553,34 +581,6 @@ public interface NotCPackage extends EPackage
    * @ordered
    */
   int EXPRESSION_FEATURE_COUNT = 5;
-
-  /**
-   * The meta object id for the '{@link br.poli.ecomp.compiladores.notC.impl.Expr5Impl <em>Expr5</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see br.poli.ecomp.compiladores.notC.impl.Expr5Impl
-   * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getExpr5()
-   * @generated
-   */
-  int EXPR5 = 12;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR5__VALUE = 0;
-
-  /**
-   * The number of structural features of the '<em>Expr5</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR5_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link br.poli.ecomp.compiladores.notC.impl.TypeImpl <em>Type</em>}' class.
@@ -630,7 +630,7 @@ public interface NotCPackage extends EPackage
   int EXPR__VALUE = EXPRESSION__VALUE;
 
   /**
-   * The feature id for the '<em><b>Result</b></em>' containment reference.
+   * The feature id for the '<em><b>Result</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -675,14 +675,14 @@ public interface NotCPackage extends EPackage
   int EXPR_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link br.poli.ecomp.compiladores.notC.impl.Expr2Impl <em>Expr2</em>}' class.
+   * The meta object id for the '{@link br.poli.ecomp.compiladores.notC.impl.TermImpl <em>Term</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see br.poli.ecomp.compiladores.notC.impl.Expr2Impl
-   * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getExpr2()
+   * @see br.poli.ecomp.compiladores.notC.impl.TermImpl
+   * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getTerm()
    * @generated
    */
-  int EXPR2 = 15;
+  int TERM = 15;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -691,16 +691,16 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPR2__VALUE = EXPRESSION__VALUE;
+  int TERM__VALUE = EXPRESSION__VALUE;
 
   /**
-   * The feature id for the '<em><b>Result</b></em>' containment reference.
+   * The feature id for the '<em><b>Result</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPR2__RESULT = EXPRESSION__RESULT;
+  int TERM__RESULT = EXPRESSION__RESULT;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -709,7 +709,7 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPR2__LEFT = EXPRESSION__LEFT;
+  int TERM__LEFT = EXPRESSION__LEFT;
 
   /**
    * The feature id for the '<em><b>Operator</b></em>' attribute.
@@ -718,7 +718,7 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPR2__OPERATOR = EXPRESSION__OPERATOR;
+  int TERM__OPERATOR = EXPRESSION__OPERATOR;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -727,26 +727,26 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPR2__RIGHT = EXPRESSION__RIGHT;
+  int TERM__RIGHT = EXPRESSION__RIGHT;
 
   /**
-   * The number of structural features of the '<em>Expr2</em>' class.
+   * The number of structural features of the '<em>Term</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPR2_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
+  int TERM_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link br.poli.ecomp.compiladores.notC.impl.Expr3Impl <em>Expr3</em>}' class.
+   * The meta object id for the '{@link br.poli.ecomp.compiladores.notC.impl.FactorImpl <em>Factor</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see br.poli.ecomp.compiladores.notC.impl.Expr3Impl
-   * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getExpr3()
+   * @see br.poli.ecomp.compiladores.notC.impl.FactorImpl
+   * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getFactor()
    * @generated
    */
-  int EXPR3 = 16;
+  int FACTOR = 16;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -755,16 +755,16 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPR3__VALUE = EXPRESSION__VALUE;
+  int FACTOR__VALUE = EXPRESSION__VALUE;
 
   /**
-   * The feature id for the '<em><b>Result</b></em>' containment reference.
+   * The feature id for the '<em><b>Result</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPR3__RESULT = EXPRESSION__RESULT;
+  int FACTOR__RESULT = EXPRESSION__RESULT;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -773,7 +773,7 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPR3__LEFT = EXPRESSION__LEFT;
+  int FACTOR__LEFT = EXPRESSION__LEFT;
 
   /**
    * The feature id for the '<em><b>Operator</b></em>' attribute.
@@ -782,7 +782,7 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPR3__OPERATOR = EXPRESSION__OPERATOR;
+  int FACTOR__OPERATOR = EXPRESSION__OPERATOR;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -791,16 +791,16 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPR3__RIGHT = EXPRESSION__RIGHT;
+  int FACTOR__RIGHT = EXPRESSION__RIGHT;
 
   /**
-   * The number of structural features of the '<em>Expr3</em>' class.
+   * The number of structural features of the '<em>Factor</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPR3_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
+  int FACTOR_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
 
 
   /**
@@ -1060,6 +1060,16 @@ public interface NotCPackage extends EPackage
   EReference getWhileCommand_WhileBlock();
 
   /**
+   * Returns the meta object for class '{@link br.poli.ecomp.compiladores.notC.ReturnCommand <em>Return Command</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Return Command</em>'.
+   * @see br.poli.ecomp.compiladores.notC.ReturnCommand
+   * @generated
+   */
+  EClass getReturnCommand();
+
+  /**
    * Returns the meta object for class '{@link br.poli.ecomp.compiladores.notC.Declaration <em>Declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1188,15 +1198,15 @@ public interface NotCPackage extends EPackage
   EReference getExpression_Value();
 
   /**
-   * Returns the meta object for the containment reference '{@link br.poli.ecomp.compiladores.notC.Expression#getResult <em>Result</em>}'.
+   * Returns the meta object for the attribute '{@link br.poli.ecomp.compiladores.notC.Expression#getResult <em>Result</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Result</em>'.
+   * @return the meta object for the attribute '<em>Result</em>'.
    * @see br.poli.ecomp.compiladores.notC.Expression#getResult()
    * @see #getExpression()
    * @generated
    */
-  EReference getExpression_Result();
+  EAttribute getExpression_Result();
 
   /**
    * Returns the meta object for the containment reference '{@link br.poli.ecomp.compiladores.notC.Expression#getLeft <em>Left</em>}'.
@@ -1232,27 +1242,6 @@ public interface NotCPackage extends EPackage
   EReference getExpression_Right();
 
   /**
-   * Returns the meta object for class '{@link br.poli.ecomp.compiladores.notC.Expr5 <em>Expr5</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Expr5</em>'.
-   * @see br.poli.ecomp.compiladores.notC.Expr5
-   * @generated
-   */
-  EClass getExpr5();
-
-  /**
-   * Returns the meta object for the attribute '{@link br.poli.ecomp.compiladores.notC.Expr5#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see br.poli.ecomp.compiladores.notC.Expr5#getValue()
-   * @see #getExpr5()
-   * @generated
-   */
-  EAttribute getExpr5_Value();
-
-  /**
    * Returns the meta object for class '{@link br.poli.ecomp.compiladores.notC.Type <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1284,24 +1273,24 @@ public interface NotCPackage extends EPackage
   EClass getExpr();
 
   /**
-   * Returns the meta object for class '{@link br.poli.ecomp.compiladores.notC.Expr2 <em>Expr2</em>}'.
+   * Returns the meta object for class '{@link br.poli.ecomp.compiladores.notC.Term <em>Term</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Expr2</em>'.
-   * @see br.poli.ecomp.compiladores.notC.Expr2
+   * @return the meta object for class '<em>Term</em>'.
+   * @see br.poli.ecomp.compiladores.notC.Term
    * @generated
    */
-  EClass getExpr2();
+  EClass getTerm();
 
   /**
-   * Returns the meta object for class '{@link br.poli.ecomp.compiladores.notC.Expr3 <em>Expr3</em>}'.
+   * Returns the meta object for class '{@link br.poli.ecomp.compiladores.notC.Factor <em>Factor</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Expr3</em>'.
-   * @see br.poli.ecomp.compiladores.notC.Expr3
+   * @return the meta object for class '<em>Factor</em>'.
+   * @see br.poli.ecomp.compiladores.notC.Factor
    * @generated
    */
-  EClass getExpr3();
+  EClass getFactor();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1535,6 +1524,16 @@ public interface NotCPackage extends EPackage
     EReference WHILE_COMMAND__WHILE_BLOCK = eINSTANCE.getWhileCommand_WhileBlock();
 
     /**
+     * The meta object literal for the '{@link br.poli.ecomp.compiladores.notC.impl.ReturnCommandImpl <em>Return Command</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.poli.ecomp.compiladores.notC.impl.ReturnCommandImpl
+     * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getReturnCommand()
+     * @generated
+     */
+    EClass RETURN_COMMAND = eINSTANCE.getReturnCommand();
+
+    /**
      * The meta object literal for the '{@link br.poli.ecomp.compiladores.notC.impl.DeclarationImpl <em>Declaration</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1639,12 +1638,12 @@ public interface NotCPackage extends EPackage
     EReference EXPRESSION__VALUE = eINSTANCE.getExpression_Value();
 
     /**
-     * The meta object literal for the '<em><b>Result</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Result</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPRESSION__RESULT = eINSTANCE.getExpression_Result();
+    EAttribute EXPRESSION__RESULT = eINSTANCE.getExpression_Result();
 
     /**
      * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
@@ -1669,24 +1668,6 @@ public interface NotCPackage extends EPackage
      * @generated
      */
     EReference EXPRESSION__RIGHT = eINSTANCE.getExpression_Right();
-
-    /**
-     * The meta object literal for the '{@link br.poli.ecomp.compiladores.notC.impl.Expr5Impl <em>Expr5</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see br.poli.ecomp.compiladores.notC.impl.Expr5Impl
-     * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getExpr5()
-     * @generated
-     */
-    EClass EXPR5 = eINSTANCE.getExpr5();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EXPR5__VALUE = eINSTANCE.getExpr5_Value();
 
     /**
      * The meta object literal for the '{@link br.poli.ecomp.compiladores.notC.impl.TypeImpl <em>Type</em>}' class.
@@ -1717,24 +1698,24 @@ public interface NotCPackage extends EPackage
     EClass EXPR = eINSTANCE.getExpr();
 
     /**
-     * The meta object literal for the '{@link br.poli.ecomp.compiladores.notC.impl.Expr2Impl <em>Expr2</em>}' class.
+     * The meta object literal for the '{@link br.poli.ecomp.compiladores.notC.impl.TermImpl <em>Term</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see br.poli.ecomp.compiladores.notC.impl.Expr2Impl
-     * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getExpr2()
+     * @see br.poli.ecomp.compiladores.notC.impl.TermImpl
+     * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getTerm()
      * @generated
      */
-    EClass EXPR2 = eINSTANCE.getExpr2();
+    EClass TERM = eINSTANCE.getTerm();
 
     /**
-     * The meta object literal for the '{@link br.poli.ecomp.compiladores.notC.impl.Expr3Impl <em>Expr3</em>}' class.
+     * The meta object literal for the '{@link br.poli.ecomp.compiladores.notC.impl.FactorImpl <em>Factor</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see br.poli.ecomp.compiladores.notC.impl.Expr3Impl
-     * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getExpr3()
+     * @see br.poli.ecomp.compiladores.notC.impl.FactorImpl
+     * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getFactor()
      * @generated
      */
-    EClass EXPR3 = eINSTANCE.getExpr3();
+    EClass FACTOR = eINSTANCE.getFactor();
 
   }
 

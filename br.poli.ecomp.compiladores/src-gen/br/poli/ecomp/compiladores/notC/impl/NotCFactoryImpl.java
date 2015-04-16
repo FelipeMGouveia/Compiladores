@@ -72,15 +72,15 @@ public class NotCFactoryImpl extends EFactoryImpl implements NotCFactory
       case NotCPackage.COMMAND: return createCommand();
       case NotCPackage.IF_COMMAND: return createIfCommand();
       case NotCPackage.WHILE_COMMAND: return createWhileCommand();
+      case NotCPackage.RETURN_COMMAND: return createReturnCommand();
       case NotCPackage.DECLARATION: return createDeclaration();
       case NotCPackage.RDECLARATION: return createRDeclaration();
       case NotCPackage.ID_DECLARATION: return createIDDeclaration();
       case NotCPackage.EXPRESSION: return createExpression();
-      case NotCPackage.EXPR5: return createExpr5();
       case NotCPackage.TYPE: return createType();
       case NotCPackage.EXPR: return createExpr();
-      case NotCPackage.EXPR2: return createExpr2();
-      case NotCPackage.EXPR3: return createExpr3();
+      case NotCPackage.TERM: return createTerm();
+      case NotCPackage.FACTOR: return createFactor();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -179,6 +179,17 @@ public class NotCFactoryImpl extends EFactoryImpl implements NotCFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public ReturnCommand createReturnCommand()
+  {
+    ReturnCommandImpl returnCommand = new ReturnCommandImpl();
+    return returnCommand;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Declaration createDeclaration()
   {
     DeclarationImpl declaration = new DeclarationImpl();
@@ -223,17 +234,6 @@ public class NotCFactoryImpl extends EFactoryImpl implements NotCFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expr5 createExpr5()
-  {
-    Expr5Impl expr5 = new Expr5Impl();
-    return expr5;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Type createType()
   {
     TypeImpl type = new TypeImpl();
@@ -256,10 +256,10 @@ public class NotCFactoryImpl extends EFactoryImpl implements NotCFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expr2 createExpr2()
+  public Term createTerm()
   {
-    Expr2Impl expr2 = new Expr2Impl();
-    return expr2;
+    TermImpl term = new TermImpl();
+    return term;
   }
 
   /**
@@ -267,10 +267,10 @@ public class NotCFactoryImpl extends EFactoryImpl implements NotCFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expr3 createExpr3()
+  public Factor createFactor()
   {
-    Expr3Impl expr3 = new Expr3Impl();
-    return expr3;
+    FactorImpl factor = new FactorImpl();
+    return factor;
   }
 
   /**

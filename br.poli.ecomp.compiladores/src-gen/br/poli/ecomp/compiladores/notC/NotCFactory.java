@@ -95,6 +95,15 @@ public interface NotCFactory extends EFactory
   WhileCommand createWhileCommand();
 
   /**
+   * Returns a new object of class '<em>Return Command</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Return Command</em>'.
+   * @generated
+   */
+  ReturnCommand createReturnCommand();
+
+  /**
    * Returns a new object of class '<em>Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -131,15 +140,6 @@ public interface NotCFactory extends EFactory
   Expression createExpression();
 
   /**
-   * Returns a new object of class '<em>Expr5</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Expr5</em>'.
-   * @generated
-   */
-  Expr5 createExpr5();
-
-  /**
    * Returns a new object of class '<em>Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -158,22 +158,22 @@ public interface NotCFactory extends EFactory
   Expr createExpr();
 
   /**
-   * Returns a new object of class '<em>Expr2</em>'.
+   * Returns a new object of class '<em>Term</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Expr2</em>'.
+   * @return a new object of class '<em>Term</em>'.
    * @generated
    */
-  Expr2 createExpr2();
+  Term createTerm();
 
   /**
-   * Returns a new object of class '<em>Expr3</em>'.
+   * Returns a new object of class '<em>Factor</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Expr3</em>'.
+   * @return a new object of class '<em>Factor</em>'.
    * @generated
    */
-  Expr3 createExpr3();
+  Factor createFactor();
 
   /**
    * Returns the package supported by this factory.
