@@ -5,8 +5,8 @@ package br.poli.ecomp.compiladores.generator
 
 import br.poli.ecomp.compiladores.notC.Block
 import br.poli.ecomp.compiladores.notC.Code
+import br.poli.ecomp.compiladores.notC.Command
 import br.poli.ecomp.compiladores.notC.Declaration
-
 import br.poli.ecomp.compiladores.notC.Expression
 import br.poli.ecomp.compiladores.notC.FuncParam
 import br.poli.ecomp.compiladores.notC.Function
@@ -16,15 +16,16 @@ import br.poli.ecomp.compiladores.notC.RDeclaration
 import br.poli.ecomp.compiladores.notC.Statement
 import br.poli.ecomp.compiladores.notC.Type
 import br.poli.ecomp.compiladores.notC.WhileCommand
+import java.util.ArrayList
+import java.util.HashMap
+import java.util.HashSet
+import java.util.List
+import java.util.Map
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
 
 import static extension org.eclipse.xtext.EcoreUtil2.*
-import java.util.Map
-import java.util.List
-import java.util.HashMap
-import java.util.ArrayList
 
 /**
  * Generates code from your model files on save.
@@ -47,6 +48,18 @@ class NotCGenerator implements IGenerator {
 			value = i;
 		}
 		
+		override boolean equals(Object variable)
+		{
+			if(variable instanceof Variable)
+			{
+				return (variable as Variable).name.equals(this.name);
+			}
+			return false;
+		}
+		override int hashCode()
+		{
+			return name.hashCode;
+		}
 	}
 	//Guarda em que parte do código estamos, serve para trabalhar com variáveis
 	private Integer currentCodeScope;
@@ -65,11 +78,18 @@ class NotCGenerator implements IGenerator {
 	def dispatch compile(IDDeclaration idDeclaration)
 	'''«IF variablesByScope.get(currentCodeScope).add(new Variable(idDeclaration.id.toString(), solve(idDeclaration.value)))»«ENDIF»«idDeclaration.id»«IF idDeclaration.value != null» = «idDeclaration.value.compile»«ENDIF»'''
 	
-	Integer leftValue;
-	Integer rightValue;
+	//Integer leftValue;
+	//Integer rightValue;
+	
+//	def Integer solve(Expression expression)
+//	{
+//		//solve(expression, );
+//	}
 	
 	def Integer solve(Expression expression) 
 	{
+		var leftValue = new Integer(0);
+		var rightValue = new Integer(0);
 		if (expression == null)
 			return null;
 		if(expression.result != null)
@@ -139,8 +159,83 @@ class NotCGenerator implements IGenerator {
 		}
 	}
 	
+	def Integer solve2(Expression expression, List<Variable> variables) 
+	{
+		System.out.println("Solve 2");
+		var leftValue = new Integer(0);
+		var rightValue = new Integer(0);
+		if (expression == null)
+			return null;
+		if(expression.result != null)
+		{
+			try
+			{
+				//Se for um inteiro retornamos ele mesmo.
+				return Integer.parseInt(expression.result);
+			}
+			catch(Exception e)
+			{
+				//Senão, tentamos capturar o valor do mesmo pelo mapa
+				for(Variable variable : variables)
+				{
+					//Se a variável existir retorne o seu valor.
+					if(variable.name.equals(expression.result))
+					{
+						System.out.println("Encontrou um valor!");
+						return variable.value;
+					}
+				}
+			}
+			return null;
+		}
+		if(expression.value != null)
+		{
+			return solve2(expression.value,variables);
+		}
+		if(expression.operator != null)
+		{
+			leftValue = solve2(expression.left, variables);
+			rightValue = solve2(expression.right, variables);
+			if(leftValue == null || rightValue == null)
+			{
+				return null;
+			}
+			switch(expression.operator)
+			{
+				case "+":
+				{
+					return leftValue + rightValue;
+				}
+				case "-":
+				{
+					return leftValue - rightValue;
+				}
+				case "*":
+				{
+					return leftValue * rightValue;
+				}
+				case "/":
+				{
+					return leftValue / rightValue;
+				}
+				case "^":
+				{
+					return Math.pow(leftValue.doubleValue, rightValue.doubleValue).intValue;
+				}
+				default:
+				{
+					return leftValue;
+				}
+			}
+		}
+		else
+		{
+			return leftValue;	
+		}
+	}
+	
 	def dispatch compile(Expression expr)
-	'''«IF expr.value != null»( «expr.value.compile» )«ENDIF»«IF expr.left != null»«expr.left.compile»«ENDIF»«IF expr.operator != null» «expr.operator» «ENDIF»«IF expr.right != null»«expr.right.compile»«ENDIF»'''
+	'''«IF expr.value != null»( «expr.value.compile» )«ENDIF»«IF expr.result != null»«expr.result»«ENDIF»«IF expr.left != null»«expr.left.compile»«ENDIF»«IF expr.operator != null» «expr.operator» «ENDIF»«IF expr.right != null»«expr.right.compile»«ENDIF»'''
 	
 		
 		
@@ -180,8 +275,179 @@ class NotCGenerator implements IGenerator {
 	«ELSE»«IF solve(ifcommand.expr).intValue != 0»«ifcommand.ifBlock.compile»«ELSE»«IF ifcommand.elseBlock != null»«ifcommand.elseBlock.compile»«ENDIF»«ENDIF»«ENDIF»'''
 	
 	def dispatch compile(WhileCommand whileCommand)
-	'''while ( «whileCommand.expr.compile» )
-	«whileCommand.whileBlock.compile»«IF whileCommand.whileBlock != null»«ENDIF»'''
+	'''«IF computeWhileCommand(whileCommand) == null»while ( «whileCommand.expr.compile» )
+	«whileCommand.whileBlock.compile»«IF whileCommand.whileBlock != null»«ENDIF»«ELSE»«FOR i : 0 ..< computeWhileCommand(whileCommand)»«whileCommand.whileBlock.compile»«ENDFOR»«ENDIF»'''
+	
+	//Compute how many times the while command must run!
+	def Integer computeWhileCommand(WhileCommand command) 
+	{
+		System.out.println("Entrando no computeWhileCommand!");
+		//Se a resolução da expressão de condição for 0 então o while é falso
+		if(solve(command.expr) == 0)
+		{
+			return null;
+		}
+		System.out.println("solve de command.expr deu != 0");
+		var knownVariables = new HashSet<Variable>();
+		//Garantir que as variáveis envolvidas na condição do while tem valor conhecido e só são alteradas com valores delas próprias.
+		//Variáveis da condição do while
+		knownVariables = computeWhileVariables(command.expr);
+		System.out.println("Saindo de computeWhileVariables() para knownVariables");
+		
+		//Garantir valor conhecido.
+		for(Variable variable : knownVariables)
+		{
+			//Se exitir ao menos 1 variável sem valor conhecido então é impossível determinar o valor das variáveis.
+			if(variable.value == null)
+				return null;
+		}
+		System.out.println("Garantiu variáveis conhecidas!");
+		//Garantir quem interfere no valor da variável.
+		//Por qeustão de simplificação se uma variável externa as da condição modificar o valor de alguma variável da condição
+		//então devemos entender a condição como não alcançável
+		for (Command com : command.whileBlock.statement.commands)
+		{
+			if(com instanceof RDeclaration)
+			{
+				var comRD = (com as RDeclaration);
+				if(knownVariables.contains(new Variable(comRD.id.id)))
+				{
+					if(comRD.id != null)
+					{
+						var comRDVariables = computeWhileVariables(comRD.id.value);
+						for(Variable variable : comRDVariables)
+						{
+							//Se uma variávle desconhecida modificar uma variável conhecida, então não continue!  
+							if(!knownVariables.contains(variable))
+							{
+								return null;
+							}
+						}						
+					}
+				}
+				
+			}
+			//TODO Adicionar suporte a possuir sub comandos sem ser expressão dentro do while.
+		}
+		
+		//Avaliar a quantidade de vezes que o while irá rodar!
+		//Para isso será utilizada a boa e velha força bruta,
+		//Ou seja, vamos calcular cara paço do while (calcular cada RDesxpression dentro do while que atualize o valor de uma variável no while, com
+		//isso teremos a quantidade de vezes que o while irá rodar!
+		//Passo 1: Criar cópia das variáveis do while!
+		var newVariableList = new ArrayList<Variable>();
+		for(Variable variable : knownVariables)
+		{
+			System.out.println("KnownVariables: " + variable.name + "  " +variable.value);
+			newVariableList.add(new Variable(variable.name, variable.value));	
+		}
+		//Passo 2: Calcular o valor inicial do while!
+		var valorInicial = solve2(command.expr, newVariableList);
+		//Passo 3: Criar contador.
+		var contador = new Integer(0);
+		//Passo 4: rodar o while, enquanto o valorInicial seja diferente de 0
+		System.out.println("Será que chega no while²²²");
+		while(valorInicial != 0)
+		{
+			
+			System.out.println("WHILE!!!!!!");
+			//Passo 5: Executar a atualização dos valores da variáveis do while!
+			//Para cada comando!
+			for (Command com : command.whileBlock.statement.commands)
+			{
+				System.out.println("Com?" + com);
+				//Se o comando for uma atribuição de variável.
+				if(com instanceof RDeclaration)
+				{
+					System.out.println("Instanceof?" + com);
+					var comRD = (com as RDeclaration);
+					//Se for para uma variável conhecida
+					System.out.println("com.id.id?" + com.id.id);
+					if(knownVariables.contains(new Variable(comRD.id.id)))
+					{
+						System.out.println("Contains?" + com);
+						var currentVariable = new Variable("");
+						for(Variable variable : newVariableList)
+						{
+							System.out.println("Variable: " + variable.name + " " + variable.value);
+							if(variable.name == comRD.id.id)
+							{
+								currentVariable = variable;
+							}
+						}
+						currentVariable.value = solve2(comRD.id.value, newVariableList);
+					}
+				}
+			}
+			//Passo 6: incrementa contador
+			contador++;
+			//Passo 7: Atualiza valor de referência
+			valorInicial = solve2(command.expr, newVariableList);
+		}
+		return contador;
+	}
+	
+	def HashSet<Variable> computeWhileVariables(Expression expression) 
+	{
+		System.out.println("Entrando em computeWhileVariables()");
+		var variables = new HashSet<Variable>();
+		if(expression == null)
+		{
+			return null;
+		}
+		if(expression.result != null)
+		{
+			try
+			{
+				//Se for um inteiro BOOM!!!.
+				Integer.parseInt(expression.result);
+				return null;
+			}
+			catch(Exception e)
+			{
+				//Senão, capturamos a variável
+				for(Variable variable : variablesByScope.get(currentCodeScope))
+				{
+					//Se a variável existir retorne-a.
+					if(variable.name.equals(expression.result))
+					{
+						variables.add(variable);
+						return variables;
+					}
+				}
+			}
+			return null;
+		}
+		if(expression.value != null)
+		{
+			var temp = computeWhileVariables(expression.value);
+			if(temp != null)
+			{
+				variables.addAll(temp);
+			}
+		}
+		if(expression.left != null)
+		{
+			var leftValue = computeWhileVariables(expression.left);
+			if(leftValue != null)
+			{
+				variables.addAll(leftValue);
+			}
+		}
+		if(expression.right != null)
+		{
+			var something = computeWhileVariables(expression.right);
+			if(something != null)
+			{
+				variables.addAll(something);
+			}
+		}
+		if(variables.size == 0)
+		{
+			variables = null;
+		}
+		return variables;
+	}
 	
 	def dispatch compile(Type type)
 	'''«type.value»'''

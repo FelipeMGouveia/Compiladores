@@ -3,6 +3,7 @@
 package br.poli.ecomp.compiladores.notC.impl;
 
 import br.poli.ecomp.compiladores.notC.Block;
+import br.poli.ecomp.compiladores.notC.Expression;
 import br.poli.ecomp.compiladores.notC.NotCPackage;
 import br.poli.ecomp.compiladores.notC.WhileCommand;
 
@@ -21,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link br.poli.ecomp.compiladores.notC.impl.WhileCommandImpl#getExpr <em>Expr</em>}</li>
  *   <li>{@link br.poli.ecomp.compiladores.notC.impl.WhileCommandImpl#getWhileBlock <em>While Block</em>}</li>
  * </ul>
  * </p>
@@ -29,6 +31,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class WhileCommandImpl extends CommandImpl implements WhileCommand
 {
+  /**
+   * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExpr()
+   * @generated
+   * @ordered
+   */
+  protected Expression expr;
+
   /**
    * The cached value of the '{@link #getWhileBlock() <em>While Block</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -58,6 +70,54 @@ public class WhileCommandImpl extends CommandImpl implements WhileCommand
   protected EClass eStaticClass()
   {
     return NotCPackage.Literals.WHILE_COMMAND;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expression getExpr()
+  {
+    return expr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetExpr(Expression newExpr, NotificationChain msgs)
+  {
+    Expression oldExpr = expr;
+    expr = newExpr;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, NotCPackage.WHILE_COMMAND__EXPR, oldExpr, newExpr);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExpr(Expression newExpr)
+  {
+    if (newExpr != expr)
+    {
+      NotificationChain msgs = null;
+      if (expr != null)
+        msgs = ((InternalEObject)expr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - NotCPackage.WHILE_COMMAND__EXPR, null, msgs);
+      if (newExpr != null)
+        msgs = ((InternalEObject)newExpr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - NotCPackage.WHILE_COMMAND__EXPR, null, msgs);
+      msgs = basicSetExpr(newExpr, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, NotCPackage.WHILE_COMMAND__EXPR, newExpr, newExpr));
   }
 
   /**
@@ -118,6 +178,8 @@ public class WhileCommandImpl extends CommandImpl implements WhileCommand
   {
     switch (featureID)
     {
+      case NotCPackage.WHILE_COMMAND__EXPR:
+        return basicSetExpr(null, msgs);
       case NotCPackage.WHILE_COMMAND__WHILE_BLOCK:
         return basicSetWhileBlock(null, msgs);
     }
@@ -134,6 +196,8 @@ public class WhileCommandImpl extends CommandImpl implements WhileCommand
   {
     switch (featureID)
     {
+      case NotCPackage.WHILE_COMMAND__EXPR:
+        return getExpr();
       case NotCPackage.WHILE_COMMAND__WHILE_BLOCK:
         return getWhileBlock();
     }
@@ -150,6 +214,9 @@ public class WhileCommandImpl extends CommandImpl implements WhileCommand
   {
     switch (featureID)
     {
+      case NotCPackage.WHILE_COMMAND__EXPR:
+        setExpr((Expression)newValue);
+        return;
       case NotCPackage.WHILE_COMMAND__WHILE_BLOCK:
         setWhileBlock((Block)newValue);
         return;
@@ -167,6 +234,9 @@ public class WhileCommandImpl extends CommandImpl implements WhileCommand
   {
     switch (featureID)
     {
+      case NotCPackage.WHILE_COMMAND__EXPR:
+        setExpr((Expression)null);
+        return;
       case NotCPackage.WHILE_COMMAND__WHILE_BLOCK:
         setWhileBlock((Block)null);
         return;
@@ -184,6 +254,8 @@ public class WhileCommandImpl extends CommandImpl implements WhileCommand
   {
     switch (featureID)
     {
+      case NotCPackage.WHILE_COMMAND__EXPR:
+        return expr != null;
       case NotCPackage.WHILE_COMMAND__WHILE_BLOCK:
         return whileBlock != null;
     }

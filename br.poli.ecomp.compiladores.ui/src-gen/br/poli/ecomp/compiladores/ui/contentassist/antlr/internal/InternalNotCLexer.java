@@ -236,11 +236,10 @@ public class InternalNotCLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:20:7: ( 'if' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:20:9: 'if'
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:20:7: ( ';' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:20:9: ';'
             {
-            match("if"); 
-
+            match(';'); 
 
             }
 
@@ -257,10 +256,10 @@ public class InternalNotCLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:21:7: ( 'else' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:21:9: 'else'
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:21:7: ( 'if' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:21:9: 'if'
             {
-            match("else"); 
+            match("if"); 
 
 
             }
@@ -278,10 +277,10 @@ public class InternalNotCLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:22:7: ( 'while' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:22:9: 'while'
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:22:7: ( 'else' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:22:9: 'else'
             {
-            match("while"); 
+            match("else"); 
 
 
             }
@@ -299,10 +298,10 @@ public class InternalNotCLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:23:7: ( 'return' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:23:9: 'return'
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:23:7: ( 'while' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:23:9: 'while'
             {
-            match("return"); 
+            match("while"); 
 
 
             }
@@ -320,10 +319,11 @@ public class InternalNotCLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:24:7: ( ';' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:24:9: ';'
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:24:7: ( 'return' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:24:9: 'return'
             {
-            match(';'); 
+            match("return"); 
+
 
             }
 
@@ -401,10 +401,10 @@ public class InternalNotCLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3246:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3246:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3315:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3315:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3246:11: ( '^' )?
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3315:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -413,7 +413,7 @@ public class InternalNotCLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3246:11: '^'
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3315:11: '^'
                     {
                     match('^'); 
 
@@ -431,7 +431,7 @@ public class InternalNotCLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3246:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3315:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -480,10 +480,10 @@ public class InternalNotCLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3248:10: ( ( '0' .. '9' )+ )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3248:12: ( '0' .. '9' )+
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3317:10: ( ( '0' .. '9' )+ )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3317:12: ( '0' .. '9' )+
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3248:12: ( '0' .. '9' )+
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3317:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -497,7 +497,7 @@ public class InternalNotCLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3248:13: '0' .. '9'
+            	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3317:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -529,10 +529,10 @@ public class InternalNotCLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3250:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3250:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3319:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3319:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3250:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3319:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -550,10 +550,10 @@ public class InternalNotCLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3250:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3319:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3250:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3319:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -569,7 +569,7 @@ public class InternalNotCLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3250:21: '\\\\' .
+                    	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3319:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -577,7 +577,7 @@ public class InternalNotCLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3250:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3319:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -602,10 +602,10 @@ public class InternalNotCLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3250:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3319:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3250:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3319:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -621,7 +621,7 @@ public class InternalNotCLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3250:54: '\\\\' .
+                    	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3319:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -629,7 +629,7 @@ public class InternalNotCLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3250:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3319:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -672,12 +672,12 @@ public class InternalNotCLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3252:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3252:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3321:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3321:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3252:24: ( options {greedy=false; } : . )*
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3321:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -702,7 +702,7 @@ public class InternalNotCLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3252:52: .
+            	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3321:52: .
             	    {
             	    matchAny(); 
 
@@ -732,12 +732,12 @@ public class InternalNotCLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3254:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3254:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3323:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3323:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3254:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3323:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -750,7 +750,7 @@ public class InternalNotCLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3254:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3323:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -770,7 +770,7 @@ public class InternalNotCLexer extends Lexer {
                 }
             } while (true);
 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3254:40: ( ( '\\r' )? '\\n' )?
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3323:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -779,9 +779,9 @@ public class InternalNotCLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3254:41: ( '\\r' )? '\\n'
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3323:41: ( '\\r' )? '\\n'
                     {
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3254:41: ( '\\r' )?
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3323:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -790,7 +790,7 @@ public class InternalNotCLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3254:41: '\\r'
+                            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3323:41: '\\r'
                             {
                             match('\r'); 
 
@@ -822,10 +822,10 @@ public class InternalNotCLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3256:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3256:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3325:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3325:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3256:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3325:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -879,8 +879,8 @@ public class InternalNotCLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3258:16: ( . )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3258:18: .
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3327:16: ( . )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3327:18: .
             {
             matchAny(); 
 
@@ -1075,34 +1075,34 @@ public class InternalNotCLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\4\uffff\1\35\5\uffff\4\44\2\uffff\1\52\1\44\2\uffff\2\27\15\uffff"+
-        "\1\57\1\uffff\3\44\3\uffff\1\44\4\uffff\3\44\1\67\1\70\2\44\2\uffff"+
-        "\1\73\1\44\1\uffff\1\75\1\uffff";
+        "\4\uffff\1\35\6\uffff\4\45\1\uffff\1\52\1\45\2\uffff\2\27\16\uffff"+
+        "\1\57\1\uffff\3\45\2\uffff\1\45\4\uffff\3\45\1\67\1\70\2\45\2\uffff"+
+        "\1\73\1\45\1\uffff\1\75\1\uffff";
     static final String DFA12_eofS =
         "\76\uffff";
     static final String DFA12_minS =
-        "\1\0\3\uffff\1\52\5\uffff\1\146\1\154\1\150\1\145\2\uffff\1\101"+
-        "\1\141\2\uffff\2\0\15\uffff\1\60\1\uffff\1\163\1\151\1\164\3\uffff"+
+        "\1\0\3\uffff\1\52\6\uffff\1\146\1\154\1\150\1\145\1\uffff\1\101"+
+        "\1\141\2\uffff\2\0\16\uffff\1\60\1\uffff\1\163\1\151\1\164\2\uffff"+
         "\1\162\4\uffff\1\145\1\154\1\165\2\60\1\145\1\162\2\uffff\1\60\1"+
         "\156\1\uffff\1\60\1\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\3\uffff\1\57\5\uffff\1\146\1\154\1\150\1\145\2\uffff\1"+
-        "\172\1\141\2\uffff\2\uffff\15\uffff\1\172\1\uffff\1\163\1\151\1"+
-        "\164\3\uffff\1\162\4\uffff\1\145\1\154\1\165\2\172\1\145\1\162\2"+
+        "\1\uffff\3\uffff\1\57\6\uffff\1\146\1\154\1\150\1\145\1\uffff\1"+
+        "\172\1\141\2\uffff\2\uffff\16\uffff\1\172\1\uffff\1\163\1\151\1"+
+        "\164\2\uffff\1\162\4\uffff\1\145\1\154\1\165\2\172\1\145\1\162\2"+
         "\uffff\1\172\1\156\1\uffff\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\1\uffff\1\1\1\2\1\3\1\uffff\1\5\1\6\1\7\1\10\1\11\4\uffff\1\16"+
+        "\1\uffff\1\1\1\2\1\3\1\uffff\1\5\1\6\1\7\1\10\1\11\1\12\4\uffff"+
         "\1\17\2\uffff\1\22\1\23\2\uffff\1\27\1\30\1\1\1\2\1\3\1\25\1\26"+
-        "\1\4\1\5\1\6\1\7\1\10\1\11\1\uffff\1\22\3\uffff\1\16\1\17\1\20\1"+
-        "\uffff\1\23\1\24\1\27\1\12\7\uffff\1\21\1\13\2\uffff\1\14\1\uffff"+
-        "\1\15";
+        "\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\uffff\1\22\3\uffff\1\17\1\20\1"+
+        "\uffff\1\23\1\24\1\27\1\13\7\uffff\1\21\1\14\2\uffff\1\15\1\uffff"+
+        "\1\16";
     static final String DFA12_specialS =
         "\1\2\23\uffff\1\0\1\1\50\uffff}>";
     static final String[] DFA12_transitionS = {
             "\11\27\2\26\2\27\1\26\22\27\1\26\1\27\1\24\4\27\1\25\1\5\1"+
-            "\6\1\3\1\1\1\7\1\2\1\27\1\4\12\23\1\27\1\16\1\27\1\17\3\27\32"+
-            "\22\3\27\1\20\1\22\1\27\4\22\1\13\3\22\1\12\10\22\1\15\3\22"+
-            "\1\21\1\14\3\22\1\10\1\27\1\11\uff82\27",
+            "\6\1\3\1\1\1\7\1\2\1\27\1\4\12\23\1\27\1\12\1\27\1\17\3\27\32"+
+            "\22\3\27\1\20\1\22\1\27\4\22\1\14\3\22\1\13\10\22\1\16\3\22"+
+            "\1\21\1\15\3\22\1\10\1\27\1\11\uff82\27",
             "",
             "",
             "",
@@ -1112,13 +1112,13 @@ public class InternalNotCLexer extends Lexer {
             "",
             "",
             "",
-            "\1\43",
-            "\1\45",
+            "",
+            "\1\44",
             "\1\46",
             "\1\47",
+            "\1\50",
             "",
-            "",
-            "\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\32\45\4\uffff\1\45\1\uffff\32\45",
             "\1\53",
             "",
             "",
@@ -1137,12 +1137,12 @@ public class InternalNotCLexer extends Lexer {
             "",
             "",
             "",
-            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "",
+            "\12\45\7\uffff\32\45\4\uffff\1\45\1\uffff\32\45",
             "",
             "\1\60",
             "\1\61",
             "\1\62",
-            "",
             "",
             "",
             "\1\63",
@@ -1153,16 +1153,16 @@ public class InternalNotCLexer extends Lexer {
             "\1\64",
             "\1\65",
             "\1\66",
-            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
-            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\12\45\7\uffff\32\45\4\uffff\1\45\1\uffff\32\45",
+            "\12\45\7\uffff\32\45\4\uffff\1\45\1\uffff\32\45",
             "\1\71",
             "\1\72",
             "",
             "",
-            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\12\45\7\uffff\32\45\4\uffff\1\45\1\uffff\32\45",
             "\1\74",
             "",
-            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\12\45\7\uffff\32\45\4\uffff\1\45\1\uffff\32\45",
             ""
     };
 
@@ -1244,15 +1244,15 @@ public class InternalNotCLexer extends Lexer {
 
                         else if ( (LA12_0=='}') ) {s = 9;}
 
-                        else if ( (LA12_0=='i') ) {s = 10;}
+                        else if ( (LA12_0==';') ) {s = 10;}
 
-                        else if ( (LA12_0=='e') ) {s = 11;}
+                        else if ( (LA12_0=='i') ) {s = 11;}
 
-                        else if ( (LA12_0=='w') ) {s = 12;}
+                        else if ( (LA12_0=='e') ) {s = 12;}
 
-                        else if ( (LA12_0=='r') ) {s = 13;}
+                        else if ( (LA12_0=='w') ) {s = 13;}
 
-                        else if ( (LA12_0==';') ) {s = 14;}
+                        else if ( (LA12_0=='r') ) {s = 14;}
 
                         else if ( (LA12_0=='=') ) {s = 15;}
 

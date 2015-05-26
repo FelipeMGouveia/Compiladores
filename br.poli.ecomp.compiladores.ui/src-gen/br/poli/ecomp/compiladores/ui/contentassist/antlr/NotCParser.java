@@ -48,6 +48,7 @@ public class NotCParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFuncParamAccess().getGroup_2(), "rule__FuncParam__Group_2__0");
 					put(grammarAccess.getBlockAccess().getGroup(), "rule__Block__Group__0");
 					put(grammarAccess.getStatementAccess().getGroup(), "rule__Statement__Group__0");
+					put(grammarAccess.getCommandAccess().getGroup_3(), "rule__Command__Group_3__0");
 					put(grammarAccess.getIfCommandAccess().getGroup(), "rule__IfCommand__Group__0");
 					put(grammarAccess.getIfCommandAccess().getGroup_5(), "rule__IfCommand__Group_5__0");
 					put(grammarAccess.getWhileCommandAccess().getGroup(), "rule__WhileCommand__Group__0");

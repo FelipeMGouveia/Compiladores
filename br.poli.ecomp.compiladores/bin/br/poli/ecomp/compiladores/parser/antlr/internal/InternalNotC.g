@@ -453,7 +453,21 @@ ruleCommand returns [EObject current=null]
         $current = $this_ReturnCommand_2.current; 
         afterParserOrEnumRuleCall();
     }
-)
+
+    |(
+    { 
+        newCompositeNode(grammarAccess.getCommandAccess().getRDeclarationParserRuleCall_3_0()); 
+    }
+    this_RDeclaration_3=ruleRDeclaration
+    { 
+        $current = $this_RDeclaration_3.current; 
+        afterParserOrEnumRuleCall();
+    }
+	otherlv_4=';' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getCommandAccess().getSemicolonKeyword_3_1());
+    }
+))
 ;
 
 

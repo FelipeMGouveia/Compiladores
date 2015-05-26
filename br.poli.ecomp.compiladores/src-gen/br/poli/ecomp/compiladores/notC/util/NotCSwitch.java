@@ -149,6 +149,7 @@ public class NotCSwitch<T> extends Switch<T>
       {
         RDeclaration rDeclaration = (RDeclaration)theEObject;
         T result = caseRDeclaration(rDeclaration);
+        if (result == null) result = caseCommand(rDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

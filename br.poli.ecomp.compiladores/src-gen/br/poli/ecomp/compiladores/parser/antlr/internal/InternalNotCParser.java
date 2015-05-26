@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalNotCParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'('", "')'", "','", "'{'", "'}'", "'if'", "'else'", "'while'", "'return'", "';'", "'='", "'+'", "'-'", "'*'", "'/'", "'^'", "'var'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'('", "')'", "','", "'{'", "'}'", "';'", "'if'", "'else'", "'while'", "'return'", "'='", "'+'", "'-'", "'*'", "'/'", "'^'", "'var'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -154,7 +154,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
                     if ( (LA1_1==RULE_ID) ) {
                         int LA1_3 = input.LA(3);
 
-                        if ( (LA1_3==13||(LA1_3>=20 && LA1_3<=21)) ) {
+                        if ( (LA1_3==13||LA1_3==16||LA1_3==21) ) {
                             alt1=1;
                         }
 
@@ -911,7 +911,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
                 int alt6=2;
                 int LA6_0 = input.LA(1);
 
-                if ( (LA6_0==16||(LA6_0>=18 && LA6_0<=19)) ) {
+                if ( (LA6_0==RULE_ID||LA6_0==17||(LA6_0>=19 && LA6_0<=20)) ) {
                     alt6=1;
                 }
 
@@ -1011,39 +1011,47 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCommand"
-    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:423:1: ruleCommand returns [EObject current=null] : (this_IfCommand_0= ruleIfCommand | this_WhileCommand_1= ruleWhileCommand | this_ReturnCommand_2= ruleReturnCommand ) ;
+    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:423:1: ruleCommand returns [EObject current=null] : (this_IfCommand_0= ruleIfCommand | this_WhileCommand_1= ruleWhileCommand | this_ReturnCommand_2= ruleReturnCommand | (this_RDeclaration_3= ruleRDeclaration otherlv_4= ';' ) ) ;
     public final EObject ruleCommand() throws RecognitionException {
         EObject current = null;
 
+        Token otherlv_4=null;
         EObject this_IfCommand_0 = null;
 
         EObject this_WhileCommand_1 = null;
 
         EObject this_ReturnCommand_2 = null;
 
+        EObject this_RDeclaration_3 = null;
+
 
          enterRule(); 
             
         try {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:426:28: ( (this_IfCommand_0= ruleIfCommand | this_WhileCommand_1= ruleWhileCommand | this_ReturnCommand_2= ruleReturnCommand ) )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:427:1: (this_IfCommand_0= ruleIfCommand | this_WhileCommand_1= ruleWhileCommand | this_ReturnCommand_2= ruleReturnCommand )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:426:28: ( (this_IfCommand_0= ruleIfCommand | this_WhileCommand_1= ruleWhileCommand | this_ReturnCommand_2= ruleReturnCommand | (this_RDeclaration_3= ruleRDeclaration otherlv_4= ';' ) ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:427:1: (this_IfCommand_0= ruleIfCommand | this_WhileCommand_1= ruleWhileCommand | this_ReturnCommand_2= ruleReturnCommand | (this_RDeclaration_3= ruleRDeclaration otherlv_4= ';' ) )
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:427:1: (this_IfCommand_0= ruleIfCommand | this_WhileCommand_1= ruleWhileCommand | this_ReturnCommand_2= ruleReturnCommand )
-            int alt7=3;
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:427:1: (this_IfCommand_0= ruleIfCommand | this_WhileCommand_1= ruleWhileCommand | this_ReturnCommand_2= ruleReturnCommand | (this_RDeclaration_3= ruleRDeclaration otherlv_4= ';' ) )
+            int alt7=4;
             switch ( input.LA(1) ) {
-            case 16:
+            case 17:
                 {
                 alt7=1;
                 }
                 break;
-            case 18:
+            case 19:
                 {
                 alt7=2;
                 }
                 break;
-            case 19:
+            case 20:
                 {
                 alt7=3;
+                }
+                break;
+            case RULE_ID:
+                {
+                alt7=4;
                 }
                 break;
             default:
@@ -1108,6 +1116,34 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
+                case 4 :
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:457:6: (this_RDeclaration_3= ruleRDeclaration otherlv_4= ';' )
+                    {
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:457:6: (this_RDeclaration_3= ruleRDeclaration otherlv_4= ';' )
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:458:5: this_RDeclaration_3= ruleRDeclaration otherlv_4= ';'
+                    {
+                     
+                            newCompositeNode(grammarAccess.getCommandAccess().getRDeclarationParserRuleCall_3_0()); 
+                        
+                    pushFollow(FOLLOW_ruleRDeclaration_in_ruleCommand900);
+                    this_RDeclaration_3=ruleRDeclaration();
+
+                    state._fsp--;
+
+                     
+                            current = this_RDeclaration_3; 
+                            afterParserOrEnumRuleCall();
+                        
+                    otherlv_4=(Token)match(input,16,FOLLOW_16_in_ruleCommand911); 
+
+                        	newLeafNode(otherlv_4, grammarAccess.getCommandAccess().getSemicolonKeyword_3_1());
+                        
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -1129,7 +1165,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIfCommand"
-    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:464:1: entryRuleIfCommand returns [EObject current=null] : iv_ruleIfCommand= ruleIfCommand EOF ;
+    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:478:1: entryRuleIfCommand returns [EObject current=null] : iv_ruleIfCommand= ruleIfCommand EOF ;
     public final EObject entryRuleIfCommand() throws RecognitionException {
         EObject current = null;
 
@@ -1137,17 +1173,17 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:465:2: (iv_ruleIfCommand= ruleIfCommand EOF )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:466:2: iv_ruleIfCommand= ruleIfCommand EOF
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:479:2: (iv_ruleIfCommand= ruleIfCommand EOF )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:480:2: iv_ruleIfCommand= ruleIfCommand EOF
             {
              newCompositeNode(grammarAccess.getIfCommandRule()); 
-            pushFollow(FOLLOW_ruleIfCommand_in_entryRuleIfCommand907);
+            pushFollow(FOLLOW_ruleIfCommand_in_entryRuleIfCommand948);
             iv_ruleIfCommand=ruleIfCommand();
 
             state._fsp--;
 
              current =iv_ruleIfCommand; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleIfCommand917); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleIfCommand958); 
 
             }
 
@@ -1165,7 +1201,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIfCommand"
-    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:473:1: ruleIfCommand returns [EObject current=null] : (otherlv_0= 'if' otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) ) otherlv_3= ')' ( (lv_ifBlock_4_0= ruleBlock ) ) (otherlv_5= 'else' ( (lv_elseBlock_6_0= ruleBlock ) ) )? ) ;
+    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:487:1: ruleIfCommand returns [EObject current=null] : (otherlv_0= 'if' otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) ) otherlv_3= ')' ( (lv_ifBlock_4_0= ruleBlock ) ) (otherlv_5= 'else' ( (lv_elseBlock_6_0= ruleBlock ) ) )? ) ;
     public final EObject ruleIfCommand() throws RecognitionException {
         EObject current = null;
 
@@ -1183,30 +1219,30 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:476:28: ( (otherlv_0= 'if' otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) ) otherlv_3= ')' ( (lv_ifBlock_4_0= ruleBlock ) ) (otherlv_5= 'else' ( (lv_elseBlock_6_0= ruleBlock ) ) )? ) )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:477:1: (otherlv_0= 'if' otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) ) otherlv_3= ')' ( (lv_ifBlock_4_0= ruleBlock ) ) (otherlv_5= 'else' ( (lv_elseBlock_6_0= ruleBlock ) ) )? )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:490:28: ( (otherlv_0= 'if' otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) ) otherlv_3= ')' ( (lv_ifBlock_4_0= ruleBlock ) ) (otherlv_5= 'else' ( (lv_elseBlock_6_0= ruleBlock ) ) )? ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:491:1: (otherlv_0= 'if' otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) ) otherlv_3= ')' ( (lv_ifBlock_4_0= ruleBlock ) ) (otherlv_5= 'else' ( (lv_elseBlock_6_0= ruleBlock ) ) )? )
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:477:1: (otherlv_0= 'if' otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) ) otherlv_3= ')' ( (lv_ifBlock_4_0= ruleBlock ) ) (otherlv_5= 'else' ( (lv_elseBlock_6_0= ruleBlock ) ) )? )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:477:3: otherlv_0= 'if' otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) ) otherlv_3= ')' ( (lv_ifBlock_4_0= ruleBlock ) ) (otherlv_5= 'else' ( (lv_elseBlock_6_0= ruleBlock ) ) )?
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:491:1: (otherlv_0= 'if' otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) ) otherlv_3= ')' ( (lv_ifBlock_4_0= ruleBlock ) ) (otherlv_5= 'else' ( (lv_elseBlock_6_0= ruleBlock ) ) )? )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:491:3: otherlv_0= 'if' otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) ) otherlv_3= ')' ( (lv_ifBlock_4_0= ruleBlock ) ) (otherlv_5= 'else' ( (lv_elseBlock_6_0= ruleBlock ) ) )?
             {
-            otherlv_0=(Token)match(input,16,FOLLOW_16_in_ruleIfCommand954); 
+            otherlv_0=(Token)match(input,17,FOLLOW_17_in_ruleIfCommand995); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getIfCommandAccess().getIfKeyword_0());
                 
-            otherlv_1=(Token)match(input,11,FOLLOW_11_in_ruleIfCommand966); 
+            otherlv_1=(Token)match(input,11,FOLLOW_11_in_ruleIfCommand1007); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getIfCommandAccess().getLeftParenthesisKeyword_1());
                 
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:485:1: ( (lv_expr_2_0= ruleExpr ) )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:486:1: (lv_expr_2_0= ruleExpr )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:499:1: ( (lv_expr_2_0= ruleExpr ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:500:1: (lv_expr_2_0= ruleExpr )
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:486:1: (lv_expr_2_0= ruleExpr )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:487:3: lv_expr_2_0= ruleExpr
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:500:1: (lv_expr_2_0= ruleExpr )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:501:3: lv_expr_2_0= ruleExpr
             {
              
             	        newCompositeNode(grammarAccess.getIfCommandAccess().getExprExprParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleExpr_in_ruleIfCommand987);
+            pushFollow(FOLLOW_ruleExpr_in_ruleIfCommand1028);
             lv_expr_2_0=ruleExpr();
 
             state._fsp--;
@@ -1228,20 +1264,20 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,12,FOLLOW_12_in_ruleIfCommand999); 
+            otherlv_3=(Token)match(input,12,FOLLOW_12_in_ruleIfCommand1040); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getIfCommandAccess().getRightParenthesisKeyword_3());
                 
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:507:1: ( (lv_ifBlock_4_0= ruleBlock ) )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:508:1: (lv_ifBlock_4_0= ruleBlock )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:521:1: ( (lv_ifBlock_4_0= ruleBlock ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:522:1: (lv_ifBlock_4_0= ruleBlock )
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:508:1: (lv_ifBlock_4_0= ruleBlock )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:509:3: lv_ifBlock_4_0= ruleBlock
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:522:1: (lv_ifBlock_4_0= ruleBlock )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:523:3: lv_ifBlock_4_0= ruleBlock
             {
              
             	        newCompositeNode(grammarAccess.getIfCommandAccess().getIfBlockBlockParserRuleCall_4_0()); 
             	    
-            pushFollow(FOLLOW_ruleBlock_in_ruleIfCommand1020);
+            pushFollow(FOLLOW_ruleBlock_in_ruleIfCommand1061);
             lv_ifBlock_4_0=ruleBlock();
 
             state._fsp--;
@@ -1263,31 +1299,31 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:525:2: (otherlv_5= 'else' ( (lv_elseBlock_6_0= ruleBlock ) ) )?
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:539:2: (otherlv_5= 'else' ( (lv_elseBlock_6_0= ruleBlock ) ) )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
-            if ( (LA8_0==17) ) {
+            if ( (LA8_0==18) ) {
                 alt8=1;
             }
             switch (alt8) {
                 case 1 :
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:525:4: otherlv_5= 'else' ( (lv_elseBlock_6_0= ruleBlock ) )
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:539:4: otherlv_5= 'else' ( (lv_elseBlock_6_0= ruleBlock ) )
                     {
-                    otherlv_5=(Token)match(input,17,FOLLOW_17_in_ruleIfCommand1033); 
+                    otherlv_5=(Token)match(input,18,FOLLOW_18_in_ruleIfCommand1074); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getIfCommandAccess().getElseKeyword_5_0());
                         
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:529:1: ( (lv_elseBlock_6_0= ruleBlock ) )
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:530:1: (lv_elseBlock_6_0= ruleBlock )
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:543:1: ( (lv_elseBlock_6_0= ruleBlock ) )
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:544:1: (lv_elseBlock_6_0= ruleBlock )
                     {
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:530:1: (lv_elseBlock_6_0= ruleBlock )
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:531:3: lv_elseBlock_6_0= ruleBlock
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:544:1: (lv_elseBlock_6_0= ruleBlock )
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:545:3: lv_elseBlock_6_0= ruleBlock
                     {
                      
                     	        newCompositeNode(grammarAccess.getIfCommandAccess().getElseBlockBlockParserRuleCall_5_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleBlock_in_ruleIfCommand1054);
+                    pushFollow(FOLLOW_ruleBlock_in_ruleIfCommand1095);
                     lv_elseBlock_6_0=ruleBlock();
 
                     state._fsp--;
@@ -1336,7 +1372,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleWhileCommand"
-    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:555:1: entryRuleWhileCommand returns [EObject current=null] : iv_ruleWhileCommand= ruleWhileCommand EOF ;
+    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:569:1: entryRuleWhileCommand returns [EObject current=null] : iv_ruleWhileCommand= ruleWhileCommand EOF ;
     public final EObject entryRuleWhileCommand() throws RecognitionException {
         EObject current = null;
 
@@ -1344,17 +1380,17 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:556:2: (iv_ruleWhileCommand= ruleWhileCommand EOF )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:557:2: iv_ruleWhileCommand= ruleWhileCommand EOF
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:570:2: (iv_ruleWhileCommand= ruleWhileCommand EOF )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:571:2: iv_ruleWhileCommand= ruleWhileCommand EOF
             {
              newCompositeNode(grammarAccess.getWhileCommandRule()); 
-            pushFollow(FOLLOW_ruleWhileCommand_in_entryRuleWhileCommand1092);
+            pushFollow(FOLLOW_ruleWhileCommand_in_entryRuleWhileCommand1133);
             iv_ruleWhileCommand=ruleWhileCommand();
 
             state._fsp--;
 
              current =iv_ruleWhileCommand; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleWhileCommand1102); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleWhileCommand1143); 
 
             }
 
@@ -1372,7 +1408,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWhileCommand"
-    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:564:1: ruleWhileCommand returns [EObject current=null] : (otherlv_0= 'while' otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) ) otherlv_3= ')' ( (lv_whileBlock_4_0= ruleBlock ) ) ) ;
+    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:578:1: ruleWhileCommand returns [EObject current=null] : (otherlv_0= 'while' otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) ) otherlv_3= ')' ( (lv_whileBlock_4_0= ruleBlock ) ) ) ;
     public final EObject ruleWhileCommand() throws RecognitionException {
         EObject current = null;
 
@@ -1387,30 +1423,30 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:567:28: ( (otherlv_0= 'while' otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) ) otherlv_3= ')' ( (lv_whileBlock_4_0= ruleBlock ) ) ) )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:568:1: (otherlv_0= 'while' otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) ) otherlv_3= ')' ( (lv_whileBlock_4_0= ruleBlock ) ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:581:28: ( (otherlv_0= 'while' otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) ) otherlv_3= ')' ( (lv_whileBlock_4_0= ruleBlock ) ) ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:582:1: (otherlv_0= 'while' otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) ) otherlv_3= ')' ( (lv_whileBlock_4_0= ruleBlock ) ) )
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:568:1: (otherlv_0= 'while' otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) ) otherlv_3= ')' ( (lv_whileBlock_4_0= ruleBlock ) ) )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:568:3: otherlv_0= 'while' otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) ) otherlv_3= ')' ( (lv_whileBlock_4_0= ruleBlock ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:582:1: (otherlv_0= 'while' otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) ) otherlv_3= ')' ( (lv_whileBlock_4_0= ruleBlock ) ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:582:3: otherlv_0= 'while' otherlv_1= '(' ( (lv_expr_2_0= ruleExpr ) ) otherlv_3= ')' ( (lv_whileBlock_4_0= ruleBlock ) )
             {
-            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleWhileCommand1139); 
+            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleWhileCommand1180); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getWhileCommandAccess().getWhileKeyword_0());
                 
-            otherlv_1=(Token)match(input,11,FOLLOW_11_in_ruleWhileCommand1151); 
+            otherlv_1=(Token)match(input,11,FOLLOW_11_in_ruleWhileCommand1192); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getWhileCommandAccess().getLeftParenthesisKeyword_1());
                 
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:576:1: ( (lv_expr_2_0= ruleExpr ) )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:577:1: (lv_expr_2_0= ruleExpr )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:590:1: ( (lv_expr_2_0= ruleExpr ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:591:1: (lv_expr_2_0= ruleExpr )
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:577:1: (lv_expr_2_0= ruleExpr )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:578:3: lv_expr_2_0= ruleExpr
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:591:1: (lv_expr_2_0= ruleExpr )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:592:3: lv_expr_2_0= ruleExpr
             {
              
             	        newCompositeNode(grammarAccess.getWhileCommandAccess().getExprExprParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleExpr_in_ruleWhileCommand1172);
+            pushFollow(FOLLOW_ruleExpr_in_ruleWhileCommand1213);
             lv_expr_2_0=ruleExpr();
 
             state._fsp--;
@@ -1432,20 +1468,20 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,12,FOLLOW_12_in_ruleWhileCommand1184); 
+            otherlv_3=(Token)match(input,12,FOLLOW_12_in_ruleWhileCommand1225); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getWhileCommandAccess().getRightParenthesisKeyword_3());
                 
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:598:1: ( (lv_whileBlock_4_0= ruleBlock ) )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:599:1: (lv_whileBlock_4_0= ruleBlock )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:612:1: ( (lv_whileBlock_4_0= ruleBlock ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:613:1: (lv_whileBlock_4_0= ruleBlock )
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:599:1: (lv_whileBlock_4_0= ruleBlock )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:600:3: lv_whileBlock_4_0= ruleBlock
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:613:1: (lv_whileBlock_4_0= ruleBlock )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:614:3: lv_whileBlock_4_0= ruleBlock
             {
              
             	        newCompositeNode(grammarAccess.getWhileCommandAccess().getWhileBlockBlockParserRuleCall_4_0()); 
             	    
-            pushFollow(FOLLOW_ruleBlock_in_ruleWhileCommand1205);
+            pushFollow(FOLLOW_ruleBlock_in_ruleWhileCommand1246);
             lv_whileBlock_4_0=ruleBlock();
 
             state._fsp--;
@@ -1488,7 +1524,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleReturnCommand"
-    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:624:1: entryRuleReturnCommand returns [EObject current=null] : iv_ruleReturnCommand= ruleReturnCommand EOF ;
+    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:638:1: entryRuleReturnCommand returns [EObject current=null] : iv_ruleReturnCommand= ruleReturnCommand EOF ;
     public final EObject entryRuleReturnCommand() throws RecognitionException {
         EObject current = null;
 
@@ -1496,17 +1532,17 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:625:2: (iv_ruleReturnCommand= ruleReturnCommand EOF )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:626:2: iv_ruleReturnCommand= ruleReturnCommand EOF
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:639:2: (iv_ruleReturnCommand= ruleReturnCommand EOF )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:640:2: iv_ruleReturnCommand= ruleReturnCommand EOF
             {
              newCompositeNode(grammarAccess.getReturnCommandRule()); 
-            pushFollow(FOLLOW_ruleReturnCommand_in_entryRuleReturnCommand1241);
+            pushFollow(FOLLOW_ruleReturnCommand_in_entryRuleReturnCommand1282);
             iv_ruleReturnCommand=ruleReturnCommand();
 
             state._fsp--;
 
              current =iv_ruleReturnCommand; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleReturnCommand1251); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleReturnCommand1292); 
 
             }
 
@@ -1524,7 +1560,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleReturnCommand"
-    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:633:1: ruleReturnCommand returns [EObject current=null] : (otherlv_0= 'return' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= ';' ) ;
+    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:647:1: ruleReturnCommand returns [EObject current=null] : (otherlv_0= 'return' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= ';' ) ;
     public final EObject ruleReturnCommand() throws RecognitionException {
         EObject current = null;
 
@@ -1536,26 +1572,26 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:636:28: ( (otherlv_0= 'return' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= ';' ) )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:637:1: (otherlv_0= 'return' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= ';' )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:650:28: ( (otherlv_0= 'return' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= ';' ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:651:1: (otherlv_0= 'return' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= ';' )
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:637:1: (otherlv_0= 'return' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= ';' )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:637:3: otherlv_0= 'return' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= ';'
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:651:1: (otherlv_0= 'return' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= ';' )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:651:3: otherlv_0= 'return' ( (lv_expr_1_0= ruleExpr ) ) otherlv_2= ';'
             {
-            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleReturnCommand1288); 
+            otherlv_0=(Token)match(input,20,FOLLOW_20_in_ruleReturnCommand1329); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getReturnCommandAccess().getReturnKeyword_0());
                 
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:641:1: ( (lv_expr_1_0= ruleExpr ) )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:642:1: (lv_expr_1_0= ruleExpr )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:655:1: ( (lv_expr_1_0= ruleExpr ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:656:1: (lv_expr_1_0= ruleExpr )
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:642:1: (lv_expr_1_0= ruleExpr )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:643:3: lv_expr_1_0= ruleExpr
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:656:1: (lv_expr_1_0= ruleExpr )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:657:3: lv_expr_1_0= ruleExpr
             {
              
             	        newCompositeNode(grammarAccess.getReturnCommandAccess().getExprExprParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleExpr_in_ruleReturnCommand1309);
+            pushFollow(FOLLOW_ruleExpr_in_ruleReturnCommand1350);
             lv_expr_1_0=ruleExpr();
 
             state._fsp--;
@@ -1577,7 +1613,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,20,FOLLOW_20_in_ruleReturnCommand1321); 
+            otherlv_2=(Token)match(input,16,FOLLOW_16_in_ruleReturnCommand1362); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getReturnCommandAccess().getSemicolonKeyword_2());
                 
@@ -1602,7 +1638,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDeclaration"
-    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:671:1: entryRuleDeclaration returns [EObject current=null] : iv_ruleDeclaration= ruleDeclaration EOF ;
+    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:685:1: entryRuleDeclaration returns [EObject current=null] : iv_ruleDeclaration= ruleDeclaration EOF ;
     public final EObject entryRuleDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -1610,17 +1646,17 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:672:2: (iv_ruleDeclaration= ruleDeclaration EOF )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:673:2: iv_ruleDeclaration= ruleDeclaration EOF
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:686:2: (iv_ruleDeclaration= ruleDeclaration EOF )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:687:2: iv_ruleDeclaration= ruleDeclaration EOF
             {
              newCompositeNode(grammarAccess.getDeclarationRule()); 
-            pushFollow(FOLLOW_ruleDeclaration_in_entryRuleDeclaration1357);
+            pushFollow(FOLLOW_ruleDeclaration_in_entryRuleDeclaration1398);
             iv_ruleDeclaration=ruleDeclaration();
 
             state._fsp--;
 
              current =iv_ruleDeclaration; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDeclaration1367); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDeclaration1408); 
 
             }
 
@@ -1638,7 +1674,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDeclaration"
-    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:680:1: ruleDeclaration returns [EObject current=null] : ( ( (lv_type_0_0= ruleType ) ) ( (lv_value_1_0= ruleRDeclaration ) ) otherlv_2= ';' ) ;
+    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:694:1: ruleDeclaration returns [EObject current=null] : ( ( (lv_type_0_0= ruleType ) ) ( (lv_value_1_0= ruleRDeclaration ) ) otherlv_2= ';' ) ;
     public final EObject ruleDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -1651,22 +1687,22 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:683:28: ( ( ( (lv_type_0_0= ruleType ) ) ( (lv_value_1_0= ruleRDeclaration ) ) otherlv_2= ';' ) )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:684:1: ( ( (lv_type_0_0= ruleType ) ) ( (lv_value_1_0= ruleRDeclaration ) ) otherlv_2= ';' )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:697:28: ( ( ( (lv_type_0_0= ruleType ) ) ( (lv_value_1_0= ruleRDeclaration ) ) otherlv_2= ';' ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:698:1: ( ( (lv_type_0_0= ruleType ) ) ( (lv_value_1_0= ruleRDeclaration ) ) otherlv_2= ';' )
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:684:1: ( ( (lv_type_0_0= ruleType ) ) ( (lv_value_1_0= ruleRDeclaration ) ) otherlv_2= ';' )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:684:2: ( (lv_type_0_0= ruleType ) ) ( (lv_value_1_0= ruleRDeclaration ) ) otherlv_2= ';'
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:698:1: ( ( (lv_type_0_0= ruleType ) ) ( (lv_value_1_0= ruleRDeclaration ) ) otherlv_2= ';' )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:698:2: ( (lv_type_0_0= ruleType ) ) ( (lv_value_1_0= ruleRDeclaration ) ) otherlv_2= ';'
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:684:2: ( (lv_type_0_0= ruleType ) )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:685:1: (lv_type_0_0= ruleType )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:698:2: ( (lv_type_0_0= ruleType ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:699:1: (lv_type_0_0= ruleType )
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:685:1: (lv_type_0_0= ruleType )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:686:3: lv_type_0_0= ruleType
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:699:1: (lv_type_0_0= ruleType )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:700:3: lv_type_0_0= ruleType
             {
              
             	        newCompositeNode(grammarAccess.getDeclarationAccess().getTypeTypeParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleType_in_ruleDeclaration1413);
+            pushFollow(FOLLOW_ruleType_in_ruleDeclaration1454);
             lv_type_0_0=ruleType();
 
             state._fsp--;
@@ -1688,16 +1724,16 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:702:2: ( (lv_value_1_0= ruleRDeclaration ) )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:703:1: (lv_value_1_0= ruleRDeclaration )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:716:2: ( (lv_value_1_0= ruleRDeclaration ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:717:1: (lv_value_1_0= ruleRDeclaration )
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:703:1: (lv_value_1_0= ruleRDeclaration )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:704:3: lv_value_1_0= ruleRDeclaration
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:717:1: (lv_value_1_0= ruleRDeclaration )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:718:3: lv_value_1_0= ruleRDeclaration
             {
              
             	        newCompositeNode(grammarAccess.getDeclarationAccess().getValueRDeclarationParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleRDeclaration_in_ruleDeclaration1434);
+            pushFollow(FOLLOW_ruleRDeclaration_in_ruleDeclaration1475);
             lv_value_1_0=ruleRDeclaration();
 
             state._fsp--;
@@ -1719,7 +1755,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,20,FOLLOW_20_in_ruleDeclaration1446); 
+            otherlv_2=(Token)match(input,16,FOLLOW_16_in_ruleDeclaration1487); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getDeclarationAccess().getSemicolonKeyword_2());
                 
@@ -1744,7 +1780,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRDeclaration"
-    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:732:1: entryRuleRDeclaration returns [EObject current=null] : iv_ruleRDeclaration= ruleRDeclaration EOF ;
+    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:746:1: entryRuleRDeclaration returns [EObject current=null] : iv_ruleRDeclaration= ruleRDeclaration EOF ;
     public final EObject entryRuleRDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -1752,17 +1788,17 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:733:2: (iv_ruleRDeclaration= ruleRDeclaration EOF )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:734:2: iv_ruleRDeclaration= ruleRDeclaration EOF
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:747:2: (iv_ruleRDeclaration= ruleRDeclaration EOF )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:748:2: iv_ruleRDeclaration= ruleRDeclaration EOF
             {
              newCompositeNode(grammarAccess.getRDeclarationRule()); 
-            pushFollow(FOLLOW_ruleRDeclaration_in_entryRuleRDeclaration1482);
+            pushFollow(FOLLOW_ruleRDeclaration_in_entryRuleRDeclaration1523);
             iv_ruleRDeclaration=ruleRDeclaration();
 
             state._fsp--;
 
              current =iv_ruleRDeclaration; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRDeclaration1492); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRDeclaration1533); 
 
             }
 
@@ -1780,7 +1816,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRDeclaration"
-    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:741:1: ruleRDeclaration returns [EObject current=null] : ( ( (lv_id_0_0= ruleIDDeclaration ) ) ( () otherlv_2= ',' ( (lv_next_3_0= ruleRDeclaration ) ) )? ) ;
+    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:755:1: ruleRDeclaration returns [EObject current=null] : ( ( (lv_id_0_0= ruleIDDeclaration ) ) ( () otherlv_2= ',' ( (lv_next_3_0= ruleRDeclaration ) ) )? ) ;
     public final EObject ruleRDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -1793,22 +1829,22 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:744:28: ( ( ( (lv_id_0_0= ruleIDDeclaration ) ) ( () otherlv_2= ',' ( (lv_next_3_0= ruleRDeclaration ) ) )? ) )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:745:1: ( ( (lv_id_0_0= ruleIDDeclaration ) ) ( () otherlv_2= ',' ( (lv_next_3_0= ruleRDeclaration ) ) )? )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:758:28: ( ( ( (lv_id_0_0= ruleIDDeclaration ) ) ( () otherlv_2= ',' ( (lv_next_3_0= ruleRDeclaration ) ) )? ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:759:1: ( ( (lv_id_0_0= ruleIDDeclaration ) ) ( () otherlv_2= ',' ( (lv_next_3_0= ruleRDeclaration ) ) )? )
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:745:1: ( ( (lv_id_0_0= ruleIDDeclaration ) ) ( () otherlv_2= ',' ( (lv_next_3_0= ruleRDeclaration ) ) )? )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:745:2: ( (lv_id_0_0= ruleIDDeclaration ) ) ( () otherlv_2= ',' ( (lv_next_3_0= ruleRDeclaration ) ) )?
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:759:1: ( ( (lv_id_0_0= ruleIDDeclaration ) ) ( () otherlv_2= ',' ( (lv_next_3_0= ruleRDeclaration ) ) )? )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:759:2: ( (lv_id_0_0= ruleIDDeclaration ) ) ( () otherlv_2= ',' ( (lv_next_3_0= ruleRDeclaration ) ) )?
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:745:2: ( (lv_id_0_0= ruleIDDeclaration ) )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:746:1: (lv_id_0_0= ruleIDDeclaration )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:759:2: ( (lv_id_0_0= ruleIDDeclaration ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:760:1: (lv_id_0_0= ruleIDDeclaration )
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:746:1: (lv_id_0_0= ruleIDDeclaration )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:747:3: lv_id_0_0= ruleIDDeclaration
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:760:1: (lv_id_0_0= ruleIDDeclaration )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:761:3: lv_id_0_0= ruleIDDeclaration
             {
              
             	        newCompositeNode(grammarAccess.getRDeclarationAccess().getIdIDDeclarationParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleIDDeclaration_in_ruleRDeclaration1538);
+            pushFollow(FOLLOW_ruleIDDeclaration_in_ruleRDeclaration1579);
             lv_id_0_0=ruleIDDeclaration();
 
             state._fsp--;
@@ -1830,7 +1866,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:763:2: ( () otherlv_2= ',' ( (lv_next_3_0= ruleRDeclaration ) ) )?
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:777:2: ( () otherlv_2= ',' ( (lv_next_3_0= ruleRDeclaration ) ) )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1839,10 +1875,10 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
             }
             switch (alt9) {
                 case 1 :
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:763:3: () otherlv_2= ',' ( (lv_next_3_0= ruleRDeclaration ) )
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:777:3: () otherlv_2= ',' ( (lv_next_3_0= ruleRDeclaration ) )
                     {
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:763:3: ()
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:764:5: 
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:777:3: ()
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:778:5: 
                     {
 
                             current = forceCreateModelElementAndSet(
@@ -1852,20 +1888,20 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,13,FOLLOW_13_in_ruleRDeclaration1560); 
+                    otherlv_2=(Token)match(input,13,FOLLOW_13_in_ruleRDeclaration1601); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getRDeclarationAccess().getCommaKeyword_1_1());
                         
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:773:1: ( (lv_next_3_0= ruleRDeclaration ) )
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:774:1: (lv_next_3_0= ruleRDeclaration )
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:787:1: ( (lv_next_3_0= ruleRDeclaration ) )
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:788:1: (lv_next_3_0= ruleRDeclaration )
                     {
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:774:1: (lv_next_3_0= ruleRDeclaration )
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:775:3: lv_next_3_0= ruleRDeclaration
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:788:1: (lv_next_3_0= ruleRDeclaration )
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:789:3: lv_next_3_0= ruleRDeclaration
                     {
                      
                     	        newCompositeNode(grammarAccess.getRDeclarationAccess().getNextRDeclarationParserRuleCall_1_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleRDeclaration_in_ruleRDeclaration1581);
+                    pushFollow(FOLLOW_ruleRDeclaration_in_ruleRDeclaration1622);
                     lv_next_3_0=ruleRDeclaration();
 
                     state._fsp--;
@@ -1914,7 +1950,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIDDeclaration"
-    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:799:1: entryRuleIDDeclaration returns [EObject current=null] : iv_ruleIDDeclaration= ruleIDDeclaration EOF ;
+    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:813:1: entryRuleIDDeclaration returns [EObject current=null] : iv_ruleIDDeclaration= ruleIDDeclaration EOF ;
     public final EObject entryRuleIDDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -1922,17 +1958,17 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:800:2: (iv_ruleIDDeclaration= ruleIDDeclaration EOF )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:801:2: iv_ruleIDDeclaration= ruleIDDeclaration EOF
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:814:2: (iv_ruleIDDeclaration= ruleIDDeclaration EOF )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:815:2: iv_ruleIDDeclaration= ruleIDDeclaration EOF
             {
              newCompositeNode(grammarAccess.getIDDeclarationRule()); 
-            pushFollow(FOLLOW_ruleIDDeclaration_in_entryRuleIDDeclaration1619);
+            pushFollow(FOLLOW_ruleIDDeclaration_in_entryRuleIDDeclaration1660);
             iv_ruleIDDeclaration=ruleIDDeclaration();
 
             state._fsp--;
 
              current =iv_ruleIDDeclaration; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleIDDeclaration1629); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleIDDeclaration1670); 
 
             }
 
@@ -1950,7 +1986,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIDDeclaration"
-    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:808:1: ruleIDDeclaration returns [EObject current=null] : ( ( (lv_id_0_0= RULE_ID ) ) (otherlv_1= '=' ( (lv_value_2_0= ruleExpr ) ) )? ) ;
+    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:822:1: ruleIDDeclaration returns [EObject current=null] : ( ( (lv_id_0_0= RULE_ID ) ) (otherlv_1= '=' ( (lv_value_2_0= ruleExpr ) ) )? ) ;
     public final EObject ruleIDDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -1962,19 +1998,19 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:811:28: ( ( ( (lv_id_0_0= RULE_ID ) ) (otherlv_1= '=' ( (lv_value_2_0= ruleExpr ) ) )? ) )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:812:1: ( ( (lv_id_0_0= RULE_ID ) ) (otherlv_1= '=' ( (lv_value_2_0= ruleExpr ) ) )? )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:825:28: ( ( ( (lv_id_0_0= RULE_ID ) ) (otherlv_1= '=' ( (lv_value_2_0= ruleExpr ) ) )? ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:826:1: ( ( (lv_id_0_0= RULE_ID ) ) (otherlv_1= '=' ( (lv_value_2_0= ruleExpr ) ) )? )
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:812:1: ( ( (lv_id_0_0= RULE_ID ) ) (otherlv_1= '=' ( (lv_value_2_0= ruleExpr ) ) )? )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:812:2: ( (lv_id_0_0= RULE_ID ) ) (otherlv_1= '=' ( (lv_value_2_0= ruleExpr ) ) )?
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:826:1: ( ( (lv_id_0_0= RULE_ID ) ) (otherlv_1= '=' ( (lv_value_2_0= ruleExpr ) ) )? )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:826:2: ( (lv_id_0_0= RULE_ID ) ) (otherlv_1= '=' ( (lv_value_2_0= ruleExpr ) ) )?
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:812:2: ( (lv_id_0_0= RULE_ID ) )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:813:1: (lv_id_0_0= RULE_ID )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:826:2: ( (lv_id_0_0= RULE_ID ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:827:1: (lv_id_0_0= RULE_ID )
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:813:1: (lv_id_0_0= RULE_ID )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:814:3: lv_id_0_0= RULE_ID
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:827:1: (lv_id_0_0= RULE_ID )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:828:3: lv_id_0_0= RULE_ID
             {
-            lv_id_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleIDDeclaration1671); 
+            lv_id_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleIDDeclaration1712); 
 
             			newLeafNode(lv_id_0_0, grammarAccess.getIDDeclarationAccess().getIdIDTerminalRuleCall_0_0()); 
             		
@@ -1994,7 +2030,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:830:2: (otherlv_1= '=' ( (lv_value_2_0= ruleExpr ) ) )?
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:844:2: (otherlv_1= '=' ( (lv_value_2_0= ruleExpr ) ) )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -2003,22 +2039,22 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
             }
             switch (alt10) {
                 case 1 :
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:830:4: otherlv_1= '=' ( (lv_value_2_0= ruleExpr ) )
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:844:4: otherlv_1= '=' ( (lv_value_2_0= ruleExpr ) )
                     {
-                    otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleIDDeclaration1689); 
+                    otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleIDDeclaration1730); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getIDDeclarationAccess().getEqualsSignKeyword_1_0());
                         
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:834:1: ( (lv_value_2_0= ruleExpr ) )
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:835:1: (lv_value_2_0= ruleExpr )
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:848:1: ( (lv_value_2_0= ruleExpr ) )
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:849:1: (lv_value_2_0= ruleExpr )
                     {
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:835:1: (lv_value_2_0= ruleExpr )
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:836:3: lv_value_2_0= ruleExpr
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:849:1: (lv_value_2_0= ruleExpr )
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:850:3: lv_value_2_0= ruleExpr
                     {
                      
                     	        newCompositeNode(grammarAccess.getIDDeclarationAccess().getValueExprParserRuleCall_1_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleExpr_in_ruleIDDeclaration1710);
+                    pushFollow(FOLLOW_ruleExpr_in_ruleIDDeclaration1751);
                     lv_value_2_0=ruleExpr();
 
                     state._fsp--;
@@ -2067,7 +2103,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleExpr"
-    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:860:1: entryRuleExpr returns [EObject current=null] : iv_ruleExpr= ruleExpr EOF ;
+    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:874:1: entryRuleExpr returns [EObject current=null] : iv_ruleExpr= ruleExpr EOF ;
     public final EObject entryRuleExpr() throws RecognitionException {
         EObject current = null;
 
@@ -2075,17 +2111,17 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:861:2: (iv_ruleExpr= ruleExpr EOF )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:862:2: iv_ruleExpr= ruleExpr EOF
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:875:2: (iv_ruleExpr= ruleExpr EOF )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:876:2: iv_ruleExpr= ruleExpr EOF
             {
              newCompositeNode(grammarAccess.getExprRule()); 
-            pushFollow(FOLLOW_ruleExpr_in_entryRuleExpr1748);
+            pushFollow(FOLLOW_ruleExpr_in_entryRuleExpr1789);
             iv_ruleExpr=ruleExpr();
 
             state._fsp--;
 
              current =iv_ruleExpr; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExpr1758); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExpr1799); 
 
             }
 
@@ -2103,7 +2139,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExpr"
-    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:869:1: ruleExpr returns [EObject current=null] : (this_Term_0= ruleTerm ( () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleTerm ) ) )* ) ;
+    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:883:1: ruleExpr returns [EObject current=null] : (this_Term_0= ruleTerm ( () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleTerm ) ) )* ) ;
     public final EObject ruleExpr() throws RecognitionException {
         EObject current = null;
 
@@ -2117,16 +2153,16 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:872:28: ( (this_Term_0= ruleTerm ( () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleTerm ) ) )* ) )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:873:1: (this_Term_0= ruleTerm ( () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleTerm ) ) )* )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:886:28: ( (this_Term_0= ruleTerm ( () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleTerm ) ) )* ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:887:1: (this_Term_0= ruleTerm ( () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleTerm ) ) )* )
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:873:1: (this_Term_0= ruleTerm ( () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleTerm ) ) )* )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:874:5: this_Term_0= ruleTerm ( () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleTerm ) ) )*
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:887:1: (this_Term_0= ruleTerm ( () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleTerm ) ) )* )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:888:5: this_Term_0= ruleTerm ( () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleTerm ) ) )*
             {
              
                     newCompositeNode(grammarAccess.getExprAccess().getTermParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleTerm_in_ruleExpr1805);
+            pushFollow(FOLLOW_ruleTerm_in_ruleExpr1846);
             this_Term_0=ruleTerm();
 
             state._fsp--;
@@ -2135,7 +2171,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
                     current = this_Term_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:882:1: ( () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleTerm ) ) )*
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:896:1: ( () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleTerm ) ) )*
             loop12:
             do {
                 int alt12=2;
@@ -2148,10 +2184,10 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
                 switch (alt12) {
             	case 1 :
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:882:2: () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleTerm ) )
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:896:2: () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleTerm ) )
             	    {
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:882:2: ()
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:883:5: 
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:896:2: ()
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:897:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
@@ -2161,13 +2197,13 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:888:2: ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) )
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:889:1: ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) )
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:902:2: ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) )
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:903:1: ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) )
             	    {
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:889:1: ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) )
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:890:1: (lv_operator_2_1= '+' | lv_operator_2_2= '-' )
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:903:1: ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) )
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:904:1: (lv_operator_2_1= '+' | lv_operator_2_2= '-' )
             	    {
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:890:1: (lv_operator_2_1= '+' | lv_operator_2_2= '-' )
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:904:1: (lv_operator_2_1= '+' | lv_operator_2_2= '-' )
             	    int alt11=2;
             	    int LA11_0 = input.LA(1);
 
@@ -2185,9 +2221,9 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
             	    }
             	    switch (alt11) {
             	        case 1 :
-            	            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:891:3: lv_operator_2_1= '+'
+            	            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:905:3: lv_operator_2_1= '+'
             	            {
-            	            lv_operator_2_1=(Token)match(input,22,FOLLOW_22_in_ruleExpr1834); 
+            	            lv_operator_2_1=(Token)match(input,22,FOLLOW_22_in_ruleExpr1875); 
 
             	                    newLeafNode(lv_operator_2_1, grammarAccess.getExprAccess().getOperatorPlusSignKeyword_1_1_0_0());
             	                
@@ -2201,9 +2237,9 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:903:8: lv_operator_2_2= '-'
+            	            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:917:8: lv_operator_2_2= '-'
             	            {
-            	            lv_operator_2_2=(Token)match(input,23,FOLLOW_23_in_ruleExpr1863); 
+            	            lv_operator_2_2=(Token)match(input,23,FOLLOW_23_in_ruleExpr1904); 
 
             	                    newLeafNode(lv_operator_2_2, grammarAccess.getExprAccess().getOperatorHyphenMinusKeyword_1_1_0_1());
             	                
@@ -2225,16 +2261,16 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:918:2: ( (lv_right_3_0= ruleTerm ) )
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:919:1: (lv_right_3_0= ruleTerm )
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:932:2: ( (lv_right_3_0= ruleTerm ) )
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:933:1: (lv_right_3_0= ruleTerm )
             	    {
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:919:1: (lv_right_3_0= ruleTerm )
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:920:3: lv_right_3_0= ruleTerm
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:933:1: (lv_right_3_0= ruleTerm )
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:934:3: lv_right_3_0= ruleTerm
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getExprAccess().getRightTermParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleTerm_in_ruleExpr1900);
+            	    pushFollow(FOLLOW_ruleTerm_in_ruleExpr1941);
             	    lv_right_3_0=ruleTerm();
 
             	    state._fsp--;
@@ -2286,7 +2322,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTerm"
-    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:944:1: entryRuleTerm returns [EObject current=null] : iv_ruleTerm= ruleTerm EOF ;
+    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:958:1: entryRuleTerm returns [EObject current=null] : iv_ruleTerm= ruleTerm EOF ;
     public final EObject entryRuleTerm() throws RecognitionException {
         EObject current = null;
 
@@ -2294,17 +2330,17 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:945:2: (iv_ruleTerm= ruleTerm EOF )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:946:2: iv_ruleTerm= ruleTerm EOF
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:959:2: (iv_ruleTerm= ruleTerm EOF )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:960:2: iv_ruleTerm= ruleTerm EOF
             {
              newCompositeNode(grammarAccess.getTermRule()); 
-            pushFollow(FOLLOW_ruleTerm_in_entryRuleTerm1938);
+            pushFollow(FOLLOW_ruleTerm_in_entryRuleTerm1979);
             iv_ruleTerm=ruleTerm();
 
             state._fsp--;
 
              current =iv_ruleTerm; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTerm1948); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTerm1989); 
 
             }
 
@@ -2322,7 +2358,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTerm"
-    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:953:1: ruleTerm returns [EObject current=null] : (this_Factor_0= ruleFactor ( () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' ) ) ) ( (lv_right_3_0= ruleFactor ) ) )* ) ;
+    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:967:1: ruleTerm returns [EObject current=null] : (this_Factor_0= ruleFactor ( () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' ) ) ) ( (lv_right_3_0= ruleFactor ) ) )* ) ;
     public final EObject ruleTerm() throws RecognitionException {
         EObject current = null;
 
@@ -2336,16 +2372,16 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:956:28: ( (this_Factor_0= ruleFactor ( () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' ) ) ) ( (lv_right_3_0= ruleFactor ) ) )* ) )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:957:1: (this_Factor_0= ruleFactor ( () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' ) ) ) ( (lv_right_3_0= ruleFactor ) ) )* )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:970:28: ( (this_Factor_0= ruleFactor ( () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' ) ) ) ( (lv_right_3_0= ruleFactor ) ) )* ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:971:1: (this_Factor_0= ruleFactor ( () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' ) ) ) ( (lv_right_3_0= ruleFactor ) ) )* )
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:957:1: (this_Factor_0= ruleFactor ( () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' ) ) ) ( (lv_right_3_0= ruleFactor ) ) )* )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:958:5: this_Factor_0= ruleFactor ( () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' ) ) ) ( (lv_right_3_0= ruleFactor ) ) )*
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:971:1: (this_Factor_0= ruleFactor ( () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' ) ) ) ( (lv_right_3_0= ruleFactor ) ) )* )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:972:5: this_Factor_0= ruleFactor ( () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' ) ) ) ( (lv_right_3_0= ruleFactor ) ) )*
             {
              
                     newCompositeNode(grammarAccess.getTermAccess().getFactorParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleFactor_in_ruleTerm1995);
+            pushFollow(FOLLOW_ruleFactor_in_ruleTerm2036);
             this_Factor_0=ruleFactor();
 
             state._fsp--;
@@ -2354,7 +2390,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
                     current = this_Factor_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:966:1: ( () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' ) ) ) ( (lv_right_3_0= ruleFactor ) ) )*
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:980:1: ( () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' ) ) ) ( (lv_right_3_0= ruleFactor ) ) )*
             loop14:
             do {
                 int alt14=2;
@@ -2367,10 +2403,10 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:966:2: () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' ) ) ) ( (lv_right_3_0= ruleFactor ) )
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:980:2: () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' ) ) ) ( (lv_right_3_0= ruleFactor ) )
             	    {
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:966:2: ()
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:967:5: 
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:980:2: ()
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:981:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
@@ -2380,13 +2416,13 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:972:2: ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' ) ) )
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:973:1: ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' ) )
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:986:2: ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' ) ) )
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:987:1: ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' ) )
             	    {
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:973:1: ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' ) )
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:974:1: (lv_operator_2_1= '*' | lv_operator_2_2= '/' )
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:987:1: ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' ) )
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:988:1: (lv_operator_2_1= '*' | lv_operator_2_2= '/' )
             	    {
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:974:1: (lv_operator_2_1= '*' | lv_operator_2_2= '/' )
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:988:1: (lv_operator_2_1= '*' | lv_operator_2_2= '/' )
             	    int alt13=2;
             	    int LA13_0 = input.LA(1);
 
@@ -2404,9 +2440,9 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
             	    }
             	    switch (alt13) {
             	        case 1 :
-            	            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:975:3: lv_operator_2_1= '*'
+            	            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:989:3: lv_operator_2_1= '*'
             	            {
-            	            lv_operator_2_1=(Token)match(input,24,FOLLOW_24_in_ruleTerm2024); 
+            	            lv_operator_2_1=(Token)match(input,24,FOLLOW_24_in_ruleTerm2065); 
 
             	                    newLeafNode(lv_operator_2_1, grammarAccess.getTermAccess().getOperatorAsteriskKeyword_1_1_0_0());
             	                
@@ -2420,9 +2456,9 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:987:8: lv_operator_2_2= '/'
+            	            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1001:8: lv_operator_2_2= '/'
             	            {
-            	            lv_operator_2_2=(Token)match(input,25,FOLLOW_25_in_ruleTerm2053); 
+            	            lv_operator_2_2=(Token)match(input,25,FOLLOW_25_in_ruleTerm2094); 
 
             	                    newLeafNode(lv_operator_2_2, grammarAccess.getTermAccess().getOperatorSolidusKeyword_1_1_0_1());
             	                
@@ -2444,16 +2480,16 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1002:2: ( (lv_right_3_0= ruleFactor ) )
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1003:1: (lv_right_3_0= ruleFactor )
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1016:2: ( (lv_right_3_0= ruleFactor ) )
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1017:1: (lv_right_3_0= ruleFactor )
             	    {
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1003:1: (lv_right_3_0= ruleFactor )
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1004:3: lv_right_3_0= ruleFactor
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1017:1: (lv_right_3_0= ruleFactor )
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1018:3: lv_right_3_0= ruleFactor
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getTermAccess().getRightFactorParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleFactor_in_ruleTerm2090);
+            	    pushFollow(FOLLOW_ruleFactor_in_ruleTerm2131);
             	    lv_right_3_0=ruleFactor();
 
             	    state._fsp--;
@@ -2505,7 +2541,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFactor"
-    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1028:1: entryRuleFactor returns [EObject current=null] : iv_ruleFactor= ruleFactor EOF ;
+    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1042:1: entryRuleFactor returns [EObject current=null] : iv_ruleFactor= ruleFactor EOF ;
     public final EObject entryRuleFactor() throws RecognitionException {
         EObject current = null;
 
@@ -2513,17 +2549,17 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1029:2: (iv_ruleFactor= ruleFactor EOF )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1030:2: iv_ruleFactor= ruleFactor EOF
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1043:2: (iv_ruleFactor= ruleFactor EOF )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1044:2: iv_ruleFactor= ruleFactor EOF
             {
              newCompositeNode(grammarAccess.getFactorRule()); 
-            pushFollow(FOLLOW_ruleFactor_in_entryRuleFactor2128);
+            pushFollow(FOLLOW_ruleFactor_in_entryRuleFactor2169);
             iv_ruleFactor=ruleFactor();
 
             state._fsp--;
 
              current =iv_ruleFactor; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFactor2138); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFactor2179); 
 
             }
 
@@ -2541,7 +2577,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFactor"
-    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1037:1: ruleFactor returns [EObject current=null] : (this_Atomic_0= ruleAtomic ( () ( (lv_operator_2_0= '^' ) ) ( (lv_right_3_0= ruleAtomic ) ) )* ) ;
+    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1051:1: ruleFactor returns [EObject current=null] : (this_Atomic_0= ruleAtomic ( () ( (lv_operator_2_0= '^' ) ) ( (lv_right_3_0= ruleAtomic ) ) )* ) ;
     public final EObject ruleFactor() throws RecognitionException {
         EObject current = null;
 
@@ -2554,16 +2590,16 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1040:28: ( (this_Atomic_0= ruleAtomic ( () ( (lv_operator_2_0= '^' ) ) ( (lv_right_3_0= ruleAtomic ) ) )* ) )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1041:1: (this_Atomic_0= ruleAtomic ( () ( (lv_operator_2_0= '^' ) ) ( (lv_right_3_0= ruleAtomic ) ) )* )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1054:28: ( (this_Atomic_0= ruleAtomic ( () ( (lv_operator_2_0= '^' ) ) ( (lv_right_3_0= ruleAtomic ) ) )* ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1055:1: (this_Atomic_0= ruleAtomic ( () ( (lv_operator_2_0= '^' ) ) ( (lv_right_3_0= ruleAtomic ) ) )* )
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1041:1: (this_Atomic_0= ruleAtomic ( () ( (lv_operator_2_0= '^' ) ) ( (lv_right_3_0= ruleAtomic ) ) )* )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1042:5: this_Atomic_0= ruleAtomic ( () ( (lv_operator_2_0= '^' ) ) ( (lv_right_3_0= ruleAtomic ) ) )*
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1055:1: (this_Atomic_0= ruleAtomic ( () ( (lv_operator_2_0= '^' ) ) ( (lv_right_3_0= ruleAtomic ) ) )* )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1056:5: this_Atomic_0= ruleAtomic ( () ( (lv_operator_2_0= '^' ) ) ( (lv_right_3_0= ruleAtomic ) ) )*
             {
              
                     newCompositeNode(grammarAccess.getFactorAccess().getAtomicParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleAtomic_in_ruleFactor2185);
+            pushFollow(FOLLOW_ruleAtomic_in_ruleFactor2226);
             this_Atomic_0=ruleAtomic();
 
             state._fsp--;
@@ -2572,7 +2608,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
                     current = this_Atomic_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1050:1: ( () ( (lv_operator_2_0= '^' ) ) ( (lv_right_3_0= ruleAtomic ) ) )*
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1064:1: ( () ( (lv_operator_2_0= '^' ) ) ( (lv_right_3_0= ruleAtomic ) ) )*
             loop15:
             do {
                 int alt15=2;
@@ -2585,10 +2621,10 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
                 switch (alt15) {
             	case 1 :
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1050:2: () ( (lv_operator_2_0= '^' ) ) ( (lv_right_3_0= ruleAtomic ) )
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1064:2: () ( (lv_operator_2_0= '^' ) ) ( (lv_right_3_0= ruleAtomic ) )
             	    {
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1050:2: ()
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1051:5: 
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1064:2: ()
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1065:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
@@ -2598,13 +2634,13 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1056:2: ( (lv_operator_2_0= '^' ) )
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1057:1: (lv_operator_2_0= '^' )
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1070:2: ( (lv_operator_2_0= '^' ) )
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1071:1: (lv_operator_2_0= '^' )
             	    {
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1057:1: (lv_operator_2_0= '^' )
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1058:3: lv_operator_2_0= '^'
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1071:1: (lv_operator_2_0= '^' )
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1072:3: lv_operator_2_0= '^'
             	    {
-            	    lv_operator_2_0=(Token)match(input,26,FOLLOW_26_in_ruleFactor2212); 
+            	    lv_operator_2_0=(Token)match(input,26,FOLLOW_26_in_ruleFactor2253); 
 
             	            newLeafNode(lv_operator_2_0, grammarAccess.getFactorAccess().getOperatorCircumflexAccentKeyword_1_1_0());
             	        
@@ -2620,16 +2656,16 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1071:2: ( (lv_right_3_0= ruleAtomic ) )
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1072:1: (lv_right_3_0= ruleAtomic )
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1085:2: ( (lv_right_3_0= ruleAtomic ) )
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1086:1: (lv_right_3_0= ruleAtomic )
             	    {
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1072:1: (lv_right_3_0= ruleAtomic )
-            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1073:3: lv_right_3_0= ruleAtomic
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1086:1: (lv_right_3_0= ruleAtomic )
+            	    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1087:3: lv_right_3_0= ruleAtomic
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getFactorAccess().getRightAtomicParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleAtomic_in_ruleFactor2246);
+            	    pushFollow(FOLLOW_ruleAtomic_in_ruleFactor2287);
             	    lv_right_3_0=ruleAtomic();
 
             	    state._fsp--;
@@ -2681,7 +2717,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAtomic"
-    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1097:1: entryRuleAtomic returns [EObject current=null] : iv_ruleAtomic= ruleAtomic EOF ;
+    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1111:1: entryRuleAtomic returns [EObject current=null] : iv_ruleAtomic= ruleAtomic EOF ;
     public final EObject entryRuleAtomic() throws RecognitionException {
         EObject current = null;
 
@@ -2689,17 +2725,17 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1098:2: (iv_ruleAtomic= ruleAtomic EOF )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1099:2: iv_ruleAtomic= ruleAtomic EOF
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1112:2: (iv_ruleAtomic= ruleAtomic EOF )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1113:2: iv_ruleAtomic= ruleAtomic EOF
             {
              newCompositeNode(grammarAccess.getAtomicRule()); 
-            pushFollow(FOLLOW_ruleAtomic_in_entryRuleAtomic2284);
+            pushFollow(FOLLOW_ruleAtomic_in_entryRuleAtomic2325);
             iv_ruleAtomic=ruleAtomic();
 
             state._fsp--;
 
              current =iv_ruleAtomic; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAtomic2294); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAtomic2335); 
 
             }
 
@@ -2717,7 +2753,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAtomic"
-    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1106:1: ruleAtomic returns [EObject current=null] : ( (otherlv_0= '(' ( (lv_value_1_0= ruleExpr ) ) otherlv_2= ')' ) | ( (lv_result_3_0= ruleElement ) ) ) ;
+    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1120:1: ruleAtomic returns [EObject current=null] : ( (otherlv_0= '(' ( (lv_value_1_0= ruleExpr ) ) otherlv_2= ')' ) | ( (lv_result_3_0= ruleElement ) ) ) ;
     public final EObject ruleAtomic() throws RecognitionException {
         EObject current = null;
 
@@ -2731,10 +2767,10 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1109:28: ( ( (otherlv_0= '(' ( (lv_value_1_0= ruleExpr ) ) otherlv_2= ')' ) | ( (lv_result_3_0= ruleElement ) ) ) )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1110:1: ( (otherlv_0= '(' ( (lv_value_1_0= ruleExpr ) ) otherlv_2= ')' ) | ( (lv_result_3_0= ruleElement ) ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1123:28: ( ( (otherlv_0= '(' ( (lv_value_1_0= ruleExpr ) ) otherlv_2= ')' ) | ( (lv_result_3_0= ruleElement ) ) ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1124:1: ( (otherlv_0= '(' ( (lv_value_1_0= ruleExpr ) ) otherlv_2= ')' ) | ( (lv_result_3_0= ruleElement ) ) )
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1110:1: ( (otherlv_0= '(' ( (lv_value_1_0= ruleExpr ) ) otherlv_2= ')' ) | ( (lv_result_3_0= ruleElement ) ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1124:1: ( (otherlv_0= '(' ( (lv_value_1_0= ruleExpr ) ) otherlv_2= ')' ) | ( (lv_result_3_0= ruleElement ) ) )
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -2752,25 +2788,25 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
             }
             switch (alt16) {
                 case 1 :
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1110:2: (otherlv_0= '(' ( (lv_value_1_0= ruleExpr ) ) otherlv_2= ')' )
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1124:2: (otherlv_0= '(' ( (lv_value_1_0= ruleExpr ) ) otherlv_2= ')' )
                     {
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1110:2: (otherlv_0= '(' ( (lv_value_1_0= ruleExpr ) ) otherlv_2= ')' )
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1110:4: otherlv_0= '(' ( (lv_value_1_0= ruleExpr ) ) otherlv_2= ')'
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1124:2: (otherlv_0= '(' ( (lv_value_1_0= ruleExpr ) ) otherlv_2= ')' )
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1124:4: otherlv_0= '(' ( (lv_value_1_0= ruleExpr ) ) otherlv_2= ')'
                     {
-                    otherlv_0=(Token)match(input,11,FOLLOW_11_in_ruleAtomic2332); 
+                    otherlv_0=(Token)match(input,11,FOLLOW_11_in_ruleAtomic2373); 
 
                         	newLeafNode(otherlv_0, grammarAccess.getAtomicAccess().getLeftParenthesisKeyword_0_0());
                         
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1114:1: ( (lv_value_1_0= ruleExpr ) )
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1115:1: (lv_value_1_0= ruleExpr )
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1128:1: ( (lv_value_1_0= ruleExpr ) )
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1129:1: (lv_value_1_0= ruleExpr )
                     {
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1115:1: (lv_value_1_0= ruleExpr )
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1116:3: lv_value_1_0= ruleExpr
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1129:1: (lv_value_1_0= ruleExpr )
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1130:3: lv_value_1_0= ruleExpr
                     {
                      
                     	        newCompositeNode(grammarAccess.getAtomicAccess().getValueExprParserRuleCall_0_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleExpr_in_ruleAtomic2353);
+                    pushFollow(FOLLOW_ruleExpr_in_ruleAtomic2394);
                     lv_value_1_0=ruleExpr();
 
                     state._fsp--;
@@ -2792,7 +2828,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleAtomic2365); 
+                    otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleAtomic2406); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getAtomicAccess().getRightParenthesisKeyword_0_2());
                         
@@ -2803,18 +2839,18 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1137:6: ( (lv_result_3_0= ruleElement ) )
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1151:6: ( (lv_result_3_0= ruleElement ) )
                     {
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1137:6: ( (lv_result_3_0= ruleElement ) )
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1138:1: (lv_result_3_0= ruleElement )
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1151:6: ( (lv_result_3_0= ruleElement ) )
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1152:1: (lv_result_3_0= ruleElement )
                     {
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1138:1: (lv_result_3_0= ruleElement )
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1139:3: lv_result_3_0= ruleElement
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1152:1: (lv_result_3_0= ruleElement )
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1153:3: lv_result_3_0= ruleElement
                     {
                      
                     	        newCompositeNode(grammarAccess.getAtomicAccess().getResultElementParserRuleCall_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleElement_in_ruleAtomic2393);
+                    pushFollow(FOLLOW_ruleElement_in_ruleAtomic2434);
                     lv_result_3_0=ruleElement();
 
                     state._fsp--;
@@ -2860,7 +2896,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleElement"
-    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1163:1: entryRuleElement returns [String current=null] : iv_ruleElement= ruleElement EOF ;
+    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1177:1: entryRuleElement returns [String current=null] : iv_ruleElement= ruleElement EOF ;
     public final String entryRuleElement() throws RecognitionException {
         String current = null;
 
@@ -2868,17 +2904,17 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1164:2: (iv_ruleElement= ruleElement EOF )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1165:2: iv_ruleElement= ruleElement EOF
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1178:2: (iv_ruleElement= ruleElement EOF )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1179:2: iv_ruleElement= ruleElement EOF
             {
              newCompositeNode(grammarAccess.getElementRule()); 
-            pushFollow(FOLLOW_ruleElement_in_entryRuleElement2430);
+            pushFollow(FOLLOW_ruleElement_in_entryRuleElement2471);
             iv_ruleElement=ruleElement();
 
             state._fsp--;
 
              current =iv_ruleElement.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleElement2441); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleElement2482); 
 
             }
 
@@ -2896,7 +2932,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleElement"
-    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1172:1: ruleElement returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT | this_ID_1= RULE_ID ) ;
+    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1186:1: ruleElement returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT | this_ID_1= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleElement() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2906,10 +2942,10 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1175:28: ( (this_INT_0= RULE_INT | this_ID_1= RULE_ID ) )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1176:1: (this_INT_0= RULE_INT | this_ID_1= RULE_ID )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1189:28: ( (this_INT_0= RULE_INT | this_ID_1= RULE_ID ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1190:1: (this_INT_0= RULE_INT | this_ID_1= RULE_ID )
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1176:1: (this_INT_0= RULE_INT | this_ID_1= RULE_ID )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1190:1: (this_INT_0= RULE_INT | this_ID_1= RULE_ID )
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -2927,9 +2963,9 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
             }
             switch (alt17) {
                 case 1 :
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1176:6: this_INT_0= RULE_INT
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1190:6: this_INT_0= RULE_INT
                     {
-                    this_INT_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleElement2481); 
+                    this_INT_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleElement2522); 
 
                     		current.merge(this_INT_0);
                         
@@ -2940,9 +2976,9 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1184:10: this_ID_1= RULE_ID
+                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1198:10: this_ID_1= RULE_ID
                     {
-                    this_ID_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleElement2507); 
+                    this_ID_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleElement2548); 
 
                     		current.merge(this_ID_1);
                         
@@ -2973,7 +3009,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleType"
-    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1199:1: entryRuleType returns [EObject current=null] : iv_ruleType= ruleType EOF ;
+    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1213:1: entryRuleType returns [EObject current=null] : iv_ruleType= ruleType EOF ;
     public final EObject entryRuleType() throws RecognitionException {
         EObject current = null;
 
@@ -2981,17 +3017,17 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1200:2: (iv_ruleType= ruleType EOF )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1201:2: iv_ruleType= ruleType EOF
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1214:2: (iv_ruleType= ruleType EOF )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1215:2: iv_ruleType= ruleType EOF
             {
              newCompositeNode(grammarAccess.getTypeRule()); 
-            pushFollow(FOLLOW_ruleType_in_entryRuleType2552);
+            pushFollow(FOLLOW_ruleType_in_entryRuleType2593);
             iv_ruleType=ruleType();
 
             state._fsp--;
 
              current =iv_ruleType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleType2562); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleType2603); 
 
             }
 
@@ -3009,7 +3045,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleType"
-    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1208:1: ruleType returns [EObject current=null] : ( (lv_value_0_0= 'var' ) ) ;
+    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1222:1: ruleType returns [EObject current=null] : ( (lv_value_0_0= 'var' ) ) ;
     public final EObject ruleType() throws RecognitionException {
         EObject current = null;
 
@@ -3018,16 +3054,16 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1211:28: ( ( (lv_value_0_0= 'var' ) ) )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1212:1: ( (lv_value_0_0= 'var' ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1225:28: ( ( (lv_value_0_0= 'var' ) ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1226:1: ( (lv_value_0_0= 'var' ) )
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1212:1: ( (lv_value_0_0= 'var' ) )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1213:1: (lv_value_0_0= 'var' )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1226:1: ( (lv_value_0_0= 'var' ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1227:1: (lv_value_0_0= 'var' )
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1213:1: (lv_value_0_0= 'var' )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1214:3: lv_value_0_0= 'var'
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1227:1: (lv_value_0_0= 'var' )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1228:3: lv_value_0_0= 'var'
             {
-            lv_value_0_0=(Token)match(input,27,FOLLOW_27_in_ruleType2604); 
+            lv_value_0_0=(Token)match(input,27,FOLLOW_27_in_ruleType2645); 
 
                     newLeafNode(lv_value_0_0, grammarAccess.getTypeAccess().getValueVarKeyword_0());
                 
@@ -3084,83 +3120,85 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleFuncParam_in_ruleFuncParam483 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBlock_in_entryRuleBlock521 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBlock531 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_ruleBlock568 = new BitSet(new long[]{0x00000000080D0000L});
+    public static final BitSet FOLLOW_14_in_ruleBlock568 = new BitSet(new long[]{0x00000000081A0010L});
     public static final BitSet FOLLOW_ruleStatement_in_ruleBlock589 = new BitSet(new long[]{0x0000000000008000L});
     public static final BitSet FOLLOW_15_in_ruleBlock601 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStatement_in_entryRuleStatement637 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleStatement647 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDeclaration_in_ruleStatement702 = new BitSet(new long[]{0x00000000080D0002L});
-    public static final BitSet FOLLOW_ruleCommand_in_ruleStatement724 = new BitSet(new long[]{0x00000000000D0002L});
+    public static final BitSet FOLLOW_ruleDeclaration_in_ruleStatement702 = new BitSet(new long[]{0x00000000081A0012L});
+    public static final BitSet FOLLOW_ruleCommand_in_ruleStatement724 = new BitSet(new long[]{0x00000000001A0012L});
     public static final BitSet FOLLOW_ruleCommand_in_entryRuleCommand761 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleCommand771 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleIfCommand_in_ruleCommand818 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleWhileCommand_in_ruleCommand845 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleReturnCommand_in_ruleCommand872 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIfCommand_in_entryRuleIfCommand907 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleIfCommand917 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_ruleIfCommand954 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_11_in_ruleIfCommand966 = new BitSet(new long[]{0x0000000000000830L});
-    public static final BitSet FOLLOW_ruleExpr_in_ruleIfCommand987 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleIfCommand999 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_ruleBlock_in_ruleIfCommand1020 = new BitSet(new long[]{0x0000000000020002L});
-    public static final BitSet FOLLOW_17_in_ruleIfCommand1033 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_ruleBlock_in_ruleIfCommand1054 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWhileCommand_in_entryRuleWhileCommand1092 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleWhileCommand1102 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_ruleWhileCommand1139 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_11_in_ruleWhileCommand1151 = new BitSet(new long[]{0x0000000000000830L});
-    public static final BitSet FOLLOW_ruleExpr_in_ruleWhileCommand1172 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleWhileCommand1184 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_ruleBlock_in_ruleWhileCommand1205 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReturnCommand_in_entryRuleReturnCommand1241 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleReturnCommand1251 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_ruleReturnCommand1288 = new BitSet(new long[]{0x0000000000000830L});
-    public static final BitSet FOLLOW_ruleExpr_in_ruleReturnCommand1309 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleReturnCommand1321 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDeclaration_in_entryRuleDeclaration1357 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDeclaration1367 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleType_in_ruleDeclaration1413 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleRDeclaration_in_ruleDeclaration1434 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleDeclaration1446 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRDeclaration_in_entryRuleRDeclaration1482 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRDeclaration1492 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIDDeclaration_in_ruleRDeclaration1538 = new BitSet(new long[]{0x0000000000002002L});
-    public static final BitSet FOLLOW_13_in_ruleRDeclaration1560 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleRDeclaration_in_ruleRDeclaration1581 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIDDeclaration_in_entryRuleIDDeclaration1619 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleIDDeclaration1629 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleIDDeclaration1671 = new BitSet(new long[]{0x0000000000200002L});
-    public static final BitSet FOLLOW_21_in_ruleIDDeclaration1689 = new BitSet(new long[]{0x0000000000000830L});
-    public static final BitSet FOLLOW_ruleExpr_in_ruleIDDeclaration1710 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpr_in_entryRuleExpr1748 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExpr1758 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTerm_in_ruleExpr1805 = new BitSet(new long[]{0x0000000000C00002L});
-    public static final BitSet FOLLOW_22_in_ruleExpr1834 = new BitSet(new long[]{0x0000000000000830L});
-    public static final BitSet FOLLOW_23_in_ruleExpr1863 = new BitSet(new long[]{0x0000000000000830L});
-    public static final BitSet FOLLOW_ruleTerm_in_ruleExpr1900 = new BitSet(new long[]{0x0000000000C00002L});
-    public static final BitSet FOLLOW_ruleTerm_in_entryRuleTerm1938 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTerm1948 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFactor_in_ruleTerm1995 = new BitSet(new long[]{0x0000000003000002L});
-    public static final BitSet FOLLOW_24_in_ruleTerm2024 = new BitSet(new long[]{0x0000000000000830L});
-    public static final BitSet FOLLOW_25_in_ruleTerm2053 = new BitSet(new long[]{0x0000000000000830L});
-    public static final BitSet FOLLOW_ruleFactor_in_ruleTerm2090 = new BitSet(new long[]{0x0000000003000002L});
-    public static final BitSet FOLLOW_ruleFactor_in_entryRuleFactor2128 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFactor2138 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtomic_in_ruleFactor2185 = new BitSet(new long[]{0x0000000004000002L});
-    public static final BitSet FOLLOW_26_in_ruleFactor2212 = new BitSet(new long[]{0x0000000000000830L});
-    public static final BitSet FOLLOW_ruleAtomic_in_ruleFactor2246 = new BitSet(new long[]{0x0000000004000002L});
-    public static final BitSet FOLLOW_ruleAtomic_in_entryRuleAtomic2284 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAtomic2294 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_ruleAtomic2332 = new BitSet(new long[]{0x0000000000000830L});
-    public static final BitSet FOLLOW_ruleExpr_in_ruleAtomic2353 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleAtomic2365 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleElement_in_ruleAtomic2393 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleElement_in_entryRuleElement2430 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleElement2441 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleElement2481 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleElement2507 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleType_in_entryRuleType2552 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleType2562 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_ruleType2604 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRDeclaration_in_ruleCommand900 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleCommand911 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIfCommand_in_entryRuleIfCommand948 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleIfCommand958 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_ruleIfCommand995 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_11_in_ruleIfCommand1007 = new BitSet(new long[]{0x0000000000000830L});
+    public static final BitSet FOLLOW_ruleExpr_in_ruleIfCommand1028 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_ruleIfCommand1040 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleBlock_in_ruleIfCommand1061 = new BitSet(new long[]{0x0000000000040002L});
+    public static final BitSet FOLLOW_18_in_ruleIfCommand1074 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleBlock_in_ruleIfCommand1095 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWhileCommand_in_entryRuleWhileCommand1133 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleWhileCommand1143 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_ruleWhileCommand1180 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_11_in_ruleWhileCommand1192 = new BitSet(new long[]{0x0000000000000830L});
+    public static final BitSet FOLLOW_ruleExpr_in_ruleWhileCommand1213 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_ruleWhileCommand1225 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleBlock_in_ruleWhileCommand1246 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleReturnCommand_in_entryRuleReturnCommand1282 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleReturnCommand1292 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_ruleReturnCommand1329 = new BitSet(new long[]{0x0000000000000830L});
+    public static final BitSet FOLLOW_ruleExpr_in_ruleReturnCommand1350 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleReturnCommand1362 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDeclaration_in_entryRuleDeclaration1398 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDeclaration1408 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleType_in_ruleDeclaration1454 = new BitSet(new long[]{0x00000000001A0010L});
+    public static final BitSet FOLLOW_ruleRDeclaration_in_ruleDeclaration1475 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleDeclaration1487 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRDeclaration_in_entryRuleRDeclaration1523 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRDeclaration1533 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIDDeclaration_in_ruleRDeclaration1579 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_13_in_ruleRDeclaration1601 = new BitSet(new long[]{0x00000000001A0010L});
+    public static final BitSet FOLLOW_ruleRDeclaration_in_ruleRDeclaration1622 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIDDeclaration_in_entryRuleIDDeclaration1660 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleIDDeclaration1670 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleIDDeclaration1712 = new BitSet(new long[]{0x0000000000200002L});
+    public static final BitSet FOLLOW_21_in_ruleIDDeclaration1730 = new BitSet(new long[]{0x0000000000000830L});
+    public static final BitSet FOLLOW_ruleExpr_in_ruleIDDeclaration1751 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpr_in_entryRuleExpr1789 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExpr1799 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTerm_in_ruleExpr1846 = new BitSet(new long[]{0x0000000000C00002L});
+    public static final BitSet FOLLOW_22_in_ruleExpr1875 = new BitSet(new long[]{0x0000000000000830L});
+    public static final BitSet FOLLOW_23_in_ruleExpr1904 = new BitSet(new long[]{0x0000000000000830L});
+    public static final BitSet FOLLOW_ruleTerm_in_ruleExpr1941 = new BitSet(new long[]{0x0000000000C00002L});
+    public static final BitSet FOLLOW_ruleTerm_in_entryRuleTerm1979 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTerm1989 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFactor_in_ruleTerm2036 = new BitSet(new long[]{0x0000000003000002L});
+    public static final BitSet FOLLOW_24_in_ruleTerm2065 = new BitSet(new long[]{0x0000000000000830L});
+    public static final BitSet FOLLOW_25_in_ruleTerm2094 = new BitSet(new long[]{0x0000000000000830L});
+    public static final BitSet FOLLOW_ruleFactor_in_ruleTerm2131 = new BitSet(new long[]{0x0000000003000002L});
+    public static final BitSet FOLLOW_ruleFactor_in_entryRuleFactor2169 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFactor2179 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAtomic_in_ruleFactor2226 = new BitSet(new long[]{0x0000000004000002L});
+    public static final BitSet FOLLOW_26_in_ruleFactor2253 = new BitSet(new long[]{0x0000000000000830L});
+    public static final BitSet FOLLOW_ruleAtomic_in_ruleFactor2287 = new BitSet(new long[]{0x0000000004000002L});
+    public static final BitSet FOLLOW_ruleAtomic_in_entryRuleAtomic2325 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAtomic2335 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_ruleAtomic2373 = new BitSet(new long[]{0x0000000000000830L});
+    public static final BitSet FOLLOW_ruleExpr_in_ruleAtomic2394 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_ruleAtomic2406 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElement_in_ruleAtomic2434 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElement_in_entryRuleElement2471 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleElement2482 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleElement2522 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleElement2548 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleType_in_entryRuleType2593 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleType2603 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_ruleType2645 = new BitSet(new long[]{0x0000000000000002L});
 
 }

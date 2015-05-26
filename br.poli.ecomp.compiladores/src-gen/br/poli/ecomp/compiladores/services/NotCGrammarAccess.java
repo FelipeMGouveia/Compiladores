@@ -208,12 +208,15 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIfCommandParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cWhileCommandParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cReturnCommandParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final RuleCall cRDeclarationParserRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
+		private final Keyword cSemicolonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
 		
 		//Command:
-		//	IfCommand | WhileCommand | ReturnCommand;
+		//	IfCommand | WhileCommand | ReturnCommand | RDeclaration ";";
 		public ParserRule getRule() { return rule; }
 
-		//IfCommand | WhileCommand | ReturnCommand
+		//IfCommand | WhileCommand | ReturnCommand | RDeclaration ";"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//IfCommand
@@ -224,6 +227,15 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ReturnCommand
 		public RuleCall getReturnCommandParserRuleCall_2() { return cReturnCommandParserRuleCall_2; }
+
+		//RDeclaration ";"
+		public Group getGroup_3() { return cGroup_3; }
+
+		//RDeclaration
+		public RuleCall getRDeclarationParserRuleCall_3_0() { return cRDeclarationParserRuleCall_3_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_3_1() { return cSemicolonKeyword_3_1; }
 	}
 
 	public class IfCommandElements extends AbstractParserRuleElementFinder {
@@ -798,7 +810,7 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Command:
-	//	IfCommand | WhileCommand | ReturnCommand;
+	//	IfCommand | WhileCommand | ReturnCommand | RDeclaration ";";
 	public CommandElements getCommandAccess() {
 		return pCommand;
 	}

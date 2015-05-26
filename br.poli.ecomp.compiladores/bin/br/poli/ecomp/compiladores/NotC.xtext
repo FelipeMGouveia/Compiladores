@@ -10,7 +10,7 @@ FuncParam: type=Type id=ID (',' next=FuncParam)? ;
 Block: '{' statement=Statement '}';
 Statement: {Statement} (declarations+=Declaration)* (commands+=Command)* ;
 
-Command: IfCommand | WhileCommand | ReturnCommand;
+Command: IfCommand | WhileCommand | ReturnCommand | RDeclaration ';';
 IfCommand: 'if' '(' expr=Expr ')' ifBlock = Block ('else' elseBlock=Block)?;
 WhileCommand: 'while' '(' expr=Expr ')' whileBlock=Block;
 ReturnCommand: 'return' (expr=Expr) ';';

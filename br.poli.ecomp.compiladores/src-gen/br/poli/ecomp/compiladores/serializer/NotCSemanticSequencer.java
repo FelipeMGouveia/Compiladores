@@ -114,7 +114,8 @@ public class NotCSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				}
 				else break;
 			case NotCPackage.RDECLARATION:
-				if(context == grammarAccess.getRDeclarationRule()) {
+				if(context == grammarAccess.getCommandRule() ||
+				   context == grammarAccess.getRDeclarationRule()) {
 					sequence_RDeclaration(context, (RDeclaration) semanticObject); 
 					return; 
 				}
@@ -293,8 +294,8 @@ public class NotCSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_ReturnCommand(EObject context, ReturnCommand semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, NotCPackage.Literals.COMMAND__EXPR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, NotCPackage.Literals.COMMAND__EXPR));
+			if(transientValues.isValueTransient(semanticObject, NotCPackage.Literals.RETURN_COMMAND__EXPR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, NotCPackage.Literals.RETURN_COMMAND__EXPR));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
@@ -343,8 +344,8 @@ public class NotCSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_WhileCommand(EObject context, WhileCommand semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, NotCPackage.Literals.COMMAND__EXPR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, NotCPackage.Literals.COMMAND__EXPR));
+			if(transientValues.isValueTransient(semanticObject, NotCPackage.Literals.WHILE_COMMAND__EXPR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, NotCPackage.Literals.WHILE_COMMAND__EXPR));
 			if(transientValues.isValueTransient(semanticObject, NotCPackage.Literals.WHILE_COMMAND__WHILE_BLOCK) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, NotCPackage.Literals.WHILE_COMMAND__WHILE_BLOCK));
 		}

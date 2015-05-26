@@ -2,7 +2,6 @@
  */
 package br.poli.ecomp.compiladores.notC;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface RDeclaration extends EObject
+public interface RDeclaration extends Command
 {
   /**
    * Returns the value of the '<em><b>Id</b></em>' containment reference.

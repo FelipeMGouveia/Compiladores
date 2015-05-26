@@ -11,6 +11,7 @@ package br.poli.ecomp.compiladores.notC;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link br.poli.ecomp.compiladores.notC.IfCommand#getExpr <em>Expr</em>}</li>
  *   <li>{@link br.poli.ecomp.compiladores.notC.IfCommand#getIfBlock <em>If Block</em>}</li>
  *   <li>{@link br.poli.ecomp.compiladores.notC.IfCommand#getElseBlock <em>Else Block</em>}</li>
  * </ul>
@@ -22,6 +23,32 @@ package br.poli.ecomp.compiladores.notC;
  */
 public interface IfCommand extends Command
 {
+  /**
+   * Returns the value of the '<em><b>Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Expr</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Expr</em>' containment reference.
+   * @see #setExpr(Expression)
+   * @see br.poli.ecomp.compiladores.notC.NotCPackage#getIfCommand_Expr()
+   * @model containment="true"
+   * @generated
+   */
+  Expression getExpr();
+
+  /**
+   * Sets the value of the '{@link br.poli.ecomp.compiladores.notC.IfCommand#getExpr <em>Expr</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Expr</em>' containment reference.
+   * @see #getExpr()
+   * @generated
+   */
+  void setExpr(Expression value);
+
   /**
    * Returns the value of the '<em><b>If Block</b></em>' containment reference.
    * <!-- begin-user-doc -->

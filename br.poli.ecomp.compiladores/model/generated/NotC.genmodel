@@ -29,17 +29,19 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Statement/declarations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Statement/commands"/>
     </genClasses>
-    <genClasses ecoreClass="NotC.ecore#//Command">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Command/expr"/>
-    </genClasses>
+    <genClasses ecoreClass="NotC.ecore#//Command"/>
     <genClasses ecoreClass="NotC.ecore#//IfCommand">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//IfCommand/expr"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//IfCommand/ifBlock"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//IfCommand/elseBlock"/>
     </genClasses>
     <genClasses ecoreClass="NotC.ecore#//WhileCommand">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//WhileCommand/expr"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//WhileCommand/whileBlock"/>
     </genClasses>
-    <genClasses ecoreClass="NotC.ecore#//ReturnCommand"/>
+    <genClasses ecoreClass="NotC.ecore#//ReturnCommand">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//ReturnCommand/expr"/>
+    </genClasses>
     <genClasses ecoreClass="NotC.ecore#//Declaration">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Declaration/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Declaration/value"/>

@@ -21,6 +21,7 @@ import com.google.common.collect.Iterables;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import org.eclipse.emf.common.util.EList;
@@ -33,6 +34,7 @@ import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.ExclusiveRange;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
 /**
@@ -54,6 +56,17 @@ public class NotCGenerator implements IGenerator {
     public Variable(final String n, final Integer i) {
       this.name = n;
       this.value = i;
+    }
+    
+    public boolean equals(final Object variable) {
+      if ((variable instanceof NotCGenerator.Variable)) {
+        return ((NotCGenerator.Variable) variable).name.equals(this.name);
+      }
+      return false;
+    }
+    
+    public int hashCode() {
+      return this.name.hashCode();
     }
   }
   
@@ -175,11 +188,9 @@ public class NotCGenerator implements IGenerator {
     return _builder;
   }
   
-  private Integer leftValue;
-  
-  private Integer rightValue;
-  
   public Integer solve(final Expression expression) {
+    Integer leftValue = new Integer(0);
+    Integer rightValue = new Integer(0);
     boolean _equals = Objects.equal(expression, null);
     if (_equals) {
       return null;
@@ -218,16 +229,16 @@ public class NotCGenerator implements IGenerator {
     if (_notEquals_2) {
       Expression _left = expression.getLeft();
       Integer _solve = this.solve(_left);
-      this.leftValue = _solve;
+      leftValue = _solve;
       Expression _right = expression.getRight();
       Integer _solve_1 = this.solve(_right);
-      this.rightValue = _solve_1;
+      rightValue = _solve_1;
       boolean _or = false;
-      boolean _equals_2 = Objects.equal(this.leftValue, null);
+      boolean _equals_2 = Objects.equal(leftValue, null);
       if (_equals_2) {
         _or = true;
       } else {
-        boolean _equals_3 = Objects.equal(this.rightValue, null);
+        boolean _equals_3 = Objects.equal(rightValue, null);
         _or = _equals_3;
       }
       if (_or) {
@@ -238,39 +249,137 @@ public class NotCGenerator implements IGenerator {
       if (!_matched) {
         if (Objects.equal(_operator_1, "+")) {
           _matched=true;
-          return Integer.valueOf(((this.leftValue).intValue() + (this.rightValue).intValue()));
+          return Integer.valueOf(((leftValue).intValue() + (rightValue).intValue()));
         }
       }
       if (!_matched) {
         if (Objects.equal(_operator_1, "-")) {
           _matched=true;
-          return Integer.valueOf(((this.leftValue).intValue() - (this.rightValue).intValue()));
+          return Integer.valueOf(((leftValue).intValue() - (rightValue).intValue()));
         }
       }
       if (!_matched) {
         if (Objects.equal(_operator_1, "*")) {
           _matched=true;
-          return Integer.valueOf(((this.leftValue).intValue() * (this.rightValue).intValue()));
+          return Integer.valueOf(((leftValue).intValue() * (rightValue).intValue()));
         }
       }
       if (!_matched) {
         if (Objects.equal(_operator_1, "/")) {
           _matched=true;
-          return Integer.valueOf(((this.leftValue).intValue() / (this.rightValue).intValue()));
+          return Integer.valueOf(((leftValue).intValue() / (rightValue).intValue()));
         }
       }
       if (!_matched) {
         if (Objects.equal(_operator_1, "^")) {
           _matched=true;
-          double _doubleValue = this.leftValue.doubleValue();
-          double _doubleValue_1 = this.rightValue.doubleValue();
+          double _doubleValue = leftValue.doubleValue();
+          double _doubleValue_1 = rightValue.doubleValue();
           double _pow = Math.pow(_doubleValue, _doubleValue_1);
           return Integer.valueOf(Double.valueOf(_pow).intValue());
         }
       }
-      return this.leftValue;
+      return leftValue;
     } else {
-      return this.leftValue;
+      return leftValue;
+    }
+  }
+  
+  public Integer solve2(final Expression expression, final List<NotCGenerator.Variable> variables) {
+    System.out.println("Solve 2");
+    Integer leftValue = new Integer(0);
+    Integer rightValue = new Integer(0);
+    boolean _equals = Objects.equal(expression, null);
+    if (_equals) {
+      return null;
+    }
+    String _result = expression.getResult();
+    boolean _notEquals = (!Objects.equal(_result, null));
+    if (_notEquals) {
+      try {
+        String _result_1 = expression.getResult();
+        return Integer.valueOf(Integer.parseInt(_result_1));
+      } catch (final Throwable _t) {
+        if (_t instanceof Exception) {
+          final Exception e = (Exception)_t;
+          for (final NotCGenerator.Variable variable : variables) {
+            String _result_2 = expression.getResult();
+            boolean _equals_1 = variable.name.equals(_result_2);
+            if (_equals_1) {
+              System.out.println("Encontrou um valor!");
+              return variable.value;
+            }
+          }
+        } else {
+          throw Exceptions.sneakyThrow(_t);
+        }
+      }
+      return null;
+    }
+    Expression _value = expression.getValue();
+    boolean _notEquals_1 = (!Objects.equal(_value, null));
+    if (_notEquals_1) {
+      Expression _value_1 = expression.getValue();
+      return this.solve2(_value_1, variables);
+    }
+    String _operator = expression.getOperator();
+    boolean _notEquals_2 = (!Objects.equal(_operator, null));
+    if (_notEquals_2) {
+      Expression _left = expression.getLeft();
+      Integer _solve2 = this.solve2(_left, variables);
+      leftValue = _solve2;
+      Expression _right = expression.getRight();
+      Integer _solve2_1 = this.solve2(_right, variables);
+      rightValue = _solve2_1;
+      boolean _or = false;
+      boolean _equals_2 = Objects.equal(leftValue, null);
+      if (_equals_2) {
+        _or = true;
+      } else {
+        boolean _equals_3 = Objects.equal(rightValue, null);
+        _or = _equals_3;
+      }
+      if (_or) {
+        return null;
+      }
+      String _operator_1 = expression.getOperator();
+      boolean _matched = false;
+      if (!_matched) {
+        if (Objects.equal(_operator_1, "+")) {
+          _matched=true;
+          return Integer.valueOf(((leftValue).intValue() + (rightValue).intValue()));
+        }
+      }
+      if (!_matched) {
+        if (Objects.equal(_operator_1, "-")) {
+          _matched=true;
+          return Integer.valueOf(((leftValue).intValue() - (rightValue).intValue()));
+        }
+      }
+      if (!_matched) {
+        if (Objects.equal(_operator_1, "*")) {
+          _matched=true;
+          return Integer.valueOf(((leftValue).intValue() * (rightValue).intValue()));
+        }
+      }
+      if (!_matched) {
+        if (Objects.equal(_operator_1, "/")) {
+          _matched=true;
+          return Integer.valueOf(((leftValue).intValue() / (rightValue).intValue()));
+        }
+      }
+      if (!_matched) {
+        if (Objects.equal(_operator_1, "^")) {
+          _matched=true;
+          double _doubleValue = leftValue.doubleValue();
+          double _doubleValue_1 = rightValue.doubleValue();
+          double _pow = Math.pow(_doubleValue, _doubleValue_1);
+          return Integer.valueOf(Double.valueOf(_pow).intValue());
+        }
+      }
+      return leftValue;
+    } else {
+      return leftValue;
     }
   }
   
@@ -288,9 +397,17 @@ public class NotCGenerator implements IGenerator {
       }
     }
     {
-      Expression _left = expr.getLeft();
-      boolean _notEquals_1 = (!Objects.equal(_left, null));
+      String _result = expr.getResult();
+      boolean _notEquals_1 = (!Objects.equal(_result, null));
       if (_notEquals_1) {
+        String _result_1 = expr.getResult();
+        _builder.append(_result_1, "");
+      }
+    }
+    {
+      Expression _left = expr.getLeft();
+      boolean _notEquals_2 = (!Objects.equal(_left, null));
+      if (_notEquals_2) {
         Expression _left_1 = expr.getLeft();
         Object _compile_1 = this.compile(_left_1);
         _builder.append(_compile_1, "");
@@ -298,8 +415,8 @@ public class NotCGenerator implements IGenerator {
     }
     {
       String _operator = expr.getOperator();
-      boolean _notEquals_2 = (!Objects.equal(_operator, null));
-      if (_notEquals_2) {
+      boolean _notEquals_3 = (!Objects.equal(_operator, null));
+      if (_notEquals_3) {
         _builder.append(" ");
         String _operator_1 = expr.getOperator();
         _builder.append(_operator_1, "");
@@ -308,8 +425,8 @@ public class NotCGenerator implements IGenerator {
     }
     {
       Expression _right = expr.getRight();
-      boolean _notEquals_3 = (!Objects.equal(_right, null));
-      if (_notEquals_3) {
+      boolean _notEquals_4 = (!Objects.equal(_right, null));
+      if (_notEquals_4) {
         Expression _right_1 = expr.getRight();
         Object _compile_2 = this.compile(_right_1);
         _builder.append(_compile_2, "");
@@ -480,23 +597,221 @@ public class NotCGenerator implements IGenerator {
   
   protected CharSequence _compile(final WhileCommand whileCommand) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("while ( ");
-    Expression _expr = whileCommand.getExpr();
-    Object _compile = this.compile(_expr);
-    _builder.append(_compile, "");
-    _builder.append(" )");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    Block _whileBlock = whileCommand.getWhileBlock();
-    Object _compile_1 = this.compile(_whileBlock);
-    _builder.append(_compile_1, "\t");
     {
-      Block _whileBlock_1 = whileCommand.getWhileBlock();
-      boolean _notEquals = (!Objects.equal(_whileBlock_1, null));
-      if (_notEquals) {
+      Integer _computeWhileCommand = this.computeWhileCommand(whileCommand);
+      boolean _equals = Objects.equal(_computeWhileCommand, null);
+      if (_equals) {
+        _builder.append("while ( ");
+        Expression _expr = whileCommand.getExpr();
+        Object _compile = this.compile(_expr);
+        _builder.append(_compile, "");
+        _builder.append(" )");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
+        Block _whileBlock = whileCommand.getWhileBlock();
+        Object _compile_1 = this.compile(_whileBlock);
+        _builder.append(_compile_1, "\t");
+        {
+          Block _whileBlock_1 = whileCommand.getWhileBlock();
+          boolean _notEquals = (!Objects.equal(_whileBlock_1, null));
+          if (_notEquals) {
+          }
+        }
+      } else {
+        {
+          Integer _computeWhileCommand_1 = this.computeWhileCommand(whileCommand);
+          ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, (_computeWhileCommand_1).intValue(), true);
+          for(final Integer i : _doubleDotLessThan) {
+            Block _whileBlock_2 = whileCommand.getWhileBlock();
+            Object _compile_2 = this.compile(_whileBlock_2);
+            _builder.append(_compile_2, "");
+          }
+        }
       }
     }
     return _builder;
+  }
+  
+  public Integer computeWhileCommand(final WhileCommand command) {
+    System.out.println("Entrando no computeWhileCommand!");
+    Expression _expr = command.getExpr();
+    Integer _solve = this.solve(_expr);
+    boolean _equals = ((_solve).intValue() == 0);
+    if (_equals) {
+      return null;
+    }
+    System.out.println("solve de command.expr deu != 0");
+    HashSet<NotCGenerator.Variable> knownVariables = new HashSet<NotCGenerator.Variable>();
+    Expression _expr_1 = command.getExpr();
+    HashSet<NotCGenerator.Variable> _computeWhileVariables = this.computeWhileVariables(_expr_1);
+    knownVariables = _computeWhileVariables;
+    System.out.println("Saindo de computeWhileVariables() para knownVariables");
+    for (final NotCGenerator.Variable variable : knownVariables) {
+      boolean _equals_1 = Objects.equal(variable.value, null);
+      if (_equals_1) {
+        return null;
+      }
+    }
+    System.out.println("Garantiu variáveis conhecidas!");
+    Block _whileBlock = command.getWhileBlock();
+    Statement _statement = _whileBlock.getStatement();
+    EList<Command> _commands = _statement.getCommands();
+    for (final Command com : _commands) {
+      if ((com instanceof RDeclaration)) {
+        RDeclaration comRD = ((RDeclaration) com);
+        IDDeclaration _id = comRD.getId();
+        String _id_1 = _id.getId();
+        NotCGenerator.Variable _variable = new NotCGenerator.Variable(_id_1);
+        boolean _contains = knownVariables.contains(_variable);
+        if (_contains) {
+          IDDeclaration _id_2 = comRD.getId();
+          boolean _notEquals = (!Objects.equal(_id_2, null));
+          if (_notEquals) {
+            IDDeclaration _id_3 = comRD.getId();
+            Expression _value = _id_3.getValue();
+            HashSet<NotCGenerator.Variable> comRDVariables = this.computeWhileVariables(_value);
+            for (final NotCGenerator.Variable variable_1 : comRDVariables) {
+              boolean _contains_1 = knownVariables.contains(variable_1);
+              boolean _not = (!_contains_1);
+              if (_not) {
+                return null;
+              }
+            }
+          }
+        }
+      }
+    }
+    ArrayList<NotCGenerator.Variable> newVariableList = new ArrayList<NotCGenerator.Variable>();
+    for (final NotCGenerator.Variable variable_2 : knownVariables) {
+      {
+        System.out.println(((("KnownVariables: " + variable_2.name) + "  ") + variable_2.value));
+        NotCGenerator.Variable _variable_1 = new NotCGenerator.Variable(variable_2.name, variable_2.value);
+        newVariableList.add(_variable_1);
+      }
+    }
+    Expression _expr_2 = command.getExpr();
+    Integer valorInicial = this.solve2(_expr_2, newVariableList);
+    Integer contador = new Integer(0);
+    System.out.println("Será que chega no while²²²");
+    while (((valorInicial).intValue() != 0)) {
+      {
+        System.out.println("WHILE!!!!!!");
+        Block _whileBlock_1 = command.getWhileBlock();
+        Statement _statement_1 = _whileBlock_1.getStatement();
+        EList<Command> _commands_1 = _statement_1.getCommands();
+        for (final Command com_1 : _commands_1) {
+          {
+            System.out.println(("Com?" + com_1));
+            if ((com_1 instanceof RDeclaration)) {
+              System.out.println(("Instanceof?" + com_1));
+              RDeclaration comRD_1 = ((RDeclaration) com_1);
+              IDDeclaration _id_4 = ((RDeclaration)com_1).getId();
+              String _id_5 = _id_4.getId();
+              String _plus = ("com.id.id?" + _id_5);
+              System.out.println(_plus);
+              IDDeclaration _id_6 = comRD_1.getId();
+              String _id_7 = _id_6.getId();
+              NotCGenerator.Variable _variable_1 = new NotCGenerator.Variable(_id_7);
+              boolean _contains_2 = knownVariables.contains(_variable_1);
+              if (_contains_2) {
+                System.out.println(("Contains?" + com_1));
+                NotCGenerator.Variable currentVariable = new NotCGenerator.Variable("");
+                for (final NotCGenerator.Variable variable_3 : newVariableList) {
+                  {
+                    System.out.println(((("Variable: " + variable_3.name) + " ") + variable_3.value));
+                    IDDeclaration _id_8 = comRD_1.getId();
+                    String _id_9 = _id_8.getId();
+                    boolean _equals_2 = Objects.equal(variable_3.name, _id_9);
+                    if (_equals_2) {
+                      currentVariable = variable_3;
+                    }
+                  }
+                }
+                IDDeclaration _id_8 = comRD_1.getId();
+                Expression _value_1 = _id_8.getValue();
+                Integer _solve2 = this.solve2(_value_1, newVariableList);
+                currentVariable.value = _solve2;
+              }
+            }
+          }
+        }
+        contador++;
+        Expression _expr_3 = command.getExpr();
+        Integer _solve2 = this.solve2(_expr_3, newVariableList);
+        valorInicial = _solve2;
+      }
+    }
+    return contador;
+  }
+  
+  public HashSet<NotCGenerator.Variable> computeWhileVariables(final Expression expression) {
+    System.out.println("Entrando em computeWhileVariables()");
+    HashSet<NotCGenerator.Variable> variables = new HashSet<NotCGenerator.Variable>();
+    boolean _equals = Objects.equal(expression, null);
+    if (_equals) {
+      return null;
+    }
+    String _result = expression.getResult();
+    boolean _notEquals = (!Objects.equal(_result, null));
+    if (_notEquals) {
+      try {
+        String _result_1 = expression.getResult();
+        Integer.parseInt(_result_1);
+        return null;
+      } catch (final Throwable _t) {
+        if (_t instanceof Exception) {
+          final Exception e = (Exception)_t;
+          List<NotCGenerator.Variable> _get = this.variablesByScope.get(this.currentCodeScope);
+          for (final NotCGenerator.Variable variable : _get) {
+            String _result_2 = expression.getResult();
+            boolean _equals_1 = variable.name.equals(_result_2);
+            if (_equals_1) {
+              variables.add(variable);
+              return variables;
+            }
+          }
+        } else {
+          throw Exceptions.sneakyThrow(_t);
+        }
+      }
+      return null;
+    }
+    Expression _value = expression.getValue();
+    boolean _notEquals_1 = (!Objects.equal(_value, null));
+    if (_notEquals_1) {
+      Expression _value_1 = expression.getValue();
+      HashSet<NotCGenerator.Variable> temp = this.computeWhileVariables(_value_1);
+      boolean _notEquals_2 = (!Objects.equal(temp, null));
+      if (_notEquals_2) {
+        variables.addAll(temp);
+      }
+    }
+    Expression _left = expression.getLeft();
+    boolean _notEquals_3 = (!Objects.equal(_left, null));
+    if (_notEquals_3) {
+      Expression _left_1 = expression.getLeft();
+      HashSet<NotCGenerator.Variable> leftValue = this.computeWhileVariables(_left_1);
+      boolean _notEquals_4 = (!Objects.equal(leftValue, null));
+      if (_notEquals_4) {
+        variables.addAll(leftValue);
+      }
+    }
+    Expression _right = expression.getRight();
+    boolean _notEquals_5 = (!Objects.equal(_right, null));
+    if (_notEquals_5) {
+      Expression _right_1 = expression.getRight();
+      HashSet<NotCGenerator.Variable> something = this.computeWhileVariables(_right_1);
+      boolean _notEquals_6 = (!Objects.equal(something, null));
+      if (_notEquals_6) {
+        variables.addAll(something);
+      }
+    }
+    int _size = variables.size();
+    boolean _equals_2 = (_size == 0);
+    if (_equals_2) {
+      variables = null;
+    }
+    return variables;
   }
   
   protected CharSequence _compile(final Type type) {
@@ -525,6 +840,8 @@ public class NotCGenerator implements IGenerator {
   public CharSequence compile(final EObject ifcommand) {
     if (ifcommand instanceof IfCommand) {
       return _compile((IfCommand)ifcommand);
+    } else if (ifcommand instanceof RDeclaration) {
+      return _compile((RDeclaration)ifcommand);
     } else if (ifcommand instanceof WhileCommand) {
       return _compile((WhileCommand)ifcommand);
     } else if (ifcommand instanceof Block) {
@@ -539,8 +856,6 @@ public class NotCGenerator implements IGenerator {
       return _compile((Function)ifcommand);
     } else if (ifcommand instanceof IDDeclaration) {
       return _compile((IDDeclaration)ifcommand);
-    } else if (ifcommand instanceof RDeclaration) {
-      return _compile((RDeclaration)ifcommand);
     } else if (ifcommand instanceof Statement) {
       return _compile((Statement)ifcommand);
     } else if (ifcommand instanceof Type) {

@@ -270,22 +270,13 @@ public interface NotCPackage extends EPackage
   int COMMAND = 5;
 
   /**
-   * The feature id for the '<em><b>Expr</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMMAND__EXPR = 0;
-
-  /**
    * The number of structural features of the '<em>Command</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMMAND_FEATURE_COUNT = 1;
+  int COMMAND_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link br.poli.ecomp.compiladores.notC.impl.IfCommandImpl <em>If Command</em>}' class.
@@ -304,7 +295,7 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_COMMAND__EXPR = COMMAND__EXPR;
+  int IF_COMMAND__EXPR = COMMAND_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>If Block</b></em>' containment reference.
@@ -313,7 +304,7 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_COMMAND__IF_BLOCK = COMMAND_FEATURE_COUNT + 0;
+  int IF_COMMAND__IF_BLOCK = COMMAND_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Else Block</b></em>' containment reference.
@@ -322,7 +313,7 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_COMMAND__ELSE_BLOCK = COMMAND_FEATURE_COUNT + 1;
+  int IF_COMMAND__ELSE_BLOCK = COMMAND_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>If Command</em>' class.
@@ -331,7 +322,7 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_COMMAND_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 2;
+  int IF_COMMAND_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link br.poli.ecomp.compiladores.notC.impl.WhileCommandImpl <em>While Command</em>}' class.
@@ -350,7 +341,7 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WHILE_COMMAND__EXPR = COMMAND__EXPR;
+  int WHILE_COMMAND__EXPR = COMMAND_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>While Block</b></em>' containment reference.
@@ -359,7 +350,7 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WHILE_COMMAND__WHILE_BLOCK = COMMAND_FEATURE_COUNT + 0;
+  int WHILE_COMMAND__WHILE_BLOCK = COMMAND_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>While Command</em>' class.
@@ -368,7 +359,7 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WHILE_COMMAND_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 1;
+  int WHILE_COMMAND_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link br.poli.ecomp.compiladores.notC.impl.ReturnCommandImpl <em>Return Command</em>}' class.
@@ -387,7 +378,7 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RETURN_COMMAND__EXPR = COMMAND__EXPR;
+  int RETURN_COMMAND__EXPR = COMMAND_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Return Command</em>' class.
@@ -396,7 +387,7 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RETURN_COMMAND_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 0;
+  int RETURN_COMMAND_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link br.poli.ecomp.compiladores.notC.impl.DeclarationImpl <em>Declaration</em>}' class.
@@ -452,7 +443,7 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RDECLARATION__ID = 0;
+  int RDECLARATION__ID = COMMAND_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -461,7 +452,7 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RDECLARATION__LEFT = 1;
+  int RDECLARATION__LEFT = COMMAND_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Next</b></em>' containment reference.
@@ -470,7 +461,7 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RDECLARATION__NEXT = 2;
+  int RDECLARATION__NEXT = COMMAND_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>RDeclaration</em>' class.
@@ -479,7 +470,7 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RDECLARATION_FEATURE_COUNT = 3;
+  int RDECLARATION_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link br.poli.ecomp.compiladores.notC.impl.IDDeclarationImpl <em>ID Declaration</em>}' class.
@@ -996,17 +987,6 @@ public interface NotCPackage extends EPackage
   EClass getCommand();
 
   /**
-   * Returns the meta object for the containment reference '{@link br.poli.ecomp.compiladores.notC.Command#getExpr <em>Expr</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expr</em>'.
-   * @see br.poli.ecomp.compiladores.notC.Command#getExpr()
-   * @see #getCommand()
-   * @generated
-   */
-  EReference getCommand_Expr();
-
-  /**
    * Returns the meta object for class '{@link br.poli.ecomp.compiladores.notC.IfCommand <em>If Command</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1015,6 +995,17 @@ public interface NotCPackage extends EPackage
    * @generated
    */
   EClass getIfCommand();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.poli.ecomp.compiladores.notC.IfCommand#getExpr <em>Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expr</em>'.
+   * @see br.poli.ecomp.compiladores.notC.IfCommand#getExpr()
+   * @see #getIfCommand()
+   * @generated
+   */
+  EReference getIfCommand_Expr();
 
   /**
    * Returns the meta object for the containment reference '{@link br.poli.ecomp.compiladores.notC.IfCommand#getIfBlock <em>If Block</em>}'.
@@ -1049,6 +1040,17 @@ public interface NotCPackage extends EPackage
   EClass getWhileCommand();
 
   /**
+   * Returns the meta object for the containment reference '{@link br.poli.ecomp.compiladores.notC.WhileCommand#getExpr <em>Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expr</em>'.
+   * @see br.poli.ecomp.compiladores.notC.WhileCommand#getExpr()
+   * @see #getWhileCommand()
+   * @generated
+   */
+  EReference getWhileCommand_Expr();
+
+  /**
    * Returns the meta object for the containment reference '{@link br.poli.ecomp.compiladores.notC.WhileCommand#getWhileBlock <em>While Block</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1068,6 +1070,17 @@ public interface NotCPackage extends EPackage
    * @generated
    */
   EClass getReturnCommand();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.poli.ecomp.compiladores.notC.ReturnCommand#getExpr <em>Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expr</em>'.
+   * @see br.poli.ecomp.compiladores.notC.ReturnCommand#getExpr()
+   * @see #getReturnCommand()
+   * @generated
+   */
+  EReference getReturnCommand_Expr();
 
   /**
    * Returns the meta object for class '{@link br.poli.ecomp.compiladores.notC.Declaration <em>Declaration</em>}'.
@@ -1472,14 +1485,6 @@ public interface NotCPackage extends EPackage
     EClass COMMAND = eINSTANCE.getCommand();
 
     /**
-     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMMAND__EXPR = eINSTANCE.getCommand_Expr();
-
-    /**
      * The meta object literal for the '{@link br.poli.ecomp.compiladores.notC.impl.IfCommandImpl <em>If Command</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1488,6 +1493,14 @@ public interface NotCPackage extends EPackage
      * @generated
      */
     EClass IF_COMMAND = eINSTANCE.getIfCommand();
+
+    /**
+     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_COMMAND__EXPR = eINSTANCE.getIfCommand_Expr();
 
     /**
      * The meta object literal for the '<em><b>If Block</b></em>' containment reference feature.
@@ -1516,6 +1529,14 @@ public interface NotCPackage extends EPackage
     EClass WHILE_COMMAND = eINSTANCE.getWhileCommand();
 
     /**
+     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WHILE_COMMAND__EXPR = eINSTANCE.getWhileCommand_Expr();
+
+    /**
      * The meta object literal for the '<em><b>While Block</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1532,6 +1553,14 @@ public interface NotCPackage extends EPackage
      * @generated
      */
     EClass RETURN_COMMAND = eINSTANCE.getReturnCommand();
+
+    /**
+     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RETURN_COMMAND__EXPR = eINSTANCE.getReturnCommand_Expr();
 
     /**
      * The meta object literal for the '{@link br.poli.ecomp.compiladores.notC.impl.DeclarationImpl <em>Declaration</em>}' class.

@@ -404,16 +404,6 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCommand_Expr()
-  {
-    return (EReference)commandEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getIfCommand()
   {
     return ifCommandEClass;
@@ -424,7 +414,7 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getIfCommand_IfBlock()
+  public EReference getIfCommand_Expr()
   {
     return (EReference)ifCommandEClass.getEStructuralFeatures().get(0);
   }
@@ -434,9 +424,19 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getIfCommand_ElseBlock()
+  public EReference getIfCommand_IfBlock()
   {
     return (EReference)ifCommandEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIfCommand_ElseBlock()
+  {
+    return (EReference)ifCommandEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -454,9 +454,19 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getWhileCommand_WhileBlock()
+  public EReference getWhileCommand_Expr()
   {
     return (EReference)whileCommandEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWhileCommand_WhileBlock()
+  {
+    return (EReference)whileCommandEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -467,6 +477,16 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
   public EClass getReturnCommand()
   {
     return returnCommandEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getReturnCommand_Expr()
+  {
+    return (EReference)returnCommandEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -732,16 +752,18 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
     createEReference(statementEClass, STATEMENT__COMMANDS);
 
     commandEClass = createEClass(COMMAND);
-    createEReference(commandEClass, COMMAND__EXPR);
 
     ifCommandEClass = createEClass(IF_COMMAND);
+    createEReference(ifCommandEClass, IF_COMMAND__EXPR);
     createEReference(ifCommandEClass, IF_COMMAND__IF_BLOCK);
     createEReference(ifCommandEClass, IF_COMMAND__ELSE_BLOCK);
 
     whileCommandEClass = createEClass(WHILE_COMMAND);
+    createEReference(whileCommandEClass, WHILE_COMMAND__EXPR);
     createEReference(whileCommandEClass, WHILE_COMMAND__WHILE_BLOCK);
 
     returnCommandEClass = createEClass(RETURN_COMMAND);
+    createEReference(returnCommandEClass, RETURN_COMMAND__EXPR);
 
     declarationEClass = createEClass(DECLARATION);
     createEReference(declarationEClass, DECLARATION__TYPE);
@@ -805,6 +827,7 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
     ifCommandEClass.getESuperTypes().add(this.getCommand());
     whileCommandEClass.getESuperTypes().add(this.getCommand());
     returnCommandEClass.getESuperTypes().add(this.getCommand());
+    rDeclarationEClass.getESuperTypes().add(this.getCommand());
     exprEClass.getESuperTypes().add(this.getExpression());
     termEClass.getESuperTypes().add(this.getExpression());
     factorEClass.getESuperTypes().add(this.getExpression());
@@ -833,16 +856,18 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
     initEReference(getStatement_Commands(), this.getCommand(), null, "commands", null, 0, -1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(commandEClass, Command.class, "Command", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCommand_Expr(), this.getExpression(), null, "expr", null, 0, 1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ifCommandEClass, IfCommand.class, "IfCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getIfCommand_Expr(), this.getExpression(), null, "expr", null, 0, 1, IfCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getIfCommand_IfBlock(), this.getBlock(), null, "ifBlock", null, 0, 1, IfCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getIfCommand_ElseBlock(), this.getBlock(), null, "elseBlock", null, 0, 1, IfCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(whileCommandEClass, WhileCommand.class, "WhileCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getWhileCommand_Expr(), this.getExpression(), null, "expr", null, 0, 1, WhileCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWhileCommand_WhileBlock(), this.getBlock(), null, "whileBlock", null, 0, 1, WhileCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(returnCommandEClass, ReturnCommand.class, "ReturnCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getReturnCommand_Expr(), this.getExpression(), null, "expr", null, 0, 1, ReturnCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(declarationEClass, Declaration.class, "Declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDeclaration_Type(), this.getType(), null, "type", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
