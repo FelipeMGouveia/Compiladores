@@ -26,4 +26,5 @@ Factor returns Expression: Atomic ({Factor.left=current} (operator=('^')) right=
 Atomic returns Expression: '(' value=Expr ')' | result=Element;
 Element: INT | ID;
 
-Type: (value = 'int'| value = 'float'| value ='char');
+//Type: (value = 'int'| value = 'float'| value ='char');
+Type: value='var';

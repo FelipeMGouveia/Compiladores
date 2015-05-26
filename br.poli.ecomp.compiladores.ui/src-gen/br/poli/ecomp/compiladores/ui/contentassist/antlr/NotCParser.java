@@ -42,7 +42,6 @@ public class NotCParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTermAccess().getOperatorAlternatives_1_1_0(), "rule__Term__OperatorAlternatives_1_1_0");
 					put(grammarAccess.getAtomicAccess().getAlternatives(), "rule__Atomic__Alternatives");
 					put(grammarAccess.getElementAccess().getAlternatives(), "rule__Element__Alternatives");
-					put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
 					put(grammarAccess.getCodeAccess().getGroup(), "rule__Code__Group__0");
 					put(grammarAccess.getFunctionAccess().getGroup(), "rule__Function__Group__0");
 					put(grammarAccess.getFuncParamAccess().getGroup(), "rule__FuncParam__Group__0");
@@ -97,9 +96,7 @@ public class NotCParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFactorAccess().getRightAssignment_1_2(), "rule__Factor__RightAssignment_1_2");
 					put(grammarAccess.getAtomicAccess().getValueAssignment_0_1(), "rule__Atomic__ValueAssignment_0_1");
 					put(grammarAccess.getAtomicAccess().getResultAssignment_1(), "rule__Atomic__ResultAssignment_1");
-					put(grammarAccess.getTypeAccess().getValueAssignment_0(), "rule__Type__ValueAssignment_0");
-					put(grammarAccess.getTypeAccess().getValueAssignment_1(), "rule__Type__ValueAssignment_1");
-					put(grammarAccess.getTypeAccess().getValueAssignment_2(), "rule__Type__ValueAssignment_2");
+					put(grammarAccess.getTypeAccess().getValueAssignment(), "rule__Type__ValueAssignment");
 				}
 			};
 		}

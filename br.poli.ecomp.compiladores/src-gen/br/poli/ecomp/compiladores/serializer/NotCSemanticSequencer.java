@@ -323,10 +323,17 @@ public class NotCSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (value='int' | value='float' | value='char')
+	 *     value='var'
 	 */
 	protected void sequence_Type(EObject context, Type semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, NotCPackage.Literals.TYPE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, NotCPackage.Literals.TYPE__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getTypeAccess().getValueVarKeyword_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	

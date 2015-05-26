@@ -18,7 +18,11 @@ import br.poli.ecomp.compiladores.notC.Type;
 import br.poli.ecomp.compiladores.notC.WhileCommand;
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
@@ -28,6 +32,7 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
 /**
@@ -37,8 +42,34 @@ import org.eclipse.xtext.xbase.lib.IteratorExtensions;
  */
 @SuppressWarnings("all")
 public class NotCGenerator implements IGenerator {
+  public static class Variable {
+    public String name;
+    
+    public Integer value = null;
+    
+    public Variable(final String n) {
+      this.name = n;
+    }
+    
+    public Variable(final String n, final Integer i) {
+      this.name = n;
+      this.value = i;
+    }
+  }
+  
+  private Integer currentCodeScope;
+  
+  private Map<Integer, List<NotCGenerator.Variable>> variablesByScope;
+  
   public CharSequence compileCode(final Code code) {
     StringConcatenation _builder = new StringConcatenation();
+    {
+      ArrayList<NotCGenerator.Variable> _arrayList = new ArrayList<NotCGenerator.Variable>();
+      List<NotCGenerator.Variable> _put = this.variablesByScope.put(this.currentCodeScope, _arrayList);
+      boolean _equals = Objects.equal(_put, null);
+      if (_equals) {
+      }
+    }
     {
       EList<Declaration> _declarations = code.getDeclarations();
       boolean _notEquals = (!Objects.equal(_declarations, null));
@@ -118,19 +149,129 @@ public class NotCGenerator implements IGenerator {
   
   protected CharSequence _compile(final IDDeclaration idDeclaration) {
     StringConcatenation _builder = new StringConcatenation();
-    String _id = idDeclaration.getId();
-    _builder.append(_id, "");
     {
+      List<NotCGenerator.Variable> _get = this.variablesByScope.get(this.currentCodeScope);
+      String _id = idDeclaration.getId();
+      String _string = _id.toString();
       Expression _value = idDeclaration.getValue();
-      boolean _notEquals = (!Objects.equal(_value, null));
+      Integer _solve = this.solve(_value);
+      NotCGenerator.Variable _variable = new NotCGenerator.Variable(_string, _solve);
+      boolean _add = _get.add(_variable);
+      if (_add) {
+      }
+    }
+    String _id_1 = idDeclaration.getId();
+    _builder.append(_id_1, "");
+    {
+      Expression _value_1 = idDeclaration.getValue();
+      boolean _notEquals = (!Objects.equal(_value_1, null));
       if (_notEquals) {
         _builder.append(" = ");
-        Expression _value_1 = idDeclaration.getValue();
-        Object _compile = this.compile(_value_1);
+        Expression _value_2 = idDeclaration.getValue();
+        Object _compile = this.compile(_value_2);
         _builder.append(_compile, "");
       }
     }
     return _builder;
+  }
+  
+  private Integer leftValue;
+  
+  private Integer rightValue;
+  
+  public Integer solve(final Expression expression) {
+    boolean _equals = Objects.equal(expression, null);
+    if (_equals) {
+      return null;
+    }
+    String _result = expression.getResult();
+    boolean _notEquals = (!Objects.equal(_result, null));
+    if (_notEquals) {
+      try {
+        String _result_1 = expression.getResult();
+        return Integer.valueOf(Integer.parseInt(_result_1));
+      } catch (final Throwable _t) {
+        if (_t instanceof Exception) {
+          final Exception e = (Exception)_t;
+          List<NotCGenerator.Variable> _get = this.variablesByScope.get(this.currentCodeScope);
+          for (final NotCGenerator.Variable variable : _get) {
+            String _result_2 = expression.getResult();
+            boolean _equals_1 = variable.name.equals(_result_2);
+            if (_equals_1) {
+              return variable.value;
+            }
+          }
+        } else {
+          throw Exceptions.sneakyThrow(_t);
+        }
+      }
+      return null;
+    }
+    Expression _value = expression.getValue();
+    boolean _notEquals_1 = (!Objects.equal(_value, null));
+    if (_notEquals_1) {
+      Expression _value_1 = expression.getValue();
+      return this.solve(_value_1);
+    }
+    String _operator = expression.getOperator();
+    boolean _notEquals_2 = (!Objects.equal(_operator, null));
+    if (_notEquals_2) {
+      Expression _left = expression.getLeft();
+      Integer _solve = this.solve(_left);
+      this.leftValue = _solve;
+      Expression _right = expression.getRight();
+      Integer _solve_1 = this.solve(_right);
+      this.rightValue = _solve_1;
+      boolean _or = false;
+      boolean _equals_2 = Objects.equal(this.leftValue, null);
+      if (_equals_2) {
+        _or = true;
+      } else {
+        boolean _equals_3 = Objects.equal(this.rightValue, null);
+        _or = _equals_3;
+      }
+      if (_or) {
+        return null;
+      }
+      String _operator_1 = expression.getOperator();
+      boolean _matched = false;
+      if (!_matched) {
+        if (Objects.equal(_operator_1, "+")) {
+          _matched=true;
+          return Integer.valueOf(((this.leftValue).intValue() + (this.rightValue).intValue()));
+        }
+      }
+      if (!_matched) {
+        if (Objects.equal(_operator_1, "-")) {
+          _matched=true;
+          return Integer.valueOf(((this.leftValue).intValue() - (this.rightValue).intValue()));
+        }
+      }
+      if (!_matched) {
+        if (Objects.equal(_operator_1, "*")) {
+          _matched=true;
+          return Integer.valueOf(((this.leftValue).intValue() * (this.rightValue).intValue()));
+        }
+      }
+      if (!_matched) {
+        if (Objects.equal(_operator_1, "/")) {
+          _matched=true;
+          return Integer.valueOf(((this.leftValue).intValue() / (this.rightValue).intValue()));
+        }
+      }
+      if (!_matched) {
+        if (Objects.equal(_operator_1, "^")) {
+          _matched=true;
+          double _doubleValue = this.leftValue.doubleValue();
+          double _doubleValue_1 = this.rightValue.doubleValue();
+          double _pow = Math.pow(_doubleValue, _doubleValue_1);
+          return Integer.valueOf(Double.valueOf(_pow).intValue());
+        }
+      }
+      return this.leftValue;
+    } else {
+      return this.leftValue;
+    }
   }
   
   protected CharSequence _compile(final Expression expr) {
@@ -141,7 +282,8 @@ public class NotCGenerator implements IGenerator {
       if (_notEquals) {
         _builder.append("( ");
         Expression _value_1 = expr.getValue();
-        _builder.append(_value_1, "");
+        Object _compile = this.compile(_value_1);
+        _builder.append(_compile, "");
         _builder.append(" )");
       }
     }
@@ -278,28 +420,59 @@ public class NotCGenerator implements IGenerator {
   
   protected CharSequence _compile(final IfCommand ifcommand) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("if ( ");
-    Expression _expr = ifcommand.getExpr();
-    Object _compile = this.compile(_expr);
-    _builder.append(_compile, "");
-    _builder.append(" ) ");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    Block _ifBlock = ifcommand.getIfBlock();
-    Object _compile_1 = this.compile(_ifBlock);
-    _builder.append(_compile_1, "\t");
     {
-      Block _elseBlock = ifcommand.getElseBlock();
-      boolean _notEquals = (!Objects.equal(_elseBlock, null));
-      if (_notEquals) {
+      Expression _expr = ifcommand.getExpr();
+      Integer _solve = this.solve(_expr);
+      boolean _equals = Objects.equal(_solve, null);
+      if (_equals) {
+        _builder.append("if ( ");
+        Expression _expr_1 = ifcommand.getExpr();
+        Object _compile = this.compile(_expr_1);
+        _builder.append(_compile, "");
+        _builder.append(" ) ");
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
-        _builder.append("else ");
-        _builder.newLine();
+        Block _ifBlock = ifcommand.getIfBlock();
+        Object _compile_1 = this.compile(_ifBlock);
+        _builder.append(_compile_1, "\t");
+        {
+          Block _elseBlock = ifcommand.getElseBlock();
+          boolean _notEquals = (!Objects.equal(_elseBlock, null));
+          if (_notEquals) {
+            _builder.newLineIfNotEmpty();
+            _builder.append("\t");
+            _builder.append("else ");
+            _builder.newLine();
+            _builder.append("\t");
+            Block _elseBlock_1 = ifcommand.getElseBlock();
+            Object _compile_2 = this.compile(_elseBlock_1);
+            _builder.append(_compile_2, "\t");
+          }
+        }
+        _builder.newLineIfNotEmpty();
         _builder.append("\t");
-        Block _elseBlock_1 = ifcommand.getElseBlock();
-        Object _compile_2 = this.compile(_elseBlock_1);
-        _builder.append(_compile_2, "\t");
+      } else {
+        {
+          Expression _expr_2 = ifcommand.getExpr();
+          Integer _solve_1 = this.solve(_expr_2);
+          int _intValue = _solve_1.intValue();
+          boolean _notEquals_1 = (_intValue != 0);
+          if (_notEquals_1) {
+            Block _ifBlock_1 = ifcommand.getIfBlock();
+            Object _compile_3 = this.compile(_ifBlock_1);
+            _builder.append(_compile_3, "");
+          } else {
+            {
+              Block _elseBlock_2 = ifcommand.getElseBlock();
+              boolean _notEquals_2 = (!Objects.equal(_elseBlock_2, null));
+              if (_notEquals_2) {
+                Block _elseBlock_3 = ifcommand.getElseBlock();
+                Object _compile_4 = this.compile(_elseBlock_3);
+                _builder.append(_compile_4, "");
+              }
+            }
+          }
+        }
       }
     }
     return _builder;
@@ -334,14 +507,18 @@ public class NotCGenerator implements IGenerator {
   }
   
   public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
+    this.currentCodeScope = Integer.valueOf(0);
+    HashMap<Integer, List<NotCGenerator.Variable>> _hashMap = new HashMap<Integer, List<NotCGenerator.Variable>>();
+    this.variablesByScope = _hashMap;
     TreeIterator<EObject> _allContents = resource.getAllContents();
     Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_allContents);
     Iterable<Code> _filter = Iterables.<Code>filter(_iterable, Code.class);
     for (final Code e : _filter) {
       URI _normalizedURI = EcoreUtil2.getNormalizedURI(resource);
       String _lastSegment = _normalizedURI.lastSegment();
+      String _plus = (_lastSegment + "_");
       CharSequence _compileCode = this.compileCode(e);
-      fsa.generateFile(_lastSegment, _compileCode);
+      fsa.generateFile(_plus, _compileCode);
     }
   }
   

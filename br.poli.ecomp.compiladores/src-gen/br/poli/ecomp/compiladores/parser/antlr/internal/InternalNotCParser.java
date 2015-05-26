@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalNotCParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'('", "')'", "','", "'{'", "'}'", "'if'", "'else'", "'while'", "'return'", "';'", "'='", "'+'", "'-'", "'*'", "'/'", "'^'", "'int'", "'float'", "'char'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'('", "')'", "','", "'{'", "'}'", "'if'", "'else'", "'while'", "'return'", "';'", "'='", "'+'", "'-'", "'*'", "'/'", "'^'", "'var'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -40,9 +40,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
     public static final int RULE_ANY_OTHER=10;
     public static final int T__26=26;
     public static final int T__27=27;
-    public static final int T__28=28;
     public static final int RULE_INT=5;
-    public static final int T__29=29;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__23=23;
@@ -148,60 +146,24 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
             loop1:
             do {
                 int alt1=2;
-                switch ( input.LA(1) ) {
-                case 27:
-                    {
+                int LA1_0 = input.LA(1);
+
+                if ( (LA1_0==27) ) {
                     int LA1_1 = input.LA(2);
 
                     if ( (LA1_1==RULE_ID) ) {
-                        int LA1_5 = input.LA(3);
+                        int LA1_3 = input.LA(3);
 
-                        if ( (LA1_5==13||(LA1_5>=20 && LA1_5<=21)) ) {
+                        if ( (LA1_3==13||(LA1_3>=20 && LA1_3<=21)) ) {
                             alt1=1;
                         }
 
 
                     }
 
-
-                    }
-                    break;
-                case 28:
-                    {
-                    int LA1_2 = input.LA(2);
-
-                    if ( (LA1_2==RULE_ID) ) {
-                        int LA1_5 = input.LA(3);
-
-                        if ( (LA1_5==13||(LA1_5>=20 && LA1_5<=21)) ) {
-                            alt1=1;
-                        }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 29:
-                    {
-                    int LA1_3 = input.LA(2);
-
-                    if ( (LA1_3==RULE_ID) ) {
-                        int LA1_5 = input.LA(3);
-
-                        if ( (LA1_5==13||(LA1_5>=20 && LA1_5<=21)) ) {
-                            alt1=1;
-                        }
-
-
-                    }
-
-
-                    }
-                    break;
 
                 }
+
 
                 switch (alt1) {
             	case 1 :
@@ -247,7 +209,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( ((LA2_0>=27 && LA2_0<=29)) ) {
+                if ( (LA2_0==27) ) {
                     alt2=1;
                 }
 
@@ -435,7 +397,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( ((LA3_0>=27 && LA3_0<=29)) ) {
+            if ( (LA3_0==27) ) {
                 alt3=1;
             }
             switch (alt3) {
@@ -900,7 +862,7 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
                 int alt5=2;
                 int LA5_0 = input.LA(1);
 
-                if ( ((LA5_0>=27 && LA5_0<=29)) ) {
+                if ( (LA5_0==27) ) {
                     alt5=1;
                 }
 
@@ -3047,130 +3009,37 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleType"
-    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1208:1: ruleType returns [EObject current=null] : ( ( (lv_value_0_0= 'int' ) ) | ( (lv_value_1_0= 'float' ) ) | ( (lv_value_2_0= 'char' ) ) ) ;
+    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1208:1: ruleType returns [EObject current=null] : ( (lv_value_0_0= 'var' ) ) ;
     public final EObject ruleType() throws RecognitionException {
         EObject current = null;
 
         Token lv_value_0_0=null;
-        Token lv_value_1_0=null;
-        Token lv_value_2_0=null;
 
          enterRule(); 
             
         try {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1211:28: ( ( ( (lv_value_0_0= 'int' ) ) | ( (lv_value_1_0= 'float' ) ) | ( (lv_value_2_0= 'char' ) ) ) )
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1212:1: ( ( (lv_value_0_0= 'int' ) ) | ( (lv_value_1_0= 'float' ) ) | ( (lv_value_2_0= 'char' ) ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1211:28: ( ( (lv_value_0_0= 'var' ) ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1212:1: ( (lv_value_0_0= 'var' ) )
             {
-            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1212:1: ( ( (lv_value_0_0= 'int' ) ) | ( (lv_value_1_0= 'float' ) ) | ( (lv_value_2_0= 'char' ) ) )
-            int alt18=3;
-            switch ( input.LA(1) ) {
-            case 27:
-                {
-                alt18=1;
-                }
-                break;
-            case 28:
-                {
-                alt18=2;
-                }
-                break;
-            case 29:
-                {
-                alt18=3;
-                }
-                break;
-            default:
-                NoViableAltException nvae =
-                    new NoViableAltException("", 18, 0, input);
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1212:1: ( (lv_value_0_0= 'var' ) )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1213:1: (lv_value_0_0= 'var' )
+            {
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1213:1: (lv_value_0_0= 'var' )
+            // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1214:3: lv_value_0_0= 'var'
+            {
+            lv_value_0_0=(Token)match(input,27,FOLLOW_27_in_ruleType2604); 
 
-                throw nvae;
+                    newLeafNode(lv_value_0_0, grammarAccess.getTypeAccess().getValueVarKeyword_0());
+                
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getTypeRule());
+            	        }
+                   		setWithLastConsumed(current, "value", lv_value_0_0, "var");
+            	    
+
             }
 
-            switch (alt18) {
-                case 1 :
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1212:2: ( (lv_value_0_0= 'int' ) )
-                    {
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1212:2: ( (lv_value_0_0= 'int' ) )
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1213:1: (lv_value_0_0= 'int' )
-                    {
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1213:1: (lv_value_0_0= 'int' )
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1214:3: lv_value_0_0= 'int'
-                    {
-                    lv_value_0_0=(Token)match(input,27,FOLLOW_27_in_ruleType2605); 
-
-                            newLeafNode(lv_value_0_0, grammarAccess.getTypeAccess().getValueIntKeyword_0_0());
-                        
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getTypeRule());
-                    	        }
-                           		setWithLastConsumed(current, "value", lv_value_0_0, "int");
-                    	    
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1228:6: ( (lv_value_1_0= 'float' ) )
-                    {
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1228:6: ( (lv_value_1_0= 'float' ) )
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1229:1: (lv_value_1_0= 'float' )
-                    {
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1229:1: (lv_value_1_0= 'float' )
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1230:3: lv_value_1_0= 'float'
-                    {
-                    lv_value_1_0=(Token)match(input,28,FOLLOW_28_in_ruleType2642); 
-
-                            newLeafNode(lv_value_1_0, grammarAccess.getTypeAccess().getValueFloatKeyword_1_0());
-                        
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getTypeRule());
-                    	        }
-                           		setWithLastConsumed(current, "value", lv_value_1_0, "float");
-                    	    
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1244:6: ( (lv_value_2_0= 'char' ) )
-                    {
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1244:6: ( (lv_value_2_0= 'char' ) )
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1245:1: (lv_value_2_0= 'char' )
-                    {
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1245:1: (lv_value_2_0= 'char' )
-                    // ../br.poli.ecomp.compiladores/src-gen/br/poli/ecomp/compiladores/parser/antlr/internal/InternalNotC.g:1246:3: lv_value_2_0= 'char'
-                    {
-                    lv_value_2_0=(Token)match(input,29,FOLLOW_29_in_ruleType2679); 
-
-                            newLeafNode(lv_value_2_0, grammarAccess.getTypeAccess().getValueCharKeyword_2_0());
-                        
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getTypeRule());
-                    	        }
-                           		setWithLastConsumed(current, "value", lv_value_2_0, "char");
-                    	    
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
 
             }
 
@@ -3197,13 +3066,13 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_ruleCode_in_entryRuleCode75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleCode85 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDeclaration_in_ruleCode131 = new BitSet(new long[]{0x0000000038000002L});
-    public static final BitSet FOLLOW_ruleFunction_in_ruleCode153 = new BitSet(new long[]{0x0000000038000002L});
+    public static final BitSet FOLLOW_ruleDeclaration_in_ruleCode131 = new BitSet(new long[]{0x0000000008000002L});
+    public static final BitSet FOLLOW_ruleFunction_in_ruleCode153 = new BitSet(new long[]{0x0000000008000002L});
     public static final BitSet FOLLOW_ruleFunction_in_entryRuleFunction190 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleFunction200 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleType_in_ruleFunction246 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleFunction263 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_11_in_ruleFunction280 = new BitSet(new long[]{0x0000000038001000L});
+    public static final BitSet FOLLOW_11_in_ruleFunction280 = new BitSet(new long[]{0x0000000008001000L});
     public static final BitSet FOLLOW_ruleFuncParam_in_ruleFunction301 = new BitSet(new long[]{0x0000000000001000L});
     public static final BitSet FOLLOW_12_in_ruleFunction314 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_ruleBlock_in_ruleFunction335 = new BitSet(new long[]{0x0000000000000002L});
@@ -3211,16 +3080,16 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_EOF_in_entryRuleFuncParam381 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleType_in_ruleFuncParam427 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleFuncParam444 = new BitSet(new long[]{0x0000000000002002L});
-    public static final BitSet FOLLOW_13_in_ruleFuncParam462 = new BitSet(new long[]{0x0000000038000000L});
+    public static final BitSet FOLLOW_13_in_ruleFuncParam462 = new BitSet(new long[]{0x0000000008000000L});
     public static final BitSet FOLLOW_ruleFuncParam_in_ruleFuncParam483 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBlock_in_entryRuleBlock521 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBlock531 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_ruleBlock568 = new BitSet(new long[]{0x00000000380D0000L});
+    public static final BitSet FOLLOW_14_in_ruleBlock568 = new BitSet(new long[]{0x00000000080D0000L});
     public static final BitSet FOLLOW_ruleStatement_in_ruleBlock589 = new BitSet(new long[]{0x0000000000008000L});
     public static final BitSet FOLLOW_15_in_ruleBlock601 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStatement_in_entryRuleStatement637 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleStatement647 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDeclaration_in_ruleStatement702 = new BitSet(new long[]{0x00000000380D0002L});
+    public static final BitSet FOLLOW_ruleDeclaration_in_ruleStatement702 = new BitSet(new long[]{0x00000000080D0002L});
     public static final BitSet FOLLOW_ruleCommand_in_ruleStatement724 = new BitSet(new long[]{0x00000000000D0002L});
     public static final BitSet FOLLOW_ruleCommand_in_entryRuleCommand761 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleCommand771 = new BitSet(new long[]{0x0000000000000002L});
@@ -3292,8 +3161,6 @@ public class InternalNotCParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_RULE_ID_in_ruleElement2507 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleType_in_entryRuleType2552 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleType2562 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_ruleType2605 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_ruleType2642 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_ruleType2679 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_ruleType2604 = new BitSet(new long[]{0x0000000000000002L});
 
 }

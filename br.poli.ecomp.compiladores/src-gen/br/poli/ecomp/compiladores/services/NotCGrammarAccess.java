@@ -656,38 +656,19 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class TypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Type");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cValueAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final Keyword cValueIntKeyword_0_0 = (Keyword)cValueAssignment_0.eContents().get(0);
-		private final Assignment cValueAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final Keyword cValueFloatKeyword_1_0 = (Keyword)cValueAssignment_1.eContents().get(0);
-		private final Assignment cValueAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final Keyword cValueCharKeyword_2_0 = (Keyword)cValueAssignment_2.eContents().get(0);
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final Keyword cValueVarKeyword_0 = (Keyword)cValueAssignment.eContents().get(0);
 		
+		////Type: (value = 'int'| value = 'float'| value ='char');
 		//Type:
-		//	value="int" | value="float" | value="char";
+		//	value="var";
 		public ParserRule getRule() { return rule; }
 
-		//value="int" | value="float" | value="char"
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//value="var"
+		public Assignment getValueAssignment() { return cValueAssignment; }
 
-		//value="int"
-		public Assignment getValueAssignment_0() { return cValueAssignment_0; }
-
-		//"int"
-		public Keyword getValueIntKeyword_0_0() { return cValueIntKeyword_0_0; }
-
-		//value="float"
-		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
-
-		//"float"
-		public Keyword getValueFloatKeyword_1_0() { return cValueFloatKeyword_1_0; }
-
-		//value="char"
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
-
-		//"char"
-		public Keyword getValueCharKeyword_2_0() { return cValueCharKeyword_2_0; }
+		//"var"
+		public Keyword getValueVarKeyword_0() { return cValueVarKeyword_0; }
 	}
 	
 	
@@ -936,8 +917,9 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 		return getElementAccess().getRule();
 	}
 
+	////Type: (value = 'int'| value = 'float'| value ='char');
 	//Type:
-	//	value="int" | value="float" | value="char";
+	//	value="var";
 	public TypeElements getTypeAccess() {
 		return pType;
 	}

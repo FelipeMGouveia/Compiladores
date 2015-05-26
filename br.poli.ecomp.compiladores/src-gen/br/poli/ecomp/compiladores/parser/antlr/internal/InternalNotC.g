@@ -1209,54 +1209,22 @@ ruleType returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
 (
-		lv_value_0_0=	'int' 
+(
+		lv_value_0_0=	'var' 
     {
-        newLeafNode(lv_value_0_0, grammarAccess.getTypeAccess().getValueIntKeyword_0_0());
+        newLeafNode(lv_value_0_0, grammarAccess.getTypeAccess().getValueVarKeyword_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getTypeRule());
 	        }
-       		setWithLastConsumed($current, "value", lv_value_0_0, "int");
+       		setWithLastConsumed($current, "value", lv_value_0_0, "var");
 	    }
 
 )
 )
-    |(
-(
-		lv_value_1_0=	'float' 
-    {
-        newLeafNode(lv_value_1_0, grammarAccess.getTypeAccess().getValueFloatKeyword_1_0());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getTypeRule());
-	        }
-       		setWithLastConsumed($current, "value", lv_value_1_0, "float");
-	    }
-
-)
-)
-    |(
-(
-		lv_value_2_0=	'char' 
-    {
-        newLeafNode(lv_value_2_0, grammarAccess.getTypeAccess().getValueCharKeyword_2_0());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getTypeRule());
-	        }
-       		setWithLastConsumed($current, "value", lv_value_2_0, "char");
-	    }
-
-)
-))
 ;
 
 
