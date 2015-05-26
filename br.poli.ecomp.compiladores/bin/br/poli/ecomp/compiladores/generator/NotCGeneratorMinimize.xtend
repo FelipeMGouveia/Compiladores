@@ -254,9 +254,26 @@ class NotCGenerator implements IGenerator {
 //Statement: (declarations+=IDDeclaration)* (commands+=Command)*;
 	def dispatch compile(Block block)
 	'''
-{
+{«IF incrementCurrentScope() != null »«ENDIF»
 «IF block.statement != null»«block.statement.compile»«ENDIF»
-}'''
+}«IF decrementCurrentScope() != null »«ENDIF»'''
+	
+	def Integer incrementCurrentScope() 
+	{
+		currentCodeScope++;
+		variablesByScope.put(currentCodeScope, new ArrayList<Variable>());
+		variablesByScope.get(currentCodeScope).addAll(variablesByScope.get(currentCodeScope - 1));
+		return null;
+	}
+	
+	def Integer decrementCurrentScope() 
+	{
+		variablesByScope.remove(currentCodeScope);
+		currentCodeScope--;
+		return null;
+	}
+	
+	
 	
 	def dispatch compile(Statement statement)
 	'''«IF statement.declarations != null»«FOR declaration : statement.declarations»	«declaration.compile»

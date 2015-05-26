@@ -485,11 +485,17 @@ public class NotCGenerator implements IGenerator {
   protected CharSequence _compile(final Block block) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("{");
-    _builder.newLine();
+    {
+      Integer _incrementCurrentScope = this.incrementCurrentScope();
+      boolean _notEquals = (!Objects.equal(_incrementCurrentScope, null));
+      if (_notEquals) {
+      }
+    }
+    _builder.newLineIfNotEmpty();
     {
       Statement _statement = block.getStatement();
-      boolean _notEquals = (!Objects.equal(_statement, null));
-      if (_notEquals) {
+      boolean _notEquals_1 = (!Objects.equal(_statement, null));
+      if (_notEquals_1) {
         Statement _statement_1 = block.getStatement();
         Object _compile = this.compile(_statement_1);
         _builder.append(_compile, "");
@@ -497,7 +503,29 @@ public class NotCGenerator implements IGenerator {
     }
     _builder.newLineIfNotEmpty();
     _builder.append("}");
+    {
+      Integer _decrementCurrentScope = this.decrementCurrentScope();
+      boolean _notEquals_2 = (!Objects.equal(_decrementCurrentScope, null));
+      if (_notEquals_2) {
+      }
+    }
     return _builder;
+  }
+  
+  public Integer incrementCurrentScope() {
+    this.currentCodeScope++;
+    ArrayList<NotCGenerator.Variable> _arrayList = new ArrayList<NotCGenerator.Variable>();
+    this.variablesByScope.put(this.currentCodeScope, _arrayList);
+    List<NotCGenerator.Variable> _get = this.variablesByScope.get(this.currentCodeScope);
+    List<NotCGenerator.Variable> _get_1 = this.variablesByScope.get(Integer.valueOf(((this.currentCodeScope).intValue() - 1)));
+    _get.addAll(_get_1);
+    return null;
+  }
+  
+  public Integer decrementCurrentScope() {
+    this.variablesByScope.remove(this.currentCodeScope);
+    this.currentCodeScope--;
+    return null;
   }
   
   protected CharSequence _compile(final Statement statement) {
