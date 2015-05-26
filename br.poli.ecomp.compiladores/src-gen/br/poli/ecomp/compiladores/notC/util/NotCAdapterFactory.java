@@ -125,6 +125,11 @@ public class NotCAdapterFactory extends AdapterFactoryImpl
         return createDeclarationAdapter();
       }
       @Override
+      public Adapter caseKDeclaration(KDeclaration object)
+      {
+        return createKDeclarationAdapter();
+      }
+      @Override
       public Adapter caseRDeclaration(RDeclaration object)
       {
         return createRDeclarationAdapter();
@@ -327,6 +332,21 @@ public class NotCAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.poli.ecomp.compiladores.notC.KDeclaration <em>KDeclaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.poli.ecomp.compiladores.notC.KDeclaration
+   * @generated
+   */
+  public Adapter createKDeclarationAdapter()
   {
     return null;
   }

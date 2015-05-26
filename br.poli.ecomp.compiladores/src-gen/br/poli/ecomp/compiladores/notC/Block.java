@@ -2,7 +2,6 @@
  */
 package br.poli.ecomp.compiladores.notC;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Block extends EObject
+public interface Block extends Command
 {
   /**
    * Returns the value of the '<em><b>Statement</b></em>' containment reference.

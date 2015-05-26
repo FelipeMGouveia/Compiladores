@@ -48,12 +48,12 @@ public class NotCParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFuncParamAccess().getGroup_2(), "rule__FuncParam__Group_2__0");
 					put(grammarAccess.getBlockAccess().getGroup(), "rule__Block__Group__0");
 					put(grammarAccess.getStatementAccess().getGroup(), "rule__Statement__Group__0");
-					put(grammarAccess.getCommandAccess().getGroup_3(), "rule__Command__Group_3__0");
 					put(grammarAccess.getIfCommandAccess().getGroup(), "rule__IfCommand__Group__0");
 					put(grammarAccess.getIfCommandAccess().getGroup_5(), "rule__IfCommand__Group_5__0");
 					put(grammarAccess.getWhileCommandAccess().getGroup(), "rule__WhileCommand__Group__0");
 					put(grammarAccess.getReturnCommandAccess().getGroup(), "rule__ReturnCommand__Group__0");
 					put(grammarAccess.getDeclarationAccess().getGroup(), "rule__Declaration__Group__0");
+					put(grammarAccess.getKDeclarationAccess().getGroup(), "rule__KDeclaration__Group__0");
 					put(grammarAccess.getRDeclarationAccess().getGroup(), "rule__RDeclaration__Group__0");
 					put(grammarAccess.getRDeclarationAccess().getGroup_1(), "rule__RDeclaration__Group_1__0");
 					put(grammarAccess.getIDDeclarationAccess().getGroup(), "rule__IDDeclaration__Group__0");
@@ -75,8 +75,7 @@ public class NotCParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFuncParamAccess().getIdAssignment_1(), "rule__FuncParam__IdAssignment_1");
 					put(grammarAccess.getFuncParamAccess().getNextAssignment_2_1(), "rule__FuncParam__NextAssignment_2_1");
 					put(grammarAccess.getBlockAccess().getStatementAssignment_1(), "rule__Block__StatementAssignment_1");
-					put(grammarAccess.getStatementAccess().getDeclarationsAssignment_1(), "rule__Statement__DeclarationsAssignment_1");
-					put(grammarAccess.getStatementAccess().getCommandsAssignment_2(), "rule__Statement__CommandsAssignment_2");
+					put(grammarAccess.getStatementAccess().getCommandsAssignment_1(), "rule__Statement__CommandsAssignment_1");
 					put(grammarAccess.getIfCommandAccess().getExprAssignment_2(), "rule__IfCommand__ExprAssignment_2");
 					put(grammarAccess.getIfCommandAccess().getIfBlockAssignment_4(), "rule__IfCommand__IfBlockAssignment_4");
 					put(grammarAccess.getIfCommandAccess().getElseBlockAssignment_5_1(), "rule__IfCommand__ElseBlockAssignment_5_1");
@@ -85,6 +84,7 @@ public class NotCParser extends AbstractContentAssistParser {
 					put(grammarAccess.getReturnCommandAccess().getExprAssignment_1(), "rule__ReturnCommand__ExprAssignment_1");
 					put(grammarAccess.getDeclarationAccess().getTypeAssignment_0(), "rule__Declaration__TypeAssignment_0");
 					put(grammarAccess.getDeclarationAccess().getValueAssignment_1(), "rule__Declaration__ValueAssignment_1");
+					put(grammarAccess.getKDeclarationAccess().getDeclarationAssignment_0(), "rule__KDeclaration__DeclarationAssignment_0");
 					put(grammarAccess.getRDeclarationAccess().getIdAssignment_0(), "rule__RDeclaration__IdAssignment_0");
 					put(grammarAccess.getRDeclarationAccess().getNextAssignment_1_2(), "rule__RDeclaration__NextAssignment_1_2");
 					put(grammarAccess.getIDDeclarationAccess().getIdAssignment_0(), "rule__IDDeclaration__IdAssignment_0");

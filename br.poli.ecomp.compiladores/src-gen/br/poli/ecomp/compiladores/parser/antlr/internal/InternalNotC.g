@@ -370,34 +370,16 @@ ruleStatement returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getStatementAccess().getDeclarationsDeclarationParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getStatementAccess().getCommandsCommandParserRuleCall_1_0()); 
 	    }
-		lv_declarations_1_0=ruleDeclaration		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getStatementRule());
-	        }
-       		add(
-       			$current, 
-       			"declarations",
-        		lv_declarations_1_0, 
-        		"Declaration");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)*(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getStatementAccess().getCommandsCommandParserRuleCall_2_0()); 
-	    }
-		lv_commands_2_0=ruleCommand		{
+		lv_commands_1_0=ruleCommand		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getStatementRule());
 	        }
        		add(
        			$current, 
        			"commands",
-        		lv_commands_2_0, 
+        		lv_commands_1_0, 
         		"Command");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -454,20 +436,36 @@ ruleCommand returns [EObject current=null]
         afterParserOrEnumRuleCall();
     }
 
-    |(
+    |
     { 
-        newCompositeNode(grammarAccess.getCommandAccess().getRDeclarationParserRuleCall_3_0()); 
+        newCompositeNode(grammarAccess.getCommandAccess().getKDeclarationParserRuleCall_3()); 
     }
-    this_RDeclaration_3=ruleRDeclaration
+    this_KDeclaration_3=ruleKDeclaration
     { 
-        $current = $this_RDeclaration_3.current; 
+        $current = $this_KDeclaration_3.current; 
         afterParserOrEnumRuleCall();
     }
-	otherlv_4=';' 
-    {
-    	newLeafNode(otherlv_4, grammarAccess.getCommandAccess().getSemicolonKeyword_3_1());
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getCommandAccess().getDeclarationParserRuleCall_4()); 
     }
-))
+    this_Declaration_4=ruleDeclaration
+    { 
+        $current = $this_Declaration_4.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getCommandAccess().getBlockParserRuleCall_5()); 
+    }
+    this_Block_5=ruleBlock
+    { 
+        $current = $this_Block_5.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
 ;
 
 
@@ -734,6 +732,49 @@ ruleDeclaration returns [EObject current=null]
 )	otherlv_2=';' 
     {
     	newLeafNode(otherlv_2, grammarAccess.getDeclarationAccess().getSemicolonKeyword_2());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleKDeclaration
+entryRuleKDeclaration returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getKDeclarationRule()); }
+	 iv_ruleKDeclaration=ruleKDeclaration 
+	 { $current=$iv_ruleKDeclaration.current; } 
+	 EOF 
+;
+
+// Rule KDeclaration
+ruleKDeclaration returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getKDeclarationAccess().getDeclarationRDeclarationParserRuleCall_0_0()); 
+	    }
+		lv_declaration_0_0=ruleRDeclaration		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getKDeclarationRule());
+	        }
+       		set(
+       			$current, 
+       			"declaration",
+        		lv_declaration_0_0, 
+        		"RDeclaration");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_1=';' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getKDeclarationAccess().getSemicolonKeyword_1());
     }
 )
 ;

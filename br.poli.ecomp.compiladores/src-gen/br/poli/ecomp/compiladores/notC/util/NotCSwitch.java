@@ -97,6 +97,7 @@ public class NotCSwitch<T> extends Switch<T>
       {
         Block block = (Block)theEObject;
         T result = caseBlock(block);
+        if (result == null) result = caseCommand(block);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -142,6 +143,15 @@ public class NotCSwitch<T> extends Switch<T>
       {
         Declaration declaration = (Declaration)theEObject;
         T result = caseDeclaration(declaration);
+        if (result == null) result = caseCommand(declaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case NotCPackage.KDECLARATION:
+      {
+        KDeclaration kDeclaration = (KDeclaration)theEObject;
+        T result = caseKDeclaration(kDeclaration);
+        if (result == null) result = caseCommand(kDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -149,7 +159,6 @@ public class NotCSwitch<T> extends Switch<T>
       {
         RDeclaration rDeclaration = (RDeclaration)theEObject;
         T result = caseRDeclaration(rDeclaration);
-        if (result == null) result = caseCommand(rDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -358,6 +367,22 @@ public class NotCSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDeclaration(Declaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>KDeclaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>KDeclaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseKDeclaration(KDeclaration object)
   {
     return null;
   }

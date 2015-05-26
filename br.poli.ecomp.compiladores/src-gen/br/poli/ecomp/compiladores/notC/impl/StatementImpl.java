@@ -3,7 +3,6 @@
 package br.poli.ecomp.compiladores.notC.impl;
 
 import br.poli.ecomp.compiladores.notC.Command;
-import br.poli.ecomp.compiladores.notC.Declaration;
 import br.poli.ecomp.compiladores.notC.NotCPackage;
 import br.poli.ecomp.compiladores.notC.Statement;
 
@@ -28,7 +27,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link br.poli.ecomp.compiladores.notC.impl.StatementImpl#getDeclarations <em>Declarations</em>}</li>
  *   <li>{@link br.poli.ecomp.compiladores.notC.impl.StatementImpl#getCommands <em>Commands</em>}</li>
  * </ul>
  * </p>
@@ -37,16 +35,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class StatementImpl extends MinimalEObjectImpl.Container implements Statement
 {
-  /**
-   * The cached value of the '{@link #getDeclarations() <em>Declarations</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDeclarations()
-   * @generated
-   * @ordered
-   */
-  protected EList<Declaration> declarations;
-
   /**
    * The cached value of the '{@link #getCommands() <em>Commands</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -83,20 +71,6 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Declaration> getDeclarations()
-  {
-    if (declarations == null)
-    {
-      declarations = new EObjectContainmentEList<Declaration>(Declaration.class, this, NotCPackage.STATEMENT__DECLARATIONS);
-    }
-    return declarations;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<Command> getCommands()
   {
     if (commands == null)
@@ -116,8 +90,6 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
-      case NotCPackage.STATEMENT__DECLARATIONS:
-        return ((InternalEList<?>)getDeclarations()).basicRemove(otherEnd, msgs);
       case NotCPackage.STATEMENT__COMMANDS:
         return ((InternalEList<?>)getCommands()).basicRemove(otherEnd, msgs);
     }
@@ -134,8 +106,6 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
-      case NotCPackage.STATEMENT__DECLARATIONS:
-        return getDeclarations();
       case NotCPackage.STATEMENT__COMMANDS:
         return getCommands();
     }
@@ -153,10 +123,6 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
-      case NotCPackage.STATEMENT__DECLARATIONS:
-        getDeclarations().clear();
-        getDeclarations().addAll((Collection<? extends Declaration>)newValue);
-        return;
       case NotCPackage.STATEMENT__COMMANDS:
         getCommands().clear();
         getCommands().addAll((Collection<? extends Command>)newValue);
@@ -175,9 +141,6 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
-      case NotCPackage.STATEMENT__DECLARATIONS:
-        getDeclarations().clear();
-        return;
       case NotCPackage.STATEMENT__COMMANDS:
         getCommands().clear();
         return;
@@ -195,8 +158,6 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
-      case NotCPackage.STATEMENT__DECLARATIONS:
-        return declarations != null && !declarations.isEmpty();
       case NotCPackage.STATEMENT__COMMANDS:
         return commands != null && !commands.isEmpty();
     }

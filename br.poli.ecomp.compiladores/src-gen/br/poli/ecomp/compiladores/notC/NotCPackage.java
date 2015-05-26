@@ -195,71 +195,6 @@ public interface NotCPackage extends EPackage
   int FUNC_PARAM_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link br.poli.ecomp.compiladores.notC.impl.BlockImpl <em>Block</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see br.poli.ecomp.compiladores.notC.impl.BlockImpl
-   * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getBlock()
-   * @generated
-   */
-  int BLOCK = 3;
-
-  /**
-   * The feature id for the '<em><b>Statement</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BLOCK__STATEMENT = 0;
-
-  /**
-   * The number of structural features of the '<em>Block</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BLOCK_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link br.poli.ecomp.compiladores.notC.impl.StatementImpl <em>Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see br.poli.ecomp.compiladores.notC.impl.StatementImpl
-   * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getStatement()
-   * @generated
-   */
-  int STATEMENT = 4;
-
-  /**
-   * The feature id for the '<em><b>Declarations</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT__DECLARATIONS = 0;
-
-  /**
-   * The feature id for the '<em><b>Commands</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT__COMMANDS = 1;
-
-  /**
-   * The number of structural features of the '<em>Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT_FEATURE_COUNT = 2;
-
-  /**
    * The meta object id for the '{@link br.poli.ecomp.compiladores.notC.impl.CommandImpl <em>Command</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -277,6 +212,62 @@ public interface NotCPackage extends EPackage
    * @ordered
    */
   int COMMAND_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link br.poli.ecomp.compiladores.notC.impl.BlockImpl <em>Block</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.poli.ecomp.compiladores.notC.impl.BlockImpl
+   * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getBlock()
+   * @generated
+   */
+  int BLOCK = 3;
+
+  /**
+   * The feature id for the '<em><b>Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BLOCK__STATEMENT = COMMAND_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Block</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BLOCK_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link br.poli.ecomp.compiladores.notC.impl.StatementImpl <em>Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.poli.ecomp.compiladores.notC.impl.StatementImpl
+   * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getStatement()
+   * @generated
+   */
+  int STATEMENT = 4;
+
+  /**
+   * The feature id for the '<em><b>Commands</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__COMMANDS = 0;
+
+  /**
+   * The number of structural features of the '<em>Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link br.poli.ecomp.compiladores.notC.impl.IfCommandImpl <em>If Command</em>}' class.
@@ -406,7 +397,7 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECLARATION__TYPE = 0;
+  int DECLARATION__TYPE = COMMAND_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -415,7 +406,7 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECLARATION__VALUE = 1;
+  int DECLARATION__VALUE = COMMAND_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Declaration</em>' class.
@@ -424,7 +415,35 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECLARATION_FEATURE_COUNT = 2;
+  int DECLARATION_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link br.poli.ecomp.compiladores.notC.impl.KDeclarationImpl <em>KDeclaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.poli.ecomp.compiladores.notC.impl.KDeclarationImpl
+   * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getKDeclaration()
+   * @generated
+   */
+  int KDECLARATION = 10;
+
+  /**
+   * The feature id for the '<em><b>Declaration</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int KDECLARATION__DECLARATION = COMMAND_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>KDeclaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int KDECLARATION_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link br.poli.ecomp.compiladores.notC.impl.RDeclarationImpl <em>RDeclaration</em>}' class.
@@ -434,7 +453,7 @@ public interface NotCPackage extends EPackage
    * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getRDeclaration()
    * @generated
    */
-  int RDECLARATION = 10;
+  int RDECLARATION = 11;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' containment reference.
@@ -443,7 +462,7 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RDECLARATION__ID = COMMAND_FEATURE_COUNT + 0;
+  int RDECLARATION__ID = 0;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -452,7 +471,7 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RDECLARATION__LEFT = COMMAND_FEATURE_COUNT + 1;
+  int RDECLARATION__LEFT = 1;
 
   /**
    * The feature id for the '<em><b>Next</b></em>' containment reference.
@@ -461,7 +480,7 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RDECLARATION__NEXT = COMMAND_FEATURE_COUNT + 2;
+  int RDECLARATION__NEXT = 2;
 
   /**
    * The number of structural features of the '<em>RDeclaration</em>' class.
@@ -470,7 +489,7 @@ public interface NotCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RDECLARATION_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 3;
+  int RDECLARATION_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link br.poli.ecomp.compiladores.notC.impl.IDDeclarationImpl <em>ID Declaration</em>}' class.
@@ -480,7 +499,7 @@ public interface NotCPackage extends EPackage
    * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getIDDeclaration()
    * @generated
    */
-  int ID_DECLARATION = 11;
+  int ID_DECLARATION = 12;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -517,7 +536,7 @@ public interface NotCPackage extends EPackage
    * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 12;
+  int EXPRESSION = 13;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -581,7 +600,7 @@ public interface NotCPackage extends EPackage
    * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getType()
    * @generated
    */
-  int TYPE = 13;
+  int TYPE = 14;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -609,7 +628,7 @@ public interface NotCPackage extends EPackage
    * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getExpr()
    * @generated
    */
-  int EXPR = 14;
+  int EXPR = 15;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -673,7 +692,7 @@ public interface NotCPackage extends EPackage
    * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getTerm()
    * @generated
    */
-  int TERM = 15;
+  int TERM = 16;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -737,7 +756,7 @@ public interface NotCPackage extends EPackage
    * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getFactor()
    * @generated
    */
-  int FACTOR = 16;
+  int FACTOR = 17;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -955,17 +974,6 @@ public interface NotCPackage extends EPackage
   EClass getStatement();
 
   /**
-   * Returns the meta object for the containment reference list '{@link br.poli.ecomp.compiladores.notC.Statement#getDeclarations <em>Declarations</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Declarations</em>'.
-   * @see br.poli.ecomp.compiladores.notC.Statement#getDeclarations()
-   * @see #getStatement()
-   * @generated
-   */
-  EReference getStatement_Declarations();
-
-  /**
    * Returns the meta object for the containment reference list '{@link br.poli.ecomp.compiladores.notC.Statement#getCommands <em>Commands</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1113,6 +1121,27 @@ public interface NotCPackage extends EPackage
    * @generated
    */
   EReference getDeclaration_Value();
+
+  /**
+   * Returns the meta object for class '{@link br.poli.ecomp.compiladores.notC.KDeclaration <em>KDeclaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>KDeclaration</em>'.
+   * @see br.poli.ecomp.compiladores.notC.KDeclaration
+   * @generated
+   */
+  EClass getKDeclaration();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.poli.ecomp.compiladores.notC.KDeclaration#getDeclaration <em>Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Declaration</em>'.
+   * @see br.poli.ecomp.compiladores.notC.KDeclaration#getDeclaration()
+   * @see #getKDeclaration()
+   * @generated
+   */
+  EReference getKDeclaration_Declaration();
 
   /**
    * Returns the meta object for class '{@link br.poli.ecomp.compiladores.notC.RDeclaration <em>RDeclaration</em>}'.
@@ -1459,14 +1488,6 @@ public interface NotCPackage extends EPackage
     EClass STATEMENT = eINSTANCE.getStatement();
 
     /**
-     * The meta object literal for the '<em><b>Declarations</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STATEMENT__DECLARATIONS = eINSTANCE.getStatement_Declarations();
-
-    /**
      * The meta object literal for the '<em><b>Commands</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1587,6 +1608,24 @@ public interface NotCPackage extends EPackage
      * @generated
      */
     EReference DECLARATION__VALUE = eINSTANCE.getDeclaration_Value();
+
+    /**
+     * The meta object literal for the '{@link br.poli.ecomp.compiladores.notC.impl.KDeclarationImpl <em>KDeclaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.poli.ecomp.compiladores.notC.impl.KDeclarationImpl
+     * @see br.poli.ecomp.compiladores.notC.impl.NotCPackageImpl#getKDeclaration()
+     * @generated
+     */
+    EClass KDECLARATION = eINSTANCE.getKDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Declaration</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference KDECLARATION__DECLARATION = eINSTANCE.getKDeclaration_Declaration();
 
     /**
      * The meta object literal for the '{@link br.poli.ecomp.compiladores.notC.impl.RDeclarationImpl <em>RDeclaration</em>}' class.

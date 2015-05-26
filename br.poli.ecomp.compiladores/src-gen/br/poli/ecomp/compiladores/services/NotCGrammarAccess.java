@@ -174,32 +174,24 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Statement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cStatementAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cDeclarationsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cDeclarationsDeclarationParserRuleCall_1_0 = (RuleCall)cDeclarationsAssignment_1.eContents().get(0);
-		private final Assignment cCommandsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cCommandsCommandParserRuleCall_2_0 = (RuleCall)cCommandsAssignment_2.eContents().get(0);
+		private final Assignment cCommandsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cCommandsCommandParserRuleCall_1_0 = (RuleCall)cCommandsAssignment_1.eContents().get(0);
 		
 		//Statement:
-		//	{Statement} declarations+=Declaration* commands+=Command*;
+		//	{Statement} commands+=Command*;
 		public ParserRule getRule() { return rule; }
 
-		//{Statement} declarations+=Declaration* commands+=Command*
+		//{Statement} commands+=Command*
 		public Group getGroup() { return cGroup; }
 
 		//{Statement}
 		public Action getStatementAction_0() { return cStatementAction_0; }
 
-		//declarations+=Declaration*
-		public Assignment getDeclarationsAssignment_1() { return cDeclarationsAssignment_1; }
-
-		//Declaration
-		public RuleCall getDeclarationsDeclarationParserRuleCall_1_0() { return cDeclarationsDeclarationParserRuleCall_1_0; }
-
 		//commands+=Command*
-		public Assignment getCommandsAssignment_2() { return cCommandsAssignment_2; }
+		public Assignment getCommandsAssignment_1() { return cCommandsAssignment_1; }
 
 		//Command
-		public RuleCall getCommandsCommandParserRuleCall_2_0() { return cCommandsCommandParserRuleCall_2_0; }
+		public RuleCall getCommandsCommandParserRuleCall_1_0() { return cCommandsCommandParserRuleCall_1_0; }
 	}
 
 	public class CommandElements extends AbstractParserRuleElementFinder {
@@ -208,15 +200,15 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIfCommandParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cWhileCommandParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cReturnCommandParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final RuleCall cRDeclarationParserRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
-		private final Keyword cSemicolonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final RuleCall cKDeclarationParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cDeclarationParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cBlockParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		
 		//Command:
-		//	IfCommand | WhileCommand | ReturnCommand | RDeclaration ";";
+		//	IfCommand | WhileCommand | ReturnCommand | KDeclaration | Declaration | Block;
 		public ParserRule getRule() { return rule; }
 
-		//IfCommand | WhileCommand | ReturnCommand | RDeclaration ";"
+		//IfCommand | WhileCommand | ReturnCommand | KDeclaration | Declaration | Block
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//IfCommand
@@ -228,14 +220,14 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 		//ReturnCommand
 		public RuleCall getReturnCommandParserRuleCall_2() { return cReturnCommandParserRuleCall_2; }
 
-		//RDeclaration ";"
-		public Group getGroup_3() { return cGroup_3; }
+		//KDeclaration
+		public RuleCall getKDeclarationParserRuleCall_3() { return cKDeclarationParserRuleCall_3; }
 
-		//RDeclaration
-		public RuleCall getRDeclarationParserRuleCall_3_0() { return cRDeclarationParserRuleCall_3_0; }
+		//Declaration
+		public RuleCall getDeclarationParserRuleCall_4() { return cDeclarationParserRuleCall_4; }
 
-		//";"
-		public Keyword getSemicolonKeyword_3_1() { return cSemicolonKeyword_3_1; }
+		//Block
+		public RuleCall getBlockParserRuleCall_5() { return cBlockParserRuleCall_5; }
 	}
 
 	public class IfCommandElements extends AbstractParserRuleElementFinder {
@@ -392,6 +384,30 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 
 		//";"
 		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
+	}
+
+	public class KDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "KDeclaration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cDeclarationAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cDeclarationRDeclarationParserRuleCall_0_0 = (RuleCall)cDeclarationAssignment_0.eContents().get(0);
+		private final Keyword cSemicolonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//KDeclaration:
+		//	declaration=RDeclaration ";";
+		public ParserRule getRule() { return rule; }
+
+		//declaration=RDeclaration ";"
+		public Group getGroup() { return cGroup; }
+
+		//declaration=RDeclaration
+		public Assignment getDeclarationAssignment_0() { return cDeclarationAssignment_0; }
+
+		//RDeclaration
+		public RuleCall getDeclarationRDeclarationParserRuleCall_0_0() { return cDeclarationRDeclarationParserRuleCall_0_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_1() { return cSemicolonKeyword_1; }
 	}
 
 	public class RDeclarationElements extends AbstractParserRuleElementFinder {
@@ -694,6 +710,7 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 	private final WhileCommandElements pWhileCommand;
 	private final ReturnCommandElements pReturnCommand;
 	private final DeclarationElements pDeclaration;
+	private final KDeclarationElements pKDeclaration;
 	private final RDeclarationElements pRDeclaration;
 	private final IDDeclarationElements pIDDeclaration;
 	private final ExprElements pExpr;
@@ -722,6 +739,7 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 		this.pWhileCommand = new WhileCommandElements();
 		this.pReturnCommand = new ReturnCommandElements();
 		this.pDeclaration = new DeclarationElements();
+		this.pKDeclaration = new KDeclarationElements();
 		this.pRDeclaration = new RDeclarationElements();
 		this.pIDDeclaration = new IDDeclarationElements();
 		this.pExpr = new ExprElements();
@@ -800,7 +818,7 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Statement:
-	//	{Statement} declarations+=Declaration* commands+=Command*;
+	//	{Statement} commands+=Command*;
 	public StatementElements getStatementAccess() {
 		return pStatement;
 	}
@@ -810,7 +828,7 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Command:
-	//	IfCommand | WhileCommand | ReturnCommand | RDeclaration ";";
+	//	IfCommand | WhileCommand | ReturnCommand | KDeclaration | Declaration | Block;
 	public CommandElements getCommandAccess() {
 		return pCommand;
 	}
@@ -857,6 +875,16 @@ public class NotCGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getDeclarationRule() {
 		return getDeclarationAccess().getRule();
+	}
+
+	//KDeclaration:
+	//	declaration=RDeclaration ";";
+	public KDeclarationElements getKDeclarationAccess() {
+		return pKDeclaration;
+	}
+	
+	public ParserRule getKDeclarationRule() {
+		return getKDeclarationAccess().getRule();
 	}
 
 	//RDeclaration:

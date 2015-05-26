@@ -74,6 +74,7 @@ public class NotCFactoryImpl extends EFactoryImpl implements NotCFactory
       case NotCPackage.WHILE_COMMAND: return createWhileCommand();
       case NotCPackage.RETURN_COMMAND: return createReturnCommand();
       case NotCPackage.DECLARATION: return createDeclaration();
+      case NotCPackage.KDECLARATION: return createKDeclaration();
       case NotCPackage.RDECLARATION: return createRDeclaration();
       case NotCPackage.ID_DECLARATION: return createIDDeclaration();
       case NotCPackage.EXPRESSION: return createExpression();
@@ -194,6 +195,17 @@ public class NotCFactoryImpl extends EFactoryImpl implements NotCFactory
   {
     DeclarationImpl declaration = new DeclarationImpl();
     return declaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public KDeclaration createKDeclaration()
+  {
+    KDeclarationImpl kDeclaration = new KDeclarationImpl();
+    return kDeclaration;
   }
 
   /**

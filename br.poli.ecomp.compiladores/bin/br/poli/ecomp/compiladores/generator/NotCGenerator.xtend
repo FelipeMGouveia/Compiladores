@@ -21,6 +21,7 @@
 //import org.eclipse.xtext.generator.IGenerator
 //
 //import static extension org.eclipse.xtext.EcoreUtil2.*
+//import br.poli.ecomp.compiladores.notC.KDeclaration
 //
 ///**
 // * Generates code from your model files on save.
@@ -38,11 +39,13 @@
 //	'''«declaration.type.compile» «declaration.value.compile»;'''
 //	def dispatch compile(RDeclaration rDeclaration)
 //	'''«IF rDeclaration.id != null»«rDeclaration.id.compile»«ENDIF»«IF rDeclaration.left != null»«rDeclaration.left.compile»«ENDIF»«IF rDeclaration.next != null», «rDeclaration.next.compile»«ENDIF»'''
+//	def dispatch compile(KDeclaration kDeclaration)
+//	'''«IF kDeclaration.declaration != null»«kDeclaration.declaration.compile»«ENDIF»;'''
 //	def dispatch compile(IDDeclaration idDeclaration)
 //	'''«idDeclaration.id»«IF idDeclaration.value != null» = «idDeclaration.value.compile»«ENDIF»'''
 //	
 //	def dispatch compile(Expression expr)
-//	'''«IF expr.value != null»( «expr.value.compile» )«ENDIF»«IF expr.left != null»«expr.left.compile»«ENDIF»«IF expr.operator != null» «expr.operator» «ENDIF»«IF expr.right != null»«expr.right.compile»«ENDIF»'''
+//	'''«IF expr.value != null»( «expr.value.compile» )«ENDIF»«IF expr.result != null»«expr.result»«ENDIF»«IF expr.left != null»«expr.left.compile»«ENDIF»«IF expr.operator != null» «expr.operator» «ENDIF»«IF expr.right != null»«expr.right.compile»«ENDIF»'''
 //	
 //		
 //		
@@ -66,8 +69,7 @@
 //}'''
 //	
 //	def dispatch compile(Statement statement)
-//	'''«IF statement.declarations != null»«FOR declaration : statement.declarations»	«declaration.compile»
-//«ENDFOR»«ENDIF»«IF statement.commands != null»«FOR command : statement.commands»	«command.compile»
+//	'''«IF statement.commands != null»«FOR command : statement.commands»	«command.compile»
 //«ENDFOR»«ENDIF»'''
 //
 ////Command: IfCommand | WhileCommand;
@@ -90,7 +92,7 @@
 //	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
 //		for(e: resource.allContents.toIterable.filter(Code)) 
 //		{ 
-//			fsa.generateFile(resource.normalizedURI.lastSegment, e.compileCode);
+//			fsa.generateFile(resource.normalizedURI.lastSegment+"_beauty", e.compileCode);
 //		}
 //	}
 //}

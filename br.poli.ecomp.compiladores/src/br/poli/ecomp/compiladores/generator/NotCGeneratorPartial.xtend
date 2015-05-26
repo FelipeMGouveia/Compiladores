@@ -26,6 +26,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
 
 import static extension org.eclipse.xtext.EcoreUtil2.*
+import br.poli.ecomp.compiladores.notC.KDeclaration
 
 /**
  * Generates code from your model files on save.
@@ -71,12 +72,51 @@ class NotCGenerator implements IGenerator {
 «ENDFOR»«ENDIF»«IF code.functions != null»«FOR function : code.functions»«function.compile»«ENDFOR»«ENDIF»
 	'''
 	def dispatch compile(Declaration declaration)
-	'''«declaration.type.compile» «declaration.value.compile»;'''
+	'''«IF canAddVariable(declaration.value) »«ENDIF»«declaration.type.compile» «declaration.value.compile»;'''
+	
+	def canAddVariable(RDeclaration declaration) 
+	{
+		if(currentCodeScope > 0)
+		{
+			
+		}
+		
+		return true;
+	}
+	
 	def dispatch compile(RDeclaration rDeclaration)
 	'''«IF rDeclaration.id != null»«rDeclaration.id.compile»«ENDIF»«IF rDeclaration.left != null»«rDeclaration.left.compile»«ENDIF»«IF rDeclaration.next != null», «rDeclaration.next.compile»«ENDIF»'''
+	def dispatch compile(KDeclaration kDeclaration)
+	'''«IF kDeclaration.declaration != null»«kDeclaration.declaration.compile»«ENDIF»;'''
 	
 	def dispatch compile(IDDeclaration idDeclaration)
-	'''«IF variablesByScope.get(currentCodeScope).add(new Variable(idDeclaration.id.toString(), solve(idDeclaration.value)))»«ENDIF»«idDeclaration.id»«IF idDeclaration.value != null» = «idDeclaration.value.compile»«ENDIF»'''
+	'''«IF validateId(idDeclaration) »«ENDIF»«idDeclaration.id»«IF idDeclaration.value != null» = «IF getValue(idDeclaration.id) != null»«getValue(idDeclaration.id)»«ELSE»«idDeclaration.value.compile»«ENDIF»«ENDIF»'''
+	
+	def getValue(String varName) 
+	{
+		var variables = variablesByScope.get(currentCodeScope);
+		var newVariable = new Variable(varName);
+		if(variables.contains(newVariable))
+		{
+			return variables.get(variables.indexOf(newVariable)).value;
+		}
+		return null;
+	}
+	
+	def validateId(IDDeclaration idDeclaration) 
+	{
+		var variables = variablesByScope.get(currentCodeScope);
+		var newVariable = new Variable(idDeclaration.id.toString());
+		if(variables.contains(newVariable))
+		{
+			variables.get(variables.indexOf(newVariable)).value = solve(idDeclaration.value);
+		}
+		else
+		{
+			variables.add(new Variable(idDeclaration.id.toString(), solve(idDeclaration.value)))	
+		}
+		return false;
+	}
 	
 	//Integer leftValue;
 	//Integer rightValue;
@@ -235,7 +275,7 @@ class NotCGenerator implements IGenerator {
 	}
 	
 	def dispatch compile(Expression expr)
-	'''«IF expr.value != null»( «expr.value.compile» )«ENDIF»«IF expr.result != null»«expr.result»«ENDIF»«IF expr.left != null»«expr.left.compile»«ENDIF»«IF expr.operator != null» «expr.operator» «ENDIF»«IF expr.right != null»«expr.right.compile»«ENDIF»'''
+	'''«IF expr.value != null»( «expr.value.compile» )«ENDIF»«IF expr.result != null»«expr.result»«ENDIF»«IF expr.left != null»«IF solve(expr.left) != null»«solve(expr.left)»«ELSE»«expr.left.compile»«ENDIF»«ENDIF»«IF expr.operator != null» «expr.operator» «ENDIF»«IF expr.right != null»«IF solve(expr.right) != null»«solve(expr.right)»«ELSE»«expr.right.compile»«ENDIF»«ENDIF»'''
 	
 		
 		
@@ -276,8 +316,7 @@ class NotCGenerator implements IGenerator {
 	
 	
 	def dispatch compile(Statement statement)
-	'''«IF statement.declarations != null»«FOR declaration : statement.declarations»	«declaration.compile»
-«ENDFOR»«ENDIF»«IF statement.commands != null»«FOR command : statement.commands»	«command.compile»
+	'''«IF statement.commands != null»«FOR command : statement.commands»	«command.compile»
 «ENDFOR»«ENDIF»'''
 
 //Command: IfCommand | WhileCommand;
@@ -288,12 +327,19 @@ class NotCGenerator implements IGenerator {
 	'''«IF solve(ifcommand.expr) == null»if ( «ifcommand.expr.compile» ) 
 	«ifcommand.ifBlock.compile»«IF ifcommand.elseBlock != null»
 	else 
-	«ifcommand.elseBlock.compile»«ENDIF»
-	«ELSE»«IF solve(ifcommand.expr).intValue != 0»«ifcommand.ifBlock.compile»«ELSE»«IF ifcommand.elseBlock != null»«ifcommand.elseBlock.compile»«ENDIF»«ENDIF»«ENDIF»'''
+	«ifcommand.elseBlock.compile»«
+	ENDIF»«ELSE»
+	«IF solve(ifcommand.expr).intValue != 0»
+	«ifcommand.ifBlock.compile»«ELSE»«IF ifcommand.elseBlock != null»«ifcommand.elseBlock.compile»«ENDIF»«ENDIF»«ENDIF»'''
 	
 	def dispatch compile(WhileCommand whileCommand)
 	'''«IF computeWhileCommand(whileCommand) == null»while ( «whileCommand.expr.compile» )
-	«whileCommand.whileBlock.compile»«IF whileCommand.whileBlock != null»«ENDIF»«ELSE»«FOR i : 0 ..< computeWhileCommand(whileCommand)»«whileCommand.whileBlock.compile»«ENDFOR»«ENDIF»'''
+	«whileCommand.whileBlock.compile»«IF whileCommand.whileBlock != null»
+	«ENDIF»
+	«ELSE»
+	«FOR i : 0 ..< computeWhileCommand(whileCommand)»
+	«whileCommand.whileBlock.compile»
+	«ENDFOR»«ENDIF»'''
 	
 	//Compute how many times the while command must run!
 	def Integer computeWhileCommand(WhileCommand command) 
@@ -324,9 +370,9 @@ class NotCGenerator implements IGenerator {
 		//então devemos entender a condição como não alcançável
 		for (Command com : command.whileBlock.statement.commands)
 		{
-			if(com instanceof RDeclaration)
+			if(com instanceof KDeclaration)
 			{
-				var comRD = (com as RDeclaration);
+				var comRD = (com as KDeclaration).declaration;
 				if(knownVariables.contains(new Variable(comRD.id.id)))
 				{
 					if(comRD.id != null)
@@ -374,12 +420,12 @@ class NotCGenerator implements IGenerator {
 			{
 				System.out.println("Com?" + com);
 				//Se o comando for uma atribuição de variável.
-				if(com instanceof RDeclaration)
+				if(com instanceof KDeclaration)
 				{
 					System.out.println("Instanceof?" + com);
-					var comRD = (com as RDeclaration);
+					var comRD = (com as KDeclaration).declaration;
 					//Se for para uma variável conhecida
-					System.out.println("com.id.id?" + com.id.id);
+					System.out.println("com.id.id?" + comRD.id.id);
 					if(knownVariables.contains(new Variable(comRD.id.id)))
 					{
 						System.out.println("Contains?" + com);
@@ -474,7 +520,7 @@ class NotCGenerator implements IGenerator {
 		variablesByScope = new HashMap<Integer, List<Variable>>();
 		for(e: resource.allContents.toIterable.filter(Code)) 
 		{ 
-			fsa.generateFile(resource.normalizedURI.lastSegment+"_", e.compileCode);
+			fsa.generateFile(resource.normalizedURI.lastSegment+"_partial", e.compileCode);
 		}
 	}
 }

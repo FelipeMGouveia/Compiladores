@@ -10,6 +10,7 @@ import br.poli.ecomp.compiladores.notC.FuncParam;
 import br.poli.ecomp.compiladores.notC.Function;
 import br.poli.ecomp.compiladores.notC.IDDeclaration;
 import br.poli.ecomp.compiladores.notC.IfCommand;
+import br.poli.ecomp.compiladores.notC.KDeclaration;
 import br.poli.ecomp.compiladores.notC.NotCPackage;
 import br.poli.ecomp.compiladores.notC.RDeclaration;
 import br.poli.ecomp.compiladores.notC.ReturnCommand;
@@ -41,7 +42,8 @@ public class NotCSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == NotCPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case NotCPackage.BLOCK:
-				if(context == grammarAccess.getBlockRule()) {
+				if(context == grammarAccess.getBlockRule() ||
+				   context == grammarAccess.getCommandRule()) {
 					sequence_Block(context, (Block) semanticObject); 
 					return; 
 				}
@@ -53,7 +55,8 @@ public class NotCSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				}
 				else break;
 			case NotCPackage.DECLARATION:
-				if(context == grammarAccess.getDeclarationRule()) {
+				if(context == grammarAccess.getCommandRule() ||
+				   context == grammarAccess.getDeclarationRule()) {
 					sequence_Declaration(context, (Declaration) semanticObject); 
 					return; 
 				}
@@ -113,9 +116,15 @@ public class NotCSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case NotCPackage.RDECLARATION:
+			case NotCPackage.KDECLARATION:
 				if(context == grammarAccess.getCommandRule() ||
-				   context == grammarAccess.getRDeclarationRule()) {
+				   context == grammarAccess.getKDeclarationRule()) {
+					sequence_KDeclaration(context, (KDeclaration) semanticObject); 
+					return; 
+				}
+				else break;
+			case NotCPackage.RDECLARATION:
+				if(context == grammarAccess.getRDeclarationRule()) {
 					sequence_RDeclaration(context, (RDeclaration) semanticObject); 
 					return; 
 				}
@@ -272,6 +281,22 @@ public class NotCSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     declaration=RDeclaration
+	 */
+	protected void sequence_KDeclaration(EObject context, KDeclaration semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, NotCPackage.Literals.KDECLARATION__DECLARATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, NotCPackage.Literals.KDECLARATION__DECLARATION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getKDeclarationAccess().getDeclarationRDeclarationParserRuleCall_0_0(), semanticObject.getDeclaration());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     ((left=RDeclaration_RDeclaration_1_0 next=RDeclaration) | id=IDDeclaration)
 	 */
 	protected void sequence_RDeclaration(EObject context, RDeclaration semanticObject) {
@@ -306,7 +331,7 @@ public class NotCSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (declarations+=Declaration* commands+=Command*)
+	 *     (commands+=Command*)
 	 */
 	protected void sequence_Statement(EObject context, Statement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

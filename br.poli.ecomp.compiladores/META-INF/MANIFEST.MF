@@ -33,3 +33,4 @@ Export-Package: br.poli.ecomp.compiladores,
  br.poli.ecomp.compiladores.scoping,
  br.poli.ecomp.compiladores.generator,
  br.poli.ecomp.compiladores.formatting
+

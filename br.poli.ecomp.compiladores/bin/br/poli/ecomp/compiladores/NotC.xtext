@@ -8,14 +8,15 @@ Function: type=Type id=ID '(' (param=FuncParam)? ')' block=Block ;
 FuncParam: type=Type id=ID (',' next=FuncParam)? ;
 
 Block: '{' statement=Statement '}';
-Statement: {Statement} (declarations+=Declaration)* (commands+=Command)* ;
+Statement: {Statement} (commands+=Command)* ;
 
-Command: IfCommand | WhileCommand | ReturnCommand | RDeclaration ';';
+Command: IfCommand | WhileCommand | ReturnCommand | KDeclaration | Declaration | Block;
 IfCommand: 'if' '(' expr=Expr ')' ifBlock = Block ('else' elseBlock=Block)?;
 WhileCommand: 'while' '(' expr=Expr ')' whileBlock=Block;
 ReturnCommand: 'return' (expr=Expr) ';';
 
 Declaration: type=Type  value=RDeclaration ';' ;
+KDeclaration: declaration=RDeclaration ';' ;
 RDeclaration: id=IDDeclaration ({RDeclaration.left=current}',' next=RDeclaration)?;
 
 IDDeclaration: id=ID ('=' value=Expr)? ;

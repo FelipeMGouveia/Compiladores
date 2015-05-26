@@ -26,7 +26,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Block/statement"/>
     </genClasses>
     <genClasses ecoreClass="NotC.ecore#//Statement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Statement/declarations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Statement/commands"/>
     </genClasses>
     <genClasses ecoreClass="NotC.ecore#//Command"/>
@@ -45,6 +44,9 @@
     <genClasses ecoreClass="NotC.ecore#//Declaration">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Declaration/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//Declaration/value"/>
+    </genClasses>
+    <genClasses ecoreClass="NotC.ecore#//KDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//KDeclaration/declaration"/>
     </genClasses>
     <genClasses ecoreClass="NotC.ecore#//RDeclaration">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NotC.ecore#//RDeclaration/id"/>

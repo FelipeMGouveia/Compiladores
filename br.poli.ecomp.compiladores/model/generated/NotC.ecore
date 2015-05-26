@@ -21,13 +21,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="next" eType="#//FuncParam"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Block">
+  <eClassifiers xsi:type="ecore:EClass" name="Block" eSuperTypes="#//Command">
     <eStructuralFeatures xsi:type="ecore:EReference" name="statement" eType="#//Statement"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Statement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="declarations" upperBound="-1"
-        eType="#//Declaration" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="commands" upperBound="-1"
         eType="#//Command" containment="true"/>
   </eClassifiers>
@@ -50,12 +48,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="#//Expression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Declaration">
+  <eClassifiers xsi:type="ecore:EClass" name="Declaration" eSuperTypes="#//Command">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//RDeclaration"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RDeclaration" eSuperTypes="#//Command">
+  <eClassifiers xsi:type="ecore:EClass" name="KDeclaration" eSuperTypes="#//Command">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declaration" eType="#//RDeclaration"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="id" eType="#//IDDeclaration"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//RDeclaration"

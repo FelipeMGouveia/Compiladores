@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +30,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class RDeclarationImpl extends CommandImpl implements RDeclaration
+public class RDeclarationImpl extends MinimalEObjectImpl.Container implements RDeclaration
 {
   /**
    * The cached value of the '{@link #getId() <em>Id</em>}' containment reference.

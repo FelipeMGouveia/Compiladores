@@ -13,6 +13,7 @@ import br.poli.ecomp.compiladores.notC.FuncParam;
 import br.poli.ecomp.compiladores.notC.Function;
 import br.poli.ecomp.compiladores.notC.IDDeclaration;
 import br.poli.ecomp.compiladores.notC.IfCommand;
+import br.poli.ecomp.compiladores.notC.KDeclaration;
 import br.poli.ecomp.compiladores.notC.NotCFactory;
 import br.poli.ecomp.compiladores.notC.NotCPackage;
 import br.poli.ecomp.compiladores.notC.RDeclaration;
@@ -106,6 +107,13 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
    * @generated
    */
   private EClass declarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass kDeclarationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -374,19 +382,9 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStatement_Declarations()
-  {
-    return (EReference)statementEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getStatement_Commands()
   {
-    return (EReference)statementEClass.getEStructuralFeatures().get(1);
+    return (EReference)statementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -517,6 +515,26 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
   public EReference getDeclaration_Value()
   {
     return (EReference)declarationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getKDeclaration()
+  {
+    return kDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getKDeclaration_Declaration()
+  {
+    return (EReference)kDeclarationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -748,7 +766,6 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
     createEReference(blockEClass, BLOCK__STATEMENT);
 
     statementEClass = createEClass(STATEMENT);
-    createEReference(statementEClass, STATEMENT__DECLARATIONS);
     createEReference(statementEClass, STATEMENT__COMMANDS);
 
     commandEClass = createEClass(COMMAND);
@@ -768,6 +785,9 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
     declarationEClass = createEClass(DECLARATION);
     createEReference(declarationEClass, DECLARATION__TYPE);
     createEReference(declarationEClass, DECLARATION__VALUE);
+
+    kDeclarationEClass = createEClass(KDECLARATION);
+    createEReference(kDeclarationEClass, KDECLARATION__DECLARATION);
 
     rDeclarationEClass = createEClass(RDECLARATION);
     createEReference(rDeclarationEClass, RDECLARATION__ID);
@@ -824,10 +844,12 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    blockEClass.getESuperTypes().add(this.getCommand());
     ifCommandEClass.getESuperTypes().add(this.getCommand());
     whileCommandEClass.getESuperTypes().add(this.getCommand());
     returnCommandEClass.getESuperTypes().add(this.getCommand());
-    rDeclarationEClass.getESuperTypes().add(this.getCommand());
+    declarationEClass.getESuperTypes().add(this.getCommand());
+    kDeclarationEClass.getESuperTypes().add(this.getCommand());
     exprEClass.getESuperTypes().add(this.getExpression());
     termEClass.getESuperTypes().add(this.getExpression());
     factorEClass.getESuperTypes().add(this.getExpression());
@@ -852,7 +874,6 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
     initEReference(getBlock_Statement(), this.getStatement(), null, "statement", null, 0, 1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(statementEClass, Statement.class, "Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStatement_Declarations(), this.getDeclaration(), null, "declarations", null, 0, -1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStatement_Commands(), this.getCommand(), null, "commands", null, 0, -1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(commandEClass, Command.class, "Command", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -872,6 +893,9 @@ public class NotCPackageImpl extends EPackageImpl implements NotCPackage
     initEClass(declarationEClass, Declaration.class, "Declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDeclaration_Type(), this.getType(), null, "type", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDeclaration_Value(), this.getRDeclaration(), null, "value", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(kDeclarationEClass, KDeclaration.class, "KDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getKDeclaration_Declaration(), this.getRDeclaration(), null, "declaration", null, 0, 1, KDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(rDeclarationEClass, RDeclaration.class, "RDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRDeclaration_Id(), this.getIDDeclaration(), null, "id", null, 0, 1, RDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

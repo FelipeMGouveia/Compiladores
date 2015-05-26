@@ -12,6 +12,7 @@ import br.poli.ecomp.compiladores.notC.FuncParam;
 import br.poli.ecomp.compiladores.notC.Function;
 import br.poli.ecomp.compiladores.notC.IDDeclaration;
 import br.poli.ecomp.compiladores.notC.IfCommand;
+import br.poli.ecomp.compiladores.notC.KDeclaration;
 import br.poli.ecomp.compiladores.notC.RDeclaration;
 import br.poli.ecomp.compiladores.notC.Statement;
 import br.poli.ecomp.compiladores.notC.Type;
@@ -116,15 +117,27 @@ public class NotCGenerator implements IGenerator {
   
   protected CharSequence _compile(final Declaration declaration) {
     StringConcatenation _builder = new StringConcatenation();
+    {
+      RDeclaration _value = declaration.getValue();
+      boolean _canAddVariable = this.canAddVariable(_value);
+      if (_canAddVariable) {
+      }
+    }
     Type _type = declaration.getType();
     Object _compile = this.compile(_type);
     _builder.append(_compile, "");
     _builder.append(" ");
-    RDeclaration _value = declaration.getValue();
-    Object _compile_1 = this.compile(_value);
+    RDeclaration _value_1 = declaration.getValue();
+    Object _compile_1 = this.compile(_value_1);
     _builder.append(_compile_1, "");
     _builder.append(";");
     return _builder;
+  }
+  
+  public boolean canAddVariable(final RDeclaration declaration) {
+    if (((this.currentCodeScope).intValue() > 0)) {
+    }
+    return true;
   }
   
   protected CharSequence _compile(final RDeclaration rDeclaration) {
@@ -160,32 +173,87 @@ public class NotCGenerator implements IGenerator {
     return _builder;
   }
   
-  protected CharSequence _compile(final IDDeclaration idDeclaration) {
+  protected CharSequence _compile(final KDeclaration kDeclaration) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      List<NotCGenerator.Variable> _get = this.variablesByScope.get(this.currentCodeScope);
-      String _id = idDeclaration.getId();
-      String _string = _id.toString();
-      Expression _value = idDeclaration.getValue();
-      Integer _solve = this.solve(_value);
-      NotCGenerator.Variable _variable = new NotCGenerator.Variable(_string, _solve);
-      boolean _add = _get.add(_variable);
-      if (_add) {
-      }
-    }
-    String _id_1 = idDeclaration.getId();
-    _builder.append(_id_1, "");
-    {
-      Expression _value_1 = idDeclaration.getValue();
-      boolean _notEquals = (!Objects.equal(_value_1, null));
+      RDeclaration _declaration = kDeclaration.getDeclaration();
+      boolean _notEquals = (!Objects.equal(_declaration, null));
       if (_notEquals) {
-        _builder.append(" = ");
-        Expression _value_2 = idDeclaration.getValue();
-        Object _compile = this.compile(_value_2);
+        RDeclaration _declaration_1 = kDeclaration.getDeclaration();
+        Object _compile = this.compile(_declaration_1);
         _builder.append(_compile, "");
       }
     }
+    _builder.append(";");
     return _builder;
+  }
+  
+  protected CharSequence _compile(final IDDeclaration idDeclaration) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      boolean _validateId = this.validateId(idDeclaration);
+      if (_validateId) {
+      }
+    }
+    String _id = idDeclaration.getId();
+    _builder.append(_id, "");
+    {
+      Expression _value = idDeclaration.getValue();
+      boolean _notEquals = (!Objects.equal(_value, null));
+      if (_notEquals) {
+        _builder.append(" = ");
+        {
+          String _id_1 = idDeclaration.getId();
+          Integer _value_1 = this.getValue(_id_1);
+          boolean _notEquals_1 = (!Objects.equal(_value_1, null));
+          if (_notEquals_1) {
+            String _id_2 = idDeclaration.getId();
+            Integer _value_2 = this.getValue(_id_2);
+            _builder.append(_value_2, "");
+          } else {
+            Expression _value_3 = idDeclaration.getValue();
+            Object _compile = this.compile(_value_3);
+            _builder.append(_compile, "");
+          }
+        }
+      }
+    }
+    return _builder;
+  }
+  
+  public Integer getValue(final String varName) {
+    List<NotCGenerator.Variable> variables = this.variablesByScope.get(this.currentCodeScope);
+    NotCGenerator.Variable newVariable = new NotCGenerator.Variable(varName);
+    boolean _contains = variables.contains(newVariable);
+    if (_contains) {
+      int _indexOf = variables.indexOf(newVariable);
+      NotCGenerator.Variable _get = variables.get(_indexOf);
+      return _get.value;
+    }
+    return null;
+  }
+  
+  public boolean validateId(final IDDeclaration idDeclaration) {
+    List<NotCGenerator.Variable> variables = this.variablesByScope.get(this.currentCodeScope);
+    String _id = idDeclaration.getId();
+    String _string = _id.toString();
+    NotCGenerator.Variable newVariable = new NotCGenerator.Variable(_string);
+    boolean _contains = variables.contains(newVariable);
+    if (_contains) {
+      int _indexOf = variables.indexOf(newVariable);
+      NotCGenerator.Variable _get = variables.get(_indexOf);
+      Expression _value = idDeclaration.getValue();
+      Integer _solve = this.solve(_value);
+      _get.value = _solve;
+    } else {
+      String _id_1 = idDeclaration.getId();
+      String _string_1 = _id_1.toString();
+      Expression _value_1 = idDeclaration.getValue();
+      Integer _solve_1 = this.solve(_value_1);
+      NotCGenerator.Variable _variable = new NotCGenerator.Variable(_string_1, _solve_1);
+      variables.add(_variable);
+    }
+    return false;
   }
   
   public Integer solve(final Expression expression) {
@@ -408,15 +476,26 @@ public class NotCGenerator implements IGenerator {
       Expression _left = expr.getLeft();
       boolean _notEquals_2 = (!Objects.equal(_left, null));
       if (_notEquals_2) {
-        Expression _left_1 = expr.getLeft();
-        Object _compile_1 = this.compile(_left_1);
-        _builder.append(_compile_1, "");
+        {
+          Expression _left_1 = expr.getLeft();
+          Integer _solve = this.solve(_left_1);
+          boolean _notEquals_3 = (!Objects.equal(_solve, null));
+          if (_notEquals_3) {
+            Expression _left_2 = expr.getLeft();
+            Integer _solve_1 = this.solve(_left_2);
+            _builder.append(_solve_1, "");
+          } else {
+            Expression _left_3 = expr.getLeft();
+            Object _compile_1 = this.compile(_left_3);
+            _builder.append(_compile_1, "");
+          }
+        }
       }
     }
     {
       String _operator = expr.getOperator();
-      boolean _notEquals_3 = (!Objects.equal(_operator, null));
-      if (_notEquals_3) {
+      boolean _notEquals_4 = (!Objects.equal(_operator, null));
+      if (_notEquals_4) {
         _builder.append(" ");
         String _operator_1 = expr.getOperator();
         _builder.append(_operator_1, "");
@@ -425,11 +504,22 @@ public class NotCGenerator implements IGenerator {
     }
     {
       Expression _right = expr.getRight();
-      boolean _notEquals_4 = (!Objects.equal(_right, null));
-      if (_notEquals_4) {
-        Expression _right_1 = expr.getRight();
-        Object _compile_2 = this.compile(_right_1);
-        _builder.append(_compile_2, "");
+      boolean _notEquals_5 = (!Objects.equal(_right, null));
+      if (_notEquals_5) {
+        {
+          Expression _right_1 = expr.getRight();
+          Integer _solve_2 = this.solve(_right_1);
+          boolean _notEquals_6 = (!Objects.equal(_solve_2, null));
+          if (_notEquals_6) {
+            Expression _right_2 = expr.getRight();
+            Integer _solve_3 = this.solve(_right_2);
+            _builder.append(_solve_3, "");
+          } else {
+            Expression _right_3 = expr.getRight();
+            Object _compile_2 = this.compile(_right_3);
+            _builder.append(_compile_2, "");
+          }
+        }
       }
     }
     return _builder;
@@ -531,30 +621,15 @@ public class NotCGenerator implements IGenerator {
   protected CharSequence _compile(final Statement statement) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      EList<Declaration> _declarations = statement.getDeclarations();
-      boolean _notEquals = (!Objects.equal(_declarations, null));
-      if (_notEquals) {
-        {
-          EList<Declaration> _declarations_1 = statement.getDeclarations();
-          for(final Declaration declaration : _declarations_1) {
-            _builder.append("\t");
-            Object _compile = this.compile(declaration);
-            _builder.append(_compile, "");
-            _builder.newLineIfNotEmpty();
-          }
-        }
-      }
-    }
-    {
       EList<Command> _commands = statement.getCommands();
-      boolean _notEquals_1 = (!Objects.equal(_commands, null));
-      if (_notEquals_1) {
+      boolean _notEquals = (!Objects.equal(_commands, null));
+      if (_notEquals) {
         {
           EList<Command> _commands_1 = statement.getCommands();
           for(final Command command : _commands_1) {
             _builder.append("\t");
-            Object _compile_1 = this.compile(command);
-            _builder.append(_compile_1, "");
+            Object _compile = this.compile(command);
+            _builder.append(_compile, "");
             _builder.newLineIfNotEmpty();
           }
         }
@@ -594,9 +669,8 @@ public class NotCGenerator implements IGenerator {
             _builder.append(_compile_2, "\t");
           }
         }
-        _builder.newLineIfNotEmpty();
-        _builder.append("\t");
       } else {
+        _builder.newLineIfNotEmpty();
         {
           Expression _expr_2 = ifcommand.getExpr();
           Integer _solve_1 = this.solve(_expr_2);
@@ -643,6 +717,7 @@ public class NotCGenerator implements IGenerator {
           Block _whileBlock_1 = whileCommand.getWhileBlock();
           boolean _notEquals = (!Objects.equal(_whileBlock_1, null));
           if (_notEquals) {
+            _builder.newLineIfNotEmpty();
           }
         }
       } else {
@@ -653,6 +728,7 @@ public class NotCGenerator implements IGenerator {
             Block _whileBlock_2 = whileCommand.getWhileBlock();
             Object _compile_2 = this.compile(_whileBlock_2);
             _builder.append(_compile_2, "");
+            _builder.newLineIfNotEmpty();
           }
         }
       }
@@ -685,8 +761,8 @@ public class NotCGenerator implements IGenerator {
     Statement _statement = _whileBlock.getStatement();
     EList<Command> _commands = _statement.getCommands();
     for (final Command com : _commands) {
-      if ((com instanceof RDeclaration)) {
-        RDeclaration comRD = ((RDeclaration) com);
+      if ((com instanceof KDeclaration)) {
+        RDeclaration comRD = ((KDeclaration) com).getDeclaration();
         IDDeclaration _id = comRD.getId();
         String _id_1 = _id.getId();
         NotCGenerator.Variable _variable = new NotCGenerator.Variable(_id_1);
@@ -730,10 +806,10 @@ public class NotCGenerator implements IGenerator {
         for (final Command com_1 : _commands_1) {
           {
             System.out.println(("Com?" + com_1));
-            if ((com_1 instanceof RDeclaration)) {
+            if ((com_1 instanceof KDeclaration)) {
               System.out.println(("Instanceof?" + com_1));
-              RDeclaration comRD_1 = ((RDeclaration) com_1);
-              IDDeclaration _id_4 = ((RDeclaration)com_1).getId();
+              RDeclaration comRD_1 = ((KDeclaration) com_1).getDeclaration();
+              IDDeclaration _id_4 = comRD_1.getId();
               String _id_5 = _id_4.getId();
               String _plus = ("com.id.id?" + _id_5);
               System.out.println(_plus);
@@ -859,38 +935,40 @@ public class NotCGenerator implements IGenerator {
     for (final Code e : _filter) {
       URI _normalizedURI = EcoreUtil2.getNormalizedURI(resource);
       String _lastSegment = _normalizedURI.lastSegment();
-      String _plus = (_lastSegment + "_");
+      String _plus = (_lastSegment + "_partial");
       CharSequence _compileCode = this.compileCode(e);
       fsa.generateFile(_plus, _compileCode);
     }
   }
   
-  public CharSequence compile(final EObject ifcommand) {
-    if (ifcommand instanceof IfCommand) {
-      return _compile((IfCommand)ifcommand);
-    } else if (ifcommand instanceof RDeclaration) {
-      return _compile((RDeclaration)ifcommand);
-    } else if (ifcommand instanceof WhileCommand) {
-      return _compile((WhileCommand)ifcommand);
-    } else if (ifcommand instanceof Block) {
-      return _compile((Block)ifcommand);
-    } else if (ifcommand instanceof Declaration) {
-      return _compile((Declaration)ifcommand);
-    } else if (ifcommand instanceof Expression) {
-      return _compile((Expression)ifcommand);
-    } else if (ifcommand instanceof FuncParam) {
-      return _compile((FuncParam)ifcommand);
-    } else if (ifcommand instanceof Function) {
-      return _compile((Function)ifcommand);
-    } else if (ifcommand instanceof IDDeclaration) {
-      return _compile((IDDeclaration)ifcommand);
-    } else if (ifcommand instanceof Statement) {
-      return _compile((Statement)ifcommand);
-    } else if (ifcommand instanceof Type) {
-      return _compile((Type)ifcommand);
+  public CharSequence compile(final EObject block) {
+    if (block instanceof Block) {
+      return _compile((Block)block);
+    } else if (block instanceof Declaration) {
+      return _compile((Declaration)block);
+    } else if (block instanceof IfCommand) {
+      return _compile((IfCommand)block);
+    } else if (block instanceof KDeclaration) {
+      return _compile((KDeclaration)block);
+    } else if (block instanceof WhileCommand) {
+      return _compile((WhileCommand)block);
+    } else if (block instanceof Expression) {
+      return _compile((Expression)block);
+    } else if (block instanceof FuncParam) {
+      return _compile((FuncParam)block);
+    } else if (block instanceof Function) {
+      return _compile((Function)block);
+    } else if (block instanceof IDDeclaration) {
+      return _compile((IDDeclaration)block);
+    } else if (block instanceof RDeclaration) {
+      return _compile((RDeclaration)block);
+    } else if (block instanceof Statement) {
+      return _compile((Statement)block);
+    } else if (block instanceof Type) {
+      return _compile((Type)block);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(ifcommand).toString());
+        Arrays.<Object>asList(block).toString());
     }
   }
 }

@@ -113,6 +113,15 @@ public interface NotCFactory extends EFactory
   Declaration createDeclaration();
 
   /**
+   * Returns a new object of class '<em>KDeclaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>KDeclaration</em>'.
+   * @generated
+   */
+  KDeclaration createKDeclaration();
+
+  /**
    * Returns a new object of class '<em>RDeclaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

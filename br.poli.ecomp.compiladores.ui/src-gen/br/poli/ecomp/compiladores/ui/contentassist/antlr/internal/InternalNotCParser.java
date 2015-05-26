@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalNotCParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'+'", "'-'", "'*'", "'/'", "'('", "')'", "','", "'{'", "'}'", "';'", "'if'", "'else'", "'while'", "'return'", "'='", "'^'", "'var'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'+'", "'-'", "'*'", "'/'", "'('", "')'", "','", "'{'", "'}'", "'if'", "'else'", "'while'", "'return'", "';'", "'='", "'^'", "'var'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -857,21 +857,98 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleDeclaration"
 
 
+    // $ANTLR start "entryRuleKDeclaration"
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:340:1: entryRuleKDeclaration : ruleKDeclaration EOF ;
+    public final void entryRuleKDeclaration() throws RecognitionException {
+        try {
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:341:1: ( ruleKDeclaration EOF )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:342:1: ruleKDeclaration EOF
+            {
+             before(grammarAccess.getKDeclarationRule()); 
+            pushFollow(FOLLOW_ruleKDeclaration_in_entryRuleKDeclaration661);
+            ruleKDeclaration();
+
+            state._fsp--;
+
+             after(grammarAccess.getKDeclarationRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleKDeclaration668); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleKDeclaration"
+
+
+    // $ANTLR start "ruleKDeclaration"
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:349:1: ruleKDeclaration : ( ( rule__KDeclaration__Group__0 ) ) ;
+    public final void ruleKDeclaration() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:353:2: ( ( ( rule__KDeclaration__Group__0 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:354:1: ( ( rule__KDeclaration__Group__0 ) )
+            {
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:354:1: ( ( rule__KDeclaration__Group__0 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:355:1: ( rule__KDeclaration__Group__0 )
+            {
+             before(grammarAccess.getKDeclarationAccess().getGroup()); 
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:356:1: ( rule__KDeclaration__Group__0 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:356:2: rule__KDeclaration__Group__0
+            {
+            pushFollow(FOLLOW_rule__KDeclaration__Group__0_in_ruleKDeclaration694);
+            rule__KDeclaration__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getKDeclarationAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleKDeclaration"
+
+
     // $ANTLR start "entryRuleRDeclaration"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:340:1: entryRuleRDeclaration : ruleRDeclaration EOF ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:368:1: entryRuleRDeclaration : ruleRDeclaration EOF ;
     public final void entryRuleRDeclaration() throws RecognitionException {
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:341:1: ( ruleRDeclaration EOF )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:342:1: ruleRDeclaration EOF
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:369:1: ( ruleRDeclaration EOF )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:370:1: ruleRDeclaration EOF
             {
              before(grammarAccess.getRDeclarationRule()); 
-            pushFollow(FOLLOW_ruleRDeclaration_in_entryRuleRDeclaration661);
+            pushFollow(FOLLOW_ruleRDeclaration_in_entryRuleRDeclaration721);
             ruleRDeclaration();
 
             state._fsp--;
 
              after(grammarAccess.getRDeclarationRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRDeclaration668); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRDeclaration728); 
 
             }
 
@@ -888,23 +965,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleRDeclaration"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:349:1: ruleRDeclaration : ( ( rule__RDeclaration__Group__0 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:377:1: ruleRDeclaration : ( ( rule__RDeclaration__Group__0 ) ) ;
     public final void ruleRDeclaration() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:353:2: ( ( ( rule__RDeclaration__Group__0 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:354:1: ( ( rule__RDeclaration__Group__0 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:381:2: ( ( ( rule__RDeclaration__Group__0 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:382:1: ( ( rule__RDeclaration__Group__0 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:354:1: ( ( rule__RDeclaration__Group__0 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:355:1: ( rule__RDeclaration__Group__0 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:382:1: ( ( rule__RDeclaration__Group__0 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:383:1: ( rule__RDeclaration__Group__0 )
             {
              before(grammarAccess.getRDeclarationAccess().getGroup()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:356:1: ( rule__RDeclaration__Group__0 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:356:2: rule__RDeclaration__Group__0
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:384:1: ( rule__RDeclaration__Group__0 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:384:2: rule__RDeclaration__Group__0
             {
-            pushFollow(FOLLOW_rule__RDeclaration__Group__0_in_ruleRDeclaration694);
+            pushFollow(FOLLOW_rule__RDeclaration__Group__0_in_ruleRDeclaration754);
             rule__RDeclaration__Group__0();
 
             state._fsp--;
@@ -935,20 +1012,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleIDDeclaration"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:368:1: entryRuleIDDeclaration : ruleIDDeclaration EOF ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:396:1: entryRuleIDDeclaration : ruleIDDeclaration EOF ;
     public final void entryRuleIDDeclaration() throws RecognitionException {
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:369:1: ( ruleIDDeclaration EOF )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:370:1: ruleIDDeclaration EOF
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:397:1: ( ruleIDDeclaration EOF )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:398:1: ruleIDDeclaration EOF
             {
              before(grammarAccess.getIDDeclarationRule()); 
-            pushFollow(FOLLOW_ruleIDDeclaration_in_entryRuleIDDeclaration721);
+            pushFollow(FOLLOW_ruleIDDeclaration_in_entryRuleIDDeclaration781);
             ruleIDDeclaration();
 
             state._fsp--;
 
              after(grammarAccess.getIDDeclarationRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleIDDeclaration728); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleIDDeclaration788); 
 
             }
 
@@ -965,23 +1042,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleIDDeclaration"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:377:1: ruleIDDeclaration : ( ( rule__IDDeclaration__Group__0 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:405:1: ruleIDDeclaration : ( ( rule__IDDeclaration__Group__0 ) ) ;
     public final void ruleIDDeclaration() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:381:2: ( ( ( rule__IDDeclaration__Group__0 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:382:1: ( ( rule__IDDeclaration__Group__0 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:409:2: ( ( ( rule__IDDeclaration__Group__0 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:410:1: ( ( rule__IDDeclaration__Group__0 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:382:1: ( ( rule__IDDeclaration__Group__0 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:383:1: ( rule__IDDeclaration__Group__0 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:410:1: ( ( rule__IDDeclaration__Group__0 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:411:1: ( rule__IDDeclaration__Group__0 )
             {
              before(grammarAccess.getIDDeclarationAccess().getGroup()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:384:1: ( rule__IDDeclaration__Group__0 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:384:2: rule__IDDeclaration__Group__0
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:412:1: ( rule__IDDeclaration__Group__0 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:412:2: rule__IDDeclaration__Group__0
             {
-            pushFollow(FOLLOW_rule__IDDeclaration__Group__0_in_ruleIDDeclaration754);
+            pushFollow(FOLLOW_rule__IDDeclaration__Group__0_in_ruleIDDeclaration814);
             rule__IDDeclaration__Group__0();
 
             state._fsp--;
@@ -1012,20 +1089,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleExpr"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:396:1: entryRuleExpr : ruleExpr EOF ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:424:1: entryRuleExpr : ruleExpr EOF ;
     public final void entryRuleExpr() throws RecognitionException {
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:397:1: ( ruleExpr EOF )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:398:1: ruleExpr EOF
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:425:1: ( ruleExpr EOF )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:426:1: ruleExpr EOF
             {
              before(grammarAccess.getExprRule()); 
-            pushFollow(FOLLOW_ruleExpr_in_entryRuleExpr781);
+            pushFollow(FOLLOW_ruleExpr_in_entryRuleExpr841);
             ruleExpr();
 
             state._fsp--;
 
              after(grammarAccess.getExprRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExpr788); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExpr848); 
 
             }
 
@@ -1042,23 +1119,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleExpr"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:405:1: ruleExpr : ( ( rule__Expr__Group__0 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:433:1: ruleExpr : ( ( rule__Expr__Group__0 ) ) ;
     public final void ruleExpr() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:409:2: ( ( ( rule__Expr__Group__0 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:410:1: ( ( rule__Expr__Group__0 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:437:2: ( ( ( rule__Expr__Group__0 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:438:1: ( ( rule__Expr__Group__0 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:410:1: ( ( rule__Expr__Group__0 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:411:1: ( rule__Expr__Group__0 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:438:1: ( ( rule__Expr__Group__0 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:439:1: ( rule__Expr__Group__0 )
             {
              before(grammarAccess.getExprAccess().getGroup()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:412:1: ( rule__Expr__Group__0 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:412:2: rule__Expr__Group__0
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:440:1: ( rule__Expr__Group__0 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:440:2: rule__Expr__Group__0
             {
-            pushFollow(FOLLOW_rule__Expr__Group__0_in_ruleExpr814);
+            pushFollow(FOLLOW_rule__Expr__Group__0_in_ruleExpr874);
             rule__Expr__Group__0();
 
             state._fsp--;
@@ -1089,20 +1166,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleTerm"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:424:1: entryRuleTerm : ruleTerm EOF ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:452:1: entryRuleTerm : ruleTerm EOF ;
     public final void entryRuleTerm() throws RecognitionException {
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:425:1: ( ruleTerm EOF )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:426:1: ruleTerm EOF
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:453:1: ( ruleTerm EOF )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:454:1: ruleTerm EOF
             {
              before(grammarAccess.getTermRule()); 
-            pushFollow(FOLLOW_ruleTerm_in_entryRuleTerm841);
+            pushFollow(FOLLOW_ruleTerm_in_entryRuleTerm901);
             ruleTerm();
 
             state._fsp--;
 
              after(grammarAccess.getTermRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTerm848); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTerm908); 
 
             }
 
@@ -1119,23 +1196,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleTerm"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:433:1: ruleTerm : ( ( rule__Term__Group__0 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:461:1: ruleTerm : ( ( rule__Term__Group__0 ) ) ;
     public final void ruleTerm() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:437:2: ( ( ( rule__Term__Group__0 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:438:1: ( ( rule__Term__Group__0 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:465:2: ( ( ( rule__Term__Group__0 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:466:1: ( ( rule__Term__Group__0 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:438:1: ( ( rule__Term__Group__0 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:439:1: ( rule__Term__Group__0 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:466:1: ( ( rule__Term__Group__0 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:467:1: ( rule__Term__Group__0 )
             {
              before(grammarAccess.getTermAccess().getGroup()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:440:1: ( rule__Term__Group__0 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:440:2: rule__Term__Group__0
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:468:1: ( rule__Term__Group__0 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:468:2: rule__Term__Group__0
             {
-            pushFollow(FOLLOW_rule__Term__Group__0_in_ruleTerm874);
+            pushFollow(FOLLOW_rule__Term__Group__0_in_ruleTerm934);
             rule__Term__Group__0();
 
             state._fsp--;
@@ -1166,20 +1243,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleFactor"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:452:1: entryRuleFactor : ruleFactor EOF ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:480:1: entryRuleFactor : ruleFactor EOF ;
     public final void entryRuleFactor() throws RecognitionException {
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:453:1: ( ruleFactor EOF )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:454:1: ruleFactor EOF
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:481:1: ( ruleFactor EOF )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:482:1: ruleFactor EOF
             {
              before(grammarAccess.getFactorRule()); 
-            pushFollow(FOLLOW_ruleFactor_in_entryRuleFactor901);
+            pushFollow(FOLLOW_ruleFactor_in_entryRuleFactor961);
             ruleFactor();
 
             state._fsp--;
 
              after(grammarAccess.getFactorRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFactor908); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFactor968); 
 
             }
 
@@ -1196,23 +1273,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleFactor"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:461:1: ruleFactor : ( ( rule__Factor__Group__0 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:489:1: ruleFactor : ( ( rule__Factor__Group__0 ) ) ;
     public final void ruleFactor() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:465:2: ( ( ( rule__Factor__Group__0 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:466:1: ( ( rule__Factor__Group__0 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:493:2: ( ( ( rule__Factor__Group__0 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:494:1: ( ( rule__Factor__Group__0 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:466:1: ( ( rule__Factor__Group__0 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:467:1: ( rule__Factor__Group__0 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:494:1: ( ( rule__Factor__Group__0 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:495:1: ( rule__Factor__Group__0 )
             {
              before(grammarAccess.getFactorAccess().getGroup()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:468:1: ( rule__Factor__Group__0 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:468:2: rule__Factor__Group__0
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:496:1: ( rule__Factor__Group__0 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:496:2: rule__Factor__Group__0
             {
-            pushFollow(FOLLOW_rule__Factor__Group__0_in_ruleFactor934);
+            pushFollow(FOLLOW_rule__Factor__Group__0_in_ruleFactor994);
             rule__Factor__Group__0();
 
             state._fsp--;
@@ -1243,20 +1320,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleAtomic"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:480:1: entryRuleAtomic : ruleAtomic EOF ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:508:1: entryRuleAtomic : ruleAtomic EOF ;
     public final void entryRuleAtomic() throws RecognitionException {
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:481:1: ( ruleAtomic EOF )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:482:1: ruleAtomic EOF
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:509:1: ( ruleAtomic EOF )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:510:1: ruleAtomic EOF
             {
              before(grammarAccess.getAtomicRule()); 
-            pushFollow(FOLLOW_ruleAtomic_in_entryRuleAtomic961);
+            pushFollow(FOLLOW_ruleAtomic_in_entryRuleAtomic1021);
             ruleAtomic();
 
             state._fsp--;
 
              after(grammarAccess.getAtomicRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAtomic968); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAtomic1028); 
 
             }
 
@@ -1273,23 +1350,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleAtomic"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:489:1: ruleAtomic : ( ( rule__Atomic__Alternatives ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:517:1: ruleAtomic : ( ( rule__Atomic__Alternatives ) ) ;
     public final void ruleAtomic() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:493:2: ( ( ( rule__Atomic__Alternatives ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:494:1: ( ( rule__Atomic__Alternatives ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:521:2: ( ( ( rule__Atomic__Alternatives ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:522:1: ( ( rule__Atomic__Alternatives ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:494:1: ( ( rule__Atomic__Alternatives ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:495:1: ( rule__Atomic__Alternatives )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:522:1: ( ( rule__Atomic__Alternatives ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:523:1: ( rule__Atomic__Alternatives )
             {
              before(grammarAccess.getAtomicAccess().getAlternatives()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:496:1: ( rule__Atomic__Alternatives )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:496:2: rule__Atomic__Alternatives
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:524:1: ( rule__Atomic__Alternatives )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:524:2: rule__Atomic__Alternatives
             {
-            pushFollow(FOLLOW_rule__Atomic__Alternatives_in_ruleAtomic994);
+            pushFollow(FOLLOW_rule__Atomic__Alternatives_in_ruleAtomic1054);
             rule__Atomic__Alternatives();
 
             state._fsp--;
@@ -1320,20 +1397,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleElement"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:508:1: entryRuleElement : ruleElement EOF ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:536:1: entryRuleElement : ruleElement EOF ;
     public final void entryRuleElement() throws RecognitionException {
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:509:1: ( ruleElement EOF )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:510:1: ruleElement EOF
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:537:1: ( ruleElement EOF )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:538:1: ruleElement EOF
             {
              before(grammarAccess.getElementRule()); 
-            pushFollow(FOLLOW_ruleElement_in_entryRuleElement1021);
+            pushFollow(FOLLOW_ruleElement_in_entryRuleElement1081);
             ruleElement();
 
             state._fsp--;
 
              after(grammarAccess.getElementRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleElement1028); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleElement1088); 
 
             }
 
@@ -1350,23 +1427,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleElement"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:517:1: ruleElement : ( ( rule__Element__Alternatives ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:545:1: ruleElement : ( ( rule__Element__Alternatives ) ) ;
     public final void ruleElement() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:521:2: ( ( ( rule__Element__Alternatives ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:522:1: ( ( rule__Element__Alternatives ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:549:2: ( ( ( rule__Element__Alternatives ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:550:1: ( ( rule__Element__Alternatives ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:522:1: ( ( rule__Element__Alternatives ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:523:1: ( rule__Element__Alternatives )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:550:1: ( ( rule__Element__Alternatives ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:551:1: ( rule__Element__Alternatives )
             {
              before(grammarAccess.getElementAccess().getAlternatives()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:524:1: ( rule__Element__Alternatives )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:524:2: rule__Element__Alternatives
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:552:1: ( rule__Element__Alternatives )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:552:2: rule__Element__Alternatives
             {
-            pushFollow(FOLLOW_rule__Element__Alternatives_in_ruleElement1054);
+            pushFollow(FOLLOW_rule__Element__Alternatives_in_ruleElement1114);
             rule__Element__Alternatives();
 
             state._fsp--;
@@ -1397,20 +1474,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleType"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:536:1: entryRuleType : ruleType EOF ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:564:1: entryRuleType : ruleType EOF ;
     public final void entryRuleType() throws RecognitionException {
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:537:1: ( ruleType EOF )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:538:1: ruleType EOF
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:565:1: ( ruleType EOF )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:566:1: ruleType EOF
             {
              before(grammarAccess.getTypeRule()); 
-            pushFollow(FOLLOW_ruleType_in_entryRuleType1081);
+            pushFollow(FOLLOW_ruleType_in_entryRuleType1141);
             ruleType();
 
             state._fsp--;
 
              after(grammarAccess.getTypeRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleType1088); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleType1148); 
 
             }
 
@@ -1427,23 +1504,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleType"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:545:1: ruleType : ( ( rule__Type__ValueAssignment ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:573:1: ruleType : ( ( rule__Type__ValueAssignment ) ) ;
     public final void ruleType() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:549:2: ( ( ( rule__Type__ValueAssignment ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:550:1: ( ( rule__Type__ValueAssignment ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:577:2: ( ( ( rule__Type__ValueAssignment ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:578:1: ( ( rule__Type__ValueAssignment ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:550:1: ( ( rule__Type__ValueAssignment ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:551:1: ( rule__Type__ValueAssignment )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:578:1: ( ( rule__Type__ValueAssignment ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:579:1: ( rule__Type__ValueAssignment )
             {
              before(grammarAccess.getTypeAccess().getValueAssignment()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:552:1: ( rule__Type__ValueAssignment )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:552:2: rule__Type__ValueAssignment
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:580:1: ( rule__Type__ValueAssignment )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:580:2: rule__Type__ValueAssignment
             {
-            pushFollow(FOLLOW_rule__Type__ValueAssignment_in_ruleType1114);
+            pushFollow(FOLLOW_rule__Type__ValueAssignment_in_ruleType1174);
             rule__Type__ValueAssignment();
 
             state._fsp--;
@@ -1474,26 +1551,26 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Command__Alternatives"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:564:1: rule__Command__Alternatives : ( ( ruleIfCommand ) | ( ruleWhileCommand ) | ( ruleReturnCommand ) | ( ( rule__Command__Group_3__0 ) ) );
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:592:1: rule__Command__Alternatives : ( ( ruleIfCommand ) | ( ruleWhileCommand ) | ( ruleReturnCommand ) | ( ruleKDeclaration ) | ( ruleDeclaration ) | ( ruleBlock ) );
     public final void rule__Command__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:568:1: ( ( ruleIfCommand ) | ( ruleWhileCommand ) | ( ruleReturnCommand ) | ( ( rule__Command__Group_3__0 ) ) )
-            int alt1=4;
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:596:1: ( ( ruleIfCommand ) | ( ruleWhileCommand ) | ( ruleReturnCommand ) | ( ruleKDeclaration ) | ( ruleDeclaration ) | ( ruleBlock ) )
+            int alt1=6;
             switch ( input.LA(1) ) {
-            case 21:
+            case 20:
                 {
                 alt1=1;
                 }
                 break;
-            case 23:
+            case 22:
                 {
                 alt1=2;
                 }
                 break;
-            case 24:
+            case 23:
                 {
                 alt1=3;
                 }
@@ -1501,6 +1578,16 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
             case RULE_ID:
                 {
                 alt1=4;
+                }
+                break;
+            case 27:
+                {
+                alt1=5;
+                }
+                break;
+            case 18:
+                {
+                alt1=6;
                 }
                 break;
             default:
@@ -1512,13 +1599,13 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
             switch (alt1) {
                 case 1 :
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:569:1: ( ruleIfCommand )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:597:1: ( ruleIfCommand )
                     {
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:569:1: ( ruleIfCommand )
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:570:1: ruleIfCommand
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:597:1: ( ruleIfCommand )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:598:1: ruleIfCommand
                     {
                      before(grammarAccess.getCommandAccess().getIfCommandParserRuleCall_0()); 
-                    pushFollow(FOLLOW_ruleIfCommand_in_rule__Command__Alternatives1150);
+                    pushFollow(FOLLOW_ruleIfCommand_in_rule__Command__Alternatives1210);
                     ruleIfCommand();
 
                     state._fsp--;
@@ -1531,13 +1618,13 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:575:6: ( ruleWhileCommand )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:603:6: ( ruleWhileCommand )
                     {
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:575:6: ( ruleWhileCommand )
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:576:1: ruleWhileCommand
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:603:6: ( ruleWhileCommand )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:604:1: ruleWhileCommand
                     {
                      before(grammarAccess.getCommandAccess().getWhileCommandParserRuleCall_1()); 
-                    pushFollow(FOLLOW_ruleWhileCommand_in_rule__Command__Alternatives1167);
+                    pushFollow(FOLLOW_ruleWhileCommand_in_rule__Command__Alternatives1227);
                     ruleWhileCommand();
 
                     state._fsp--;
@@ -1550,13 +1637,13 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:581:6: ( ruleReturnCommand )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:609:6: ( ruleReturnCommand )
                     {
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:581:6: ( ruleReturnCommand )
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:582:1: ruleReturnCommand
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:609:6: ( ruleReturnCommand )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:610:1: ruleReturnCommand
                     {
                      before(grammarAccess.getCommandAccess().getReturnCommandParserRuleCall_2()); 
-                    pushFollow(FOLLOW_ruleReturnCommand_in_rule__Command__Alternatives1184);
+                    pushFollow(FOLLOW_ruleReturnCommand_in_rule__Command__Alternatives1244);
                     ruleReturnCommand();
 
                     state._fsp--;
@@ -1569,24 +1656,56 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:587:6: ( ( rule__Command__Group_3__0 ) )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:615:6: ( ruleKDeclaration )
                     {
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:587:6: ( ( rule__Command__Group_3__0 ) )
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:588:1: ( rule__Command__Group_3__0 )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:615:6: ( ruleKDeclaration )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:616:1: ruleKDeclaration
                     {
-                     before(grammarAccess.getCommandAccess().getGroup_3()); 
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:589:1: ( rule__Command__Group_3__0 )
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:589:2: rule__Command__Group_3__0
-                    {
-                    pushFollow(FOLLOW_rule__Command__Group_3__0_in_rule__Command__Alternatives1201);
-                    rule__Command__Group_3__0();
+                     before(grammarAccess.getCommandAccess().getKDeclarationParserRuleCall_3()); 
+                    pushFollow(FOLLOW_ruleKDeclaration_in_rule__Command__Alternatives1261);
+                    ruleKDeclaration();
 
                     state._fsp--;
 
+                     after(grammarAccess.getCommandAccess().getKDeclarationParserRuleCall_3()); 
 
                     }
 
-                     after(grammarAccess.getCommandAccess().getGroup_3()); 
+
+                    }
+                    break;
+                case 5 :
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:621:6: ( ruleDeclaration )
+                    {
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:621:6: ( ruleDeclaration )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:622:1: ruleDeclaration
+                    {
+                     before(grammarAccess.getCommandAccess().getDeclarationParserRuleCall_4()); 
+                    pushFollow(FOLLOW_ruleDeclaration_in_rule__Command__Alternatives1278);
+                    ruleDeclaration();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getCommandAccess().getDeclarationParserRuleCall_4()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 6 :
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:627:6: ( ruleBlock )
+                    {
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:627:6: ( ruleBlock )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:628:1: ruleBlock
+                    {
+                     before(grammarAccess.getCommandAccess().getBlockParserRuleCall_5()); 
+                    pushFollow(FOLLOW_ruleBlock_in_rule__Command__Alternatives1295);
+                    ruleBlock();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getCommandAccess().getBlockParserRuleCall_5()); 
 
                     }
 
@@ -1611,13 +1730,13 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expr__OperatorAlternatives_1_1_0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:598:1: rule__Expr__OperatorAlternatives_1_1_0 : ( ( '+' ) | ( '-' ) );
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:638:1: rule__Expr__OperatorAlternatives_1_1_0 : ( ( '+' ) | ( '-' ) );
     public final void rule__Expr__OperatorAlternatives_1_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:602:1: ( ( '+' ) | ( '-' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:642:1: ( ( '+' ) | ( '-' ) )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -1635,13 +1754,13 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
             }
             switch (alt2) {
                 case 1 :
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:603:1: ( '+' )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:643:1: ( '+' )
                     {
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:603:1: ( '+' )
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:604:1: '+'
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:643:1: ( '+' )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:644:1: '+'
                     {
                      before(grammarAccess.getExprAccess().getOperatorPlusSignKeyword_1_1_0_0()); 
-                    match(input,11,FOLLOW_11_in_rule__Expr__OperatorAlternatives_1_1_01235); 
+                    match(input,11,FOLLOW_11_in_rule__Expr__OperatorAlternatives_1_1_01328); 
                      after(grammarAccess.getExprAccess().getOperatorPlusSignKeyword_1_1_0_0()); 
 
                     }
@@ -1650,13 +1769,13 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:611:6: ( '-' )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:651:6: ( '-' )
                     {
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:611:6: ( '-' )
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:612:1: '-'
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:651:6: ( '-' )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:652:1: '-'
                     {
                      before(grammarAccess.getExprAccess().getOperatorHyphenMinusKeyword_1_1_0_1()); 
-                    match(input,12,FOLLOW_12_in_rule__Expr__OperatorAlternatives_1_1_01255); 
+                    match(input,12,FOLLOW_12_in_rule__Expr__OperatorAlternatives_1_1_01348); 
                      after(grammarAccess.getExprAccess().getOperatorHyphenMinusKeyword_1_1_0_1()); 
 
                     }
@@ -1682,13 +1801,13 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Term__OperatorAlternatives_1_1_0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:624:1: rule__Term__OperatorAlternatives_1_1_0 : ( ( '*' ) | ( '/' ) );
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:664:1: rule__Term__OperatorAlternatives_1_1_0 : ( ( '*' ) | ( '/' ) );
     public final void rule__Term__OperatorAlternatives_1_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:628:1: ( ( '*' ) | ( '/' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:668:1: ( ( '*' ) | ( '/' ) )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -1706,13 +1825,13 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
             }
             switch (alt3) {
                 case 1 :
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:629:1: ( '*' )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:669:1: ( '*' )
                     {
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:629:1: ( '*' )
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:630:1: '*'
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:669:1: ( '*' )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:670:1: '*'
                     {
                      before(grammarAccess.getTermAccess().getOperatorAsteriskKeyword_1_1_0_0()); 
-                    match(input,13,FOLLOW_13_in_rule__Term__OperatorAlternatives_1_1_01290); 
+                    match(input,13,FOLLOW_13_in_rule__Term__OperatorAlternatives_1_1_01383); 
                      after(grammarAccess.getTermAccess().getOperatorAsteriskKeyword_1_1_0_0()); 
 
                     }
@@ -1721,13 +1840,13 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:637:6: ( '/' )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:677:6: ( '/' )
                     {
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:637:6: ( '/' )
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:638:1: '/'
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:677:6: ( '/' )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:678:1: '/'
                     {
                      before(grammarAccess.getTermAccess().getOperatorSolidusKeyword_1_1_0_1()); 
-                    match(input,14,FOLLOW_14_in_rule__Term__OperatorAlternatives_1_1_01310); 
+                    match(input,14,FOLLOW_14_in_rule__Term__OperatorAlternatives_1_1_01403); 
                      after(grammarAccess.getTermAccess().getOperatorSolidusKeyword_1_1_0_1()); 
 
                     }
@@ -1753,13 +1872,13 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Alternatives"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:650:1: rule__Atomic__Alternatives : ( ( ( rule__Atomic__Group_0__0 ) ) | ( ( rule__Atomic__ResultAssignment_1 ) ) );
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:690:1: rule__Atomic__Alternatives : ( ( ( rule__Atomic__Group_0__0 ) ) | ( ( rule__Atomic__ResultAssignment_1 ) ) );
     public final void rule__Atomic__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:654:1: ( ( ( rule__Atomic__Group_0__0 ) ) | ( ( rule__Atomic__ResultAssignment_1 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:694:1: ( ( ( rule__Atomic__Group_0__0 ) ) | ( ( rule__Atomic__ResultAssignment_1 ) ) )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1777,16 +1896,16 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
             }
             switch (alt4) {
                 case 1 :
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:655:1: ( ( rule__Atomic__Group_0__0 ) )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:695:1: ( ( rule__Atomic__Group_0__0 ) )
                     {
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:655:1: ( ( rule__Atomic__Group_0__0 ) )
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:656:1: ( rule__Atomic__Group_0__0 )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:695:1: ( ( rule__Atomic__Group_0__0 ) )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:696:1: ( rule__Atomic__Group_0__0 )
                     {
                      before(grammarAccess.getAtomicAccess().getGroup_0()); 
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:657:1: ( rule__Atomic__Group_0__0 )
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:657:2: rule__Atomic__Group_0__0
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:697:1: ( rule__Atomic__Group_0__0 )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:697:2: rule__Atomic__Group_0__0
                     {
-                    pushFollow(FOLLOW_rule__Atomic__Group_0__0_in_rule__Atomic__Alternatives1344);
+                    pushFollow(FOLLOW_rule__Atomic__Group_0__0_in_rule__Atomic__Alternatives1437);
                     rule__Atomic__Group_0__0();
 
                     state._fsp--;
@@ -1802,16 +1921,16 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:661:6: ( ( rule__Atomic__ResultAssignment_1 ) )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:701:6: ( ( rule__Atomic__ResultAssignment_1 ) )
                     {
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:661:6: ( ( rule__Atomic__ResultAssignment_1 ) )
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:662:1: ( rule__Atomic__ResultAssignment_1 )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:701:6: ( ( rule__Atomic__ResultAssignment_1 ) )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:702:1: ( rule__Atomic__ResultAssignment_1 )
                     {
                      before(grammarAccess.getAtomicAccess().getResultAssignment_1()); 
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:663:1: ( rule__Atomic__ResultAssignment_1 )
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:663:2: rule__Atomic__ResultAssignment_1
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:703:1: ( rule__Atomic__ResultAssignment_1 )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:703:2: rule__Atomic__ResultAssignment_1
                     {
-                    pushFollow(FOLLOW_rule__Atomic__ResultAssignment_1_in_rule__Atomic__Alternatives1362);
+                    pushFollow(FOLLOW_rule__Atomic__ResultAssignment_1_in_rule__Atomic__Alternatives1455);
                     rule__Atomic__ResultAssignment_1();
 
                     state._fsp--;
@@ -1844,13 +1963,13 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Element__Alternatives"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:672:1: rule__Element__Alternatives : ( ( RULE_INT ) | ( RULE_ID ) );
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:712:1: rule__Element__Alternatives : ( ( RULE_INT ) | ( RULE_ID ) );
     public final void rule__Element__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:676:1: ( ( RULE_INT ) | ( RULE_ID ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:716:1: ( ( RULE_INT ) | ( RULE_ID ) )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -1868,13 +1987,13 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
             }
             switch (alt5) {
                 case 1 :
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:677:1: ( RULE_INT )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:717:1: ( RULE_INT )
                     {
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:677:1: ( RULE_INT )
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:678:1: RULE_INT
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:717:1: ( RULE_INT )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:718:1: RULE_INT
                     {
                      before(grammarAccess.getElementAccess().getINTTerminalRuleCall_0()); 
-                    match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Element__Alternatives1395); 
+                    match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Element__Alternatives1488); 
                      after(grammarAccess.getElementAccess().getINTTerminalRuleCall_0()); 
 
                     }
@@ -1883,13 +2002,13 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:683:6: ( RULE_ID )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:723:6: ( RULE_ID )
                     {
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:683:6: ( RULE_ID )
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:684:1: RULE_ID
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:723:6: ( RULE_ID )
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:724:1: RULE_ID
                     {
                      before(grammarAccess.getElementAccess().getIDTerminalRuleCall_1()); 
-                    match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Element__Alternatives1412); 
+                    match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Element__Alternatives1505); 
                      after(grammarAccess.getElementAccess().getIDTerminalRuleCall_1()); 
 
                     }
@@ -1915,21 +2034,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Code__Group__0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:696:1: rule__Code__Group__0 : rule__Code__Group__0__Impl rule__Code__Group__1 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:736:1: rule__Code__Group__0 : rule__Code__Group__0__Impl rule__Code__Group__1 ;
     public final void rule__Code__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:700:1: ( rule__Code__Group__0__Impl rule__Code__Group__1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:701:2: rule__Code__Group__0__Impl rule__Code__Group__1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:740:1: ( rule__Code__Group__0__Impl rule__Code__Group__1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:741:2: rule__Code__Group__0__Impl rule__Code__Group__1
             {
-            pushFollow(FOLLOW_rule__Code__Group__0__Impl_in_rule__Code__Group__01442);
+            pushFollow(FOLLOW_rule__Code__Group__0__Impl_in_rule__Code__Group__01535);
             rule__Code__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Code__Group__1_in_rule__Code__Group__01445);
+            pushFollow(FOLLOW_rule__Code__Group__1_in_rule__Code__Group__01538);
             rule__Code__Group__1();
 
             state._fsp--;
@@ -1953,20 +2072,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Code__Group__0__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:708:1: rule__Code__Group__0__Impl : ( ( rule__Code__DeclarationsAssignment_0 )* ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:748:1: rule__Code__Group__0__Impl : ( ( rule__Code__DeclarationsAssignment_0 )* ) ;
     public final void rule__Code__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:712:1: ( ( ( rule__Code__DeclarationsAssignment_0 )* ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:713:1: ( ( rule__Code__DeclarationsAssignment_0 )* )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:752:1: ( ( ( rule__Code__DeclarationsAssignment_0 )* ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:753:1: ( ( rule__Code__DeclarationsAssignment_0 )* )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:713:1: ( ( rule__Code__DeclarationsAssignment_0 )* )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:714:1: ( rule__Code__DeclarationsAssignment_0 )*
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:753:1: ( ( rule__Code__DeclarationsAssignment_0 )* )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:754:1: ( rule__Code__DeclarationsAssignment_0 )*
             {
              before(grammarAccess.getCodeAccess().getDeclarationsAssignment_0()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:715:1: ( rule__Code__DeclarationsAssignment_0 )*
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:755:1: ( rule__Code__DeclarationsAssignment_0 )*
             loop6:
             do {
                 int alt6=2;
@@ -1978,7 +2097,7 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
                     if ( (LA6_1==RULE_ID) ) {
                         int LA6_3 = input.LA(3);
 
-                        if ( (LA6_3==17||LA6_3==20||LA6_3==25) ) {
+                        if ( (LA6_3==17||(LA6_3>=24 && LA6_3<=25)) ) {
                             alt6=1;
                         }
 
@@ -1991,9 +2110,9 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
                 switch (alt6) {
             	case 1 :
-            	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:715:2: rule__Code__DeclarationsAssignment_0
+            	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:755:2: rule__Code__DeclarationsAssignment_0
             	    {
-            	    pushFollow(FOLLOW_rule__Code__DeclarationsAssignment_0_in_rule__Code__Group__0__Impl1472);
+            	    pushFollow(FOLLOW_rule__Code__DeclarationsAssignment_0_in_rule__Code__Group__0__Impl1565);
             	    rule__Code__DeclarationsAssignment_0();
 
             	    state._fsp--;
@@ -2030,16 +2149,16 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Code__Group__1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:725:1: rule__Code__Group__1 : rule__Code__Group__1__Impl ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:765:1: rule__Code__Group__1 : rule__Code__Group__1__Impl ;
     public final void rule__Code__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:729:1: ( rule__Code__Group__1__Impl )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:730:2: rule__Code__Group__1__Impl
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:769:1: ( rule__Code__Group__1__Impl )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:770:2: rule__Code__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Code__Group__1__Impl_in_rule__Code__Group__11503);
+            pushFollow(FOLLOW_rule__Code__Group__1__Impl_in_rule__Code__Group__11596);
             rule__Code__Group__1__Impl();
 
             state._fsp--;
@@ -2063,20 +2182,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Code__Group__1__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:736:1: rule__Code__Group__1__Impl : ( ( rule__Code__FunctionsAssignment_1 )* ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:776:1: rule__Code__Group__1__Impl : ( ( rule__Code__FunctionsAssignment_1 )* ) ;
     public final void rule__Code__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:740:1: ( ( ( rule__Code__FunctionsAssignment_1 )* ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:741:1: ( ( rule__Code__FunctionsAssignment_1 )* )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:780:1: ( ( ( rule__Code__FunctionsAssignment_1 )* ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:781:1: ( ( rule__Code__FunctionsAssignment_1 )* )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:741:1: ( ( rule__Code__FunctionsAssignment_1 )* )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:742:1: ( rule__Code__FunctionsAssignment_1 )*
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:781:1: ( ( rule__Code__FunctionsAssignment_1 )* )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:782:1: ( rule__Code__FunctionsAssignment_1 )*
             {
              before(grammarAccess.getCodeAccess().getFunctionsAssignment_1()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:743:1: ( rule__Code__FunctionsAssignment_1 )*
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:783:1: ( rule__Code__FunctionsAssignment_1 )*
             loop7:
             do {
                 int alt7=2;
@@ -2089,9 +2208,9 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:743:2: rule__Code__FunctionsAssignment_1
+            	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:783:2: rule__Code__FunctionsAssignment_1
             	    {
-            	    pushFollow(FOLLOW_rule__Code__FunctionsAssignment_1_in_rule__Code__Group__1__Impl1530);
+            	    pushFollow(FOLLOW_rule__Code__FunctionsAssignment_1_in_rule__Code__Group__1__Impl1623);
             	    rule__Code__FunctionsAssignment_1();
 
             	    state._fsp--;
@@ -2128,21 +2247,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Function__Group__0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:757:1: rule__Function__Group__0 : rule__Function__Group__0__Impl rule__Function__Group__1 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:797:1: rule__Function__Group__0 : rule__Function__Group__0__Impl rule__Function__Group__1 ;
     public final void rule__Function__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:761:1: ( rule__Function__Group__0__Impl rule__Function__Group__1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:762:2: rule__Function__Group__0__Impl rule__Function__Group__1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:801:1: ( rule__Function__Group__0__Impl rule__Function__Group__1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:802:2: rule__Function__Group__0__Impl rule__Function__Group__1
             {
-            pushFollow(FOLLOW_rule__Function__Group__0__Impl_in_rule__Function__Group__01565);
+            pushFollow(FOLLOW_rule__Function__Group__0__Impl_in_rule__Function__Group__01658);
             rule__Function__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Function__Group__1_in_rule__Function__Group__01568);
+            pushFollow(FOLLOW_rule__Function__Group__1_in_rule__Function__Group__01661);
             rule__Function__Group__1();
 
             state._fsp--;
@@ -2166,23 +2285,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Function__Group__0__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:769:1: rule__Function__Group__0__Impl : ( ( rule__Function__TypeAssignment_0 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:809:1: rule__Function__Group__0__Impl : ( ( rule__Function__TypeAssignment_0 ) ) ;
     public final void rule__Function__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:773:1: ( ( ( rule__Function__TypeAssignment_0 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:774:1: ( ( rule__Function__TypeAssignment_0 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:813:1: ( ( ( rule__Function__TypeAssignment_0 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:814:1: ( ( rule__Function__TypeAssignment_0 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:774:1: ( ( rule__Function__TypeAssignment_0 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:775:1: ( rule__Function__TypeAssignment_0 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:814:1: ( ( rule__Function__TypeAssignment_0 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:815:1: ( rule__Function__TypeAssignment_0 )
             {
              before(grammarAccess.getFunctionAccess().getTypeAssignment_0()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:776:1: ( rule__Function__TypeAssignment_0 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:776:2: rule__Function__TypeAssignment_0
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:816:1: ( rule__Function__TypeAssignment_0 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:816:2: rule__Function__TypeAssignment_0
             {
-            pushFollow(FOLLOW_rule__Function__TypeAssignment_0_in_rule__Function__Group__0__Impl1595);
+            pushFollow(FOLLOW_rule__Function__TypeAssignment_0_in_rule__Function__Group__0__Impl1688);
             rule__Function__TypeAssignment_0();
 
             state._fsp--;
@@ -2213,21 +2332,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Function__Group__1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:786:1: rule__Function__Group__1 : rule__Function__Group__1__Impl rule__Function__Group__2 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:826:1: rule__Function__Group__1 : rule__Function__Group__1__Impl rule__Function__Group__2 ;
     public final void rule__Function__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:790:1: ( rule__Function__Group__1__Impl rule__Function__Group__2 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:791:2: rule__Function__Group__1__Impl rule__Function__Group__2
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:830:1: ( rule__Function__Group__1__Impl rule__Function__Group__2 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:831:2: rule__Function__Group__1__Impl rule__Function__Group__2
             {
-            pushFollow(FOLLOW_rule__Function__Group__1__Impl_in_rule__Function__Group__11625);
+            pushFollow(FOLLOW_rule__Function__Group__1__Impl_in_rule__Function__Group__11718);
             rule__Function__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Function__Group__2_in_rule__Function__Group__11628);
+            pushFollow(FOLLOW_rule__Function__Group__2_in_rule__Function__Group__11721);
             rule__Function__Group__2();
 
             state._fsp--;
@@ -2251,23 +2370,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Function__Group__1__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:798:1: rule__Function__Group__1__Impl : ( ( rule__Function__IdAssignment_1 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:838:1: rule__Function__Group__1__Impl : ( ( rule__Function__IdAssignment_1 ) ) ;
     public final void rule__Function__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:802:1: ( ( ( rule__Function__IdAssignment_1 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:803:1: ( ( rule__Function__IdAssignment_1 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:842:1: ( ( ( rule__Function__IdAssignment_1 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:843:1: ( ( rule__Function__IdAssignment_1 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:803:1: ( ( rule__Function__IdAssignment_1 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:804:1: ( rule__Function__IdAssignment_1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:843:1: ( ( rule__Function__IdAssignment_1 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:844:1: ( rule__Function__IdAssignment_1 )
             {
              before(grammarAccess.getFunctionAccess().getIdAssignment_1()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:805:1: ( rule__Function__IdAssignment_1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:805:2: rule__Function__IdAssignment_1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:845:1: ( rule__Function__IdAssignment_1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:845:2: rule__Function__IdAssignment_1
             {
-            pushFollow(FOLLOW_rule__Function__IdAssignment_1_in_rule__Function__Group__1__Impl1655);
+            pushFollow(FOLLOW_rule__Function__IdAssignment_1_in_rule__Function__Group__1__Impl1748);
             rule__Function__IdAssignment_1();
 
             state._fsp--;
@@ -2298,21 +2417,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Function__Group__2"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:815:1: rule__Function__Group__2 : rule__Function__Group__2__Impl rule__Function__Group__3 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:855:1: rule__Function__Group__2 : rule__Function__Group__2__Impl rule__Function__Group__3 ;
     public final void rule__Function__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:819:1: ( rule__Function__Group__2__Impl rule__Function__Group__3 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:820:2: rule__Function__Group__2__Impl rule__Function__Group__3
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:859:1: ( rule__Function__Group__2__Impl rule__Function__Group__3 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:860:2: rule__Function__Group__2__Impl rule__Function__Group__3
             {
-            pushFollow(FOLLOW_rule__Function__Group__2__Impl_in_rule__Function__Group__21685);
+            pushFollow(FOLLOW_rule__Function__Group__2__Impl_in_rule__Function__Group__21778);
             rule__Function__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Function__Group__3_in_rule__Function__Group__21688);
+            pushFollow(FOLLOW_rule__Function__Group__3_in_rule__Function__Group__21781);
             rule__Function__Group__3();
 
             state._fsp--;
@@ -2336,20 +2455,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Function__Group__2__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:827:1: rule__Function__Group__2__Impl : ( '(' ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:867:1: rule__Function__Group__2__Impl : ( '(' ) ;
     public final void rule__Function__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:831:1: ( ( '(' ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:832:1: ( '(' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:871:1: ( ( '(' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:872:1: ( '(' )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:832:1: ( '(' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:833:1: '('
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:872:1: ( '(' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:873:1: '('
             {
              before(grammarAccess.getFunctionAccess().getLeftParenthesisKeyword_2()); 
-            match(input,15,FOLLOW_15_in_rule__Function__Group__2__Impl1716); 
+            match(input,15,FOLLOW_15_in_rule__Function__Group__2__Impl1809); 
              after(grammarAccess.getFunctionAccess().getLeftParenthesisKeyword_2()); 
 
             }
@@ -2373,21 +2492,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Function__Group__3"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:846:1: rule__Function__Group__3 : rule__Function__Group__3__Impl rule__Function__Group__4 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:886:1: rule__Function__Group__3 : rule__Function__Group__3__Impl rule__Function__Group__4 ;
     public final void rule__Function__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:850:1: ( rule__Function__Group__3__Impl rule__Function__Group__4 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:851:2: rule__Function__Group__3__Impl rule__Function__Group__4
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:890:1: ( rule__Function__Group__3__Impl rule__Function__Group__4 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:891:2: rule__Function__Group__3__Impl rule__Function__Group__4
             {
-            pushFollow(FOLLOW_rule__Function__Group__3__Impl_in_rule__Function__Group__31747);
+            pushFollow(FOLLOW_rule__Function__Group__3__Impl_in_rule__Function__Group__31840);
             rule__Function__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Function__Group__4_in_rule__Function__Group__31750);
+            pushFollow(FOLLOW_rule__Function__Group__4_in_rule__Function__Group__31843);
             rule__Function__Group__4();
 
             state._fsp--;
@@ -2411,20 +2530,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Function__Group__3__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:858:1: rule__Function__Group__3__Impl : ( ( rule__Function__ParamAssignment_3 )? ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:898:1: rule__Function__Group__3__Impl : ( ( rule__Function__ParamAssignment_3 )? ) ;
     public final void rule__Function__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:862:1: ( ( ( rule__Function__ParamAssignment_3 )? ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:863:1: ( ( rule__Function__ParamAssignment_3 )? )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:902:1: ( ( ( rule__Function__ParamAssignment_3 )? ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:903:1: ( ( rule__Function__ParamAssignment_3 )? )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:863:1: ( ( rule__Function__ParamAssignment_3 )? )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:864:1: ( rule__Function__ParamAssignment_3 )?
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:903:1: ( ( rule__Function__ParamAssignment_3 )? )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:904:1: ( rule__Function__ParamAssignment_3 )?
             {
              before(grammarAccess.getFunctionAccess().getParamAssignment_3()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:865:1: ( rule__Function__ParamAssignment_3 )?
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:905:1: ( rule__Function__ParamAssignment_3 )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -2433,9 +2552,9 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
             }
             switch (alt8) {
                 case 1 :
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:865:2: rule__Function__ParamAssignment_3
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:905:2: rule__Function__ParamAssignment_3
                     {
-                    pushFollow(FOLLOW_rule__Function__ParamAssignment_3_in_rule__Function__Group__3__Impl1777);
+                    pushFollow(FOLLOW_rule__Function__ParamAssignment_3_in_rule__Function__Group__3__Impl1870);
                     rule__Function__ParamAssignment_3();
 
                     state._fsp--;
@@ -2469,21 +2588,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Function__Group__4"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:875:1: rule__Function__Group__4 : rule__Function__Group__4__Impl rule__Function__Group__5 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:915:1: rule__Function__Group__4 : rule__Function__Group__4__Impl rule__Function__Group__5 ;
     public final void rule__Function__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:879:1: ( rule__Function__Group__4__Impl rule__Function__Group__5 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:880:2: rule__Function__Group__4__Impl rule__Function__Group__5
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:919:1: ( rule__Function__Group__4__Impl rule__Function__Group__5 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:920:2: rule__Function__Group__4__Impl rule__Function__Group__5
             {
-            pushFollow(FOLLOW_rule__Function__Group__4__Impl_in_rule__Function__Group__41808);
+            pushFollow(FOLLOW_rule__Function__Group__4__Impl_in_rule__Function__Group__41901);
             rule__Function__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Function__Group__5_in_rule__Function__Group__41811);
+            pushFollow(FOLLOW_rule__Function__Group__5_in_rule__Function__Group__41904);
             rule__Function__Group__5();
 
             state._fsp--;
@@ -2507,20 +2626,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Function__Group__4__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:887:1: rule__Function__Group__4__Impl : ( ')' ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:927:1: rule__Function__Group__4__Impl : ( ')' ) ;
     public final void rule__Function__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:891:1: ( ( ')' ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:892:1: ( ')' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:931:1: ( ( ')' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:932:1: ( ')' )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:892:1: ( ')' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:893:1: ')'
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:932:1: ( ')' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:933:1: ')'
             {
              before(grammarAccess.getFunctionAccess().getRightParenthesisKeyword_4()); 
-            match(input,16,FOLLOW_16_in_rule__Function__Group__4__Impl1839); 
+            match(input,16,FOLLOW_16_in_rule__Function__Group__4__Impl1932); 
              after(grammarAccess.getFunctionAccess().getRightParenthesisKeyword_4()); 
 
             }
@@ -2544,16 +2663,16 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Function__Group__5"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:906:1: rule__Function__Group__5 : rule__Function__Group__5__Impl ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:946:1: rule__Function__Group__5 : rule__Function__Group__5__Impl ;
     public final void rule__Function__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:910:1: ( rule__Function__Group__5__Impl )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:911:2: rule__Function__Group__5__Impl
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:950:1: ( rule__Function__Group__5__Impl )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:951:2: rule__Function__Group__5__Impl
             {
-            pushFollow(FOLLOW_rule__Function__Group__5__Impl_in_rule__Function__Group__51870);
+            pushFollow(FOLLOW_rule__Function__Group__5__Impl_in_rule__Function__Group__51963);
             rule__Function__Group__5__Impl();
 
             state._fsp--;
@@ -2577,23 +2696,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Function__Group__5__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:917:1: rule__Function__Group__5__Impl : ( ( rule__Function__BlockAssignment_5 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:957:1: rule__Function__Group__5__Impl : ( ( rule__Function__BlockAssignment_5 ) ) ;
     public final void rule__Function__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:921:1: ( ( ( rule__Function__BlockAssignment_5 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:922:1: ( ( rule__Function__BlockAssignment_5 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:961:1: ( ( ( rule__Function__BlockAssignment_5 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:962:1: ( ( rule__Function__BlockAssignment_5 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:922:1: ( ( rule__Function__BlockAssignment_5 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:923:1: ( rule__Function__BlockAssignment_5 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:962:1: ( ( rule__Function__BlockAssignment_5 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:963:1: ( rule__Function__BlockAssignment_5 )
             {
              before(grammarAccess.getFunctionAccess().getBlockAssignment_5()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:924:1: ( rule__Function__BlockAssignment_5 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:924:2: rule__Function__BlockAssignment_5
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:964:1: ( rule__Function__BlockAssignment_5 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:964:2: rule__Function__BlockAssignment_5
             {
-            pushFollow(FOLLOW_rule__Function__BlockAssignment_5_in_rule__Function__Group__5__Impl1897);
+            pushFollow(FOLLOW_rule__Function__BlockAssignment_5_in_rule__Function__Group__5__Impl1990);
             rule__Function__BlockAssignment_5();
 
             state._fsp--;
@@ -2624,21 +2743,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FuncParam__Group__0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:946:1: rule__FuncParam__Group__0 : rule__FuncParam__Group__0__Impl rule__FuncParam__Group__1 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:986:1: rule__FuncParam__Group__0 : rule__FuncParam__Group__0__Impl rule__FuncParam__Group__1 ;
     public final void rule__FuncParam__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:950:1: ( rule__FuncParam__Group__0__Impl rule__FuncParam__Group__1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:951:2: rule__FuncParam__Group__0__Impl rule__FuncParam__Group__1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:990:1: ( rule__FuncParam__Group__0__Impl rule__FuncParam__Group__1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:991:2: rule__FuncParam__Group__0__Impl rule__FuncParam__Group__1
             {
-            pushFollow(FOLLOW_rule__FuncParam__Group__0__Impl_in_rule__FuncParam__Group__01939);
+            pushFollow(FOLLOW_rule__FuncParam__Group__0__Impl_in_rule__FuncParam__Group__02032);
             rule__FuncParam__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__FuncParam__Group__1_in_rule__FuncParam__Group__01942);
+            pushFollow(FOLLOW_rule__FuncParam__Group__1_in_rule__FuncParam__Group__02035);
             rule__FuncParam__Group__1();
 
             state._fsp--;
@@ -2662,23 +2781,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FuncParam__Group__0__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:958:1: rule__FuncParam__Group__0__Impl : ( ( rule__FuncParam__TypeAssignment_0 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:998:1: rule__FuncParam__Group__0__Impl : ( ( rule__FuncParam__TypeAssignment_0 ) ) ;
     public final void rule__FuncParam__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:962:1: ( ( ( rule__FuncParam__TypeAssignment_0 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:963:1: ( ( rule__FuncParam__TypeAssignment_0 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1002:1: ( ( ( rule__FuncParam__TypeAssignment_0 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1003:1: ( ( rule__FuncParam__TypeAssignment_0 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:963:1: ( ( rule__FuncParam__TypeAssignment_0 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:964:1: ( rule__FuncParam__TypeAssignment_0 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1003:1: ( ( rule__FuncParam__TypeAssignment_0 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1004:1: ( rule__FuncParam__TypeAssignment_0 )
             {
              before(grammarAccess.getFuncParamAccess().getTypeAssignment_0()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:965:1: ( rule__FuncParam__TypeAssignment_0 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:965:2: rule__FuncParam__TypeAssignment_0
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1005:1: ( rule__FuncParam__TypeAssignment_0 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1005:2: rule__FuncParam__TypeAssignment_0
             {
-            pushFollow(FOLLOW_rule__FuncParam__TypeAssignment_0_in_rule__FuncParam__Group__0__Impl1969);
+            pushFollow(FOLLOW_rule__FuncParam__TypeAssignment_0_in_rule__FuncParam__Group__0__Impl2062);
             rule__FuncParam__TypeAssignment_0();
 
             state._fsp--;
@@ -2709,21 +2828,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FuncParam__Group__1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:975:1: rule__FuncParam__Group__1 : rule__FuncParam__Group__1__Impl rule__FuncParam__Group__2 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1015:1: rule__FuncParam__Group__1 : rule__FuncParam__Group__1__Impl rule__FuncParam__Group__2 ;
     public final void rule__FuncParam__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:979:1: ( rule__FuncParam__Group__1__Impl rule__FuncParam__Group__2 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:980:2: rule__FuncParam__Group__1__Impl rule__FuncParam__Group__2
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1019:1: ( rule__FuncParam__Group__1__Impl rule__FuncParam__Group__2 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1020:2: rule__FuncParam__Group__1__Impl rule__FuncParam__Group__2
             {
-            pushFollow(FOLLOW_rule__FuncParam__Group__1__Impl_in_rule__FuncParam__Group__11999);
+            pushFollow(FOLLOW_rule__FuncParam__Group__1__Impl_in_rule__FuncParam__Group__12092);
             rule__FuncParam__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__FuncParam__Group__2_in_rule__FuncParam__Group__12002);
+            pushFollow(FOLLOW_rule__FuncParam__Group__2_in_rule__FuncParam__Group__12095);
             rule__FuncParam__Group__2();
 
             state._fsp--;
@@ -2747,23 +2866,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FuncParam__Group__1__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:987:1: rule__FuncParam__Group__1__Impl : ( ( rule__FuncParam__IdAssignment_1 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1027:1: rule__FuncParam__Group__1__Impl : ( ( rule__FuncParam__IdAssignment_1 ) ) ;
     public final void rule__FuncParam__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:991:1: ( ( ( rule__FuncParam__IdAssignment_1 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:992:1: ( ( rule__FuncParam__IdAssignment_1 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1031:1: ( ( ( rule__FuncParam__IdAssignment_1 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1032:1: ( ( rule__FuncParam__IdAssignment_1 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:992:1: ( ( rule__FuncParam__IdAssignment_1 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:993:1: ( rule__FuncParam__IdAssignment_1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1032:1: ( ( rule__FuncParam__IdAssignment_1 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1033:1: ( rule__FuncParam__IdAssignment_1 )
             {
              before(grammarAccess.getFuncParamAccess().getIdAssignment_1()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:994:1: ( rule__FuncParam__IdAssignment_1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:994:2: rule__FuncParam__IdAssignment_1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1034:1: ( rule__FuncParam__IdAssignment_1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1034:2: rule__FuncParam__IdAssignment_1
             {
-            pushFollow(FOLLOW_rule__FuncParam__IdAssignment_1_in_rule__FuncParam__Group__1__Impl2029);
+            pushFollow(FOLLOW_rule__FuncParam__IdAssignment_1_in_rule__FuncParam__Group__1__Impl2122);
             rule__FuncParam__IdAssignment_1();
 
             state._fsp--;
@@ -2794,16 +2913,16 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FuncParam__Group__2"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1004:1: rule__FuncParam__Group__2 : rule__FuncParam__Group__2__Impl ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1044:1: rule__FuncParam__Group__2 : rule__FuncParam__Group__2__Impl ;
     public final void rule__FuncParam__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1008:1: ( rule__FuncParam__Group__2__Impl )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1009:2: rule__FuncParam__Group__2__Impl
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1048:1: ( rule__FuncParam__Group__2__Impl )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1049:2: rule__FuncParam__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__FuncParam__Group__2__Impl_in_rule__FuncParam__Group__22059);
+            pushFollow(FOLLOW_rule__FuncParam__Group__2__Impl_in_rule__FuncParam__Group__22152);
             rule__FuncParam__Group__2__Impl();
 
             state._fsp--;
@@ -2827,20 +2946,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FuncParam__Group__2__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1015:1: rule__FuncParam__Group__2__Impl : ( ( rule__FuncParam__Group_2__0 )? ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1055:1: rule__FuncParam__Group__2__Impl : ( ( rule__FuncParam__Group_2__0 )? ) ;
     public final void rule__FuncParam__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1019:1: ( ( ( rule__FuncParam__Group_2__0 )? ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1020:1: ( ( rule__FuncParam__Group_2__0 )? )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1059:1: ( ( ( rule__FuncParam__Group_2__0 )? ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1060:1: ( ( rule__FuncParam__Group_2__0 )? )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1020:1: ( ( rule__FuncParam__Group_2__0 )? )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1021:1: ( rule__FuncParam__Group_2__0 )?
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1060:1: ( ( rule__FuncParam__Group_2__0 )? )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1061:1: ( rule__FuncParam__Group_2__0 )?
             {
              before(grammarAccess.getFuncParamAccess().getGroup_2()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1022:1: ( rule__FuncParam__Group_2__0 )?
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1062:1: ( rule__FuncParam__Group_2__0 )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -2849,9 +2968,9 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
             }
             switch (alt9) {
                 case 1 :
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1022:2: rule__FuncParam__Group_2__0
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1062:2: rule__FuncParam__Group_2__0
                     {
-                    pushFollow(FOLLOW_rule__FuncParam__Group_2__0_in_rule__FuncParam__Group__2__Impl2086);
+                    pushFollow(FOLLOW_rule__FuncParam__Group_2__0_in_rule__FuncParam__Group__2__Impl2179);
                     rule__FuncParam__Group_2__0();
 
                     state._fsp--;
@@ -2885,21 +3004,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FuncParam__Group_2__0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1038:1: rule__FuncParam__Group_2__0 : rule__FuncParam__Group_2__0__Impl rule__FuncParam__Group_2__1 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1078:1: rule__FuncParam__Group_2__0 : rule__FuncParam__Group_2__0__Impl rule__FuncParam__Group_2__1 ;
     public final void rule__FuncParam__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1042:1: ( rule__FuncParam__Group_2__0__Impl rule__FuncParam__Group_2__1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1043:2: rule__FuncParam__Group_2__0__Impl rule__FuncParam__Group_2__1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1082:1: ( rule__FuncParam__Group_2__0__Impl rule__FuncParam__Group_2__1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1083:2: rule__FuncParam__Group_2__0__Impl rule__FuncParam__Group_2__1
             {
-            pushFollow(FOLLOW_rule__FuncParam__Group_2__0__Impl_in_rule__FuncParam__Group_2__02123);
+            pushFollow(FOLLOW_rule__FuncParam__Group_2__0__Impl_in_rule__FuncParam__Group_2__02216);
             rule__FuncParam__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__FuncParam__Group_2__1_in_rule__FuncParam__Group_2__02126);
+            pushFollow(FOLLOW_rule__FuncParam__Group_2__1_in_rule__FuncParam__Group_2__02219);
             rule__FuncParam__Group_2__1();
 
             state._fsp--;
@@ -2923,20 +3042,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FuncParam__Group_2__0__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1050:1: rule__FuncParam__Group_2__0__Impl : ( ',' ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1090:1: rule__FuncParam__Group_2__0__Impl : ( ',' ) ;
     public final void rule__FuncParam__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1054:1: ( ( ',' ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1055:1: ( ',' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1094:1: ( ( ',' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1095:1: ( ',' )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1055:1: ( ',' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1056:1: ','
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1095:1: ( ',' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1096:1: ','
             {
              before(grammarAccess.getFuncParamAccess().getCommaKeyword_2_0()); 
-            match(input,17,FOLLOW_17_in_rule__FuncParam__Group_2__0__Impl2154); 
+            match(input,17,FOLLOW_17_in_rule__FuncParam__Group_2__0__Impl2247); 
              after(grammarAccess.getFuncParamAccess().getCommaKeyword_2_0()); 
 
             }
@@ -2960,16 +3079,16 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FuncParam__Group_2__1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1069:1: rule__FuncParam__Group_2__1 : rule__FuncParam__Group_2__1__Impl ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1109:1: rule__FuncParam__Group_2__1 : rule__FuncParam__Group_2__1__Impl ;
     public final void rule__FuncParam__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1073:1: ( rule__FuncParam__Group_2__1__Impl )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1074:2: rule__FuncParam__Group_2__1__Impl
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1113:1: ( rule__FuncParam__Group_2__1__Impl )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1114:2: rule__FuncParam__Group_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__FuncParam__Group_2__1__Impl_in_rule__FuncParam__Group_2__12185);
+            pushFollow(FOLLOW_rule__FuncParam__Group_2__1__Impl_in_rule__FuncParam__Group_2__12278);
             rule__FuncParam__Group_2__1__Impl();
 
             state._fsp--;
@@ -2993,23 +3112,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FuncParam__Group_2__1__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1080:1: rule__FuncParam__Group_2__1__Impl : ( ( rule__FuncParam__NextAssignment_2_1 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1120:1: rule__FuncParam__Group_2__1__Impl : ( ( rule__FuncParam__NextAssignment_2_1 ) ) ;
     public final void rule__FuncParam__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1084:1: ( ( ( rule__FuncParam__NextAssignment_2_1 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1085:1: ( ( rule__FuncParam__NextAssignment_2_1 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1124:1: ( ( ( rule__FuncParam__NextAssignment_2_1 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1125:1: ( ( rule__FuncParam__NextAssignment_2_1 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1085:1: ( ( rule__FuncParam__NextAssignment_2_1 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1086:1: ( rule__FuncParam__NextAssignment_2_1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1125:1: ( ( rule__FuncParam__NextAssignment_2_1 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1126:1: ( rule__FuncParam__NextAssignment_2_1 )
             {
              before(grammarAccess.getFuncParamAccess().getNextAssignment_2_1()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1087:1: ( rule__FuncParam__NextAssignment_2_1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1087:2: rule__FuncParam__NextAssignment_2_1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1127:1: ( rule__FuncParam__NextAssignment_2_1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1127:2: rule__FuncParam__NextAssignment_2_1
             {
-            pushFollow(FOLLOW_rule__FuncParam__NextAssignment_2_1_in_rule__FuncParam__Group_2__1__Impl2212);
+            pushFollow(FOLLOW_rule__FuncParam__NextAssignment_2_1_in_rule__FuncParam__Group_2__1__Impl2305);
             rule__FuncParam__NextAssignment_2_1();
 
             state._fsp--;
@@ -3040,21 +3159,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Block__Group__0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1101:1: rule__Block__Group__0 : rule__Block__Group__0__Impl rule__Block__Group__1 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1141:1: rule__Block__Group__0 : rule__Block__Group__0__Impl rule__Block__Group__1 ;
     public final void rule__Block__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1105:1: ( rule__Block__Group__0__Impl rule__Block__Group__1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1106:2: rule__Block__Group__0__Impl rule__Block__Group__1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1145:1: ( rule__Block__Group__0__Impl rule__Block__Group__1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1146:2: rule__Block__Group__0__Impl rule__Block__Group__1
             {
-            pushFollow(FOLLOW_rule__Block__Group__0__Impl_in_rule__Block__Group__02246);
+            pushFollow(FOLLOW_rule__Block__Group__0__Impl_in_rule__Block__Group__02339);
             rule__Block__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Block__Group__1_in_rule__Block__Group__02249);
+            pushFollow(FOLLOW_rule__Block__Group__1_in_rule__Block__Group__02342);
             rule__Block__Group__1();
 
             state._fsp--;
@@ -3078,20 +3197,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Block__Group__0__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1113:1: rule__Block__Group__0__Impl : ( '{' ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1153:1: rule__Block__Group__0__Impl : ( '{' ) ;
     public final void rule__Block__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1117:1: ( ( '{' ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1118:1: ( '{' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1157:1: ( ( '{' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1158:1: ( '{' )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1118:1: ( '{' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1119:1: '{'
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1158:1: ( '{' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1159:1: '{'
             {
              before(grammarAccess.getBlockAccess().getLeftCurlyBracketKeyword_0()); 
-            match(input,18,FOLLOW_18_in_rule__Block__Group__0__Impl2277); 
+            match(input,18,FOLLOW_18_in_rule__Block__Group__0__Impl2370); 
              after(grammarAccess.getBlockAccess().getLeftCurlyBracketKeyword_0()); 
 
             }
@@ -3115,21 +3234,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Block__Group__1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1132:1: rule__Block__Group__1 : rule__Block__Group__1__Impl rule__Block__Group__2 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1172:1: rule__Block__Group__1 : rule__Block__Group__1__Impl rule__Block__Group__2 ;
     public final void rule__Block__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1136:1: ( rule__Block__Group__1__Impl rule__Block__Group__2 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1137:2: rule__Block__Group__1__Impl rule__Block__Group__2
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1176:1: ( rule__Block__Group__1__Impl rule__Block__Group__2 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1177:2: rule__Block__Group__1__Impl rule__Block__Group__2
             {
-            pushFollow(FOLLOW_rule__Block__Group__1__Impl_in_rule__Block__Group__12308);
+            pushFollow(FOLLOW_rule__Block__Group__1__Impl_in_rule__Block__Group__12401);
             rule__Block__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Block__Group__2_in_rule__Block__Group__12311);
+            pushFollow(FOLLOW_rule__Block__Group__2_in_rule__Block__Group__12404);
             rule__Block__Group__2();
 
             state._fsp--;
@@ -3153,23 +3272,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Block__Group__1__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1144:1: rule__Block__Group__1__Impl : ( ( rule__Block__StatementAssignment_1 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1184:1: rule__Block__Group__1__Impl : ( ( rule__Block__StatementAssignment_1 ) ) ;
     public final void rule__Block__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1148:1: ( ( ( rule__Block__StatementAssignment_1 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1149:1: ( ( rule__Block__StatementAssignment_1 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1188:1: ( ( ( rule__Block__StatementAssignment_1 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1189:1: ( ( rule__Block__StatementAssignment_1 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1149:1: ( ( rule__Block__StatementAssignment_1 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1150:1: ( rule__Block__StatementAssignment_1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1189:1: ( ( rule__Block__StatementAssignment_1 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1190:1: ( rule__Block__StatementAssignment_1 )
             {
              before(grammarAccess.getBlockAccess().getStatementAssignment_1()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1151:1: ( rule__Block__StatementAssignment_1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1151:2: rule__Block__StatementAssignment_1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1191:1: ( rule__Block__StatementAssignment_1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1191:2: rule__Block__StatementAssignment_1
             {
-            pushFollow(FOLLOW_rule__Block__StatementAssignment_1_in_rule__Block__Group__1__Impl2338);
+            pushFollow(FOLLOW_rule__Block__StatementAssignment_1_in_rule__Block__Group__1__Impl2431);
             rule__Block__StatementAssignment_1();
 
             state._fsp--;
@@ -3200,16 +3319,16 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Block__Group__2"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1161:1: rule__Block__Group__2 : rule__Block__Group__2__Impl ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1201:1: rule__Block__Group__2 : rule__Block__Group__2__Impl ;
     public final void rule__Block__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1165:1: ( rule__Block__Group__2__Impl )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1166:2: rule__Block__Group__2__Impl
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1205:1: ( rule__Block__Group__2__Impl )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1206:2: rule__Block__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__Block__Group__2__Impl_in_rule__Block__Group__22368);
+            pushFollow(FOLLOW_rule__Block__Group__2__Impl_in_rule__Block__Group__22461);
             rule__Block__Group__2__Impl();
 
             state._fsp--;
@@ -3233,20 +3352,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Block__Group__2__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1172:1: rule__Block__Group__2__Impl : ( '}' ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1212:1: rule__Block__Group__2__Impl : ( '}' ) ;
     public final void rule__Block__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1176:1: ( ( '}' ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1177:1: ( '}' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1216:1: ( ( '}' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1217:1: ( '}' )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1177:1: ( '}' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1178:1: '}'
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1217:1: ( '}' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1218:1: '}'
             {
              before(grammarAccess.getBlockAccess().getRightCurlyBracketKeyword_2()); 
-            match(input,19,FOLLOW_19_in_rule__Block__Group__2__Impl2396); 
+            match(input,19,FOLLOW_19_in_rule__Block__Group__2__Impl2489); 
              after(grammarAccess.getBlockAccess().getRightCurlyBracketKeyword_2()); 
 
             }
@@ -3270,21 +3389,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Statement__Group__0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1197:1: rule__Statement__Group__0 : rule__Statement__Group__0__Impl rule__Statement__Group__1 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1237:1: rule__Statement__Group__0 : rule__Statement__Group__0__Impl rule__Statement__Group__1 ;
     public final void rule__Statement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1201:1: ( rule__Statement__Group__0__Impl rule__Statement__Group__1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1202:2: rule__Statement__Group__0__Impl rule__Statement__Group__1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1241:1: ( rule__Statement__Group__0__Impl rule__Statement__Group__1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1242:2: rule__Statement__Group__0__Impl rule__Statement__Group__1
             {
-            pushFollow(FOLLOW_rule__Statement__Group__0__Impl_in_rule__Statement__Group__02433);
+            pushFollow(FOLLOW_rule__Statement__Group__0__Impl_in_rule__Statement__Group__02526);
             rule__Statement__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Statement__Group__1_in_rule__Statement__Group__02436);
+            pushFollow(FOLLOW_rule__Statement__Group__1_in_rule__Statement__Group__02529);
             rule__Statement__Group__1();
 
             state._fsp--;
@@ -3308,21 +3427,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Statement__Group__0__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1209:1: rule__Statement__Group__0__Impl : ( () ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1249:1: rule__Statement__Group__0__Impl : ( () ) ;
     public final void rule__Statement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1213:1: ( ( () ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1214:1: ( () )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1253:1: ( ( () ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1254:1: ( () )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1214:1: ( () )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1215:1: ()
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1254:1: ( () )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1255:1: ()
             {
              before(grammarAccess.getStatementAccess().getStatementAction_0()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1216:1: ()
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1218:1: 
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1256:1: ()
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1258:1: 
             {
             }
 
@@ -3345,22 +3464,17 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Statement__Group__1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1228:1: rule__Statement__Group__1 : rule__Statement__Group__1__Impl rule__Statement__Group__2 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1268:1: rule__Statement__Group__1 : rule__Statement__Group__1__Impl ;
     public final void rule__Statement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1232:1: ( rule__Statement__Group__1__Impl rule__Statement__Group__2 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1233:2: rule__Statement__Group__1__Impl rule__Statement__Group__2
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1272:1: ( rule__Statement__Group__1__Impl )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1273:2: rule__Statement__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Statement__Group__1__Impl_in_rule__Statement__Group__12494);
+            pushFollow(FOLLOW_rule__Statement__Group__1__Impl_in_rule__Statement__Group__12587);
             rule__Statement__Group__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Statement__Group__2_in_rule__Statement__Group__12497);
-            rule__Statement__Group__2();
 
             state._fsp--;
 
@@ -3383,36 +3497,36 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Statement__Group__1__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1240:1: rule__Statement__Group__1__Impl : ( ( rule__Statement__DeclarationsAssignment_1 )* ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1279:1: rule__Statement__Group__1__Impl : ( ( rule__Statement__CommandsAssignment_1 )* ) ;
     public final void rule__Statement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1244:1: ( ( ( rule__Statement__DeclarationsAssignment_1 )* ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1245:1: ( ( rule__Statement__DeclarationsAssignment_1 )* )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1283:1: ( ( ( rule__Statement__CommandsAssignment_1 )* ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1284:1: ( ( rule__Statement__CommandsAssignment_1 )* )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1245:1: ( ( rule__Statement__DeclarationsAssignment_1 )* )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1246:1: ( rule__Statement__DeclarationsAssignment_1 )*
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1284:1: ( ( rule__Statement__CommandsAssignment_1 )* )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1285:1: ( rule__Statement__CommandsAssignment_1 )*
             {
-             before(grammarAccess.getStatementAccess().getDeclarationsAssignment_1()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1247:1: ( rule__Statement__DeclarationsAssignment_1 )*
+             before(grammarAccess.getStatementAccess().getCommandsAssignment_1()); 
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1286:1: ( rule__Statement__CommandsAssignment_1 )*
             loop10:
             do {
                 int alt10=2;
                 int LA10_0 = input.LA(1);
 
-                if ( (LA10_0==27) ) {
+                if ( (LA10_0==RULE_ID||LA10_0==18||LA10_0==20||(LA10_0>=22 && LA10_0<=23)||LA10_0==27) ) {
                     alt10=1;
                 }
 
 
                 switch (alt10) {
             	case 1 :
-            	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1247:2: rule__Statement__DeclarationsAssignment_1
+            	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1286:2: rule__Statement__CommandsAssignment_1
             	    {
-            	    pushFollow(FOLLOW_rule__Statement__DeclarationsAssignment_1_in_rule__Statement__Group__1__Impl2524);
-            	    rule__Statement__DeclarationsAssignment_1();
+            	    pushFollow(FOLLOW_rule__Statement__CommandsAssignment_1_in_rule__Statement__Group__1__Impl2614);
+            	    rule__Statement__CommandsAssignment_1();
 
             	    state._fsp--;
 
@@ -3425,7 +3539,7 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getStatementAccess().getDeclarationsAssignment_1()); 
+             after(grammarAccess.getStatementAccess().getCommandsAssignment_1()); 
 
             }
 
@@ -3447,269 +3561,22 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Statement__Group__1__Impl"
 
 
-    // $ANTLR start "rule__Statement__Group__2"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1257:1: rule__Statement__Group__2 : rule__Statement__Group__2__Impl ;
-    public final void rule__Statement__Group__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1261:1: ( rule__Statement__Group__2__Impl )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1262:2: rule__Statement__Group__2__Impl
-            {
-            pushFollow(FOLLOW_rule__Statement__Group__2__Impl_in_rule__Statement__Group__22555);
-            rule__Statement__Group__2__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Statement__Group__2"
-
-
-    // $ANTLR start "rule__Statement__Group__2__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1268:1: rule__Statement__Group__2__Impl : ( ( rule__Statement__CommandsAssignment_2 )* ) ;
-    public final void rule__Statement__Group__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1272:1: ( ( ( rule__Statement__CommandsAssignment_2 )* ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1273:1: ( ( rule__Statement__CommandsAssignment_2 )* )
-            {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1273:1: ( ( rule__Statement__CommandsAssignment_2 )* )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1274:1: ( rule__Statement__CommandsAssignment_2 )*
-            {
-             before(grammarAccess.getStatementAccess().getCommandsAssignment_2()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1275:1: ( rule__Statement__CommandsAssignment_2 )*
-            loop11:
-            do {
-                int alt11=2;
-                int LA11_0 = input.LA(1);
-
-                if ( (LA11_0==RULE_ID||LA11_0==21||(LA11_0>=23 && LA11_0<=24)) ) {
-                    alt11=1;
-                }
-
-
-                switch (alt11) {
-            	case 1 :
-            	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1275:2: rule__Statement__CommandsAssignment_2
-            	    {
-            	    pushFollow(FOLLOW_rule__Statement__CommandsAssignment_2_in_rule__Statement__Group__2__Impl2582);
-            	    rule__Statement__CommandsAssignment_2();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop11;
-                }
-            } while (true);
-
-             after(grammarAccess.getStatementAccess().getCommandsAssignment_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Statement__Group__2__Impl"
-
-
-    // $ANTLR start "rule__Command__Group_3__0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1291:1: rule__Command__Group_3__0 : rule__Command__Group_3__0__Impl rule__Command__Group_3__1 ;
-    public final void rule__Command__Group_3__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1295:1: ( rule__Command__Group_3__0__Impl rule__Command__Group_3__1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1296:2: rule__Command__Group_3__0__Impl rule__Command__Group_3__1
-            {
-            pushFollow(FOLLOW_rule__Command__Group_3__0__Impl_in_rule__Command__Group_3__02619);
-            rule__Command__Group_3__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Command__Group_3__1_in_rule__Command__Group_3__02622);
-            rule__Command__Group_3__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Command__Group_3__0"
-
-
-    // $ANTLR start "rule__Command__Group_3__0__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1303:1: rule__Command__Group_3__0__Impl : ( ruleRDeclaration ) ;
-    public final void rule__Command__Group_3__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1307:1: ( ( ruleRDeclaration ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1308:1: ( ruleRDeclaration )
-            {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1308:1: ( ruleRDeclaration )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1309:1: ruleRDeclaration
-            {
-             before(grammarAccess.getCommandAccess().getRDeclarationParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleRDeclaration_in_rule__Command__Group_3__0__Impl2649);
-            ruleRDeclaration();
-
-            state._fsp--;
-
-             after(grammarAccess.getCommandAccess().getRDeclarationParserRuleCall_3_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Command__Group_3__0__Impl"
-
-
-    // $ANTLR start "rule__Command__Group_3__1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1320:1: rule__Command__Group_3__1 : rule__Command__Group_3__1__Impl ;
-    public final void rule__Command__Group_3__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1324:1: ( rule__Command__Group_3__1__Impl )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1325:2: rule__Command__Group_3__1__Impl
-            {
-            pushFollow(FOLLOW_rule__Command__Group_3__1__Impl_in_rule__Command__Group_3__12678);
-            rule__Command__Group_3__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Command__Group_3__1"
-
-
-    // $ANTLR start "rule__Command__Group_3__1__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1331:1: rule__Command__Group_3__1__Impl : ( ';' ) ;
-    public final void rule__Command__Group_3__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1335:1: ( ( ';' ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1336:1: ( ';' )
-            {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1336:1: ( ';' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1337:1: ';'
-            {
-             before(grammarAccess.getCommandAccess().getSemicolonKeyword_3_1()); 
-            match(input,20,FOLLOW_20_in_rule__Command__Group_3__1__Impl2706); 
-             after(grammarAccess.getCommandAccess().getSemicolonKeyword_3_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Command__Group_3__1__Impl"
-
-
     // $ANTLR start "rule__IfCommand__Group__0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1354:1: rule__IfCommand__Group__0 : rule__IfCommand__Group__0__Impl rule__IfCommand__Group__1 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1300:1: rule__IfCommand__Group__0 : rule__IfCommand__Group__0__Impl rule__IfCommand__Group__1 ;
     public final void rule__IfCommand__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1358:1: ( rule__IfCommand__Group__0__Impl rule__IfCommand__Group__1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1359:2: rule__IfCommand__Group__0__Impl rule__IfCommand__Group__1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1304:1: ( rule__IfCommand__Group__0__Impl rule__IfCommand__Group__1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1305:2: rule__IfCommand__Group__0__Impl rule__IfCommand__Group__1
             {
-            pushFollow(FOLLOW_rule__IfCommand__Group__0__Impl_in_rule__IfCommand__Group__02741);
+            pushFollow(FOLLOW_rule__IfCommand__Group__0__Impl_in_rule__IfCommand__Group__02649);
             rule__IfCommand__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__IfCommand__Group__1_in_rule__IfCommand__Group__02744);
+            pushFollow(FOLLOW_rule__IfCommand__Group__1_in_rule__IfCommand__Group__02652);
             rule__IfCommand__Group__1();
 
             state._fsp--;
@@ -3733,20 +3600,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfCommand__Group__0__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1366:1: rule__IfCommand__Group__0__Impl : ( 'if' ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1312:1: rule__IfCommand__Group__0__Impl : ( 'if' ) ;
     public final void rule__IfCommand__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1370:1: ( ( 'if' ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1371:1: ( 'if' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1316:1: ( ( 'if' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1317:1: ( 'if' )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1371:1: ( 'if' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1372:1: 'if'
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1317:1: ( 'if' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1318:1: 'if'
             {
              before(grammarAccess.getIfCommandAccess().getIfKeyword_0()); 
-            match(input,21,FOLLOW_21_in_rule__IfCommand__Group__0__Impl2772); 
+            match(input,20,FOLLOW_20_in_rule__IfCommand__Group__0__Impl2680); 
              after(grammarAccess.getIfCommandAccess().getIfKeyword_0()); 
 
             }
@@ -3770,21 +3637,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfCommand__Group__1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1385:1: rule__IfCommand__Group__1 : rule__IfCommand__Group__1__Impl rule__IfCommand__Group__2 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1331:1: rule__IfCommand__Group__1 : rule__IfCommand__Group__1__Impl rule__IfCommand__Group__2 ;
     public final void rule__IfCommand__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1389:1: ( rule__IfCommand__Group__1__Impl rule__IfCommand__Group__2 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1390:2: rule__IfCommand__Group__1__Impl rule__IfCommand__Group__2
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1335:1: ( rule__IfCommand__Group__1__Impl rule__IfCommand__Group__2 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1336:2: rule__IfCommand__Group__1__Impl rule__IfCommand__Group__2
             {
-            pushFollow(FOLLOW_rule__IfCommand__Group__1__Impl_in_rule__IfCommand__Group__12803);
+            pushFollow(FOLLOW_rule__IfCommand__Group__1__Impl_in_rule__IfCommand__Group__12711);
             rule__IfCommand__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__IfCommand__Group__2_in_rule__IfCommand__Group__12806);
+            pushFollow(FOLLOW_rule__IfCommand__Group__2_in_rule__IfCommand__Group__12714);
             rule__IfCommand__Group__2();
 
             state._fsp--;
@@ -3808,20 +3675,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfCommand__Group__1__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1397:1: rule__IfCommand__Group__1__Impl : ( '(' ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1343:1: rule__IfCommand__Group__1__Impl : ( '(' ) ;
     public final void rule__IfCommand__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1401:1: ( ( '(' ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1402:1: ( '(' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1347:1: ( ( '(' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1348:1: ( '(' )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1402:1: ( '(' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1403:1: '('
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1348:1: ( '(' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1349:1: '('
             {
              before(grammarAccess.getIfCommandAccess().getLeftParenthesisKeyword_1()); 
-            match(input,15,FOLLOW_15_in_rule__IfCommand__Group__1__Impl2834); 
+            match(input,15,FOLLOW_15_in_rule__IfCommand__Group__1__Impl2742); 
              after(grammarAccess.getIfCommandAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -3845,21 +3712,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfCommand__Group__2"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1416:1: rule__IfCommand__Group__2 : rule__IfCommand__Group__2__Impl rule__IfCommand__Group__3 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1362:1: rule__IfCommand__Group__2 : rule__IfCommand__Group__2__Impl rule__IfCommand__Group__3 ;
     public final void rule__IfCommand__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1420:1: ( rule__IfCommand__Group__2__Impl rule__IfCommand__Group__3 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1421:2: rule__IfCommand__Group__2__Impl rule__IfCommand__Group__3
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1366:1: ( rule__IfCommand__Group__2__Impl rule__IfCommand__Group__3 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1367:2: rule__IfCommand__Group__2__Impl rule__IfCommand__Group__3
             {
-            pushFollow(FOLLOW_rule__IfCommand__Group__2__Impl_in_rule__IfCommand__Group__22865);
+            pushFollow(FOLLOW_rule__IfCommand__Group__2__Impl_in_rule__IfCommand__Group__22773);
             rule__IfCommand__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__IfCommand__Group__3_in_rule__IfCommand__Group__22868);
+            pushFollow(FOLLOW_rule__IfCommand__Group__3_in_rule__IfCommand__Group__22776);
             rule__IfCommand__Group__3();
 
             state._fsp--;
@@ -3883,23 +3750,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfCommand__Group__2__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1428:1: rule__IfCommand__Group__2__Impl : ( ( rule__IfCommand__ExprAssignment_2 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1374:1: rule__IfCommand__Group__2__Impl : ( ( rule__IfCommand__ExprAssignment_2 ) ) ;
     public final void rule__IfCommand__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1432:1: ( ( ( rule__IfCommand__ExprAssignment_2 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1433:1: ( ( rule__IfCommand__ExprAssignment_2 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1378:1: ( ( ( rule__IfCommand__ExprAssignment_2 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1379:1: ( ( rule__IfCommand__ExprAssignment_2 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1433:1: ( ( rule__IfCommand__ExprAssignment_2 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1434:1: ( rule__IfCommand__ExprAssignment_2 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1379:1: ( ( rule__IfCommand__ExprAssignment_2 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1380:1: ( rule__IfCommand__ExprAssignment_2 )
             {
              before(grammarAccess.getIfCommandAccess().getExprAssignment_2()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1435:1: ( rule__IfCommand__ExprAssignment_2 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1435:2: rule__IfCommand__ExprAssignment_2
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1381:1: ( rule__IfCommand__ExprAssignment_2 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1381:2: rule__IfCommand__ExprAssignment_2
             {
-            pushFollow(FOLLOW_rule__IfCommand__ExprAssignment_2_in_rule__IfCommand__Group__2__Impl2895);
+            pushFollow(FOLLOW_rule__IfCommand__ExprAssignment_2_in_rule__IfCommand__Group__2__Impl2803);
             rule__IfCommand__ExprAssignment_2();
 
             state._fsp--;
@@ -3930,21 +3797,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfCommand__Group__3"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1445:1: rule__IfCommand__Group__3 : rule__IfCommand__Group__3__Impl rule__IfCommand__Group__4 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1391:1: rule__IfCommand__Group__3 : rule__IfCommand__Group__3__Impl rule__IfCommand__Group__4 ;
     public final void rule__IfCommand__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1449:1: ( rule__IfCommand__Group__3__Impl rule__IfCommand__Group__4 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1450:2: rule__IfCommand__Group__3__Impl rule__IfCommand__Group__4
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1395:1: ( rule__IfCommand__Group__3__Impl rule__IfCommand__Group__4 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1396:2: rule__IfCommand__Group__3__Impl rule__IfCommand__Group__4
             {
-            pushFollow(FOLLOW_rule__IfCommand__Group__3__Impl_in_rule__IfCommand__Group__32925);
+            pushFollow(FOLLOW_rule__IfCommand__Group__3__Impl_in_rule__IfCommand__Group__32833);
             rule__IfCommand__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__IfCommand__Group__4_in_rule__IfCommand__Group__32928);
+            pushFollow(FOLLOW_rule__IfCommand__Group__4_in_rule__IfCommand__Group__32836);
             rule__IfCommand__Group__4();
 
             state._fsp--;
@@ -3968,20 +3835,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfCommand__Group__3__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1457:1: rule__IfCommand__Group__3__Impl : ( ')' ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1403:1: rule__IfCommand__Group__3__Impl : ( ')' ) ;
     public final void rule__IfCommand__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1461:1: ( ( ')' ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1462:1: ( ')' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1407:1: ( ( ')' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1408:1: ( ')' )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1462:1: ( ')' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1463:1: ')'
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1408:1: ( ')' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1409:1: ')'
             {
              before(grammarAccess.getIfCommandAccess().getRightParenthesisKeyword_3()); 
-            match(input,16,FOLLOW_16_in_rule__IfCommand__Group__3__Impl2956); 
+            match(input,16,FOLLOW_16_in_rule__IfCommand__Group__3__Impl2864); 
              after(grammarAccess.getIfCommandAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -4005,21 +3872,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfCommand__Group__4"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1476:1: rule__IfCommand__Group__4 : rule__IfCommand__Group__4__Impl rule__IfCommand__Group__5 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1422:1: rule__IfCommand__Group__4 : rule__IfCommand__Group__4__Impl rule__IfCommand__Group__5 ;
     public final void rule__IfCommand__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1480:1: ( rule__IfCommand__Group__4__Impl rule__IfCommand__Group__5 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1481:2: rule__IfCommand__Group__4__Impl rule__IfCommand__Group__5
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1426:1: ( rule__IfCommand__Group__4__Impl rule__IfCommand__Group__5 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1427:2: rule__IfCommand__Group__4__Impl rule__IfCommand__Group__5
             {
-            pushFollow(FOLLOW_rule__IfCommand__Group__4__Impl_in_rule__IfCommand__Group__42987);
+            pushFollow(FOLLOW_rule__IfCommand__Group__4__Impl_in_rule__IfCommand__Group__42895);
             rule__IfCommand__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__IfCommand__Group__5_in_rule__IfCommand__Group__42990);
+            pushFollow(FOLLOW_rule__IfCommand__Group__5_in_rule__IfCommand__Group__42898);
             rule__IfCommand__Group__5();
 
             state._fsp--;
@@ -4043,23 +3910,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfCommand__Group__4__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1488:1: rule__IfCommand__Group__4__Impl : ( ( rule__IfCommand__IfBlockAssignment_4 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1434:1: rule__IfCommand__Group__4__Impl : ( ( rule__IfCommand__IfBlockAssignment_4 ) ) ;
     public final void rule__IfCommand__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1492:1: ( ( ( rule__IfCommand__IfBlockAssignment_4 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1493:1: ( ( rule__IfCommand__IfBlockAssignment_4 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1438:1: ( ( ( rule__IfCommand__IfBlockAssignment_4 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1439:1: ( ( rule__IfCommand__IfBlockAssignment_4 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1493:1: ( ( rule__IfCommand__IfBlockAssignment_4 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1494:1: ( rule__IfCommand__IfBlockAssignment_4 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1439:1: ( ( rule__IfCommand__IfBlockAssignment_4 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1440:1: ( rule__IfCommand__IfBlockAssignment_4 )
             {
              before(grammarAccess.getIfCommandAccess().getIfBlockAssignment_4()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1495:1: ( rule__IfCommand__IfBlockAssignment_4 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1495:2: rule__IfCommand__IfBlockAssignment_4
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1441:1: ( rule__IfCommand__IfBlockAssignment_4 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1441:2: rule__IfCommand__IfBlockAssignment_4
             {
-            pushFollow(FOLLOW_rule__IfCommand__IfBlockAssignment_4_in_rule__IfCommand__Group__4__Impl3017);
+            pushFollow(FOLLOW_rule__IfCommand__IfBlockAssignment_4_in_rule__IfCommand__Group__4__Impl2925);
             rule__IfCommand__IfBlockAssignment_4();
 
             state._fsp--;
@@ -4090,16 +3957,16 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfCommand__Group__5"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1505:1: rule__IfCommand__Group__5 : rule__IfCommand__Group__5__Impl ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1451:1: rule__IfCommand__Group__5 : rule__IfCommand__Group__5__Impl ;
     public final void rule__IfCommand__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1509:1: ( rule__IfCommand__Group__5__Impl )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1510:2: rule__IfCommand__Group__5__Impl
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1455:1: ( rule__IfCommand__Group__5__Impl )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1456:2: rule__IfCommand__Group__5__Impl
             {
-            pushFollow(FOLLOW_rule__IfCommand__Group__5__Impl_in_rule__IfCommand__Group__53047);
+            pushFollow(FOLLOW_rule__IfCommand__Group__5__Impl_in_rule__IfCommand__Group__52955);
             rule__IfCommand__Group__5__Impl();
 
             state._fsp--;
@@ -4123,31 +3990,31 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfCommand__Group__5__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1516:1: rule__IfCommand__Group__5__Impl : ( ( rule__IfCommand__Group_5__0 )? ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1462:1: rule__IfCommand__Group__5__Impl : ( ( rule__IfCommand__Group_5__0 )? ) ;
     public final void rule__IfCommand__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1520:1: ( ( ( rule__IfCommand__Group_5__0 )? ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1521:1: ( ( rule__IfCommand__Group_5__0 )? )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1466:1: ( ( ( rule__IfCommand__Group_5__0 )? ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1467:1: ( ( rule__IfCommand__Group_5__0 )? )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1521:1: ( ( rule__IfCommand__Group_5__0 )? )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1522:1: ( rule__IfCommand__Group_5__0 )?
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1467:1: ( ( rule__IfCommand__Group_5__0 )? )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1468:1: ( rule__IfCommand__Group_5__0 )?
             {
              before(grammarAccess.getIfCommandAccess().getGroup_5()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1523:1: ( rule__IfCommand__Group_5__0 )?
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1469:1: ( rule__IfCommand__Group_5__0 )?
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-            if ( (LA12_0==22) ) {
-                alt12=1;
+            if ( (LA11_0==21) ) {
+                alt11=1;
             }
-            switch (alt12) {
+            switch (alt11) {
                 case 1 :
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1523:2: rule__IfCommand__Group_5__0
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1469:2: rule__IfCommand__Group_5__0
                     {
-                    pushFollow(FOLLOW_rule__IfCommand__Group_5__0_in_rule__IfCommand__Group__5__Impl3074);
+                    pushFollow(FOLLOW_rule__IfCommand__Group_5__0_in_rule__IfCommand__Group__5__Impl2982);
                     rule__IfCommand__Group_5__0();
 
                     state._fsp--;
@@ -4181,21 +4048,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfCommand__Group_5__0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1545:1: rule__IfCommand__Group_5__0 : rule__IfCommand__Group_5__0__Impl rule__IfCommand__Group_5__1 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1491:1: rule__IfCommand__Group_5__0 : rule__IfCommand__Group_5__0__Impl rule__IfCommand__Group_5__1 ;
     public final void rule__IfCommand__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1549:1: ( rule__IfCommand__Group_5__0__Impl rule__IfCommand__Group_5__1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1550:2: rule__IfCommand__Group_5__0__Impl rule__IfCommand__Group_5__1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1495:1: ( rule__IfCommand__Group_5__0__Impl rule__IfCommand__Group_5__1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1496:2: rule__IfCommand__Group_5__0__Impl rule__IfCommand__Group_5__1
             {
-            pushFollow(FOLLOW_rule__IfCommand__Group_5__0__Impl_in_rule__IfCommand__Group_5__03117);
+            pushFollow(FOLLOW_rule__IfCommand__Group_5__0__Impl_in_rule__IfCommand__Group_5__03025);
             rule__IfCommand__Group_5__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__IfCommand__Group_5__1_in_rule__IfCommand__Group_5__03120);
+            pushFollow(FOLLOW_rule__IfCommand__Group_5__1_in_rule__IfCommand__Group_5__03028);
             rule__IfCommand__Group_5__1();
 
             state._fsp--;
@@ -4219,20 +4086,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfCommand__Group_5__0__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1557:1: rule__IfCommand__Group_5__0__Impl : ( 'else' ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1503:1: rule__IfCommand__Group_5__0__Impl : ( 'else' ) ;
     public final void rule__IfCommand__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1561:1: ( ( 'else' ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1562:1: ( 'else' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1507:1: ( ( 'else' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1508:1: ( 'else' )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1562:1: ( 'else' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1563:1: 'else'
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1508:1: ( 'else' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1509:1: 'else'
             {
              before(grammarAccess.getIfCommandAccess().getElseKeyword_5_0()); 
-            match(input,22,FOLLOW_22_in_rule__IfCommand__Group_5__0__Impl3148); 
+            match(input,21,FOLLOW_21_in_rule__IfCommand__Group_5__0__Impl3056); 
              after(grammarAccess.getIfCommandAccess().getElseKeyword_5_0()); 
 
             }
@@ -4256,16 +4123,16 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfCommand__Group_5__1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1576:1: rule__IfCommand__Group_5__1 : rule__IfCommand__Group_5__1__Impl ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1522:1: rule__IfCommand__Group_5__1 : rule__IfCommand__Group_5__1__Impl ;
     public final void rule__IfCommand__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1580:1: ( rule__IfCommand__Group_5__1__Impl )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1581:2: rule__IfCommand__Group_5__1__Impl
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1526:1: ( rule__IfCommand__Group_5__1__Impl )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1527:2: rule__IfCommand__Group_5__1__Impl
             {
-            pushFollow(FOLLOW_rule__IfCommand__Group_5__1__Impl_in_rule__IfCommand__Group_5__13179);
+            pushFollow(FOLLOW_rule__IfCommand__Group_5__1__Impl_in_rule__IfCommand__Group_5__13087);
             rule__IfCommand__Group_5__1__Impl();
 
             state._fsp--;
@@ -4289,23 +4156,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfCommand__Group_5__1__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1587:1: rule__IfCommand__Group_5__1__Impl : ( ( rule__IfCommand__ElseBlockAssignment_5_1 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1533:1: rule__IfCommand__Group_5__1__Impl : ( ( rule__IfCommand__ElseBlockAssignment_5_1 ) ) ;
     public final void rule__IfCommand__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1591:1: ( ( ( rule__IfCommand__ElseBlockAssignment_5_1 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1592:1: ( ( rule__IfCommand__ElseBlockAssignment_5_1 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1537:1: ( ( ( rule__IfCommand__ElseBlockAssignment_5_1 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1538:1: ( ( rule__IfCommand__ElseBlockAssignment_5_1 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1592:1: ( ( rule__IfCommand__ElseBlockAssignment_5_1 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1593:1: ( rule__IfCommand__ElseBlockAssignment_5_1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1538:1: ( ( rule__IfCommand__ElseBlockAssignment_5_1 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1539:1: ( rule__IfCommand__ElseBlockAssignment_5_1 )
             {
              before(grammarAccess.getIfCommandAccess().getElseBlockAssignment_5_1()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1594:1: ( rule__IfCommand__ElseBlockAssignment_5_1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1594:2: rule__IfCommand__ElseBlockAssignment_5_1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1540:1: ( rule__IfCommand__ElseBlockAssignment_5_1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1540:2: rule__IfCommand__ElseBlockAssignment_5_1
             {
-            pushFollow(FOLLOW_rule__IfCommand__ElseBlockAssignment_5_1_in_rule__IfCommand__Group_5__1__Impl3206);
+            pushFollow(FOLLOW_rule__IfCommand__ElseBlockAssignment_5_1_in_rule__IfCommand__Group_5__1__Impl3114);
             rule__IfCommand__ElseBlockAssignment_5_1();
 
             state._fsp--;
@@ -4336,21 +4203,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WhileCommand__Group__0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1608:1: rule__WhileCommand__Group__0 : rule__WhileCommand__Group__0__Impl rule__WhileCommand__Group__1 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1554:1: rule__WhileCommand__Group__0 : rule__WhileCommand__Group__0__Impl rule__WhileCommand__Group__1 ;
     public final void rule__WhileCommand__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1612:1: ( rule__WhileCommand__Group__0__Impl rule__WhileCommand__Group__1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1613:2: rule__WhileCommand__Group__0__Impl rule__WhileCommand__Group__1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1558:1: ( rule__WhileCommand__Group__0__Impl rule__WhileCommand__Group__1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1559:2: rule__WhileCommand__Group__0__Impl rule__WhileCommand__Group__1
             {
-            pushFollow(FOLLOW_rule__WhileCommand__Group__0__Impl_in_rule__WhileCommand__Group__03240);
+            pushFollow(FOLLOW_rule__WhileCommand__Group__0__Impl_in_rule__WhileCommand__Group__03148);
             rule__WhileCommand__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__WhileCommand__Group__1_in_rule__WhileCommand__Group__03243);
+            pushFollow(FOLLOW_rule__WhileCommand__Group__1_in_rule__WhileCommand__Group__03151);
             rule__WhileCommand__Group__1();
 
             state._fsp--;
@@ -4374,20 +4241,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WhileCommand__Group__0__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1620:1: rule__WhileCommand__Group__0__Impl : ( 'while' ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1566:1: rule__WhileCommand__Group__0__Impl : ( 'while' ) ;
     public final void rule__WhileCommand__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1624:1: ( ( 'while' ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1625:1: ( 'while' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1570:1: ( ( 'while' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1571:1: ( 'while' )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1625:1: ( 'while' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1626:1: 'while'
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1571:1: ( 'while' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1572:1: 'while'
             {
              before(grammarAccess.getWhileCommandAccess().getWhileKeyword_0()); 
-            match(input,23,FOLLOW_23_in_rule__WhileCommand__Group__0__Impl3271); 
+            match(input,22,FOLLOW_22_in_rule__WhileCommand__Group__0__Impl3179); 
              after(grammarAccess.getWhileCommandAccess().getWhileKeyword_0()); 
 
             }
@@ -4411,21 +4278,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WhileCommand__Group__1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1639:1: rule__WhileCommand__Group__1 : rule__WhileCommand__Group__1__Impl rule__WhileCommand__Group__2 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1585:1: rule__WhileCommand__Group__1 : rule__WhileCommand__Group__1__Impl rule__WhileCommand__Group__2 ;
     public final void rule__WhileCommand__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1643:1: ( rule__WhileCommand__Group__1__Impl rule__WhileCommand__Group__2 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1644:2: rule__WhileCommand__Group__1__Impl rule__WhileCommand__Group__2
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1589:1: ( rule__WhileCommand__Group__1__Impl rule__WhileCommand__Group__2 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1590:2: rule__WhileCommand__Group__1__Impl rule__WhileCommand__Group__2
             {
-            pushFollow(FOLLOW_rule__WhileCommand__Group__1__Impl_in_rule__WhileCommand__Group__13302);
+            pushFollow(FOLLOW_rule__WhileCommand__Group__1__Impl_in_rule__WhileCommand__Group__13210);
             rule__WhileCommand__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__WhileCommand__Group__2_in_rule__WhileCommand__Group__13305);
+            pushFollow(FOLLOW_rule__WhileCommand__Group__2_in_rule__WhileCommand__Group__13213);
             rule__WhileCommand__Group__2();
 
             state._fsp--;
@@ -4449,20 +4316,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WhileCommand__Group__1__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1651:1: rule__WhileCommand__Group__1__Impl : ( '(' ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1597:1: rule__WhileCommand__Group__1__Impl : ( '(' ) ;
     public final void rule__WhileCommand__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1655:1: ( ( '(' ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1656:1: ( '(' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1601:1: ( ( '(' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1602:1: ( '(' )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1656:1: ( '(' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1657:1: '('
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1602:1: ( '(' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1603:1: '('
             {
              before(grammarAccess.getWhileCommandAccess().getLeftParenthesisKeyword_1()); 
-            match(input,15,FOLLOW_15_in_rule__WhileCommand__Group__1__Impl3333); 
+            match(input,15,FOLLOW_15_in_rule__WhileCommand__Group__1__Impl3241); 
              after(grammarAccess.getWhileCommandAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -4486,21 +4353,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WhileCommand__Group__2"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1670:1: rule__WhileCommand__Group__2 : rule__WhileCommand__Group__2__Impl rule__WhileCommand__Group__3 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1616:1: rule__WhileCommand__Group__2 : rule__WhileCommand__Group__2__Impl rule__WhileCommand__Group__3 ;
     public final void rule__WhileCommand__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1674:1: ( rule__WhileCommand__Group__2__Impl rule__WhileCommand__Group__3 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1675:2: rule__WhileCommand__Group__2__Impl rule__WhileCommand__Group__3
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1620:1: ( rule__WhileCommand__Group__2__Impl rule__WhileCommand__Group__3 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1621:2: rule__WhileCommand__Group__2__Impl rule__WhileCommand__Group__3
             {
-            pushFollow(FOLLOW_rule__WhileCommand__Group__2__Impl_in_rule__WhileCommand__Group__23364);
+            pushFollow(FOLLOW_rule__WhileCommand__Group__2__Impl_in_rule__WhileCommand__Group__23272);
             rule__WhileCommand__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__WhileCommand__Group__3_in_rule__WhileCommand__Group__23367);
+            pushFollow(FOLLOW_rule__WhileCommand__Group__3_in_rule__WhileCommand__Group__23275);
             rule__WhileCommand__Group__3();
 
             state._fsp--;
@@ -4524,23 +4391,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WhileCommand__Group__2__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1682:1: rule__WhileCommand__Group__2__Impl : ( ( rule__WhileCommand__ExprAssignment_2 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1628:1: rule__WhileCommand__Group__2__Impl : ( ( rule__WhileCommand__ExprAssignment_2 ) ) ;
     public final void rule__WhileCommand__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1686:1: ( ( ( rule__WhileCommand__ExprAssignment_2 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1687:1: ( ( rule__WhileCommand__ExprAssignment_2 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1632:1: ( ( ( rule__WhileCommand__ExprAssignment_2 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1633:1: ( ( rule__WhileCommand__ExprAssignment_2 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1687:1: ( ( rule__WhileCommand__ExprAssignment_2 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1688:1: ( rule__WhileCommand__ExprAssignment_2 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1633:1: ( ( rule__WhileCommand__ExprAssignment_2 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1634:1: ( rule__WhileCommand__ExprAssignment_2 )
             {
              before(grammarAccess.getWhileCommandAccess().getExprAssignment_2()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1689:1: ( rule__WhileCommand__ExprAssignment_2 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1689:2: rule__WhileCommand__ExprAssignment_2
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1635:1: ( rule__WhileCommand__ExprAssignment_2 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1635:2: rule__WhileCommand__ExprAssignment_2
             {
-            pushFollow(FOLLOW_rule__WhileCommand__ExprAssignment_2_in_rule__WhileCommand__Group__2__Impl3394);
+            pushFollow(FOLLOW_rule__WhileCommand__ExprAssignment_2_in_rule__WhileCommand__Group__2__Impl3302);
             rule__WhileCommand__ExprAssignment_2();
 
             state._fsp--;
@@ -4571,21 +4438,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WhileCommand__Group__3"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1699:1: rule__WhileCommand__Group__3 : rule__WhileCommand__Group__3__Impl rule__WhileCommand__Group__4 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1645:1: rule__WhileCommand__Group__3 : rule__WhileCommand__Group__3__Impl rule__WhileCommand__Group__4 ;
     public final void rule__WhileCommand__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1703:1: ( rule__WhileCommand__Group__3__Impl rule__WhileCommand__Group__4 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1704:2: rule__WhileCommand__Group__3__Impl rule__WhileCommand__Group__4
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1649:1: ( rule__WhileCommand__Group__3__Impl rule__WhileCommand__Group__4 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1650:2: rule__WhileCommand__Group__3__Impl rule__WhileCommand__Group__4
             {
-            pushFollow(FOLLOW_rule__WhileCommand__Group__3__Impl_in_rule__WhileCommand__Group__33424);
+            pushFollow(FOLLOW_rule__WhileCommand__Group__3__Impl_in_rule__WhileCommand__Group__33332);
             rule__WhileCommand__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__WhileCommand__Group__4_in_rule__WhileCommand__Group__33427);
+            pushFollow(FOLLOW_rule__WhileCommand__Group__4_in_rule__WhileCommand__Group__33335);
             rule__WhileCommand__Group__4();
 
             state._fsp--;
@@ -4609,20 +4476,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WhileCommand__Group__3__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1711:1: rule__WhileCommand__Group__3__Impl : ( ')' ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1657:1: rule__WhileCommand__Group__3__Impl : ( ')' ) ;
     public final void rule__WhileCommand__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1715:1: ( ( ')' ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1716:1: ( ')' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1661:1: ( ( ')' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1662:1: ( ')' )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1716:1: ( ')' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1717:1: ')'
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1662:1: ( ')' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1663:1: ')'
             {
              before(grammarAccess.getWhileCommandAccess().getRightParenthesisKeyword_3()); 
-            match(input,16,FOLLOW_16_in_rule__WhileCommand__Group__3__Impl3455); 
+            match(input,16,FOLLOW_16_in_rule__WhileCommand__Group__3__Impl3363); 
              after(grammarAccess.getWhileCommandAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -4646,16 +4513,16 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WhileCommand__Group__4"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1730:1: rule__WhileCommand__Group__4 : rule__WhileCommand__Group__4__Impl ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1676:1: rule__WhileCommand__Group__4 : rule__WhileCommand__Group__4__Impl ;
     public final void rule__WhileCommand__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1734:1: ( rule__WhileCommand__Group__4__Impl )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1735:2: rule__WhileCommand__Group__4__Impl
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1680:1: ( rule__WhileCommand__Group__4__Impl )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1681:2: rule__WhileCommand__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__WhileCommand__Group__4__Impl_in_rule__WhileCommand__Group__43486);
+            pushFollow(FOLLOW_rule__WhileCommand__Group__4__Impl_in_rule__WhileCommand__Group__43394);
             rule__WhileCommand__Group__4__Impl();
 
             state._fsp--;
@@ -4679,23 +4546,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WhileCommand__Group__4__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1741:1: rule__WhileCommand__Group__4__Impl : ( ( rule__WhileCommand__WhileBlockAssignment_4 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1687:1: rule__WhileCommand__Group__4__Impl : ( ( rule__WhileCommand__WhileBlockAssignment_4 ) ) ;
     public final void rule__WhileCommand__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1745:1: ( ( ( rule__WhileCommand__WhileBlockAssignment_4 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1746:1: ( ( rule__WhileCommand__WhileBlockAssignment_4 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1691:1: ( ( ( rule__WhileCommand__WhileBlockAssignment_4 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1692:1: ( ( rule__WhileCommand__WhileBlockAssignment_4 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1746:1: ( ( rule__WhileCommand__WhileBlockAssignment_4 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1747:1: ( rule__WhileCommand__WhileBlockAssignment_4 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1692:1: ( ( rule__WhileCommand__WhileBlockAssignment_4 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1693:1: ( rule__WhileCommand__WhileBlockAssignment_4 )
             {
              before(grammarAccess.getWhileCommandAccess().getWhileBlockAssignment_4()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1748:1: ( rule__WhileCommand__WhileBlockAssignment_4 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1748:2: rule__WhileCommand__WhileBlockAssignment_4
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1694:1: ( rule__WhileCommand__WhileBlockAssignment_4 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1694:2: rule__WhileCommand__WhileBlockAssignment_4
             {
-            pushFollow(FOLLOW_rule__WhileCommand__WhileBlockAssignment_4_in_rule__WhileCommand__Group__4__Impl3513);
+            pushFollow(FOLLOW_rule__WhileCommand__WhileBlockAssignment_4_in_rule__WhileCommand__Group__4__Impl3421);
             rule__WhileCommand__WhileBlockAssignment_4();
 
             state._fsp--;
@@ -4726,21 +4593,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ReturnCommand__Group__0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1768:1: rule__ReturnCommand__Group__0 : rule__ReturnCommand__Group__0__Impl rule__ReturnCommand__Group__1 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1714:1: rule__ReturnCommand__Group__0 : rule__ReturnCommand__Group__0__Impl rule__ReturnCommand__Group__1 ;
     public final void rule__ReturnCommand__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1772:1: ( rule__ReturnCommand__Group__0__Impl rule__ReturnCommand__Group__1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1773:2: rule__ReturnCommand__Group__0__Impl rule__ReturnCommand__Group__1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1718:1: ( rule__ReturnCommand__Group__0__Impl rule__ReturnCommand__Group__1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1719:2: rule__ReturnCommand__Group__0__Impl rule__ReturnCommand__Group__1
             {
-            pushFollow(FOLLOW_rule__ReturnCommand__Group__0__Impl_in_rule__ReturnCommand__Group__03553);
+            pushFollow(FOLLOW_rule__ReturnCommand__Group__0__Impl_in_rule__ReturnCommand__Group__03461);
             rule__ReturnCommand__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ReturnCommand__Group__1_in_rule__ReturnCommand__Group__03556);
+            pushFollow(FOLLOW_rule__ReturnCommand__Group__1_in_rule__ReturnCommand__Group__03464);
             rule__ReturnCommand__Group__1();
 
             state._fsp--;
@@ -4764,20 +4631,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ReturnCommand__Group__0__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1780:1: rule__ReturnCommand__Group__0__Impl : ( 'return' ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1726:1: rule__ReturnCommand__Group__0__Impl : ( 'return' ) ;
     public final void rule__ReturnCommand__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1784:1: ( ( 'return' ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1785:1: ( 'return' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1730:1: ( ( 'return' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1731:1: ( 'return' )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1785:1: ( 'return' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1786:1: 'return'
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1731:1: ( 'return' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1732:1: 'return'
             {
              before(grammarAccess.getReturnCommandAccess().getReturnKeyword_0()); 
-            match(input,24,FOLLOW_24_in_rule__ReturnCommand__Group__0__Impl3584); 
+            match(input,23,FOLLOW_23_in_rule__ReturnCommand__Group__0__Impl3492); 
              after(grammarAccess.getReturnCommandAccess().getReturnKeyword_0()); 
 
             }
@@ -4801,21 +4668,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ReturnCommand__Group__1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1799:1: rule__ReturnCommand__Group__1 : rule__ReturnCommand__Group__1__Impl rule__ReturnCommand__Group__2 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1745:1: rule__ReturnCommand__Group__1 : rule__ReturnCommand__Group__1__Impl rule__ReturnCommand__Group__2 ;
     public final void rule__ReturnCommand__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1803:1: ( rule__ReturnCommand__Group__1__Impl rule__ReturnCommand__Group__2 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1804:2: rule__ReturnCommand__Group__1__Impl rule__ReturnCommand__Group__2
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1749:1: ( rule__ReturnCommand__Group__1__Impl rule__ReturnCommand__Group__2 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1750:2: rule__ReturnCommand__Group__1__Impl rule__ReturnCommand__Group__2
             {
-            pushFollow(FOLLOW_rule__ReturnCommand__Group__1__Impl_in_rule__ReturnCommand__Group__13615);
+            pushFollow(FOLLOW_rule__ReturnCommand__Group__1__Impl_in_rule__ReturnCommand__Group__13523);
             rule__ReturnCommand__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ReturnCommand__Group__2_in_rule__ReturnCommand__Group__13618);
+            pushFollow(FOLLOW_rule__ReturnCommand__Group__2_in_rule__ReturnCommand__Group__13526);
             rule__ReturnCommand__Group__2();
 
             state._fsp--;
@@ -4839,23 +4706,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ReturnCommand__Group__1__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1811:1: rule__ReturnCommand__Group__1__Impl : ( ( rule__ReturnCommand__ExprAssignment_1 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1757:1: rule__ReturnCommand__Group__1__Impl : ( ( rule__ReturnCommand__ExprAssignment_1 ) ) ;
     public final void rule__ReturnCommand__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1815:1: ( ( ( rule__ReturnCommand__ExprAssignment_1 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1816:1: ( ( rule__ReturnCommand__ExprAssignment_1 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1761:1: ( ( ( rule__ReturnCommand__ExprAssignment_1 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1762:1: ( ( rule__ReturnCommand__ExprAssignment_1 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1816:1: ( ( rule__ReturnCommand__ExprAssignment_1 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1817:1: ( rule__ReturnCommand__ExprAssignment_1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1762:1: ( ( rule__ReturnCommand__ExprAssignment_1 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1763:1: ( rule__ReturnCommand__ExprAssignment_1 )
             {
              before(grammarAccess.getReturnCommandAccess().getExprAssignment_1()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1818:1: ( rule__ReturnCommand__ExprAssignment_1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1818:2: rule__ReturnCommand__ExprAssignment_1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1764:1: ( rule__ReturnCommand__ExprAssignment_1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1764:2: rule__ReturnCommand__ExprAssignment_1
             {
-            pushFollow(FOLLOW_rule__ReturnCommand__ExprAssignment_1_in_rule__ReturnCommand__Group__1__Impl3645);
+            pushFollow(FOLLOW_rule__ReturnCommand__ExprAssignment_1_in_rule__ReturnCommand__Group__1__Impl3553);
             rule__ReturnCommand__ExprAssignment_1();
 
             state._fsp--;
@@ -4886,16 +4753,16 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ReturnCommand__Group__2"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1828:1: rule__ReturnCommand__Group__2 : rule__ReturnCommand__Group__2__Impl ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1774:1: rule__ReturnCommand__Group__2 : rule__ReturnCommand__Group__2__Impl ;
     public final void rule__ReturnCommand__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1832:1: ( rule__ReturnCommand__Group__2__Impl )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1833:2: rule__ReturnCommand__Group__2__Impl
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1778:1: ( rule__ReturnCommand__Group__2__Impl )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1779:2: rule__ReturnCommand__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__ReturnCommand__Group__2__Impl_in_rule__ReturnCommand__Group__23675);
+            pushFollow(FOLLOW_rule__ReturnCommand__Group__2__Impl_in_rule__ReturnCommand__Group__23583);
             rule__ReturnCommand__Group__2__Impl();
 
             state._fsp--;
@@ -4919,20 +4786,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ReturnCommand__Group__2__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1839:1: rule__ReturnCommand__Group__2__Impl : ( ';' ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1785:1: rule__ReturnCommand__Group__2__Impl : ( ';' ) ;
     public final void rule__ReturnCommand__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1843:1: ( ( ';' ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1844:1: ( ';' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1789:1: ( ( ';' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1790:1: ( ';' )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1844:1: ( ';' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1845:1: ';'
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1790:1: ( ';' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1791:1: ';'
             {
              before(grammarAccess.getReturnCommandAccess().getSemicolonKeyword_2()); 
-            match(input,20,FOLLOW_20_in_rule__ReturnCommand__Group__2__Impl3703); 
+            match(input,24,FOLLOW_24_in_rule__ReturnCommand__Group__2__Impl3611); 
              after(grammarAccess.getReturnCommandAccess().getSemicolonKeyword_2()); 
 
             }
@@ -4956,21 +4823,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Declaration__Group__0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1864:1: rule__Declaration__Group__0 : rule__Declaration__Group__0__Impl rule__Declaration__Group__1 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1810:1: rule__Declaration__Group__0 : rule__Declaration__Group__0__Impl rule__Declaration__Group__1 ;
     public final void rule__Declaration__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1868:1: ( rule__Declaration__Group__0__Impl rule__Declaration__Group__1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1869:2: rule__Declaration__Group__0__Impl rule__Declaration__Group__1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1814:1: ( rule__Declaration__Group__0__Impl rule__Declaration__Group__1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1815:2: rule__Declaration__Group__0__Impl rule__Declaration__Group__1
             {
-            pushFollow(FOLLOW_rule__Declaration__Group__0__Impl_in_rule__Declaration__Group__03740);
+            pushFollow(FOLLOW_rule__Declaration__Group__0__Impl_in_rule__Declaration__Group__03648);
             rule__Declaration__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Declaration__Group__1_in_rule__Declaration__Group__03743);
+            pushFollow(FOLLOW_rule__Declaration__Group__1_in_rule__Declaration__Group__03651);
             rule__Declaration__Group__1();
 
             state._fsp--;
@@ -4994,23 +4861,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Declaration__Group__0__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1876:1: rule__Declaration__Group__0__Impl : ( ( rule__Declaration__TypeAssignment_0 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1822:1: rule__Declaration__Group__0__Impl : ( ( rule__Declaration__TypeAssignment_0 ) ) ;
     public final void rule__Declaration__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1880:1: ( ( ( rule__Declaration__TypeAssignment_0 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1881:1: ( ( rule__Declaration__TypeAssignment_0 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1826:1: ( ( ( rule__Declaration__TypeAssignment_0 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1827:1: ( ( rule__Declaration__TypeAssignment_0 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1881:1: ( ( rule__Declaration__TypeAssignment_0 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1882:1: ( rule__Declaration__TypeAssignment_0 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1827:1: ( ( rule__Declaration__TypeAssignment_0 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1828:1: ( rule__Declaration__TypeAssignment_0 )
             {
              before(grammarAccess.getDeclarationAccess().getTypeAssignment_0()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1883:1: ( rule__Declaration__TypeAssignment_0 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1883:2: rule__Declaration__TypeAssignment_0
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1829:1: ( rule__Declaration__TypeAssignment_0 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1829:2: rule__Declaration__TypeAssignment_0
             {
-            pushFollow(FOLLOW_rule__Declaration__TypeAssignment_0_in_rule__Declaration__Group__0__Impl3770);
+            pushFollow(FOLLOW_rule__Declaration__TypeAssignment_0_in_rule__Declaration__Group__0__Impl3678);
             rule__Declaration__TypeAssignment_0();
 
             state._fsp--;
@@ -5041,21 +4908,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Declaration__Group__1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1893:1: rule__Declaration__Group__1 : rule__Declaration__Group__1__Impl rule__Declaration__Group__2 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1839:1: rule__Declaration__Group__1 : rule__Declaration__Group__1__Impl rule__Declaration__Group__2 ;
     public final void rule__Declaration__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1897:1: ( rule__Declaration__Group__1__Impl rule__Declaration__Group__2 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1898:2: rule__Declaration__Group__1__Impl rule__Declaration__Group__2
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1843:1: ( rule__Declaration__Group__1__Impl rule__Declaration__Group__2 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1844:2: rule__Declaration__Group__1__Impl rule__Declaration__Group__2
             {
-            pushFollow(FOLLOW_rule__Declaration__Group__1__Impl_in_rule__Declaration__Group__13800);
+            pushFollow(FOLLOW_rule__Declaration__Group__1__Impl_in_rule__Declaration__Group__13708);
             rule__Declaration__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Declaration__Group__2_in_rule__Declaration__Group__13803);
+            pushFollow(FOLLOW_rule__Declaration__Group__2_in_rule__Declaration__Group__13711);
             rule__Declaration__Group__2();
 
             state._fsp--;
@@ -5079,23 +4946,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Declaration__Group__1__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1905:1: rule__Declaration__Group__1__Impl : ( ( rule__Declaration__ValueAssignment_1 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1851:1: rule__Declaration__Group__1__Impl : ( ( rule__Declaration__ValueAssignment_1 ) ) ;
     public final void rule__Declaration__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1909:1: ( ( ( rule__Declaration__ValueAssignment_1 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1910:1: ( ( rule__Declaration__ValueAssignment_1 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1855:1: ( ( ( rule__Declaration__ValueAssignment_1 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1856:1: ( ( rule__Declaration__ValueAssignment_1 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1910:1: ( ( rule__Declaration__ValueAssignment_1 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1911:1: ( rule__Declaration__ValueAssignment_1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1856:1: ( ( rule__Declaration__ValueAssignment_1 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1857:1: ( rule__Declaration__ValueAssignment_1 )
             {
              before(grammarAccess.getDeclarationAccess().getValueAssignment_1()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1912:1: ( rule__Declaration__ValueAssignment_1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1912:2: rule__Declaration__ValueAssignment_1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1858:1: ( rule__Declaration__ValueAssignment_1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1858:2: rule__Declaration__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__Declaration__ValueAssignment_1_in_rule__Declaration__Group__1__Impl3830);
+            pushFollow(FOLLOW_rule__Declaration__ValueAssignment_1_in_rule__Declaration__Group__1__Impl3738);
             rule__Declaration__ValueAssignment_1();
 
             state._fsp--;
@@ -5126,16 +4993,16 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Declaration__Group__2"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1922:1: rule__Declaration__Group__2 : rule__Declaration__Group__2__Impl ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1868:1: rule__Declaration__Group__2 : rule__Declaration__Group__2__Impl ;
     public final void rule__Declaration__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1926:1: ( rule__Declaration__Group__2__Impl )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1927:2: rule__Declaration__Group__2__Impl
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1872:1: ( rule__Declaration__Group__2__Impl )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1873:2: rule__Declaration__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__Declaration__Group__2__Impl_in_rule__Declaration__Group__23860);
+            pushFollow(FOLLOW_rule__Declaration__Group__2__Impl_in_rule__Declaration__Group__23768);
             rule__Declaration__Group__2__Impl();
 
             state._fsp--;
@@ -5159,20 +5026,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Declaration__Group__2__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1933:1: rule__Declaration__Group__2__Impl : ( ';' ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1879:1: rule__Declaration__Group__2__Impl : ( ';' ) ;
     public final void rule__Declaration__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1937:1: ( ( ';' ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1938:1: ( ';' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1883:1: ( ( ';' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1884:1: ( ';' )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1938:1: ( ';' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1939:1: ';'
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1884:1: ( ';' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1885:1: ';'
             {
              before(grammarAccess.getDeclarationAccess().getSemicolonKeyword_2()); 
-            match(input,20,FOLLOW_20_in_rule__Declaration__Group__2__Impl3888); 
+            match(input,24,FOLLOW_24_in_rule__Declaration__Group__2__Impl3796); 
              after(grammarAccess.getDeclarationAccess().getSemicolonKeyword_2()); 
 
             }
@@ -5195,22 +5062,177 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Declaration__Group__2__Impl"
 
 
+    // $ANTLR start "rule__KDeclaration__Group__0"
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1904:1: rule__KDeclaration__Group__0 : rule__KDeclaration__Group__0__Impl rule__KDeclaration__Group__1 ;
+    public final void rule__KDeclaration__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1908:1: ( rule__KDeclaration__Group__0__Impl rule__KDeclaration__Group__1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1909:2: rule__KDeclaration__Group__0__Impl rule__KDeclaration__Group__1
+            {
+            pushFollow(FOLLOW_rule__KDeclaration__Group__0__Impl_in_rule__KDeclaration__Group__03833);
+            rule__KDeclaration__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__KDeclaration__Group__1_in_rule__KDeclaration__Group__03836);
+            rule__KDeclaration__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__KDeclaration__Group__0"
+
+
+    // $ANTLR start "rule__KDeclaration__Group__0__Impl"
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1916:1: rule__KDeclaration__Group__0__Impl : ( ( rule__KDeclaration__DeclarationAssignment_0 ) ) ;
+    public final void rule__KDeclaration__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1920:1: ( ( ( rule__KDeclaration__DeclarationAssignment_0 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1921:1: ( ( rule__KDeclaration__DeclarationAssignment_0 ) )
+            {
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1921:1: ( ( rule__KDeclaration__DeclarationAssignment_0 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1922:1: ( rule__KDeclaration__DeclarationAssignment_0 )
+            {
+             before(grammarAccess.getKDeclarationAccess().getDeclarationAssignment_0()); 
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1923:1: ( rule__KDeclaration__DeclarationAssignment_0 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1923:2: rule__KDeclaration__DeclarationAssignment_0
+            {
+            pushFollow(FOLLOW_rule__KDeclaration__DeclarationAssignment_0_in_rule__KDeclaration__Group__0__Impl3863);
+            rule__KDeclaration__DeclarationAssignment_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getKDeclarationAccess().getDeclarationAssignment_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__KDeclaration__Group__0__Impl"
+
+
+    // $ANTLR start "rule__KDeclaration__Group__1"
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1933:1: rule__KDeclaration__Group__1 : rule__KDeclaration__Group__1__Impl ;
+    public final void rule__KDeclaration__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1937:1: ( rule__KDeclaration__Group__1__Impl )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1938:2: rule__KDeclaration__Group__1__Impl
+            {
+            pushFollow(FOLLOW_rule__KDeclaration__Group__1__Impl_in_rule__KDeclaration__Group__13893);
+            rule__KDeclaration__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__KDeclaration__Group__1"
+
+
+    // $ANTLR start "rule__KDeclaration__Group__1__Impl"
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1944:1: rule__KDeclaration__Group__1__Impl : ( ';' ) ;
+    public final void rule__KDeclaration__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1948:1: ( ( ';' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1949:1: ( ';' )
+            {
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1949:1: ( ';' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1950:1: ';'
+            {
+             before(grammarAccess.getKDeclarationAccess().getSemicolonKeyword_1()); 
+            match(input,24,FOLLOW_24_in_rule__KDeclaration__Group__1__Impl3921); 
+             after(grammarAccess.getKDeclarationAccess().getSemicolonKeyword_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__KDeclaration__Group__1__Impl"
+
+
     // $ANTLR start "rule__RDeclaration__Group__0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1958:1: rule__RDeclaration__Group__0 : rule__RDeclaration__Group__0__Impl rule__RDeclaration__Group__1 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1967:1: rule__RDeclaration__Group__0 : rule__RDeclaration__Group__0__Impl rule__RDeclaration__Group__1 ;
     public final void rule__RDeclaration__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1962:1: ( rule__RDeclaration__Group__0__Impl rule__RDeclaration__Group__1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1963:2: rule__RDeclaration__Group__0__Impl rule__RDeclaration__Group__1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1971:1: ( rule__RDeclaration__Group__0__Impl rule__RDeclaration__Group__1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1972:2: rule__RDeclaration__Group__0__Impl rule__RDeclaration__Group__1
             {
-            pushFollow(FOLLOW_rule__RDeclaration__Group__0__Impl_in_rule__RDeclaration__Group__03925);
+            pushFollow(FOLLOW_rule__RDeclaration__Group__0__Impl_in_rule__RDeclaration__Group__03956);
             rule__RDeclaration__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__RDeclaration__Group__1_in_rule__RDeclaration__Group__03928);
+            pushFollow(FOLLOW_rule__RDeclaration__Group__1_in_rule__RDeclaration__Group__03959);
             rule__RDeclaration__Group__1();
 
             state._fsp--;
@@ -5234,23 +5256,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RDeclaration__Group__0__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1970:1: rule__RDeclaration__Group__0__Impl : ( ( rule__RDeclaration__IdAssignment_0 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1979:1: rule__RDeclaration__Group__0__Impl : ( ( rule__RDeclaration__IdAssignment_0 ) ) ;
     public final void rule__RDeclaration__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1974:1: ( ( ( rule__RDeclaration__IdAssignment_0 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1975:1: ( ( rule__RDeclaration__IdAssignment_0 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1983:1: ( ( ( rule__RDeclaration__IdAssignment_0 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1984:1: ( ( rule__RDeclaration__IdAssignment_0 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1975:1: ( ( rule__RDeclaration__IdAssignment_0 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1976:1: ( rule__RDeclaration__IdAssignment_0 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1984:1: ( ( rule__RDeclaration__IdAssignment_0 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1985:1: ( rule__RDeclaration__IdAssignment_0 )
             {
              before(grammarAccess.getRDeclarationAccess().getIdAssignment_0()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1977:1: ( rule__RDeclaration__IdAssignment_0 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1977:2: rule__RDeclaration__IdAssignment_0
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1986:1: ( rule__RDeclaration__IdAssignment_0 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1986:2: rule__RDeclaration__IdAssignment_0
             {
-            pushFollow(FOLLOW_rule__RDeclaration__IdAssignment_0_in_rule__RDeclaration__Group__0__Impl3955);
+            pushFollow(FOLLOW_rule__RDeclaration__IdAssignment_0_in_rule__RDeclaration__Group__0__Impl3986);
             rule__RDeclaration__IdAssignment_0();
 
             state._fsp--;
@@ -5281,16 +5303,16 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RDeclaration__Group__1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1987:1: rule__RDeclaration__Group__1 : rule__RDeclaration__Group__1__Impl ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1996:1: rule__RDeclaration__Group__1 : rule__RDeclaration__Group__1__Impl ;
     public final void rule__RDeclaration__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1991:1: ( rule__RDeclaration__Group__1__Impl )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1992:2: rule__RDeclaration__Group__1__Impl
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2000:1: ( rule__RDeclaration__Group__1__Impl )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2001:2: rule__RDeclaration__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__RDeclaration__Group__1__Impl_in_rule__RDeclaration__Group__13985);
+            pushFollow(FOLLOW_rule__RDeclaration__Group__1__Impl_in_rule__RDeclaration__Group__14016);
             rule__RDeclaration__Group__1__Impl();
 
             state._fsp--;
@@ -5314,31 +5336,31 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RDeclaration__Group__1__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:1998:1: rule__RDeclaration__Group__1__Impl : ( ( rule__RDeclaration__Group_1__0 )? ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2007:1: rule__RDeclaration__Group__1__Impl : ( ( rule__RDeclaration__Group_1__0 )? ) ;
     public final void rule__RDeclaration__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2002:1: ( ( ( rule__RDeclaration__Group_1__0 )? ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2003:1: ( ( rule__RDeclaration__Group_1__0 )? )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2011:1: ( ( ( rule__RDeclaration__Group_1__0 )? ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2012:1: ( ( rule__RDeclaration__Group_1__0 )? )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2003:1: ( ( rule__RDeclaration__Group_1__0 )? )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2004:1: ( rule__RDeclaration__Group_1__0 )?
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2012:1: ( ( rule__RDeclaration__Group_1__0 )? )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2013:1: ( rule__RDeclaration__Group_1__0 )?
             {
              before(grammarAccess.getRDeclarationAccess().getGroup_1()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2005:1: ( rule__RDeclaration__Group_1__0 )?
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2014:1: ( rule__RDeclaration__Group_1__0 )?
+            int alt12=2;
+            int LA12_0 = input.LA(1);
 
-            if ( (LA13_0==17) ) {
-                alt13=1;
+            if ( (LA12_0==17) ) {
+                alt12=1;
             }
-            switch (alt13) {
+            switch (alt12) {
                 case 1 :
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2005:2: rule__RDeclaration__Group_1__0
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2014:2: rule__RDeclaration__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__RDeclaration__Group_1__0_in_rule__RDeclaration__Group__1__Impl4012);
+                    pushFollow(FOLLOW_rule__RDeclaration__Group_1__0_in_rule__RDeclaration__Group__1__Impl4043);
                     rule__RDeclaration__Group_1__0();
 
                     state._fsp--;
@@ -5372,21 +5394,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RDeclaration__Group_1__0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2019:1: rule__RDeclaration__Group_1__0 : rule__RDeclaration__Group_1__0__Impl rule__RDeclaration__Group_1__1 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2028:1: rule__RDeclaration__Group_1__0 : rule__RDeclaration__Group_1__0__Impl rule__RDeclaration__Group_1__1 ;
     public final void rule__RDeclaration__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2023:1: ( rule__RDeclaration__Group_1__0__Impl rule__RDeclaration__Group_1__1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2024:2: rule__RDeclaration__Group_1__0__Impl rule__RDeclaration__Group_1__1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2032:1: ( rule__RDeclaration__Group_1__0__Impl rule__RDeclaration__Group_1__1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2033:2: rule__RDeclaration__Group_1__0__Impl rule__RDeclaration__Group_1__1
             {
-            pushFollow(FOLLOW_rule__RDeclaration__Group_1__0__Impl_in_rule__RDeclaration__Group_1__04047);
+            pushFollow(FOLLOW_rule__RDeclaration__Group_1__0__Impl_in_rule__RDeclaration__Group_1__04078);
             rule__RDeclaration__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__RDeclaration__Group_1__1_in_rule__RDeclaration__Group_1__04050);
+            pushFollow(FOLLOW_rule__RDeclaration__Group_1__1_in_rule__RDeclaration__Group_1__04081);
             rule__RDeclaration__Group_1__1();
 
             state._fsp--;
@@ -5410,21 +5432,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RDeclaration__Group_1__0__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2031:1: rule__RDeclaration__Group_1__0__Impl : ( () ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2040:1: rule__RDeclaration__Group_1__0__Impl : ( () ) ;
     public final void rule__RDeclaration__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2035:1: ( ( () ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2036:1: ( () )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2044:1: ( ( () ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2045:1: ( () )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2036:1: ( () )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2037:1: ()
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2045:1: ( () )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2046:1: ()
             {
              before(grammarAccess.getRDeclarationAccess().getRDeclarationLeftAction_1_0()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2038:1: ()
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2040:1: 
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2047:1: ()
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2049:1: 
             {
             }
 
@@ -5447,21 +5469,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RDeclaration__Group_1__1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2050:1: rule__RDeclaration__Group_1__1 : rule__RDeclaration__Group_1__1__Impl rule__RDeclaration__Group_1__2 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2059:1: rule__RDeclaration__Group_1__1 : rule__RDeclaration__Group_1__1__Impl rule__RDeclaration__Group_1__2 ;
     public final void rule__RDeclaration__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2054:1: ( rule__RDeclaration__Group_1__1__Impl rule__RDeclaration__Group_1__2 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2055:2: rule__RDeclaration__Group_1__1__Impl rule__RDeclaration__Group_1__2
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2063:1: ( rule__RDeclaration__Group_1__1__Impl rule__RDeclaration__Group_1__2 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2064:2: rule__RDeclaration__Group_1__1__Impl rule__RDeclaration__Group_1__2
             {
-            pushFollow(FOLLOW_rule__RDeclaration__Group_1__1__Impl_in_rule__RDeclaration__Group_1__14108);
+            pushFollow(FOLLOW_rule__RDeclaration__Group_1__1__Impl_in_rule__RDeclaration__Group_1__14139);
             rule__RDeclaration__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__RDeclaration__Group_1__2_in_rule__RDeclaration__Group_1__14111);
+            pushFollow(FOLLOW_rule__RDeclaration__Group_1__2_in_rule__RDeclaration__Group_1__14142);
             rule__RDeclaration__Group_1__2();
 
             state._fsp--;
@@ -5485,20 +5507,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RDeclaration__Group_1__1__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2062:1: rule__RDeclaration__Group_1__1__Impl : ( ',' ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2071:1: rule__RDeclaration__Group_1__1__Impl : ( ',' ) ;
     public final void rule__RDeclaration__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2066:1: ( ( ',' ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2067:1: ( ',' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2075:1: ( ( ',' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2076:1: ( ',' )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2067:1: ( ',' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2068:1: ','
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2076:1: ( ',' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2077:1: ','
             {
              before(grammarAccess.getRDeclarationAccess().getCommaKeyword_1_1()); 
-            match(input,17,FOLLOW_17_in_rule__RDeclaration__Group_1__1__Impl4139); 
+            match(input,17,FOLLOW_17_in_rule__RDeclaration__Group_1__1__Impl4170); 
              after(grammarAccess.getRDeclarationAccess().getCommaKeyword_1_1()); 
 
             }
@@ -5522,16 +5544,16 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RDeclaration__Group_1__2"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2081:1: rule__RDeclaration__Group_1__2 : rule__RDeclaration__Group_1__2__Impl ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2090:1: rule__RDeclaration__Group_1__2 : rule__RDeclaration__Group_1__2__Impl ;
     public final void rule__RDeclaration__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2085:1: ( rule__RDeclaration__Group_1__2__Impl )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2086:2: rule__RDeclaration__Group_1__2__Impl
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2094:1: ( rule__RDeclaration__Group_1__2__Impl )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2095:2: rule__RDeclaration__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__RDeclaration__Group_1__2__Impl_in_rule__RDeclaration__Group_1__24170);
+            pushFollow(FOLLOW_rule__RDeclaration__Group_1__2__Impl_in_rule__RDeclaration__Group_1__24201);
             rule__RDeclaration__Group_1__2__Impl();
 
             state._fsp--;
@@ -5555,23 +5577,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RDeclaration__Group_1__2__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2092:1: rule__RDeclaration__Group_1__2__Impl : ( ( rule__RDeclaration__NextAssignment_1_2 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2101:1: rule__RDeclaration__Group_1__2__Impl : ( ( rule__RDeclaration__NextAssignment_1_2 ) ) ;
     public final void rule__RDeclaration__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2096:1: ( ( ( rule__RDeclaration__NextAssignment_1_2 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2097:1: ( ( rule__RDeclaration__NextAssignment_1_2 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2105:1: ( ( ( rule__RDeclaration__NextAssignment_1_2 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2106:1: ( ( rule__RDeclaration__NextAssignment_1_2 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2097:1: ( ( rule__RDeclaration__NextAssignment_1_2 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2098:1: ( rule__RDeclaration__NextAssignment_1_2 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2106:1: ( ( rule__RDeclaration__NextAssignment_1_2 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2107:1: ( rule__RDeclaration__NextAssignment_1_2 )
             {
              before(grammarAccess.getRDeclarationAccess().getNextAssignment_1_2()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2099:1: ( rule__RDeclaration__NextAssignment_1_2 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2099:2: rule__RDeclaration__NextAssignment_1_2
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2108:1: ( rule__RDeclaration__NextAssignment_1_2 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2108:2: rule__RDeclaration__NextAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__RDeclaration__NextAssignment_1_2_in_rule__RDeclaration__Group_1__2__Impl4197);
+            pushFollow(FOLLOW_rule__RDeclaration__NextAssignment_1_2_in_rule__RDeclaration__Group_1__2__Impl4228);
             rule__RDeclaration__NextAssignment_1_2();
 
             state._fsp--;
@@ -5602,21 +5624,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IDDeclaration__Group__0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2115:1: rule__IDDeclaration__Group__0 : rule__IDDeclaration__Group__0__Impl rule__IDDeclaration__Group__1 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2124:1: rule__IDDeclaration__Group__0 : rule__IDDeclaration__Group__0__Impl rule__IDDeclaration__Group__1 ;
     public final void rule__IDDeclaration__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2119:1: ( rule__IDDeclaration__Group__0__Impl rule__IDDeclaration__Group__1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2120:2: rule__IDDeclaration__Group__0__Impl rule__IDDeclaration__Group__1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2128:1: ( rule__IDDeclaration__Group__0__Impl rule__IDDeclaration__Group__1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2129:2: rule__IDDeclaration__Group__0__Impl rule__IDDeclaration__Group__1
             {
-            pushFollow(FOLLOW_rule__IDDeclaration__Group__0__Impl_in_rule__IDDeclaration__Group__04233);
+            pushFollow(FOLLOW_rule__IDDeclaration__Group__0__Impl_in_rule__IDDeclaration__Group__04264);
             rule__IDDeclaration__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__IDDeclaration__Group__1_in_rule__IDDeclaration__Group__04236);
+            pushFollow(FOLLOW_rule__IDDeclaration__Group__1_in_rule__IDDeclaration__Group__04267);
             rule__IDDeclaration__Group__1();
 
             state._fsp--;
@@ -5640,23 +5662,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IDDeclaration__Group__0__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2127:1: rule__IDDeclaration__Group__0__Impl : ( ( rule__IDDeclaration__IdAssignment_0 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2136:1: rule__IDDeclaration__Group__0__Impl : ( ( rule__IDDeclaration__IdAssignment_0 ) ) ;
     public final void rule__IDDeclaration__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2131:1: ( ( ( rule__IDDeclaration__IdAssignment_0 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2132:1: ( ( rule__IDDeclaration__IdAssignment_0 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2140:1: ( ( ( rule__IDDeclaration__IdAssignment_0 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2141:1: ( ( rule__IDDeclaration__IdAssignment_0 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2132:1: ( ( rule__IDDeclaration__IdAssignment_0 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2133:1: ( rule__IDDeclaration__IdAssignment_0 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2141:1: ( ( rule__IDDeclaration__IdAssignment_0 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2142:1: ( rule__IDDeclaration__IdAssignment_0 )
             {
              before(grammarAccess.getIDDeclarationAccess().getIdAssignment_0()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2134:1: ( rule__IDDeclaration__IdAssignment_0 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2134:2: rule__IDDeclaration__IdAssignment_0
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2143:1: ( rule__IDDeclaration__IdAssignment_0 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2143:2: rule__IDDeclaration__IdAssignment_0
             {
-            pushFollow(FOLLOW_rule__IDDeclaration__IdAssignment_0_in_rule__IDDeclaration__Group__0__Impl4263);
+            pushFollow(FOLLOW_rule__IDDeclaration__IdAssignment_0_in_rule__IDDeclaration__Group__0__Impl4294);
             rule__IDDeclaration__IdAssignment_0();
 
             state._fsp--;
@@ -5687,16 +5709,16 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IDDeclaration__Group__1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2144:1: rule__IDDeclaration__Group__1 : rule__IDDeclaration__Group__1__Impl ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2153:1: rule__IDDeclaration__Group__1 : rule__IDDeclaration__Group__1__Impl ;
     public final void rule__IDDeclaration__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2148:1: ( rule__IDDeclaration__Group__1__Impl )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2149:2: rule__IDDeclaration__Group__1__Impl
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2157:1: ( rule__IDDeclaration__Group__1__Impl )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2158:2: rule__IDDeclaration__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__IDDeclaration__Group__1__Impl_in_rule__IDDeclaration__Group__14293);
+            pushFollow(FOLLOW_rule__IDDeclaration__Group__1__Impl_in_rule__IDDeclaration__Group__14324);
             rule__IDDeclaration__Group__1__Impl();
 
             state._fsp--;
@@ -5720,31 +5742,31 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IDDeclaration__Group__1__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2155:1: rule__IDDeclaration__Group__1__Impl : ( ( rule__IDDeclaration__Group_1__0 )? ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2164:1: rule__IDDeclaration__Group__1__Impl : ( ( rule__IDDeclaration__Group_1__0 )? ) ;
     public final void rule__IDDeclaration__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2159:1: ( ( ( rule__IDDeclaration__Group_1__0 )? ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2160:1: ( ( rule__IDDeclaration__Group_1__0 )? )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2168:1: ( ( ( rule__IDDeclaration__Group_1__0 )? ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2169:1: ( ( rule__IDDeclaration__Group_1__0 )? )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2160:1: ( ( rule__IDDeclaration__Group_1__0 )? )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2161:1: ( rule__IDDeclaration__Group_1__0 )?
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2169:1: ( ( rule__IDDeclaration__Group_1__0 )? )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2170:1: ( rule__IDDeclaration__Group_1__0 )?
             {
              before(grammarAccess.getIDDeclarationAccess().getGroup_1()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2162:1: ( rule__IDDeclaration__Group_1__0 )?
-            int alt14=2;
-            int LA14_0 = input.LA(1);
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2171:1: ( rule__IDDeclaration__Group_1__0 )?
+            int alt13=2;
+            int LA13_0 = input.LA(1);
 
-            if ( (LA14_0==25) ) {
-                alt14=1;
+            if ( (LA13_0==25) ) {
+                alt13=1;
             }
-            switch (alt14) {
+            switch (alt13) {
                 case 1 :
-                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2162:2: rule__IDDeclaration__Group_1__0
+                    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2171:2: rule__IDDeclaration__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__IDDeclaration__Group_1__0_in_rule__IDDeclaration__Group__1__Impl4320);
+                    pushFollow(FOLLOW_rule__IDDeclaration__Group_1__0_in_rule__IDDeclaration__Group__1__Impl4351);
                     rule__IDDeclaration__Group_1__0();
 
                     state._fsp--;
@@ -5778,21 +5800,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IDDeclaration__Group_1__0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2176:1: rule__IDDeclaration__Group_1__0 : rule__IDDeclaration__Group_1__0__Impl rule__IDDeclaration__Group_1__1 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2185:1: rule__IDDeclaration__Group_1__0 : rule__IDDeclaration__Group_1__0__Impl rule__IDDeclaration__Group_1__1 ;
     public final void rule__IDDeclaration__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2180:1: ( rule__IDDeclaration__Group_1__0__Impl rule__IDDeclaration__Group_1__1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2181:2: rule__IDDeclaration__Group_1__0__Impl rule__IDDeclaration__Group_1__1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2189:1: ( rule__IDDeclaration__Group_1__0__Impl rule__IDDeclaration__Group_1__1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2190:2: rule__IDDeclaration__Group_1__0__Impl rule__IDDeclaration__Group_1__1
             {
-            pushFollow(FOLLOW_rule__IDDeclaration__Group_1__0__Impl_in_rule__IDDeclaration__Group_1__04355);
+            pushFollow(FOLLOW_rule__IDDeclaration__Group_1__0__Impl_in_rule__IDDeclaration__Group_1__04386);
             rule__IDDeclaration__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__IDDeclaration__Group_1__1_in_rule__IDDeclaration__Group_1__04358);
+            pushFollow(FOLLOW_rule__IDDeclaration__Group_1__1_in_rule__IDDeclaration__Group_1__04389);
             rule__IDDeclaration__Group_1__1();
 
             state._fsp--;
@@ -5816,20 +5838,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IDDeclaration__Group_1__0__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2188:1: rule__IDDeclaration__Group_1__0__Impl : ( '=' ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2197:1: rule__IDDeclaration__Group_1__0__Impl : ( '=' ) ;
     public final void rule__IDDeclaration__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2192:1: ( ( '=' ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2193:1: ( '=' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2201:1: ( ( '=' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2202:1: ( '=' )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2193:1: ( '=' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2194:1: '='
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2202:1: ( '=' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2203:1: '='
             {
              before(grammarAccess.getIDDeclarationAccess().getEqualsSignKeyword_1_0()); 
-            match(input,25,FOLLOW_25_in_rule__IDDeclaration__Group_1__0__Impl4386); 
+            match(input,25,FOLLOW_25_in_rule__IDDeclaration__Group_1__0__Impl4417); 
              after(grammarAccess.getIDDeclarationAccess().getEqualsSignKeyword_1_0()); 
 
             }
@@ -5853,16 +5875,16 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IDDeclaration__Group_1__1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2207:1: rule__IDDeclaration__Group_1__1 : rule__IDDeclaration__Group_1__1__Impl ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2216:1: rule__IDDeclaration__Group_1__1 : rule__IDDeclaration__Group_1__1__Impl ;
     public final void rule__IDDeclaration__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2211:1: ( rule__IDDeclaration__Group_1__1__Impl )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2212:2: rule__IDDeclaration__Group_1__1__Impl
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2220:1: ( rule__IDDeclaration__Group_1__1__Impl )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2221:2: rule__IDDeclaration__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__IDDeclaration__Group_1__1__Impl_in_rule__IDDeclaration__Group_1__14417);
+            pushFollow(FOLLOW_rule__IDDeclaration__Group_1__1__Impl_in_rule__IDDeclaration__Group_1__14448);
             rule__IDDeclaration__Group_1__1__Impl();
 
             state._fsp--;
@@ -5886,23 +5908,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IDDeclaration__Group_1__1__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2218:1: rule__IDDeclaration__Group_1__1__Impl : ( ( rule__IDDeclaration__ValueAssignment_1_1 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2227:1: rule__IDDeclaration__Group_1__1__Impl : ( ( rule__IDDeclaration__ValueAssignment_1_1 ) ) ;
     public final void rule__IDDeclaration__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2222:1: ( ( ( rule__IDDeclaration__ValueAssignment_1_1 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2223:1: ( ( rule__IDDeclaration__ValueAssignment_1_1 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2231:1: ( ( ( rule__IDDeclaration__ValueAssignment_1_1 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2232:1: ( ( rule__IDDeclaration__ValueAssignment_1_1 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2223:1: ( ( rule__IDDeclaration__ValueAssignment_1_1 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2224:1: ( rule__IDDeclaration__ValueAssignment_1_1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2232:1: ( ( rule__IDDeclaration__ValueAssignment_1_1 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2233:1: ( rule__IDDeclaration__ValueAssignment_1_1 )
             {
              before(grammarAccess.getIDDeclarationAccess().getValueAssignment_1_1()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2225:1: ( rule__IDDeclaration__ValueAssignment_1_1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2225:2: rule__IDDeclaration__ValueAssignment_1_1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2234:1: ( rule__IDDeclaration__ValueAssignment_1_1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2234:2: rule__IDDeclaration__ValueAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__IDDeclaration__ValueAssignment_1_1_in_rule__IDDeclaration__Group_1__1__Impl4444);
+            pushFollow(FOLLOW_rule__IDDeclaration__ValueAssignment_1_1_in_rule__IDDeclaration__Group_1__1__Impl4475);
             rule__IDDeclaration__ValueAssignment_1_1();
 
             state._fsp--;
@@ -5933,21 +5955,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expr__Group__0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2239:1: rule__Expr__Group__0 : rule__Expr__Group__0__Impl rule__Expr__Group__1 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2248:1: rule__Expr__Group__0 : rule__Expr__Group__0__Impl rule__Expr__Group__1 ;
     public final void rule__Expr__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2243:1: ( rule__Expr__Group__0__Impl rule__Expr__Group__1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2244:2: rule__Expr__Group__0__Impl rule__Expr__Group__1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2252:1: ( rule__Expr__Group__0__Impl rule__Expr__Group__1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2253:2: rule__Expr__Group__0__Impl rule__Expr__Group__1
             {
-            pushFollow(FOLLOW_rule__Expr__Group__0__Impl_in_rule__Expr__Group__04478);
+            pushFollow(FOLLOW_rule__Expr__Group__0__Impl_in_rule__Expr__Group__04509);
             rule__Expr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Expr__Group__1_in_rule__Expr__Group__04481);
+            pushFollow(FOLLOW_rule__Expr__Group__1_in_rule__Expr__Group__04512);
             rule__Expr__Group__1();
 
             state._fsp--;
@@ -5971,20 +5993,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expr__Group__0__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2251:1: rule__Expr__Group__0__Impl : ( ruleTerm ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2260:1: rule__Expr__Group__0__Impl : ( ruleTerm ) ;
     public final void rule__Expr__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2255:1: ( ( ruleTerm ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2256:1: ( ruleTerm )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2264:1: ( ( ruleTerm ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2265:1: ( ruleTerm )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2256:1: ( ruleTerm )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2257:1: ruleTerm
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2265:1: ( ruleTerm )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2266:1: ruleTerm
             {
              before(grammarAccess.getExprAccess().getTermParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleTerm_in_rule__Expr__Group__0__Impl4508);
+            pushFollow(FOLLOW_ruleTerm_in_rule__Expr__Group__0__Impl4539);
             ruleTerm();
 
             state._fsp--;
@@ -6012,16 +6034,16 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expr__Group__1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2268:1: rule__Expr__Group__1 : rule__Expr__Group__1__Impl ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2277:1: rule__Expr__Group__1 : rule__Expr__Group__1__Impl ;
     public final void rule__Expr__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2272:1: ( rule__Expr__Group__1__Impl )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2273:2: rule__Expr__Group__1__Impl
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2281:1: ( rule__Expr__Group__1__Impl )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2282:2: rule__Expr__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Expr__Group__1__Impl_in_rule__Expr__Group__14537);
+            pushFollow(FOLLOW_rule__Expr__Group__1__Impl_in_rule__Expr__Group__14568);
             rule__Expr__Group__1__Impl();
 
             state._fsp--;
@@ -6045,35 +6067,35 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expr__Group__1__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2279:1: rule__Expr__Group__1__Impl : ( ( rule__Expr__Group_1__0 )* ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2288:1: rule__Expr__Group__1__Impl : ( ( rule__Expr__Group_1__0 )* ) ;
     public final void rule__Expr__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2283:1: ( ( ( rule__Expr__Group_1__0 )* ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2284:1: ( ( rule__Expr__Group_1__0 )* )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2292:1: ( ( ( rule__Expr__Group_1__0 )* ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2293:1: ( ( rule__Expr__Group_1__0 )* )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2284:1: ( ( rule__Expr__Group_1__0 )* )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2285:1: ( rule__Expr__Group_1__0 )*
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2293:1: ( ( rule__Expr__Group_1__0 )* )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2294:1: ( rule__Expr__Group_1__0 )*
             {
              before(grammarAccess.getExprAccess().getGroup_1()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2286:1: ( rule__Expr__Group_1__0 )*
-            loop15:
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2295:1: ( rule__Expr__Group_1__0 )*
+            loop14:
             do {
-                int alt15=2;
-                int LA15_0 = input.LA(1);
+                int alt14=2;
+                int LA14_0 = input.LA(1);
 
-                if ( ((LA15_0>=11 && LA15_0<=12)) ) {
-                    alt15=1;
+                if ( ((LA14_0>=11 && LA14_0<=12)) ) {
+                    alt14=1;
                 }
 
 
-                switch (alt15) {
+                switch (alt14) {
             	case 1 :
-            	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2286:2: rule__Expr__Group_1__0
+            	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2295:2: rule__Expr__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__Expr__Group_1__0_in_rule__Expr__Group__1__Impl4564);
+            	    pushFollow(FOLLOW_rule__Expr__Group_1__0_in_rule__Expr__Group__1__Impl4595);
             	    rule__Expr__Group_1__0();
 
             	    state._fsp--;
@@ -6083,7 +6105,7 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop15;
+            	    break loop14;
                 }
             } while (true);
 
@@ -6110,21 +6132,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expr__Group_1__0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2300:1: rule__Expr__Group_1__0 : rule__Expr__Group_1__0__Impl rule__Expr__Group_1__1 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2309:1: rule__Expr__Group_1__0 : rule__Expr__Group_1__0__Impl rule__Expr__Group_1__1 ;
     public final void rule__Expr__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2304:1: ( rule__Expr__Group_1__0__Impl rule__Expr__Group_1__1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2305:2: rule__Expr__Group_1__0__Impl rule__Expr__Group_1__1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2313:1: ( rule__Expr__Group_1__0__Impl rule__Expr__Group_1__1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2314:2: rule__Expr__Group_1__0__Impl rule__Expr__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Expr__Group_1__0__Impl_in_rule__Expr__Group_1__04599);
+            pushFollow(FOLLOW_rule__Expr__Group_1__0__Impl_in_rule__Expr__Group_1__04630);
             rule__Expr__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Expr__Group_1__1_in_rule__Expr__Group_1__04602);
+            pushFollow(FOLLOW_rule__Expr__Group_1__1_in_rule__Expr__Group_1__04633);
             rule__Expr__Group_1__1();
 
             state._fsp--;
@@ -6148,21 +6170,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expr__Group_1__0__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2312:1: rule__Expr__Group_1__0__Impl : ( () ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2321:1: rule__Expr__Group_1__0__Impl : ( () ) ;
     public final void rule__Expr__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2316:1: ( ( () ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2317:1: ( () )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2325:1: ( ( () ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2326:1: ( () )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2317:1: ( () )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2318:1: ()
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2326:1: ( () )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2327:1: ()
             {
              before(grammarAccess.getExprAccess().getExprLeftAction_1_0()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2319:1: ()
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2321:1: 
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2328:1: ()
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2330:1: 
             {
             }
 
@@ -6185,21 +6207,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expr__Group_1__1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2331:1: rule__Expr__Group_1__1 : rule__Expr__Group_1__1__Impl rule__Expr__Group_1__2 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2340:1: rule__Expr__Group_1__1 : rule__Expr__Group_1__1__Impl rule__Expr__Group_1__2 ;
     public final void rule__Expr__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2335:1: ( rule__Expr__Group_1__1__Impl rule__Expr__Group_1__2 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2336:2: rule__Expr__Group_1__1__Impl rule__Expr__Group_1__2
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2344:1: ( rule__Expr__Group_1__1__Impl rule__Expr__Group_1__2 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2345:2: rule__Expr__Group_1__1__Impl rule__Expr__Group_1__2
             {
-            pushFollow(FOLLOW_rule__Expr__Group_1__1__Impl_in_rule__Expr__Group_1__14660);
+            pushFollow(FOLLOW_rule__Expr__Group_1__1__Impl_in_rule__Expr__Group_1__14691);
             rule__Expr__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Expr__Group_1__2_in_rule__Expr__Group_1__14663);
+            pushFollow(FOLLOW_rule__Expr__Group_1__2_in_rule__Expr__Group_1__14694);
             rule__Expr__Group_1__2();
 
             state._fsp--;
@@ -6223,23 +6245,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expr__Group_1__1__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2343:1: rule__Expr__Group_1__1__Impl : ( ( rule__Expr__OperatorAssignment_1_1 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2352:1: rule__Expr__Group_1__1__Impl : ( ( rule__Expr__OperatorAssignment_1_1 ) ) ;
     public final void rule__Expr__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2347:1: ( ( ( rule__Expr__OperatorAssignment_1_1 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2348:1: ( ( rule__Expr__OperatorAssignment_1_1 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2356:1: ( ( ( rule__Expr__OperatorAssignment_1_1 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2357:1: ( ( rule__Expr__OperatorAssignment_1_1 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2348:1: ( ( rule__Expr__OperatorAssignment_1_1 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2349:1: ( rule__Expr__OperatorAssignment_1_1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2357:1: ( ( rule__Expr__OperatorAssignment_1_1 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2358:1: ( rule__Expr__OperatorAssignment_1_1 )
             {
              before(grammarAccess.getExprAccess().getOperatorAssignment_1_1()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2350:1: ( rule__Expr__OperatorAssignment_1_1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2350:2: rule__Expr__OperatorAssignment_1_1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2359:1: ( rule__Expr__OperatorAssignment_1_1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2359:2: rule__Expr__OperatorAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__Expr__OperatorAssignment_1_1_in_rule__Expr__Group_1__1__Impl4690);
+            pushFollow(FOLLOW_rule__Expr__OperatorAssignment_1_1_in_rule__Expr__Group_1__1__Impl4721);
             rule__Expr__OperatorAssignment_1_1();
 
             state._fsp--;
@@ -6270,16 +6292,16 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expr__Group_1__2"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2360:1: rule__Expr__Group_1__2 : rule__Expr__Group_1__2__Impl ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2369:1: rule__Expr__Group_1__2 : rule__Expr__Group_1__2__Impl ;
     public final void rule__Expr__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2364:1: ( rule__Expr__Group_1__2__Impl )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2365:2: rule__Expr__Group_1__2__Impl
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2373:1: ( rule__Expr__Group_1__2__Impl )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2374:2: rule__Expr__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__Expr__Group_1__2__Impl_in_rule__Expr__Group_1__24720);
+            pushFollow(FOLLOW_rule__Expr__Group_1__2__Impl_in_rule__Expr__Group_1__24751);
             rule__Expr__Group_1__2__Impl();
 
             state._fsp--;
@@ -6303,23 +6325,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expr__Group_1__2__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2371:1: rule__Expr__Group_1__2__Impl : ( ( rule__Expr__RightAssignment_1_2 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2380:1: rule__Expr__Group_1__2__Impl : ( ( rule__Expr__RightAssignment_1_2 ) ) ;
     public final void rule__Expr__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2375:1: ( ( ( rule__Expr__RightAssignment_1_2 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2376:1: ( ( rule__Expr__RightAssignment_1_2 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2384:1: ( ( ( rule__Expr__RightAssignment_1_2 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2385:1: ( ( rule__Expr__RightAssignment_1_2 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2376:1: ( ( rule__Expr__RightAssignment_1_2 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2377:1: ( rule__Expr__RightAssignment_1_2 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2385:1: ( ( rule__Expr__RightAssignment_1_2 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2386:1: ( rule__Expr__RightAssignment_1_2 )
             {
              before(grammarAccess.getExprAccess().getRightAssignment_1_2()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2378:1: ( rule__Expr__RightAssignment_1_2 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2378:2: rule__Expr__RightAssignment_1_2
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2387:1: ( rule__Expr__RightAssignment_1_2 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2387:2: rule__Expr__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__Expr__RightAssignment_1_2_in_rule__Expr__Group_1__2__Impl4747);
+            pushFollow(FOLLOW_rule__Expr__RightAssignment_1_2_in_rule__Expr__Group_1__2__Impl4778);
             rule__Expr__RightAssignment_1_2();
 
             state._fsp--;
@@ -6350,21 +6372,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Term__Group__0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2394:1: rule__Term__Group__0 : rule__Term__Group__0__Impl rule__Term__Group__1 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2403:1: rule__Term__Group__0 : rule__Term__Group__0__Impl rule__Term__Group__1 ;
     public final void rule__Term__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2398:1: ( rule__Term__Group__0__Impl rule__Term__Group__1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2399:2: rule__Term__Group__0__Impl rule__Term__Group__1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2407:1: ( rule__Term__Group__0__Impl rule__Term__Group__1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2408:2: rule__Term__Group__0__Impl rule__Term__Group__1
             {
-            pushFollow(FOLLOW_rule__Term__Group__0__Impl_in_rule__Term__Group__04783);
+            pushFollow(FOLLOW_rule__Term__Group__0__Impl_in_rule__Term__Group__04814);
             rule__Term__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Term__Group__1_in_rule__Term__Group__04786);
+            pushFollow(FOLLOW_rule__Term__Group__1_in_rule__Term__Group__04817);
             rule__Term__Group__1();
 
             state._fsp--;
@@ -6388,20 +6410,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Term__Group__0__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2406:1: rule__Term__Group__0__Impl : ( ruleFactor ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2415:1: rule__Term__Group__0__Impl : ( ruleFactor ) ;
     public final void rule__Term__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2410:1: ( ( ruleFactor ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2411:1: ( ruleFactor )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2419:1: ( ( ruleFactor ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2420:1: ( ruleFactor )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2411:1: ( ruleFactor )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2412:1: ruleFactor
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2420:1: ( ruleFactor )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2421:1: ruleFactor
             {
              before(grammarAccess.getTermAccess().getFactorParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleFactor_in_rule__Term__Group__0__Impl4813);
+            pushFollow(FOLLOW_ruleFactor_in_rule__Term__Group__0__Impl4844);
             ruleFactor();
 
             state._fsp--;
@@ -6429,16 +6451,16 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Term__Group__1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2423:1: rule__Term__Group__1 : rule__Term__Group__1__Impl ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2432:1: rule__Term__Group__1 : rule__Term__Group__1__Impl ;
     public final void rule__Term__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2427:1: ( rule__Term__Group__1__Impl )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2428:2: rule__Term__Group__1__Impl
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2436:1: ( rule__Term__Group__1__Impl )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2437:2: rule__Term__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Term__Group__1__Impl_in_rule__Term__Group__14842);
+            pushFollow(FOLLOW_rule__Term__Group__1__Impl_in_rule__Term__Group__14873);
             rule__Term__Group__1__Impl();
 
             state._fsp--;
@@ -6462,35 +6484,35 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Term__Group__1__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2434:1: rule__Term__Group__1__Impl : ( ( rule__Term__Group_1__0 )* ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2443:1: rule__Term__Group__1__Impl : ( ( rule__Term__Group_1__0 )* ) ;
     public final void rule__Term__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2438:1: ( ( ( rule__Term__Group_1__0 )* ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2439:1: ( ( rule__Term__Group_1__0 )* )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2447:1: ( ( ( rule__Term__Group_1__0 )* ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2448:1: ( ( rule__Term__Group_1__0 )* )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2439:1: ( ( rule__Term__Group_1__0 )* )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2440:1: ( rule__Term__Group_1__0 )*
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2448:1: ( ( rule__Term__Group_1__0 )* )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2449:1: ( rule__Term__Group_1__0 )*
             {
              before(grammarAccess.getTermAccess().getGroup_1()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2441:1: ( rule__Term__Group_1__0 )*
-            loop16:
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2450:1: ( rule__Term__Group_1__0 )*
+            loop15:
             do {
-                int alt16=2;
-                int LA16_0 = input.LA(1);
+                int alt15=2;
+                int LA15_0 = input.LA(1);
 
-                if ( ((LA16_0>=13 && LA16_0<=14)) ) {
-                    alt16=1;
+                if ( ((LA15_0>=13 && LA15_0<=14)) ) {
+                    alt15=1;
                 }
 
 
-                switch (alt16) {
+                switch (alt15) {
             	case 1 :
-            	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2441:2: rule__Term__Group_1__0
+            	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2450:2: rule__Term__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__Term__Group_1__0_in_rule__Term__Group__1__Impl4869);
+            	    pushFollow(FOLLOW_rule__Term__Group_1__0_in_rule__Term__Group__1__Impl4900);
             	    rule__Term__Group_1__0();
 
             	    state._fsp--;
@@ -6500,7 +6522,7 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop16;
+            	    break loop15;
                 }
             } while (true);
 
@@ -6527,21 +6549,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Term__Group_1__0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2455:1: rule__Term__Group_1__0 : rule__Term__Group_1__0__Impl rule__Term__Group_1__1 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2464:1: rule__Term__Group_1__0 : rule__Term__Group_1__0__Impl rule__Term__Group_1__1 ;
     public final void rule__Term__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2459:1: ( rule__Term__Group_1__0__Impl rule__Term__Group_1__1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2460:2: rule__Term__Group_1__0__Impl rule__Term__Group_1__1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2468:1: ( rule__Term__Group_1__0__Impl rule__Term__Group_1__1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2469:2: rule__Term__Group_1__0__Impl rule__Term__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Term__Group_1__0__Impl_in_rule__Term__Group_1__04904);
+            pushFollow(FOLLOW_rule__Term__Group_1__0__Impl_in_rule__Term__Group_1__04935);
             rule__Term__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Term__Group_1__1_in_rule__Term__Group_1__04907);
+            pushFollow(FOLLOW_rule__Term__Group_1__1_in_rule__Term__Group_1__04938);
             rule__Term__Group_1__1();
 
             state._fsp--;
@@ -6565,21 +6587,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Term__Group_1__0__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2467:1: rule__Term__Group_1__0__Impl : ( () ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2476:1: rule__Term__Group_1__0__Impl : ( () ) ;
     public final void rule__Term__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2471:1: ( ( () ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2472:1: ( () )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2480:1: ( ( () ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2481:1: ( () )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2472:1: ( () )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2473:1: ()
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2481:1: ( () )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2482:1: ()
             {
              before(grammarAccess.getTermAccess().getTermLeftAction_1_0()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2474:1: ()
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2476:1: 
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2483:1: ()
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2485:1: 
             {
             }
 
@@ -6602,21 +6624,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Term__Group_1__1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2486:1: rule__Term__Group_1__1 : rule__Term__Group_1__1__Impl rule__Term__Group_1__2 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2495:1: rule__Term__Group_1__1 : rule__Term__Group_1__1__Impl rule__Term__Group_1__2 ;
     public final void rule__Term__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2490:1: ( rule__Term__Group_1__1__Impl rule__Term__Group_1__2 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2491:2: rule__Term__Group_1__1__Impl rule__Term__Group_1__2
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2499:1: ( rule__Term__Group_1__1__Impl rule__Term__Group_1__2 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2500:2: rule__Term__Group_1__1__Impl rule__Term__Group_1__2
             {
-            pushFollow(FOLLOW_rule__Term__Group_1__1__Impl_in_rule__Term__Group_1__14965);
+            pushFollow(FOLLOW_rule__Term__Group_1__1__Impl_in_rule__Term__Group_1__14996);
             rule__Term__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Term__Group_1__2_in_rule__Term__Group_1__14968);
+            pushFollow(FOLLOW_rule__Term__Group_1__2_in_rule__Term__Group_1__14999);
             rule__Term__Group_1__2();
 
             state._fsp--;
@@ -6640,23 +6662,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Term__Group_1__1__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2498:1: rule__Term__Group_1__1__Impl : ( ( rule__Term__OperatorAssignment_1_1 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2507:1: rule__Term__Group_1__1__Impl : ( ( rule__Term__OperatorAssignment_1_1 ) ) ;
     public final void rule__Term__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2502:1: ( ( ( rule__Term__OperatorAssignment_1_1 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2503:1: ( ( rule__Term__OperatorAssignment_1_1 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2511:1: ( ( ( rule__Term__OperatorAssignment_1_1 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2512:1: ( ( rule__Term__OperatorAssignment_1_1 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2503:1: ( ( rule__Term__OperatorAssignment_1_1 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2504:1: ( rule__Term__OperatorAssignment_1_1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2512:1: ( ( rule__Term__OperatorAssignment_1_1 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2513:1: ( rule__Term__OperatorAssignment_1_1 )
             {
              before(grammarAccess.getTermAccess().getOperatorAssignment_1_1()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2505:1: ( rule__Term__OperatorAssignment_1_1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2505:2: rule__Term__OperatorAssignment_1_1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2514:1: ( rule__Term__OperatorAssignment_1_1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2514:2: rule__Term__OperatorAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__Term__OperatorAssignment_1_1_in_rule__Term__Group_1__1__Impl4995);
+            pushFollow(FOLLOW_rule__Term__OperatorAssignment_1_1_in_rule__Term__Group_1__1__Impl5026);
             rule__Term__OperatorAssignment_1_1();
 
             state._fsp--;
@@ -6687,16 +6709,16 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Term__Group_1__2"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2515:1: rule__Term__Group_1__2 : rule__Term__Group_1__2__Impl ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2524:1: rule__Term__Group_1__2 : rule__Term__Group_1__2__Impl ;
     public final void rule__Term__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2519:1: ( rule__Term__Group_1__2__Impl )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2520:2: rule__Term__Group_1__2__Impl
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2528:1: ( rule__Term__Group_1__2__Impl )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2529:2: rule__Term__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__Term__Group_1__2__Impl_in_rule__Term__Group_1__25025);
+            pushFollow(FOLLOW_rule__Term__Group_1__2__Impl_in_rule__Term__Group_1__25056);
             rule__Term__Group_1__2__Impl();
 
             state._fsp--;
@@ -6720,23 +6742,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Term__Group_1__2__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2526:1: rule__Term__Group_1__2__Impl : ( ( rule__Term__RightAssignment_1_2 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2535:1: rule__Term__Group_1__2__Impl : ( ( rule__Term__RightAssignment_1_2 ) ) ;
     public final void rule__Term__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2530:1: ( ( ( rule__Term__RightAssignment_1_2 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2531:1: ( ( rule__Term__RightAssignment_1_2 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2539:1: ( ( ( rule__Term__RightAssignment_1_2 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2540:1: ( ( rule__Term__RightAssignment_1_2 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2531:1: ( ( rule__Term__RightAssignment_1_2 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2532:1: ( rule__Term__RightAssignment_1_2 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2540:1: ( ( rule__Term__RightAssignment_1_2 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2541:1: ( rule__Term__RightAssignment_1_2 )
             {
              before(grammarAccess.getTermAccess().getRightAssignment_1_2()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2533:1: ( rule__Term__RightAssignment_1_2 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2533:2: rule__Term__RightAssignment_1_2
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2542:1: ( rule__Term__RightAssignment_1_2 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2542:2: rule__Term__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__Term__RightAssignment_1_2_in_rule__Term__Group_1__2__Impl5052);
+            pushFollow(FOLLOW_rule__Term__RightAssignment_1_2_in_rule__Term__Group_1__2__Impl5083);
             rule__Term__RightAssignment_1_2();
 
             state._fsp--;
@@ -6767,21 +6789,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__Group__0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2549:1: rule__Factor__Group__0 : rule__Factor__Group__0__Impl rule__Factor__Group__1 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2558:1: rule__Factor__Group__0 : rule__Factor__Group__0__Impl rule__Factor__Group__1 ;
     public final void rule__Factor__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2553:1: ( rule__Factor__Group__0__Impl rule__Factor__Group__1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2554:2: rule__Factor__Group__0__Impl rule__Factor__Group__1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2562:1: ( rule__Factor__Group__0__Impl rule__Factor__Group__1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2563:2: rule__Factor__Group__0__Impl rule__Factor__Group__1
             {
-            pushFollow(FOLLOW_rule__Factor__Group__0__Impl_in_rule__Factor__Group__05088);
+            pushFollow(FOLLOW_rule__Factor__Group__0__Impl_in_rule__Factor__Group__05119);
             rule__Factor__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Factor__Group__1_in_rule__Factor__Group__05091);
+            pushFollow(FOLLOW_rule__Factor__Group__1_in_rule__Factor__Group__05122);
             rule__Factor__Group__1();
 
             state._fsp--;
@@ -6805,20 +6827,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__Group__0__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2561:1: rule__Factor__Group__0__Impl : ( ruleAtomic ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2570:1: rule__Factor__Group__0__Impl : ( ruleAtomic ) ;
     public final void rule__Factor__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2565:1: ( ( ruleAtomic ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2566:1: ( ruleAtomic )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2574:1: ( ( ruleAtomic ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2575:1: ( ruleAtomic )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2566:1: ( ruleAtomic )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2567:1: ruleAtomic
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2575:1: ( ruleAtomic )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2576:1: ruleAtomic
             {
              before(grammarAccess.getFactorAccess().getAtomicParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleAtomic_in_rule__Factor__Group__0__Impl5118);
+            pushFollow(FOLLOW_ruleAtomic_in_rule__Factor__Group__0__Impl5149);
             ruleAtomic();
 
             state._fsp--;
@@ -6846,16 +6868,16 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__Group__1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2578:1: rule__Factor__Group__1 : rule__Factor__Group__1__Impl ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2587:1: rule__Factor__Group__1 : rule__Factor__Group__1__Impl ;
     public final void rule__Factor__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2582:1: ( rule__Factor__Group__1__Impl )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2583:2: rule__Factor__Group__1__Impl
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2591:1: ( rule__Factor__Group__1__Impl )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2592:2: rule__Factor__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Factor__Group__1__Impl_in_rule__Factor__Group__15147);
+            pushFollow(FOLLOW_rule__Factor__Group__1__Impl_in_rule__Factor__Group__15178);
             rule__Factor__Group__1__Impl();
 
             state._fsp--;
@@ -6879,35 +6901,35 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__Group__1__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2589:1: rule__Factor__Group__1__Impl : ( ( rule__Factor__Group_1__0 )* ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2598:1: rule__Factor__Group__1__Impl : ( ( rule__Factor__Group_1__0 )* ) ;
     public final void rule__Factor__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2593:1: ( ( ( rule__Factor__Group_1__0 )* ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2594:1: ( ( rule__Factor__Group_1__0 )* )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2602:1: ( ( ( rule__Factor__Group_1__0 )* ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2603:1: ( ( rule__Factor__Group_1__0 )* )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2594:1: ( ( rule__Factor__Group_1__0 )* )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2595:1: ( rule__Factor__Group_1__0 )*
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2603:1: ( ( rule__Factor__Group_1__0 )* )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2604:1: ( rule__Factor__Group_1__0 )*
             {
              before(grammarAccess.getFactorAccess().getGroup_1()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2596:1: ( rule__Factor__Group_1__0 )*
-            loop17:
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2605:1: ( rule__Factor__Group_1__0 )*
+            loop16:
             do {
-                int alt17=2;
-                int LA17_0 = input.LA(1);
+                int alt16=2;
+                int LA16_0 = input.LA(1);
 
-                if ( (LA17_0==26) ) {
-                    alt17=1;
+                if ( (LA16_0==26) ) {
+                    alt16=1;
                 }
 
 
-                switch (alt17) {
+                switch (alt16) {
             	case 1 :
-            	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2596:2: rule__Factor__Group_1__0
+            	    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2605:2: rule__Factor__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__Factor__Group_1__0_in_rule__Factor__Group__1__Impl5174);
+            	    pushFollow(FOLLOW_rule__Factor__Group_1__0_in_rule__Factor__Group__1__Impl5205);
             	    rule__Factor__Group_1__0();
 
             	    state._fsp--;
@@ -6917,7 +6939,7 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop17;
+            	    break loop16;
                 }
             } while (true);
 
@@ -6944,21 +6966,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__Group_1__0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2610:1: rule__Factor__Group_1__0 : rule__Factor__Group_1__0__Impl rule__Factor__Group_1__1 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2619:1: rule__Factor__Group_1__0 : rule__Factor__Group_1__0__Impl rule__Factor__Group_1__1 ;
     public final void rule__Factor__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2614:1: ( rule__Factor__Group_1__0__Impl rule__Factor__Group_1__1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2615:2: rule__Factor__Group_1__0__Impl rule__Factor__Group_1__1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2623:1: ( rule__Factor__Group_1__0__Impl rule__Factor__Group_1__1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2624:2: rule__Factor__Group_1__0__Impl rule__Factor__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Factor__Group_1__0__Impl_in_rule__Factor__Group_1__05209);
+            pushFollow(FOLLOW_rule__Factor__Group_1__0__Impl_in_rule__Factor__Group_1__05240);
             rule__Factor__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Factor__Group_1__1_in_rule__Factor__Group_1__05212);
+            pushFollow(FOLLOW_rule__Factor__Group_1__1_in_rule__Factor__Group_1__05243);
             rule__Factor__Group_1__1();
 
             state._fsp--;
@@ -6982,21 +7004,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__Group_1__0__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2622:1: rule__Factor__Group_1__0__Impl : ( () ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2631:1: rule__Factor__Group_1__0__Impl : ( () ) ;
     public final void rule__Factor__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2626:1: ( ( () ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2627:1: ( () )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2635:1: ( ( () ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2636:1: ( () )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2627:1: ( () )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2628:1: ()
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2636:1: ( () )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2637:1: ()
             {
              before(grammarAccess.getFactorAccess().getFactorLeftAction_1_0()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2629:1: ()
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2631:1: 
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2638:1: ()
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2640:1: 
             {
             }
 
@@ -7019,21 +7041,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__Group_1__1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2641:1: rule__Factor__Group_1__1 : rule__Factor__Group_1__1__Impl rule__Factor__Group_1__2 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2650:1: rule__Factor__Group_1__1 : rule__Factor__Group_1__1__Impl rule__Factor__Group_1__2 ;
     public final void rule__Factor__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2645:1: ( rule__Factor__Group_1__1__Impl rule__Factor__Group_1__2 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2646:2: rule__Factor__Group_1__1__Impl rule__Factor__Group_1__2
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2654:1: ( rule__Factor__Group_1__1__Impl rule__Factor__Group_1__2 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2655:2: rule__Factor__Group_1__1__Impl rule__Factor__Group_1__2
             {
-            pushFollow(FOLLOW_rule__Factor__Group_1__1__Impl_in_rule__Factor__Group_1__15270);
+            pushFollow(FOLLOW_rule__Factor__Group_1__1__Impl_in_rule__Factor__Group_1__15301);
             rule__Factor__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Factor__Group_1__2_in_rule__Factor__Group_1__15273);
+            pushFollow(FOLLOW_rule__Factor__Group_1__2_in_rule__Factor__Group_1__15304);
             rule__Factor__Group_1__2();
 
             state._fsp--;
@@ -7057,23 +7079,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__Group_1__1__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2653:1: rule__Factor__Group_1__1__Impl : ( ( rule__Factor__OperatorAssignment_1_1 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2662:1: rule__Factor__Group_1__1__Impl : ( ( rule__Factor__OperatorAssignment_1_1 ) ) ;
     public final void rule__Factor__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2657:1: ( ( ( rule__Factor__OperatorAssignment_1_1 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2658:1: ( ( rule__Factor__OperatorAssignment_1_1 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2666:1: ( ( ( rule__Factor__OperatorAssignment_1_1 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2667:1: ( ( rule__Factor__OperatorAssignment_1_1 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2658:1: ( ( rule__Factor__OperatorAssignment_1_1 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2659:1: ( rule__Factor__OperatorAssignment_1_1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2667:1: ( ( rule__Factor__OperatorAssignment_1_1 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2668:1: ( rule__Factor__OperatorAssignment_1_1 )
             {
              before(grammarAccess.getFactorAccess().getOperatorAssignment_1_1()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2660:1: ( rule__Factor__OperatorAssignment_1_1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2660:2: rule__Factor__OperatorAssignment_1_1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2669:1: ( rule__Factor__OperatorAssignment_1_1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2669:2: rule__Factor__OperatorAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__Factor__OperatorAssignment_1_1_in_rule__Factor__Group_1__1__Impl5300);
+            pushFollow(FOLLOW_rule__Factor__OperatorAssignment_1_1_in_rule__Factor__Group_1__1__Impl5331);
             rule__Factor__OperatorAssignment_1_1();
 
             state._fsp--;
@@ -7104,16 +7126,16 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__Group_1__2"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2670:1: rule__Factor__Group_1__2 : rule__Factor__Group_1__2__Impl ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2679:1: rule__Factor__Group_1__2 : rule__Factor__Group_1__2__Impl ;
     public final void rule__Factor__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2674:1: ( rule__Factor__Group_1__2__Impl )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2675:2: rule__Factor__Group_1__2__Impl
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2683:1: ( rule__Factor__Group_1__2__Impl )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2684:2: rule__Factor__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__Factor__Group_1__2__Impl_in_rule__Factor__Group_1__25330);
+            pushFollow(FOLLOW_rule__Factor__Group_1__2__Impl_in_rule__Factor__Group_1__25361);
             rule__Factor__Group_1__2__Impl();
 
             state._fsp--;
@@ -7137,23 +7159,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__Group_1__2__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2681:1: rule__Factor__Group_1__2__Impl : ( ( rule__Factor__RightAssignment_1_2 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2690:1: rule__Factor__Group_1__2__Impl : ( ( rule__Factor__RightAssignment_1_2 ) ) ;
     public final void rule__Factor__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2685:1: ( ( ( rule__Factor__RightAssignment_1_2 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2686:1: ( ( rule__Factor__RightAssignment_1_2 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2694:1: ( ( ( rule__Factor__RightAssignment_1_2 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2695:1: ( ( rule__Factor__RightAssignment_1_2 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2686:1: ( ( rule__Factor__RightAssignment_1_2 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2687:1: ( rule__Factor__RightAssignment_1_2 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2695:1: ( ( rule__Factor__RightAssignment_1_2 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2696:1: ( rule__Factor__RightAssignment_1_2 )
             {
              before(grammarAccess.getFactorAccess().getRightAssignment_1_2()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2688:1: ( rule__Factor__RightAssignment_1_2 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2688:2: rule__Factor__RightAssignment_1_2
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2697:1: ( rule__Factor__RightAssignment_1_2 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2697:2: rule__Factor__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__Factor__RightAssignment_1_2_in_rule__Factor__Group_1__2__Impl5357);
+            pushFollow(FOLLOW_rule__Factor__RightAssignment_1_2_in_rule__Factor__Group_1__2__Impl5388);
             rule__Factor__RightAssignment_1_2();
 
             state._fsp--;
@@ -7184,21 +7206,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_0__0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2704:1: rule__Atomic__Group_0__0 : rule__Atomic__Group_0__0__Impl rule__Atomic__Group_0__1 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2713:1: rule__Atomic__Group_0__0 : rule__Atomic__Group_0__0__Impl rule__Atomic__Group_0__1 ;
     public final void rule__Atomic__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2708:1: ( rule__Atomic__Group_0__0__Impl rule__Atomic__Group_0__1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2709:2: rule__Atomic__Group_0__0__Impl rule__Atomic__Group_0__1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2717:1: ( rule__Atomic__Group_0__0__Impl rule__Atomic__Group_0__1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2718:2: rule__Atomic__Group_0__0__Impl rule__Atomic__Group_0__1
             {
-            pushFollow(FOLLOW_rule__Atomic__Group_0__0__Impl_in_rule__Atomic__Group_0__05393);
+            pushFollow(FOLLOW_rule__Atomic__Group_0__0__Impl_in_rule__Atomic__Group_0__05424);
             rule__Atomic__Group_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Atomic__Group_0__1_in_rule__Atomic__Group_0__05396);
+            pushFollow(FOLLOW_rule__Atomic__Group_0__1_in_rule__Atomic__Group_0__05427);
             rule__Atomic__Group_0__1();
 
             state._fsp--;
@@ -7222,20 +7244,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_0__0__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2716:1: rule__Atomic__Group_0__0__Impl : ( '(' ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2725:1: rule__Atomic__Group_0__0__Impl : ( '(' ) ;
     public final void rule__Atomic__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2720:1: ( ( '(' ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2721:1: ( '(' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2729:1: ( ( '(' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2730:1: ( '(' )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2721:1: ( '(' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2722:1: '('
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2730:1: ( '(' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2731:1: '('
             {
              before(grammarAccess.getAtomicAccess().getLeftParenthesisKeyword_0_0()); 
-            match(input,15,FOLLOW_15_in_rule__Atomic__Group_0__0__Impl5424); 
+            match(input,15,FOLLOW_15_in_rule__Atomic__Group_0__0__Impl5455); 
              after(grammarAccess.getAtomicAccess().getLeftParenthesisKeyword_0_0()); 
 
             }
@@ -7259,21 +7281,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_0__1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2735:1: rule__Atomic__Group_0__1 : rule__Atomic__Group_0__1__Impl rule__Atomic__Group_0__2 ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2744:1: rule__Atomic__Group_0__1 : rule__Atomic__Group_0__1__Impl rule__Atomic__Group_0__2 ;
     public final void rule__Atomic__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2739:1: ( rule__Atomic__Group_0__1__Impl rule__Atomic__Group_0__2 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2740:2: rule__Atomic__Group_0__1__Impl rule__Atomic__Group_0__2
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2748:1: ( rule__Atomic__Group_0__1__Impl rule__Atomic__Group_0__2 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2749:2: rule__Atomic__Group_0__1__Impl rule__Atomic__Group_0__2
             {
-            pushFollow(FOLLOW_rule__Atomic__Group_0__1__Impl_in_rule__Atomic__Group_0__15455);
+            pushFollow(FOLLOW_rule__Atomic__Group_0__1__Impl_in_rule__Atomic__Group_0__15486);
             rule__Atomic__Group_0__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Atomic__Group_0__2_in_rule__Atomic__Group_0__15458);
+            pushFollow(FOLLOW_rule__Atomic__Group_0__2_in_rule__Atomic__Group_0__15489);
             rule__Atomic__Group_0__2();
 
             state._fsp--;
@@ -7297,23 +7319,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_0__1__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2747:1: rule__Atomic__Group_0__1__Impl : ( ( rule__Atomic__ValueAssignment_0_1 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2756:1: rule__Atomic__Group_0__1__Impl : ( ( rule__Atomic__ValueAssignment_0_1 ) ) ;
     public final void rule__Atomic__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2751:1: ( ( ( rule__Atomic__ValueAssignment_0_1 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2752:1: ( ( rule__Atomic__ValueAssignment_0_1 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2760:1: ( ( ( rule__Atomic__ValueAssignment_0_1 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2761:1: ( ( rule__Atomic__ValueAssignment_0_1 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2752:1: ( ( rule__Atomic__ValueAssignment_0_1 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2753:1: ( rule__Atomic__ValueAssignment_0_1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2761:1: ( ( rule__Atomic__ValueAssignment_0_1 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2762:1: ( rule__Atomic__ValueAssignment_0_1 )
             {
              before(grammarAccess.getAtomicAccess().getValueAssignment_0_1()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2754:1: ( rule__Atomic__ValueAssignment_0_1 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2754:2: rule__Atomic__ValueAssignment_0_1
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2763:1: ( rule__Atomic__ValueAssignment_0_1 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2763:2: rule__Atomic__ValueAssignment_0_1
             {
-            pushFollow(FOLLOW_rule__Atomic__ValueAssignment_0_1_in_rule__Atomic__Group_0__1__Impl5485);
+            pushFollow(FOLLOW_rule__Atomic__ValueAssignment_0_1_in_rule__Atomic__Group_0__1__Impl5516);
             rule__Atomic__ValueAssignment_0_1();
 
             state._fsp--;
@@ -7344,16 +7366,16 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_0__2"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2764:1: rule__Atomic__Group_0__2 : rule__Atomic__Group_0__2__Impl ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2773:1: rule__Atomic__Group_0__2 : rule__Atomic__Group_0__2__Impl ;
     public final void rule__Atomic__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2768:1: ( rule__Atomic__Group_0__2__Impl )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2769:2: rule__Atomic__Group_0__2__Impl
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2777:1: ( rule__Atomic__Group_0__2__Impl )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2778:2: rule__Atomic__Group_0__2__Impl
             {
-            pushFollow(FOLLOW_rule__Atomic__Group_0__2__Impl_in_rule__Atomic__Group_0__25515);
+            pushFollow(FOLLOW_rule__Atomic__Group_0__2__Impl_in_rule__Atomic__Group_0__25546);
             rule__Atomic__Group_0__2__Impl();
 
             state._fsp--;
@@ -7377,20 +7399,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__Group_0__2__Impl"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2775:1: rule__Atomic__Group_0__2__Impl : ( ')' ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2784:1: rule__Atomic__Group_0__2__Impl : ( ')' ) ;
     public final void rule__Atomic__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2779:1: ( ( ')' ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2780:1: ( ')' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2788:1: ( ( ')' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2789:1: ( ')' )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2780:1: ( ')' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2781:1: ')'
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2789:1: ( ')' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2790:1: ')'
             {
              before(grammarAccess.getAtomicAccess().getRightParenthesisKeyword_0_2()); 
-            match(input,16,FOLLOW_16_in_rule__Atomic__Group_0__2__Impl5543); 
+            match(input,16,FOLLOW_16_in_rule__Atomic__Group_0__2__Impl5574); 
              after(grammarAccess.getAtomicAccess().getRightParenthesisKeyword_0_2()); 
 
             }
@@ -7414,20 +7436,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Code__DeclarationsAssignment_0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2801:1: rule__Code__DeclarationsAssignment_0 : ( ruleDeclaration ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2810:1: rule__Code__DeclarationsAssignment_0 : ( ruleDeclaration ) ;
     public final void rule__Code__DeclarationsAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2805:1: ( ( ruleDeclaration ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2806:1: ( ruleDeclaration )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2814:1: ( ( ruleDeclaration ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2815:1: ( ruleDeclaration )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2806:1: ( ruleDeclaration )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2807:1: ruleDeclaration
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2815:1: ( ruleDeclaration )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2816:1: ruleDeclaration
             {
              before(grammarAccess.getCodeAccess().getDeclarationsDeclarationParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleDeclaration_in_rule__Code__DeclarationsAssignment_05585);
+            pushFollow(FOLLOW_ruleDeclaration_in_rule__Code__DeclarationsAssignment_05616);
             ruleDeclaration();
 
             state._fsp--;
@@ -7455,20 +7477,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Code__FunctionsAssignment_1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2816:1: rule__Code__FunctionsAssignment_1 : ( ruleFunction ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2825:1: rule__Code__FunctionsAssignment_1 : ( ruleFunction ) ;
     public final void rule__Code__FunctionsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2820:1: ( ( ruleFunction ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2821:1: ( ruleFunction )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2829:1: ( ( ruleFunction ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2830:1: ( ruleFunction )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2821:1: ( ruleFunction )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2822:1: ruleFunction
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2830:1: ( ruleFunction )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2831:1: ruleFunction
             {
              before(grammarAccess.getCodeAccess().getFunctionsFunctionParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleFunction_in_rule__Code__FunctionsAssignment_15616);
+            pushFollow(FOLLOW_ruleFunction_in_rule__Code__FunctionsAssignment_15647);
             ruleFunction();
 
             state._fsp--;
@@ -7496,20 +7518,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Function__TypeAssignment_0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2831:1: rule__Function__TypeAssignment_0 : ( ruleType ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2840:1: rule__Function__TypeAssignment_0 : ( ruleType ) ;
     public final void rule__Function__TypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2835:1: ( ( ruleType ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2836:1: ( ruleType )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2844:1: ( ( ruleType ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2845:1: ( ruleType )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2836:1: ( ruleType )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2837:1: ruleType
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2845:1: ( ruleType )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2846:1: ruleType
             {
              before(grammarAccess.getFunctionAccess().getTypeTypeParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleType_in_rule__Function__TypeAssignment_05647);
+            pushFollow(FOLLOW_ruleType_in_rule__Function__TypeAssignment_05678);
             ruleType();
 
             state._fsp--;
@@ -7537,20 +7559,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Function__IdAssignment_1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2846:1: rule__Function__IdAssignment_1 : ( RULE_ID ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2855:1: rule__Function__IdAssignment_1 : ( RULE_ID ) ;
     public final void rule__Function__IdAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2850:1: ( ( RULE_ID ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2851:1: ( RULE_ID )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2859:1: ( ( RULE_ID ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2860:1: ( RULE_ID )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2851:1: ( RULE_ID )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2852:1: RULE_ID
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2860:1: ( RULE_ID )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2861:1: RULE_ID
             {
              before(grammarAccess.getFunctionAccess().getIdIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Function__IdAssignment_15678); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Function__IdAssignment_15709); 
              after(grammarAccess.getFunctionAccess().getIdIDTerminalRuleCall_1_0()); 
 
             }
@@ -7574,20 +7596,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Function__ParamAssignment_3"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2861:1: rule__Function__ParamAssignment_3 : ( ruleFuncParam ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2870:1: rule__Function__ParamAssignment_3 : ( ruleFuncParam ) ;
     public final void rule__Function__ParamAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2865:1: ( ( ruleFuncParam ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2866:1: ( ruleFuncParam )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2874:1: ( ( ruleFuncParam ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2875:1: ( ruleFuncParam )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2866:1: ( ruleFuncParam )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2867:1: ruleFuncParam
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2875:1: ( ruleFuncParam )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2876:1: ruleFuncParam
             {
              before(grammarAccess.getFunctionAccess().getParamFuncParamParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleFuncParam_in_rule__Function__ParamAssignment_35709);
+            pushFollow(FOLLOW_ruleFuncParam_in_rule__Function__ParamAssignment_35740);
             ruleFuncParam();
 
             state._fsp--;
@@ -7615,20 +7637,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Function__BlockAssignment_5"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2876:1: rule__Function__BlockAssignment_5 : ( ruleBlock ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2885:1: rule__Function__BlockAssignment_5 : ( ruleBlock ) ;
     public final void rule__Function__BlockAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2880:1: ( ( ruleBlock ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2881:1: ( ruleBlock )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2889:1: ( ( ruleBlock ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2890:1: ( ruleBlock )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2881:1: ( ruleBlock )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2882:1: ruleBlock
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2890:1: ( ruleBlock )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2891:1: ruleBlock
             {
              before(grammarAccess.getFunctionAccess().getBlockBlockParserRuleCall_5_0()); 
-            pushFollow(FOLLOW_ruleBlock_in_rule__Function__BlockAssignment_55740);
+            pushFollow(FOLLOW_ruleBlock_in_rule__Function__BlockAssignment_55771);
             ruleBlock();
 
             state._fsp--;
@@ -7656,20 +7678,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FuncParam__TypeAssignment_0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2891:1: rule__FuncParam__TypeAssignment_0 : ( ruleType ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2900:1: rule__FuncParam__TypeAssignment_0 : ( ruleType ) ;
     public final void rule__FuncParam__TypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2895:1: ( ( ruleType ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2896:1: ( ruleType )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2904:1: ( ( ruleType ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2905:1: ( ruleType )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2896:1: ( ruleType )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2897:1: ruleType
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2905:1: ( ruleType )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2906:1: ruleType
             {
              before(grammarAccess.getFuncParamAccess().getTypeTypeParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleType_in_rule__FuncParam__TypeAssignment_05771);
+            pushFollow(FOLLOW_ruleType_in_rule__FuncParam__TypeAssignment_05802);
             ruleType();
 
             state._fsp--;
@@ -7697,20 +7719,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FuncParam__IdAssignment_1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2906:1: rule__FuncParam__IdAssignment_1 : ( RULE_ID ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2915:1: rule__FuncParam__IdAssignment_1 : ( RULE_ID ) ;
     public final void rule__FuncParam__IdAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2910:1: ( ( RULE_ID ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2911:1: ( RULE_ID )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2919:1: ( ( RULE_ID ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2920:1: ( RULE_ID )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2911:1: ( RULE_ID )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2912:1: RULE_ID
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2920:1: ( RULE_ID )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2921:1: RULE_ID
             {
              before(grammarAccess.getFuncParamAccess().getIdIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__FuncParam__IdAssignment_15802); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__FuncParam__IdAssignment_15833); 
              after(grammarAccess.getFuncParamAccess().getIdIDTerminalRuleCall_1_0()); 
 
             }
@@ -7734,20 +7756,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FuncParam__NextAssignment_2_1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2921:1: rule__FuncParam__NextAssignment_2_1 : ( ruleFuncParam ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2930:1: rule__FuncParam__NextAssignment_2_1 : ( ruleFuncParam ) ;
     public final void rule__FuncParam__NextAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2925:1: ( ( ruleFuncParam ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2926:1: ( ruleFuncParam )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2934:1: ( ( ruleFuncParam ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2935:1: ( ruleFuncParam )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2926:1: ( ruleFuncParam )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2927:1: ruleFuncParam
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2935:1: ( ruleFuncParam )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2936:1: ruleFuncParam
             {
              before(grammarAccess.getFuncParamAccess().getNextFuncParamParserRuleCall_2_1_0()); 
-            pushFollow(FOLLOW_ruleFuncParam_in_rule__FuncParam__NextAssignment_2_15833);
+            pushFollow(FOLLOW_ruleFuncParam_in_rule__FuncParam__NextAssignment_2_15864);
             ruleFuncParam();
 
             state._fsp--;
@@ -7775,20 +7797,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Block__StatementAssignment_1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2936:1: rule__Block__StatementAssignment_1 : ( ruleStatement ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2945:1: rule__Block__StatementAssignment_1 : ( ruleStatement ) ;
     public final void rule__Block__StatementAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2940:1: ( ( ruleStatement ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2941:1: ( ruleStatement )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2949:1: ( ( ruleStatement ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2950:1: ( ruleStatement )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2941:1: ( ruleStatement )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2942:1: ruleStatement
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2950:1: ( ruleStatement )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2951:1: ruleStatement
             {
              before(grammarAccess.getBlockAccess().getStatementStatementParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleStatement_in_rule__Block__StatementAssignment_15864);
+            pushFollow(FOLLOW_ruleStatement_in_rule__Block__StatementAssignment_15895);
             ruleStatement();
 
             state._fsp--;
@@ -7815,67 +7837,26 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Block__StatementAssignment_1"
 
 
-    // $ANTLR start "rule__Statement__DeclarationsAssignment_1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2951:1: rule__Statement__DeclarationsAssignment_1 : ( ruleDeclaration ) ;
-    public final void rule__Statement__DeclarationsAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Statement__CommandsAssignment_1"
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2960:1: rule__Statement__CommandsAssignment_1 : ( ruleCommand ) ;
+    public final void rule__Statement__CommandsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2955:1: ( ( ruleDeclaration ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2956:1: ( ruleDeclaration )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2964:1: ( ( ruleCommand ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2965:1: ( ruleCommand )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2956:1: ( ruleDeclaration )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2957:1: ruleDeclaration
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2965:1: ( ruleCommand )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2966:1: ruleCommand
             {
-             before(grammarAccess.getStatementAccess().getDeclarationsDeclarationParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleDeclaration_in_rule__Statement__DeclarationsAssignment_15895);
-            ruleDeclaration();
-
-            state._fsp--;
-
-             after(grammarAccess.getStatementAccess().getDeclarationsDeclarationParserRuleCall_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Statement__DeclarationsAssignment_1"
-
-
-    // $ANTLR start "rule__Statement__CommandsAssignment_2"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2966:1: rule__Statement__CommandsAssignment_2 : ( ruleCommand ) ;
-    public final void rule__Statement__CommandsAssignment_2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2970:1: ( ( ruleCommand ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2971:1: ( ruleCommand )
-            {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2971:1: ( ruleCommand )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2972:1: ruleCommand
-            {
-             before(grammarAccess.getStatementAccess().getCommandsCommandParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleCommand_in_rule__Statement__CommandsAssignment_25926);
+             before(grammarAccess.getStatementAccess().getCommandsCommandParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_ruleCommand_in_rule__Statement__CommandsAssignment_15926);
             ruleCommand();
 
             state._fsp--;
 
-             after(grammarAccess.getStatementAccess().getCommandsCommandParserRuleCall_2_0()); 
+             after(grammarAccess.getStatementAccess().getCommandsCommandParserRuleCall_1_0()); 
 
             }
 
@@ -7894,21 +7875,21 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Statement__CommandsAssignment_2"
+    // $ANTLR end "rule__Statement__CommandsAssignment_1"
 
 
     // $ANTLR start "rule__IfCommand__ExprAssignment_2"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2981:1: rule__IfCommand__ExprAssignment_2 : ( ruleExpr ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2975:1: rule__IfCommand__ExprAssignment_2 : ( ruleExpr ) ;
     public final void rule__IfCommand__ExprAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2985:1: ( ( ruleExpr ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2986:1: ( ruleExpr )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2979:1: ( ( ruleExpr ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2980:1: ( ruleExpr )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2986:1: ( ruleExpr )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2987:1: ruleExpr
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2980:1: ( ruleExpr )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2981:1: ruleExpr
             {
              before(grammarAccess.getIfCommandAccess().getExprExprParserRuleCall_2_0()); 
             pushFollow(FOLLOW_ruleExpr_in_rule__IfCommand__ExprAssignment_25957);
@@ -7939,17 +7920,17 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfCommand__IfBlockAssignment_4"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2996:1: rule__IfCommand__IfBlockAssignment_4 : ( ruleBlock ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2990:1: rule__IfCommand__IfBlockAssignment_4 : ( ruleBlock ) ;
     public final void rule__IfCommand__IfBlockAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3000:1: ( ( ruleBlock ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3001:1: ( ruleBlock )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2994:1: ( ( ruleBlock ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2995:1: ( ruleBlock )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3001:1: ( ruleBlock )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3002:1: ruleBlock
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2995:1: ( ruleBlock )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:2996:1: ruleBlock
             {
              before(grammarAccess.getIfCommandAccess().getIfBlockBlockParserRuleCall_4_0()); 
             pushFollow(FOLLOW_ruleBlock_in_rule__IfCommand__IfBlockAssignment_45988);
@@ -7980,17 +7961,17 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfCommand__ElseBlockAssignment_5_1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3011:1: rule__IfCommand__ElseBlockAssignment_5_1 : ( ruleBlock ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3005:1: rule__IfCommand__ElseBlockAssignment_5_1 : ( ruleBlock ) ;
     public final void rule__IfCommand__ElseBlockAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3015:1: ( ( ruleBlock ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3016:1: ( ruleBlock )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3009:1: ( ( ruleBlock ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3010:1: ( ruleBlock )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3016:1: ( ruleBlock )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3017:1: ruleBlock
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3010:1: ( ruleBlock )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3011:1: ruleBlock
             {
              before(grammarAccess.getIfCommandAccess().getElseBlockBlockParserRuleCall_5_1_0()); 
             pushFollow(FOLLOW_ruleBlock_in_rule__IfCommand__ElseBlockAssignment_5_16019);
@@ -8021,17 +8002,17 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WhileCommand__ExprAssignment_2"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3026:1: rule__WhileCommand__ExprAssignment_2 : ( ruleExpr ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3020:1: rule__WhileCommand__ExprAssignment_2 : ( ruleExpr ) ;
     public final void rule__WhileCommand__ExprAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3030:1: ( ( ruleExpr ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3031:1: ( ruleExpr )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3024:1: ( ( ruleExpr ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3025:1: ( ruleExpr )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3031:1: ( ruleExpr )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3032:1: ruleExpr
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3025:1: ( ruleExpr )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3026:1: ruleExpr
             {
              before(grammarAccess.getWhileCommandAccess().getExprExprParserRuleCall_2_0()); 
             pushFollow(FOLLOW_ruleExpr_in_rule__WhileCommand__ExprAssignment_26050);
@@ -8062,17 +8043,17 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WhileCommand__WhileBlockAssignment_4"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3041:1: rule__WhileCommand__WhileBlockAssignment_4 : ( ruleBlock ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3035:1: rule__WhileCommand__WhileBlockAssignment_4 : ( ruleBlock ) ;
     public final void rule__WhileCommand__WhileBlockAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3045:1: ( ( ruleBlock ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3046:1: ( ruleBlock )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3039:1: ( ( ruleBlock ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3040:1: ( ruleBlock )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3046:1: ( ruleBlock )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3047:1: ruleBlock
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3040:1: ( ruleBlock )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3041:1: ruleBlock
             {
              before(grammarAccess.getWhileCommandAccess().getWhileBlockBlockParserRuleCall_4_0()); 
             pushFollow(FOLLOW_ruleBlock_in_rule__WhileCommand__WhileBlockAssignment_46081);
@@ -8103,17 +8084,17 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ReturnCommand__ExprAssignment_1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3056:1: rule__ReturnCommand__ExprAssignment_1 : ( ruleExpr ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3050:1: rule__ReturnCommand__ExprAssignment_1 : ( ruleExpr ) ;
     public final void rule__ReturnCommand__ExprAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3060:1: ( ( ruleExpr ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3061:1: ( ruleExpr )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3054:1: ( ( ruleExpr ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3055:1: ( ruleExpr )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3061:1: ( ruleExpr )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3062:1: ruleExpr
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3055:1: ( ruleExpr )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3056:1: ruleExpr
             {
              before(grammarAccess.getReturnCommandAccess().getExprExprParserRuleCall_1_0()); 
             pushFollow(FOLLOW_ruleExpr_in_rule__ReturnCommand__ExprAssignment_16112);
@@ -8144,17 +8125,17 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Declaration__TypeAssignment_0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3071:1: rule__Declaration__TypeAssignment_0 : ( ruleType ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3065:1: rule__Declaration__TypeAssignment_0 : ( ruleType ) ;
     public final void rule__Declaration__TypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3075:1: ( ( ruleType ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3076:1: ( ruleType )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3069:1: ( ( ruleType ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3070:1: ( ruleType )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3076:1: ( ruleType )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3077:1: ruleType
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3070:1: ( ruleType )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3071:1: ruleType
             {
              before(grammarAccess.getDeclarationAccess().getTypeTypeParserRuleCall_0_0()); 
             pushFollow(FOLLOW_ruleType_in_rule__Declaration__TypeAssignment_06143);
@@ -8185,17 +8166,17 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Declaration__ValueAssignment_1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3086:1: rule__Declaration__ValueAssignment_1 : ( ruleRDeclaration ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3080:1: rule__Declaration__ValueAssignment_1 : ( ruleRDeclaration ) ;
     public final void rule__Declaration__ValueAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3090:1: ( ( ruleRDeclaration ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3091:1: ( ruleRDeclaration )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3084:1: ( ( ruleRDeclaration ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3085:1: ( ruleRDeclaration )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3091:1: ( ruleRDeclaration )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3092:1: ruleRDeclaration
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3085:1: ( ruleRDeclaration )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3086:1: ruleRDeclaration
             {
              before(grammarAccess.getDeclarationAccess().getValueRDeclarationParserRuleCall_1_0()); 
             pushFollow(FOLLOW_ruleRDeclaration_in_rule__Declaration__ValueAssignment_16174);
@@ -8225,21 +8206,62 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Declaration__ValueAssignment_1"
 
 
+    // $ANTLR start "rule__KDeclaration__DeclarationAssignment_0"
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3095:1: rule__KDeclaration__DeclarationAssignment_0 : ( ruleRDeclaration ) ;
+    public final void rule__KDeclaration__DeclarationAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3099:1: ( ( ruleRDeclaration ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3100:1: ( ruleRDeclaration )
+            {
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3100:1: ( ruleRDeclaration )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3101:1: ruleRDeclaration
+            {
+             before(grammarAccess.getKDeclarationAccess().getDeclarationRDeclarationParserRuleCall_0_0()); 
+            pushFollow(FOLLOW_ruleRDeclaration_in_rule__KDeclaration__DeclarationAssignment_06205);
+            ruleRDeclaration();
+
+            state._fsp--;
+
+             after(grammarAccess.getKDeclarationAccess().getDeclarationRDeclarationParserRuleCall_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__KDeclaration__DeclarationAssignment_0"
+
+
     // $ANTLR start "rule__RDeclaration__IdAssignment_0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3101:1: rule__RDeclaration__IdAssignment_0 : ( ruleIDDeclaration ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3110:1: rule__RDeclaration__IdAssignment_0 : ( ruleIDDeclaration ) ;
     public final void rule__RDeclaration__IdAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3105:1: ( ( ruleIDDeclaration ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3106:1: ( ruleIDDeclaration )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3114:1: ( ( ruleIDDeclaration ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3115:1: ( ruleIDDeclaration )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3106:1: ( ruleIDDeclaration )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3107:1: ruleIDDeclaration
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3115:1: ( ruleIDDeclaration )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3116:1: ruleIDDeclaration
             {
              before(grammarAccess.getRDeclarationAccess().getIdIDDeclarationParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleIDDeclaration_in_rule__RDeclaration__IdAssignment_06205);
+            pushFollow(FOLLOW_ruleIDDeclaration_in_rule__RDeclaration__IdAssignment_06236);
             ruleIDDeclaration();
 
             state._fsp--;
@@ -8267,20 +8289,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RDeclaration__NextAssignment_1_2"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3116:1: rule__RDeclaration__NextAssignment_1_2 : ( ruleRDeclaration ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3125:1: rule__RDeclaration__NextAssignment_1_2 : ( ruleRDeclaration ) ;
     public final void rule__RDeclaration__NextAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3120:1: ( ( ruleRDeclaration ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3121:1: ( ruleRDeclaration )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3129:1: ( ( ruleRDeclaration ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3130:1: ( ruleRDeclaration )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3121:1: ( ruleRDeclaration )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3122:1: ruleRDeclaration
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3130:1: ( ruleRDeclaration )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3131:1: ruleRDeclaration
             {
              before(grammarAccess.getRDeclarationAccess().getNextRDeclarationParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_ruleRDeclaration_in_rule__RDeclaration__NextAssignment_1_26236);
+            pushFollow(FOLLOW_ruleRDeclaration_in_rule__RDeclaration__NextAssignment_1_26267);
             ruleRDeclaration();
 
             state._fsp--;
@@ -8308,20 +8330,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IDDeclaration__IdAssignment_0"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3131:1: rule__IDDeclaration__IdAssignment_0 : ( RULE_ID ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3140:1: rule__IDDeclaration__IdAssignment_0 : ( RULE_ID ) ;
     public final void rule__IDDeclaration__IdAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3135:1: ( ( RULE_ID ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3136:1: ( RULE_ID )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3144:1: ( ( RULE_ID ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3145:1: ( RULE_ID )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3136:1: ( RULE_ID )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3137:1: RULE_ID
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3145:1: ( RULE_ID )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3146:1: RULE_ID
             {
              before(grammarAccess.getIDDeclarationAccess().getIdIDTerminalRuleCall_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__IDDeclaration__IdAssignment_06267); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__IDDeclaration__IdAssignment_06298); 
              after(grammarAccess.getIDDeclarationAccess().getIdIDTerminalRuleCall_0_0()); 
 
             }
@@ -8345,20 +8367,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IDDeclaration__ValueAssignment_1_1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3146:1: rule__IDDeclaration__ValueAssignment_1_1 : ( ruleExpr ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3155:1: rule__IDDeclaration__ValueAssignment_1_1 : ( ruleExpr ) ;
     public final void rule__IDDeclaration__ValueAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3150:1: ( ( ruleExpr ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3151:1: ( ruleExpr )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3159:1: ( ( ruleExpr ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3160:1: ( ruleExpr )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3151:1: ( ruleExpr )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3152:1: ruleExpr
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3160:1: ( ruleExpr )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3161:1: ruleExpr
             {
              before(grammarAccess.getIDDeclarationAccess().getValueExprParserRuleCall_1_1_0()); 
-            pushFollow(FOLLOW_ruleExpr_in_rule__IDDeclaration__ValueAssignment_1_16298);
+            pushFollow(FOLLOW_ruleExpr_in_rule__IDDeclaration__ValueAssignment_1_16329);
             ruleExpr();
 
             state._fsp--;
@@ -8386,23 +8408,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expr__OperatorAssignment_1_1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3161:1: rule__Expr__OperatorAssignment_1_1 : ( ( rule__Expr__OperatorAlternatives_1_1_0 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3170:1: rule__Expr__OperatorAssignment_1_1 : ( ( rule__Expr__OperatorAlternatives_1_1_0 ) ) ;
     public final void rule__Expr__OperatorAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3165:1: ( ( ( rule__Expr__OperatorAlternatives_1_1_0 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3166:1: ( ( rule__Expr__OperatorAlternatives_1_1_0 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3174:1: ( ( ( rule__Expr__OperatorAlternatives_1_1_0 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3175:1: ( ( rule__Expr__OperatorAlternatives_1_1_0 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3166:1: ( ( rule__Expr__OperatorAlternatives_1_1_0 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3167:1: ( rule__Expr__OperatorAlternatives_1_1_0 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3175:1: ( ( rule__Expr__OperatorAlternatives_1_1_0 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3176:1: ( rule__Expr__OperatorAlternatives_1_1_0 )
             {
              before(grammarAccess.getExprAccess().getOperatorAlternatives_1_1_0()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3168:1: ( rule__Expr__OperatorAlternatives_1_1_0 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3168:2: rule__Expr__OperatorAlternatives_1_1_0
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3177:1: ( rule__Expr__OperatorAlternatives_1_1_0 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3177:2: rule__Expr__OperatorAlternatives_1_1_0
             {
-            pushFollow(FOLLOW_rule__Expr__OperatorAlternatives_1_1_0_in_rule__Expr__OperatorAssignment_1_16329);
+            pushFollow(FOLLOW_rule__Expr__OperatorAlternatives_1_1_0_in_rule__Expr__OperatorAssignment_1_16360);
             rule__Expr__OperatorAlternatives_1_1_0();
 
             state._fsp--;
@@ -8433,20 +8455,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expr__RightAssignment_1_2"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3177:1: rule__Expr__RightAssignment_1_2 : ( ruleTerm ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3186:1: rule__Expr__RightAssignment_1_2 : ( ruleTerm ) ;
     public final void rule__Expr__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3181:1: ( ( ruleTerm ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3182:1: ( ruleTerm )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3190:1: ( ( ruleTerm ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3191:1: ( ruleTerm )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3182:1: ( ruleTerm )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3183:1: ruleTerm
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3191:1: ( ruleTerm )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3192:1: ruleTerm
             {
              before(grammarAccess.getExprAccess().getRightTermParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_ruleTerm_in_rule__Expr__RightAssignment_1_26362);
+            pushFollow(FOLLOW_ruleTerm_in_rule__Expr__RightAssignment_1_26393);
             ruleTerm();
 
             state._fsp--;
@@ -8474,23 +8496,23 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Term__OperatorAssignment_1_1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3192:1: rule__Term__OperatorAssignment_1_1 : ( ( rule__Term__OperatorAlternatives_1_1_0 ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3201:1: rule__Term__OperatorAssignment_1_1 : ( ( rule__Term__OperatorAlternatives_1_1_0 ) ) ;
     public final void rule__Term__OperatorAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3196:1: ( ( ( rule__Term__OperatorAlternatives_1_1_0 ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3197:1: ( ( rule__Term__OperatorAlternatives_1_1_0 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3205:1: ( ( ( rule__Term__OperatorAlternatives_1_1_0 ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3206:1: ( ( rule__Term__OperatorAlternatives_1_1_0 ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3197:1: ( ( rule__Term__OperatorAlternatives_1_1_0 ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3198:1: ( rule__Term__OperatorAlternatives_1_1_0 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3206:1: ( ( rule__Term__OperatorAlternatives_1_1_0 ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3207:1: ( rule__Term__OperatorAlternatives_1_1_0 )
             {
              before(grammarAccess.getTermAccess().getOperatorAlternatives_1_1_0()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3199:1: ( rule__Term__OperatorAlternatives_1_1_0 )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3199:2: rule__Term__OperatorAlternatives_1_1_0
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3208:1: ( rule__Term__OperatorAlternatives_1_1_0 )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3208:2: rule__Term__OperatorAlternatives_1_1_0
             {
-            pushFollow(FOLLOW_rule__Term__OperatorAlternatives_1_1_0_in_rule__Term__OperatorAssignment_1_16393);
+            pushFollow(FOLLOW_rule__Term__OperatorAlternatives_1_1_0_in_rule__Term__OperatorAssignment_1_16424);
             rule__Term__OperatorAlternatives_1_1_0();
 
             state._fsp--;
@@ -8521,20 +8543,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Term__RightAssignment_1_2"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3208:1: rule__Term__RightAssignment_1_2 : ( ruleFactor ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3217:1: rule__Term__RightAssignment_1_2 : ( ruleFactor ) ;
     public final void rule__Term__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3212:1: ( ( ruleFactor ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3213:1: ( ruleFactor )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3221:1: ( ( ruleFactor ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3222:1: ( ruleFactor )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3213:1: ( ruleFactor )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3214:1: ruleFactor
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3222:1: ( ruleFactor )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3223:1: ruleFactor
             {
              before(grammarAccess.getTermAccess().getRightFactorParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_ruleFactor_in_rule__Term__RightAssignment_1_26426);
+            pushFollow(FOLLOW_ruleFactor_in_rule__Term__RightAssignment_1_26457);
             ruleFactor();
 
             state._fsp--;
@@ -8562,24 +8584,24 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__OperatorAssignment_1_1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3223:1: rule__Factor__OperatorAssignment_1_1 : ( ( '^' ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3232:1: rule__Factor__OperatorAssignment_1_1 : ( ( '^' ) ) ;
     public final void rule__Factor__OperatorAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3227:1: ( ( ( '^' ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3228:1: ( ( '^' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3236:1: ( ( ( '^' ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3237:1: ( ( '^' ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3228:1: ( ( '^' ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3229:1: ( '^' )
-            {
-             before(grammarAccess.getFactorAccess().getOperatorCircumflexAccentKeyword_1_1_0()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3230:1: ( '^' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3231:1: '^'
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3237:1: ( ( '^' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3238:1: ( '^' )
             {
              before(grammarAccess.getFactorAccess().getOperatorCircumflexAccentKeyword_1_1_0()); 
-            match(input,26,FOLLOW_26_in_rule__Factor__OperatorAssignment_1_16462); 
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3239:1: ( '^' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3240:1: '^'
+            {
+             before(grammarAccess.getFactorAccess().getOperatorCircumflexAccentKeyword_1_1_0()); 
+            match(input,26,FOLLOW_26_in_rule__Factor__OperatorAssignment_1_16493); 
              after(grammarAccess.getFactorAccess().getOperatorCircumflexAccentKeyword_1_1_0()); 
 
             }
@@ -8607,20 +8629,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__RightAssignment_1_2"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3246:1: rule__Factor__RightAssignment_1_2 : ( ruleAtomic ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3255:1: rule__Factor__RightAssignment_1_2 : ( ruleAtomic ) ;
     public final void rule__Factor__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3250:1: ( ( ruleAtomic ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3251:1: ( ruleAtomic )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3259:1: ( ( ruleAtomic ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3260:1: ( ruleAtomic )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3251:1: ( ruleAtomic )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3252:1: ruleAtomic
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3260:1: ( ruleAtomic )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3261:1: ruleAtomic
             {
              before(grammarAccess.getFactorAccess().getRightAtomicParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_ruleAtomic_in_rule__Factor__RightAssignment_1_26501);
+            pushFollow(FOLLOW_ruleAtomic_in_rule__Factor__RightAssignment_1_26532);
             ruleAtomic();
 
             state._fsp--;
@@ -8648,20 +8670,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__ValueAssignment_0_1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3261:1: rule__Atomic__ValueAssignment_0_1 : ( ruleExpr ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3270:1: rule__Atomic__ValueAssignment_0_1 : ( ruleExpr ) ;
     public final void rule__Atomic__ValueAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3265:1: ( ( ruleExpr ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3266:1: ( ruleExpr )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3274:1: ( ( ruleExpr ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3275:1: ( ruleExpr )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3266:1: ( ruleExpr )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3267:1: ruleExpr
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3275:1: ( ruleExpr )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3276:1: ruleExpr
             {
              before(grammarAccess.getAtomicAccess().getValueExprParserRuleCall_0_1_0()); 
-            pushFollow(FOLLOW_ruleExpr_in_rule__Atomic__ValueAssignment_0_16532);
+            pushFollow(FOLLOW_ruleExpr_in_rule__Atomic__ValueAssignment_0_16563);
             ruleExpr();
 
             state._fsp--;
@@ -8689,20 +8711,20 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atomic__ResultAssignment_1"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3276:1: rule__Atomic__ResultAssignment_1 : ( ruleElement ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3285:1: rule__Atomic__ResultAssignment_1 : ( ruleElement ) ;
     public final void rule__Atomic__ResultAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3280:1: ( ( ruleElement ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3281:1: ( ruleElement )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3289:1: ( ( ruleElement ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3290:1: ( ruleElement )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3281:1: ( ruleElement )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3282:1: ruleElement
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3290:1: ( ruleElement )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3291:1: ruleElement
             {
              before(grammarAccess.getAtomicAccess().getResultElementParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleElement_in_rule__Atomic__ResultAssignment_16563);
+            pushFollow(FOLLOW_ruleElement_in_rule__Atomic__ResultAssignment_16594);
             ruleElement();
 
             state._fsp--;
@@ -8730,24 +8752,24 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Type__ValueAssignment"
-    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3291:1: rule__Type__ValueAssignment : ( ( 'var' ) ) ;
+    // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3300:1: rule__Type__ValueAssignment : ( ( 'var' ) ) ;
     public final void rule__Type__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3295:1: ( ( ( 'var' ) ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3296:1: ( ( 'var' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3304:1: ( ( ( 'var' ) ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3305:1: ( ( 'var' ) )
             {
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3296:1: ( ( 'var' ) )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3297:1: ( 'var' )
-            {
-             before(grammarAccess.getTypeAccess().getValueVarKeyword_0()); 
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3298:1: ( 'var' )
-            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3299:1: 'var'
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3305:1: ( ( 'var' ) )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3306:1: ( 'var' )
             {
              before(grammarAccess.getTypeAccess().getValueVarKeyword_0()); 
-            match(input,27,FOLLOW_27_in_rule__Type__ValueAssignment6599); 
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3307:1: ( 'var' )
+            // ../br.poli.ecomp.compiladores.ui/src-gen/br/poli/ecomp/compiladores/ui/contentassist/antlr/internal/InternalNotC.g:3308:1: 'var'
+            {
+             before(grammarAccess.getTypeAccess().getValueVarKeyword_0()); 
+            match(input,27,FOLLOW_27_in_rule__Type__ValueAssignment6630); 
              after(grammarAccess.getTypeAccess().getValueVarKeyword_0()); 
 
             }
@@ -8808,227 +8830,228 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleDeclaration_in_entryRuleDeclaration601 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleDeclaration608 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Declaration__Group__0_in_ruleDeclaration634 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRDeclaration_in_entryRuleRDeclaration661 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRDeclaration668 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RDeclaration__Group__0_in_ruleRDeclaration694 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIDDeclaration_in_entryRuleIDDeclaration721 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleIDDeclaration728 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__IDDeclaration__Group__0_in_ruleIDDeclaration754 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpr_in_entryRuleExpr781 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExpr788 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Expr__Group__0_in_ruleExpr814 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTerm_in_entryRuleTerm841 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTerm848 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Term__Group__0_in_ruleTerm874 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFactor_in_entryRuleFactor901 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFactor908 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Factor__Group__0_in_ruleFactor934 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtomic_in_entryRuleAtomic961 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAtomic968 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__Alternatives_in_ruleAtomic994 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleElement_in_entryRuleElement1021 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleElement1028 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Element__Alternatives_in_ruleElement1054 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleType_in_entryRuleType1081 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleType1088 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Type__ValueAssignment_in_ruleType1114 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIfCommand_in_rule__Command__Alternatives1150 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWhileCommand_in_rule__Command__Alternatives1167 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReturnCommand_in_rule__Command__Alternatives1184 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Command__Group_3__0_in_rule__Command__Alternatives1201 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_rule__Expr__OperatorAlternatives_1_1_01235 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_rule__Expr__OperatorAlternatives_1_1_01255 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_rule__Term__OperatorAlternatives_1_1_01290 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_rule__Term__OperatorAlternatives_1_1_01310 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_0__0_in_rule__Atomic__Alternatives1344 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__ResultAssignment_1_in_rule__Atomic__Alternatives1362 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Element__Alternatives1395 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Element__Alternatives1412 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Code__Group__0__Impl_in_rule__Code__Group__01442 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__Code__Group__1_in_rule__Code__Group__01445 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Code__DeclarationsAssignment_0_in_rule__Code__Group__0__Impl1472 = new BitSet(new long[]{0x0000000008000002L});
-    public static final BitSet FOLLOW_rule__Code__Group__1__Impl_in_rule__Code__Group__11503 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Code__FunctionsAssignment_1_in_rule__Code__Group__1__Impl1530 = new BitSet(new long[]{0x0000000008000002L});
-    public static final BitSet FOLLOW_rule__Function__Group__0__Impl_in_rule__Function__Group__01565 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Function__Group__1_in_rule__Function__Group__01568 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Function__TypeAssignment_0_in_rule__Function__Group__0__Impl1595 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Function__Group__1__Impl_in_rule__Function__Group__11625 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_rule__Function__Group__2_in_rule__Function__Group__11628 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Function__IdAssignment_1_in_rule__Function__Group__1__Impl1655 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Function__Group__2__Impl_in_rule__Function__Group__21685 = new BitSet(new long[]{0x0000000008010000L});
-    public static final BitSet FOLLOW_rule__Function__Group__3_in_rule__Function__Group__21688 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Function__Group__2__Impl1716 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Function__Group__3__Impl_in_rule__Function__Group__31747 = new BitSet(new long[]{0x0000000008010000L});
-    public static final BitSet FOLLOW_rule__Function__Group__4_in_rule__Function__Group__31750 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Function__ParamAssignment_3_in_rule__Function__Group__3__Impl1777 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Function__Group__4__Impl_in_rule__Function__Group__41808 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_rule__Function__Group__5_in_rule__Function__Group__41811 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__Function__Group__4__Impl1839 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Function__Group__5__Impl_in_rule__Function__Group__51870 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Function__BlockAssignment_5_in_rule__Function__Group__5__Impl1897 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FuncParam__Group__0__Impl_in_rule__FuncParam__Group__01939 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__FuncParam__Group__1_in_rule__FuncParam__Group__01942 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FuncParam__TypeAssignment_0_in_rule__FuncParam__Group__0__Impl1969 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FuncParam__Group__1__Impl_in_rule__FuncParam__Group__11999 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_rule__FuncParam__Group__2_in_rule__FuncParam__Group__12002 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FuncParam__IdAssignment_1_in_rule__FuncParam__Group__1__Impl2029 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FuncParam__Group__2__Impl_in_rule__FuncParam__Group__22059 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FuncParam__Group_2__0_in_rule__FuncParam__Group__2__Impl2086 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FuncParam__Group_2__0__Impl_in_rule__FuncParam__Group_2__02123 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__FuncParam__Group_2__1_in_rule__FuncParam__Group_2__02126 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__FuncParam__Group_2__0__Impl2154 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FuncParam__Group_2__1__Impl_in_rule__FuncParam__Group_2__12185 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FuncParam__NextAssignment_2_1_in_rule__FuncParam__Group_2__1__Impl2212 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Block__Group__0__Impl_in_rule__Block__Group__02246 = new BitSet(new long[]{0x0000000009A00020L});
-    public static final BitSet FOLLOW_rule__Block__Group__1_in_rule__Block__Group__02249 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__Block__Group__0__Impl2277 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Block__Group__1__Impl_in_rule__Block__Group__12308 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_rule__Block__Group__2_in_rule__Block__Group__12311 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Block__StatementAssignment_1_in_rule__Block__Group__1__Impl2338 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Block__Group__2__Impl_in_rule__Block__Group__22368 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__Block__Group__2__Impl2396 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__Group__0__Impl_in_rule__Statement__Group__02433 = new BitSet(new long[]{0x0000000009A00020L});
-    public static final BitSet FOLLOW_rule__Statement__Group__1_in_rule__Statement__Group__02436 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__Group__1__Impl_in_rule__Statement__Group__12494 = new BitSet(new long[]{0x0000000009A00020L});
-    public static final BitSet FOLLOW_rule__Statement__Group__2_in_rule__Statement__Group__12497 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__DeclarationsAssignment_1_in_rule__Statement__Group__1__Impl2524 = new BitSet(new long[]{0x0000000008000002L});
-    public static final BitSet FOLLOW_rule__Statement__Group__2__Impl_in_rule__Statement__Group__22555 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__CommandsAssignment_2_in_rule__Statement__Group__2__Impl2582 = new BitSet(new long[]{0x0000000001A00022L});
-    public static final BitSet FOLLOW_rule__Command__Group_3__0__Impl_in_rule__Command__Group_3__02619 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_rule__Command__Group_3__1_in_rule__Command__Group_3__02622 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRDeclaration_in_rule__Command__Group_3__0__Impl2649 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Command__Group_3__1__Impl_in_rule__Command__Group_3__12678 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__Command__Group_3__1__Impl2706 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__IfCommand__Group__0__Impl_in_rule__IfCommand__Group__02741 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_rule__IfCommand__Group__1_in_rule__IfCommand__Group__02744 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__IfCommand__Group__0__Impl2772 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__IfCommand__Group__1__Impl_in_rule__IfCommand__Group__12803 = new BitSet(new long[]{0x0000000000008030L});
-    public static final BitSet FOLLOW_rule__IfCommand__Group__2_in_rule__IfCommand__Group__12806 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__IfCommand__Group__1__Impl2834 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__IfCommand__Group__2__Impl_in_rule__IfCommand__Group__22865 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_rule__IfCommand__Group__3_in_rule__IfCommand__Group__22868 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__IfCommand__ExprAssignment_2_in_rule__IfCommand__Group__2__Impl2895 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__IfCommand__Group__3__Impl_in_rule__IfCommand__Group__32925 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_rule__IfCommand__Group__4_in_rule__IfCommand__Group__32928 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__IfCommand__Group__3__Impl2956 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__IfCommand__Group__4__Impl_in_rule__IfCommand__Group__42987 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_rule__IfCommand__Group__5_in_rule__IfCommand__Group__42990 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__IfCommand__IfBlockAssignment_4_in_rule__IfCommand__Group__4__Impl3017 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__IfCommand__Group__5__Impl_in_rule__IfCommand__Group__53047 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__IfCommand__Group_5__0_in_rule__IfCommand__Group__5__Impl3074 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__IfCommand__Group_5__0__Impl_in_rule__IfCommand__Group_5__03117 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_rule__IfCommand__Group_5__1_in_rule__IfCommand__Group_5__03120 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__IfCommand__Group_5__0__Impl3148 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__IfCommand__Group_5__1__Impl_in_rule__IfCommand__Group_5__13179 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__IfCommand__ElseBlockAssignment_5_1_in_rule__IfCommand__Group_5__1__Impl3206 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__WhileCommand__Group__0__Impl_in_rule__WhileCommand__Group__03240 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_rule__WhileCommand__Group__1_in_rule__WhileCommand__Group__03243 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__WhileCommand__Group__0__Impl3271 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__WhileCommand__Group__1__Impl_in_rule__WhileCommand__Group__13302 = new BitSet(new long[]{0x0000000000008030L});
-    public static final BitSet FOLLOW_rule__WhileCommand__Group__2_in_rule__WhileCommand__Group__13305 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__WhileCommand__Group__1__Impl3333 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__WhileCommand__Group__2__Impl_in_rule__WhileCommand__Group__23364 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_rule__WhileCommand__Group__3_in_rule__WhileCommand__Group__23367 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__WhileCommand__ExprAssignment_2_in_rule__WhileCommand__Group__2__Impl3394 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__WhileCommand__Group__3__Impl_in_rule__WhileCommand__Group__33424 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_rule__WhileCommand__Group__4_in_rule__WhileCommand__Group__33427 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__WhileCommand__Group__3__Impl3455 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__WhileCommand__Group__4__Impl_in_rule__WhileCommand__Group__43486 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__WhileCommand__WhileBlockAssignment_4_in_rule__WhileCommand__Group__4__Impl3513 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ReturnCommand__Group__0__Impl_in_rule__ReturnCommand__Group__03553 = new BitSet(new long[]{0x0000000000008030L});
-    public static final BitSet FOLLOW_rule__ReturnCommand__Group__1_in_rule__ReturnCommand__Group__03556 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__ReturnCommand__Group__0__Impl3584 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ReturnCommand__Group__1__Impl_in_rule__ReturnCommand__Group__13615 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_rule__ReturnCommand__Group__2_in_rule__ReturnCommand__Group__13618 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ReturnCommand__ExprAssignment_1_in_rule__ReturnCommand__Group__1__Impl3645 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ReturnCommand__Group__2__Impl_in_rule__ReturnCommand__Group__23675 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__ReturnCommand__Group__2__Impl3703 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Declaration__Group__0__Impl_in_rule__Declaration__Group__03740 = new BitSet(new long[]{0x0000000001A00020L});
-    public static final BitSet FOLLOW_rule__Declaration__Group__1_in_rule__Declaration__Group__03743 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Declaration__TypeAssignment_0_in_rule__Declaration__Group__0__Impl3770 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Declaration__Group__1__Impl_in_rule__Declaration__Group__13800 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_rule__Declaration__Group__2_in_rule__Declaration__Group__13803 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Declaration__ValueAssignment_1_in_rule__Declaration__Group__1__Impl3830 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Declaration__Group__2__Impl_in_rule__Declaration__Group__23860 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__Declaration__Group__2__Impl3888 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RDeclaration__Group__0__Impl_in_rule__RDeclaration__Group__03925 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_rule__RDeclaration__Group__1_in_rule__RDeclaration__Group__03928 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RDeclaration__IdAssignment_0_in_rule__RDeclaration__Group__0__Impl3955 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RDeclaration__Group__1__Impl_in_rule__RDeclaration__Group__13985 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RDeclaration__Group_1__0_in_rule__RDeclaration__Group__1__Impl4012 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RDeclaration__Group_1__0__Impl_in_rule__RDeclaration__Group_1__04047 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_rule__RDeclaration__Group_1__1_in_rule__RDeclaration__Group_1__04050 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RDeclaration__Group_1__1__Impl_in_rule__RDeclaration__Group_1__14108 = new BitSet(new long[]{0x0000000001A00020L});
-    public static final BitSet FOLLOW_rule__RDeclaration__Group_1__2_in_rule__RDeclaration__Group_1__14111 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__RDeclaration__Group_1__1__Impl4139 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RDeclaration__Group_1__2__Impl_in_rule__RDeclaration__Group_1__24170 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RDeclaration__NextAssignment_1_2_in_rule__RDeclaration__Group_1__2__Impl4197 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__IDDeclaration__Group__0__Impl_in_rule__IDDeclaration__Group__04233 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__IDDeclaration__Group__1_in_rule__IDDeclaration__Group__04236 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__IDDeclaration__IdAssignment_0_in_rule__IDDeclaration__Group__0__Impl4263 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__IDDeclaration__Group__1__Impl_in_rule__IDDeclaration__Group__14293 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__IDDeclaration__Group_1__0_in_rule__IDDeclaration__Group__1__Impl4320 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__IDDeclaration__Group_1__0__Impl_in_rule__IDDeclaration__Group_1__04355 = new BitSet(new long[]{0x0000000000008030L});
-    public static final BitSet FOLLOW_rule__IDDeclaration__Group_1__1_in_rule__IDDeclaration__Group_1__04358 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__IDDeclaration__Group_1__0__Impl4386 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__IDDeclaration__Group_1__1__Impl_in_rule__IDDeclaration__Group_1__14417 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__IDDeclaration__ValueAssignment_1_1_in_rule__IDDeclaration__Group_1__1__Impl4444 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Expr__Group__0__Impl_in_rule__Expr__Group__04478 = new BitSet(new long[]{0x0000000000001800L});
-    public static final BitSet FOLLOW_rule__Expr__Group__1_in_rule__Expr__Group__04481 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTerm_in_rule__Expr__Group__0__Impl4508 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Expr__Group__1__Impl_in_rule__Expr__Group__14537 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Expr__Group_1__0_in_rule__Expr__Group__1__Impl4564 = new BitSet(new long[]{0x0000000000001802L});
-    public static final BitSet FOLLOW_rule__Expr__Group_1__0__Impl_in_rule__Expr__Group_1__04599 = new BitSet(new long[]{0x0000000000001800L});
-    public static final BitSet FOLLOW_rule__Expr__Group_1__1_in_rule__Expr__Group_1__04602 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Expr__Group_1__1__Impl_in_rule__Expr__Group_1__14660 = new BitSet(new long[]{0x0000000000008030L});
-    public static final BitSet FOLLOW_rule__Expr__Group_1__2_in_rule__Expr__Group_1__14663 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Expr__OperatorAssignment_1_1_in_rule__Expr__Group_1__1__Impl4690 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Expr__Group_1__2__Impl_in_rule__Expr__Group_1__24720 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Expr__RightAssignment_1_2_in_rule__Expr__Group_1__2__Impl4747 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Term__Group__0__Impl_in_rule__Term__Group__04783 = new BitSet(new long[]{0x0000000000006000L});
-    public static final BitSet FOLLOW_rule__Term__Group__1_in_rule__Term__Group__04786 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFactor_in_rule__Term__Group__0__Impl4813 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Term__Group__1__Impl_in_rule__Term__Group__14842 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Term__Group_1__0_in_rule__Term__Group__1__Impl4869 = new BitSet(new long[]{0x0000000000006002L});
-    public static final BitSet FOLLOW_rule__Term__Group_1__0__Impl_in_rule__Term__Group_1__04904 = new BitSet(new long[]{0x0000000000006000L});
-    public static final BitSet FOLLOW_rule__Term__Group_1__1_in_rule__Term__Group_1__04907 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Term__Group_1__1__Impl_in_rule__Term__Group_1__14965 = new BitSet(new long[]{0x0000000000008030L});
-    public static final BitSet FOLLOW_rule__Term__Group_1__2_in_rule__Term__Group_1__14968 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Term__OperatorAssignment_1_1_in_rule__Term__Group_1__1__Impl4995 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Term__Group_1__2__Impl_in_rule__Term__Group_1__25025 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Term__RightAssignment_1_2_in_rule__Term__Group_1__2__Impl5052 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Factor__Group__0__Impl_in_rule__Factor__Group__05088 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_rule__Factor__Group__1_in_rule__Factor__Group__05091 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtomic_in_rule__Factor__Group__0__Impl5118 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Factor__Group__1__Impl_in_rule__Factor__Group__15147 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Factor__Group_1__0_in_rule__Factor__Group__1__Impl5174 = new BitSet(new long[]{0x0000000004000002L});
-    public static final BitSet FOLLOW_rule__Factor__Group_1__0__Impl_in_rule__Factor__Group_1__05209 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_rule__Factor__Group_1__1_in_rule__Factor__Group_1__05212 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Factor__Group_1__1__Impl_in_rule__Factor__Group_1__15270 = new BitSet(new long[]{0x0000000000008030L});
-    public static final BitSet FOLLOW_rule__Factor__Group_1__2_in_rule__Factor__Group_1__15273 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Factor__OperatorAssignment_1_1_in_rule__Factor__Group_1__1__Impl5300 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Factor__Group_1__2__Impl_in_rule__Factor__Group_1__25330 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Factor__RightAssignment_1_2_in_rule__Factor__Group_1__2__Impl5357 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_0__0__Impl_in_rule__Atomic__Group_0__05393 = new BitSet(new long[]{0x0000000000008030L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_0__1_in_rule__Atomic__Group_0__05396 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Atomic__Group_0__0__Impl5424 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_0__1__Impl_in_rule__Atomic__Group_0__15455 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_0__2_in_rule__Atomic__Group_0__15458 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__ValueAssignment_0_1_in_rule__Atomic__Group_0__1__Impl5485 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_0__2__Impl_in_rule__Atomic__Group_0__25515 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__Atomic__Group_0__2__Impl5543 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDeclaration_in_rule__Code__DeclarationsAssignment_05585 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunction_in_rule__Code__FunctionsAssignment_15616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleType_in_rule__Function__TypeAssignment_05647 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Function__IdAssignment_15678 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFuncParam_in_rule__Function__ParamAssignment_35709 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBlock_in_rule__Function__BlockAssignment_55740 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleType_in_rule__FuncParam__TypeAssignment_05771 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__FuncParam__IdAssignment_15802 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFuncParam_in_rule__FuncParam__NextAssignment_2_15833 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStatement_in_rule__Block__StatementAssignment_15864 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDeclaration_in_rule__Statement__DeclarationsAssignment_15895 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCommand_in_rule__Statement__CommandsAssignment_25926 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleKDeclaration_in_entryRuleKDeclaration661 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleKDeclaration668 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__KDeclaration__Group__0_in_ruleKDeclaration694 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRDeclaration_in_entryRuleRDeclaration721 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRDeclaration728 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RDeclaration__Group__0_in_ruleRDeclaration754 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIDDeclaration_in_entryRuleIDDeclaration781 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleIDDeclaration788 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__IDDeclaration__Group__0_in_ruleIDDeclaration814 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpr_in_entryRuleExpr841 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExpr848 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Expr__Group__0_in_ruleExpr874 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTerm_in_entryRuleTerm901 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTerm908 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Term__Group__0_in_ruleTerm934 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFactor_in_entryRuleFactor961 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFactor968 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Factor__Group__0_in_ruleFactor994 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAtomic_in_entryRuleAtomic1021 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAtomic1028 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__Alternatives_in_ruleAtomic1054 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElement_in_entryRuleElement1081 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleElement1088 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Element__Alternatives_in_ruleElement1114 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleType_in_entryRuleType1141 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleType1148 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Type__ValueAssignment_in_ruleType1174 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIfCommand_in_rule__Command__Alternatives1210 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWhileCommand_in_rule__Command__Alternatives1227 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleReturnCommand_in_rule__Command__Alternatives1244 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleKDeclaration_in_rule__Command__Alternatives1261 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDeclaration_in_rule__Command__Alternatives1278 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBlock_in_rule__Command__Alternatives1295 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_rule__Expr__OperatorAlternatives_1_1_01328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rule__Expr__OperatorAlternatives_1_1_01348 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rule__Term__OperatorAlternatives_1_1_01383 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__Term__OperatorAlternatives_1_1_01403 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_0__0_in_rule__Atomic__Alternatives1437 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__ResultAssignment_1_in_rule__Atomic__Alternatives1455 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Element__Alternatives1488 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Element__Alternatives1505 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Code__Group__0__Impl_in_rule__Code__Group__01535 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__Code__Group__1_in_rule__Code__Group__01538 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Code__DeclarationsAssignment_0_in_rule__Code__Group__0__Impl1565 = new BitSet(new long[]{0x0000000008000002L});
+    public static final BitSet FOLLOW_rule__Code__Group__1__Impl_in_rule__Code__Group__11596 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Code__FunctionsAssignment_1_in_rule__Code__Group__1__Impl1623 = new BitSet(new long[]{0x0000000008000002L});
+    public static final BitSet FOLLOW_rule__Function__Group__0__Impl_in_rule__Function__Group__01658 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Function__Group__1_in_rule__Function__Group__01661 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Function__TypeAssignment_0_in_rule__Function__Group__0__Impl1688 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Function__Group__1__Impl_in_rule__Function__Group__11718 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_rule__Function__Group__2_in_rule__Function__Group__11721 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Function__IdAssignment_1_in_rule__Function__Group__1__Impl1748 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Function__Group__2__Impl_in_rule__Function__Group__21778 = new BitSet(new long[]{0x0000000008010000L});
+    public static final BitSet FOLLOW_rule__Function__Group__3_in_rule__Function__Group__21781 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__Function__Group__2__Impl1809 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Function__Group__3__Impl_in_rule__Function__Group__31840 = new BitSet(new long[]{0x0000000008010000L});
+    public static final BitSet FOLLOW_rule__Function__Group__4_in_rule__Function__Group__31843 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Function__ParamAssignment_3_in_rule__Function__Group__3__Impl1870 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Function__Group__4__Impl_in_rule__Function__Group__41901 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_rule__Function__Group__5_in_rule__Function__Group__41904 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__Function__Group__4__Impl1932 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Function__Group__5__Impl_in_rule__Function__Group__51963 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Function__BlockAssignment_5_in_rule__Function__Group__5__Impl1990 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FuncParam__Group__0__Impl_in_rule__FuncParam__Group__02032 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__FuncParam__Group__1_in_rule__FuncParam__Group__02035 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FuncParam__TypeAssignment_0_in_rule__FuncParam__Group__0__Impl2062 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FuncParam__Group__1__Impl_in_rule__FuncParam__Group__12092 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_rule__FuncParam__Group__2_in_rule__FuncParam__Group__12095 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FuncParam__IdAssignment_1_in_rule__FuncParam__Group__1__Impl2122 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FuncParam__Group__2__Impl_in_rule__FuncParam__Group__22152 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FuncParam__Group_2__0_in_rule__FuncParam__Group__2__Impl2179 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FuncParam__Group_2__0__Impl_in_rule__FuncParam__Group_2__02216 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__FuncParam__Group_2__1_in_rule__FuncParam__Group_2__02219 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__FuncParam__Group_2__0__Impl2247 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FuncParam__Group_2__1__Impl_in_rule__FuncParam__Group_2__12278 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FuncParam__NextAssignment_2_1_in_rule__FuncParam__Group_2__1__Impl2305 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Block__Group__0__Impl_in_rule__Block__Group__02339 = new BitSet(new long[]{0x0000000008D40020L});
+    public static final BitSet FOLLOW_rule__Block__Group__1_in_rule__Block__Group__02342 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_rule__Block__Group__0__Impl2370 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Block__Group__1__Impl_in_rule__Block__Group__12401 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_rule__Block__Group__2_in_rule__Block__Group__12404 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Block__StatementAssignment_1_in_rule__Block__Group__1__Impl2431 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Block__Group__2__Impl_in_rule__Block__Group__22461 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__Block__Group__2__Impl2489 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__Group__0__Impl_in_rule__Statement__Group__02526 = new BitSet(new long[]{0x0000000008D40020L});
+    public static final BitSet FOLLOW_rule__Statement__Group__1_in_rule__Statement__Group__02529 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__Group__1__Impl_in_rule__Statement__Group__12587 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__CommandsAssignment_1_in_rule__Statement__Group__1__Impl2614 = new BitSet(new long[]{0x0000000008D40022L});
+    public static final BitSet FOLLOW_rule__IfCommand__Group__0__Impl_in_rule__IfCommand__Group__02649 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_rule__IfCommand__Group__1_in_rule__IfCommand__Group__02652 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__IfCommand__Group__0__Impl2680 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__IfCommand__Group__1__Impl_in_rule__IfCommand__Group__12711 = new BitSet(new long[]{0x0000000000008030L});
+    public static final BitSet FOLLOW_rule__IfCommand__Group__2_in_rule__IfCommand__Group__12714 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__IfCommand__Group__1__Impl2742 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__IfCommand__Group__2__Impl_in_rule__IfCommand__Group__22773 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_rule__IfCommand__Group__3_in_rule__IfCommand__Group__22776 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__IfCommand__ExprAssignment_2_in_rule__IfCommand__Group__2__Impl2803 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__IfCommand__Group__3__Impl_in_rule__IfCommand__Group__32833 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_rule__IfCommand__Group__4_in_rule__IfCommand__Group__32836 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__IfCommand__Group__3__Impl2864 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__IfCommand__Group__4__Impl_in_rule__IfCommand__Group__42895 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_rule__IfCommand__Group__5_in_rule__IfCommand__Group__42898 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__IfCommand__IfBlockAssignment_4_in_rule__IfCommand__Group__4__Impl2925 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__IfCommand__Group__5__Impl_in_rule__IfCommand__Group__52955 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__IfCommand__Group_5__0_in_rule__IfCommand__Group__5__Impl2982 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__IfCommand__Group_5__0__Impl_in_rule__IfCommand__Group_5__03025 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_rule__IfCommand__Group_5__1_in_rule__IfCommand__Group_5__03028 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__IfCommand__Group_5__0__Impl3056 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__IfCommand__Group_5__1__Impl_in_rule__IfCommand__Group_5__13087 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__IfCommand__ElseBlockAssignment_5_1_in_rule__IfCommand__Group_5__1__Impl3114 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__WhileCommand__Group__0__Impl_in_rule__WhileCommand__Group__03148 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_rule__WhileCommand__Group__1_in_rule__WhileCommand__Group__03151 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_rule__WhileCommand__Group__0__Impl3179 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__WhileCommand__Group__1__Impl_in_rule__WhileCommand__Group__13210 = new BitSet(new long[]{0x0000000000008030L});
+    public static final BitSet FOLLOW_rule__WhileCommand__Group__2_in_rule__WhileCommand__Group__13213 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__WhileCommand__Group__1__Impl3241 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__WhileCommand__Group__2__Impl_in_rule__WhileCommand__Group__23272 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_rule__WhileCommand__Group__3_in_rule__WhileCommand__Group__23275 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__WhileCommand__ExprAssignment_2_in_rule__WhileCommand__Group__2__Impl3302 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__WhileCommand__Group__3__Impl_in_rule__WhileCommand__Group__33332 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_rule__WhileCommand__Group__4_in_rule__WhileCommand__Group__33335 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__WhileCommand__Group__3__Impl3363 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__WhileCommand__Group__4__Impl_in_rule__WhileCommand__Group__43394 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__WhileCommand__WhileBlockAssignment_4_in_rule__WhileCommand__Group__4__Impl3421 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ReturnCommand__Group__0__Impl_in_rule__ReturnCommand__Group__03461 = new BitSet(new long[]{0x0000000000008030L});
+    public static final BitSet FOLLOW_rule__ReturnCommand__Group__1_in_rule__ReturnCommand__Group__03464 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__ReturnCommand__Group__0__Impl3492 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ReturnCommand__Group__1__Impl_in_rule__ReturnCommand__Group__13523 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__ReturnCommand__Group__2_in_rule__ReturnCommand__Group__13526 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ReturnCommand__ExprAssignment_1_in_rule__ReturnCommand__Group__1__Impl3553 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ReturnCommand__Group__2__Impl_in_rule__ReturnCommand__Group__23583 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__ReturnCommand__Group__2__Impl3611 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Declaration__Group__0__Impl_in_rule__Declaration__Group__03648 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Declaration__Group__1_in_rule__Declaration__Group__03651 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Declaration__TypeAssignment_0_in_rule__Declaration__Group__0__Impl3678 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Declaration__Group__1__Impl_in_rule__Declaration__Group__13708 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__Declaration__Group__2_in_rule__Declaration__Group__13711 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Declaration__ValueAssignment_1_in_rule__Declaration__Group__1__Impl3738 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Declaration__Group__2__Impl_in_rule__Declaration__Group__23768 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__Declaration__Group__2__Impl3796 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__KDeclaration__Group__0__Impl_in_rule__KDeclaration__Group__03833 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__KDeclaration__Group__1_in_rule__KDeclaration__Group__03836 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__KDeclaration__DeclarationAssignment_0_in_rule__KDeclaration__Group__0__Impl3863 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__KDeclaration__Group__1__Impl_in_rule__KDeclaration__Group__13893 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__KDeclaration__Group__1__Impl3921 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RDeclaration__Group__0__Impl_in_rule__RDeclaration__Group__03956 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_rule__RDeclaration__Group__1_in_rule__RDeclaration__Group__03959 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RDeclaration__IdAssignment_0_in_rule__RDeclaration__Group__0__Impl3986 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RDeclaration__Group__1__Impl_in_rule__RDeclaration__Group__14016 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RDeclaration__Group_1__0_in_rule__RDeclaration__Group__1__Impl4043 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RDeclaration__Group_1__0__Impl_in_rule__RDeclaration__Group_1__04078 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_rule__RDeclaration__Group_1__1_in_rule__RDeclaration__Group_1__04081 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RDeclaration__Group_1__1__Impl_in_rule__RDeclaration__Group_1__14139 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__RDeclaration__Group_1__2_in_rule__RDeclaration__Group_1__14142 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__RDeclaration__Group_1__1__Impl4170 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RDeclaration__Group_1__2__Impl_in_rule__RDeclaration__Group_1__24201 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RDeclaration__NextAssignment_1_2_in_rule__RDeclaration__Group_1__2__Impl4228 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__IDDeclaration__Group__0__Impl_in_rule__IDDeclaration__Group__04264 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__IDDeclaration__Group__1_in_rule__IDDeclaration__Group__04267 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__IDDeclaration__IdAssignment_0_in_rule__IDDeclaration__Group__0__Impl4294 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__IDDeclaration__Group__1__Impl_in_rule__IDDeclaration__Group__14324 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__IDDeclaration__Group_1__0_in_rule__IDDeclaration__Group__1__Impl4351 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__IDDeclaration__Group_1__0__Impl_in_rule__IDDeclaration__Group_1__04386 = new BitSet(new long[]{0x0000000000008030L});
+    public static final BitSet FOLLOW_rule__IDDeclaration__Group_1__1_in_rule__IDDeclaration__Group_1__04389 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__IDDeclaration__Group_1__0__Impl4417 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__IDDeclaration__Group_1__1__Impl_in_rule__IDDeclaration__Group_1__14448 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__IDDeclaration__ValueAssignment_1_1_in_rule__IDDeclaration__Group_1__1__Impl4475 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Expr__Group__0__Impl_in_rule__Expr__Group__04509 = new BitSet(new long[]{0x0000000000001800L});
+    public static final BitSet FOLLOW_rule__Expr__Group__1_in_rule__Expr__Group__04512 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTerm_in_rule__Expr__Group__0__Impl4539 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Expr__Group__1__Impl_in_rule__Expr__Group__14568 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Expr__Group_1__0_in_rule__Expr__Group__1__Impl4595 = new BitSet(new long[]{0x0000000000001802L});
+    public static final BitSet FOLLOW_rule__Expr__Group_1__0__Impl_in_rule__Expr__Group_1__04630 = new BitSet(new long[]{0x0000000000001800L});
+    public static final BitSet FOLLOW_rule__Expr__Group_1__1_in_rule__Expr__Group_1__04633 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Expr__Group_1__1__Impl_in_rule__Expr__Group_1__14691 = new BitSet(new long[]{0x0000000000008030L});
+    public static final BitSet FOLLOW_rule__Expr__Group_1__2_in_rule__Expr__Group_1__14694 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Expr__OperatorAssignment_1_1_in_rule__Expr__Group_1__1__Impl4721 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Expr__Group_1__2__Impl_in_rule__Expr__Group_1__24751 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Expr__RightAssignment_1_2_in_rule__Expr__Group_1__2__Impl4778 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Term__Group__0__Impl_in_rule__Term__Group__04814 = new BitSet(new long[]{0x0000000000006000L});
+    public static final BitSet FOLLOW_rule__Term__Group__1_in_rule__Term__Group__04817 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFactor_in_rule__Term__Group__0__Impl4844 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Term__Group__1__Impl_in_rule__Term__Group__14873 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Term__Group_1__0_in_rule__Term__Group__1__Impl4900 = new BitSet(new long[]{0x0000000000006002L});
+    public static final BitSet FOLLOW_rule__Term__Group_1__0__Impl_in_rule__Term__Group_1__04935 = new BitSet(new long[]{0x0000000000006000L});
+    public static final BitSet FOLLOW_rule__Term__Group_1__1_in_rule__Term__Group_1__04938 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Term__Group_1__1__Impl_in_rule__Term__Group_1__14996 = new BitSet(new long[]{0x0000000000008030L});
+    public static final BitSet FOLLOW_rule__Term__Group_1__2_in_rule__Term__Group_1__14999 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Term__OperatorAssignment_1_1_in_rule__Term__Group_1__1__Impl5026 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Term__Group_1__2__Impl_in_rule__Term__Group_1__25056 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Term__RightAssignment_1_2_in_rule__Term__Group_1__2__Impl5083 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Factor__Group__0__Impl_in_rule__Factor__Group__05119 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_rule__Factor__Group__1_in_rule__Factor__Group__05122 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAtomic_in_rule__Factor__Group__0__Impl5149 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Factor__Group__1__Impl_in_rule__Factor__Group__15178 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Factor__Group_1__0_in_rule__Factor__Group__1__Impl5205 = new BitSet(new long[]{0x0000000004000002L});
+    public static final BitSet FOLLOW_rule__Factor__Group_1__0__Impl_in_rule__Factor__Group_1__05240 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_rule__Factor__Group_1__1_in_rule__Factor__Group_1__05243 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Factor__Group_1__1__Impl_in_rule__Factor__Group_1__15301 = new BitSet(new long[]{0x0000000000008030L});
+    public static final BitSet FOLLOW_rule__Factor__Group_1__2_in_rule__Factor__Group_1__15304 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Factor__OperatorAssignment_1_1_in_rule__Factor__Group_1__1__Impl5331 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Factor__Group_1__2__Impl_in_rule__Factor__Group_1__25361 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Factor__RightAssignment_1_2_in_rule__Factor__Group_1__2__Impl5388 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_0__0__Impl_in_rule__Atomic__Group_0__05424 = new BitSet(new long[]{0x0000000000008030L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_0__1_in_rule__Atomic__Group_0__05427 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__Atomic__Group_0__0__Impl5455 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_0__1__Impl_in_rule__Atomic__Group_0__15486 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_0__2_in_rule__Atomic__Group_0__15489 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__ValueAssignment_0_1_in_rule__Atomic__Group_0__1__Impl5516 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_0__2__Impl_in_rule__Atomic__Group_0__25546 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__Atomic__Group_0__2__Impl5574 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDeclaration_in_rule__Code__DeclarationsAssignment_05616 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFunction_in_rule__Code__FunctionsAssignment_15647 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleType_in_rule__Function__TypeAssignment_05678 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Function__IdAssignment_15709 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFuncParam_in_rule__Function__ParamAssignment_35740 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBlock_in_rule__Function__BlockAssignment_55771 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleType_in_rule__FuncParam__TypeAssignment_05802 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__FuncParam__IdAssignment_15833 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFuncParam_in_rule__FuncParam__NextAssignment_2_15864 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStatement_in_rule__Block__StatementAssignment_15895 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCommand_in_rule__Statement__CommandsAssignment_15926 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExpr_in_rule__IfCommand__ExprAssignment_25957 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBlock_in_rule__IfCommand__IfBlockAssignment_45988 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBlock_in_rule__IfCommand__ElseBlockAssignment_5_16019 = new BitSet(new long[]{0x0000000000000002L});
@@ -9037,18 +9060,19 @@ public class InternalNotCParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleExpr_in_rule__ReturnCommand__ExprAssignment_16112 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleType_in_rule__Declaration__TypeAssignment_06143 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRDeclaration_in_rule__Declaration__ValueAssignment_16174 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIDDeclaration_in_rule__RDeclaration__IdAssignment_06205 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRDeclaration_in_rule__RDeclaration__NextAssignment_1_26236 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__IDDeclaration__IdAssignment_06267 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpr_in_rule__IDDeclaration__ValueAssignment_1_16298 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Expr__OperatorAlternatives_1_1_0_in_rule__Expr__OperatorAssignment_1_16329 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTerm_in_rule__Expr__RightAssignment_1_26362 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Term__OperatorAlternatives_1_1_0_in_rule__Term__OperatorAssignment_1_16393 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFactor_in_rule__Term__RightAssignment_1_26426 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__Factor__OperatorAssignment_1_16462 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtomic_in_rule__Factor__RightAssignment_1_26501 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpr_in_rule__Atomic__ValueAssignment_0_16532 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleElement_in_rule__Atomic__ResultAssignment_16563 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__Type__ValueAssignment6599 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRDeclaration_in_rule__KDeclaration__DeclarationAssignment_06205 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIDDeclaration_in_rule__RDeclaration__IdAssignment_06236 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRDeclaration_in_rule__RDeclaration__NextAssignment_1_26267 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__IDDeclaration__IdAssignment_06298 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpr_in_rule__IDDeclaration__ValueAssignment_1_16329 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Expr__OperatorAlternatives_1_1_0_in_rule__Expr__OperatorAssignment_1_16360 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTerm_in_rule__Expr__RightAssignment_1_26393 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Term__OperatorAlternatives_1_1_0_in_rule__Term__OperatorAssignment_1_16424 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFactor_in_rule__Term__RightAssignment_1_26457 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__Factor__OperatorAssignment_1_16493 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAtomic_in_rule__Factor__RightAssignment_1_26532 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpr_in_rule__Atomic__ValueAssignment_0_16563 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElement_in_rule__Atomic__ResultAssignment_16594 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__Type__ValueAssignment6630 = new BitSet(new long[]{0x0000000000000002L});
 
 }
